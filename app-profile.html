@@ -663,6 +663,7 @@
     <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/lib/form-validation/jquery.validate.min.js"></script>
     <script src="js/lib/form-validation/jquery.validate.unobtrusive.min.js"></script>
+    <script src="js/lib/jquery.nicescroll/jquery.nicescroll.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
     <!--Menu sidebar -->
@@ -671,7 +672,17 @@
     <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
-
+      <script>
+          $(function(){
+            $("html").niceScroll({
+                cursorcolor:"#16385d",
+                cursorwidth:"5px",
+                background:"#fff",
+                cursorborder:"1px solid #5c4ac7",
+                cursorborderradius:0
+                });  // a world f
+          });
+      </script>
 </body>
 
 </html>
