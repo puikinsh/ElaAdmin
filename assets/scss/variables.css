@@ -1,0 +1,123 @@
+/* 
+
+
+Googel Fonts  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+/* Googel Fonts End  
+
+*/
+.bg-flat-color-1 {
+  background: #00c292; }
+
+.bg-flat-color-2 {
+  background: #ab8ce4; }
+
+.bg-flat-color-3 {
+  background: #03a9f3; }
+
+.bg-flat-color-4 {
+  background: #fb9678; }
+
+.bg-flat-color-5 {
+  background: #66bb6a; }
+
+.bg-flat-color-6 {
+  background: #5c6bc0; }
+
+.bg-transparent {
+  background-color: transparent; }
+
+.white-color {
+  color: #fff; }
+
+.flat-color-1 {
+  color: #00c292; }
+
+.flat-color-2 {
+  color: #ab8ce4; }
+
+.flat-color-3 {
+  color: #03a9f3; }
+
+.flat-color-4 {
+  color: #fb9678; }
+
+.flat-color-5 {
+  color: #66bb6a; }
+
+.flat-color-6 {
+  color: #5c6bc0; }
+
+.bg-twitter {
+  background: #1da1f2; }
+
+.bg-facebook {
+  background: #3b5998; }
+
+.bg-instagram {
+  background: #833ab4; }
+
+.bg- {
+  background: #ef5350; }
+
+.bg- {
+  background: #4dbd74; }
+
+.bg- {
+  background: #66bb6a; }
+
+.bg-white {
+  background-color: #fff; }
+
+.fade-5 {
+  opacity: 0.5; }
+
+.icon-lg {
+  font-size: 4.68em; }
+
+.fw-r {
+  font-weight: normal; }
+
+.color-gray {
+  color: #868e96; }
+
+.text-up {
+  text-transform: uppercase; }
+
+.br-0 {
+  border: none !important; }
+
+.black-rgba {
+  background-color: rgba(0, 0, 0, 0.15) !important; }
+
+.color-white {
+  color: #fff !important; }
+
+.color-red {
+  color: #dc3545; }
+
+.font-3xl {
+  font-size: 2.8125em; }
+
+.font-4xl {
+  font-size: 3.75em; }
+
+.width-90 {
+  width: 90px; }
+
+.height-15 {
+  height: 15px; }
+
+.height-93 {
+  height: 93px; }
+
+.height-100 {
+  height: 100px; }
+
+.inline-block {
+  display: inline-block; }
+
+.mb-15 {
+  margin-bottom: 15px; }
+
+/*# sourceMappingURL=variables.css.map */

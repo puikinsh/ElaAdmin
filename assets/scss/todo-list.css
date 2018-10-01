@@ -1,0 +1,210 @@
+/* 
+
+
+Googel Fonts  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+/* Googel Fonts End  
+
+*/
+.bg-flat-color-1 {
+  background: #00c292; }
+
+.bg-flat-color-2 {
+  background: #ab8ce4; }
+
+.bg-flat-color-3 {
+  background: #03a9f3; }
+
+.bg-flat-color-4 {
+  background: #fb9678; }
+
+.bg-flat-color-5 {
+  background: #66bb6a; }
+
+.bg-flat-color-6 {
+  background: #5c6bc0; }
+
+.bg-transparent {
+  background-color: transparent; }
+
+.white-color {
+  color: #fff; }
+
+.flat-color-1 {
+  color: #00c292; }
+
+.flat-color-2 {
+  color: #ab8ce4; }
+
+.flat-color-3 {
+  color: #03a9f3; }
+
+.flat-color-4 {
+  color: #fb9678; }
+
+.flat-color-5 {
+  color: #66bb6a; }
+
+.flat-color-6 {
+  color: #5c6bc0; }
+
+.bg-twitter {
+  background: #1da1f2; }
+
+.bg-facebook {
+  background: #3b5998; }
+
+.bg-instagram {
+  background: #833ab4; }
+
+.bg- {
+  background: #ef5350; }
+
+.bg- {
+  background: #4dbd74; }
+
+.bg- {
+  background: #66bb6a; }
+
+.bg-white {
+  background-color: #fff; }
+
+.fade-5 {
+  opacity: 0.5; }
+
+.icon-lg {
+  font-size: 4.68em; }
+
+.fw-r {
+  font-weight: normal; }
+
+.color-gray {
+  color: #868e96; }
+
+.text-up {
+  text-transform: uppercase; }
+
+.br-0 {
+  border: none !important; }
+
+.black-rgba {
+  background-color: rgba(0, 0, 0, 0.15) !important; }
+
+.color-white {
+  color: #fff !important; }
+
+.color-red {
+  color: #dc3545; }
+
+.font-3xl {
+  font-size: 2.8125em; }
+
+.font-4xl {
+  font-size: 3.75em; }
+
+.width-90 {
+  width: 90px; }
+
+.height-15 {
+  height: 15px; }
+
+.height-93 {
+  height: 93px; }
+
+.height-100 {
+  height: 100px; }
+
+.inline-block {
+  display: inline-block; }
+
+.mb-15 {
+  margin-bottom: 15px; }
+
+.tdl-holder {
+  margin: 0 auto; }
+  .tdl-holder ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .tdl-holder li {
+    position: relative;
+    background-color: transparent;
+    list-style: outside none none;
+    margin: 0;
+    padding: 7px 0; }
+    .tdl-holder li:after, .tdl-holder li:before {
+      content: "\f142";
+      top: 24px;
+      position: absolute;
+      font: normal normal normal 14px/1 FontAwesome;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      z-index: 99;
+      color: #99abb4; }
+    .tdl-holder li:after {
+      left: 10px; }
+    .tdl-holder li:before {
+      left: 14px; }
+    .tdl-holder li span {
+      margin-left: 30px;
+      vertical-align: middle;
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear; }
+  .tdl-holder label {
+    cursor: pointer;
+    display: block;
+    line-height: 50px;
+    padding: 0 15px;
+    padding-left: 30px;
+    position: relative;
+    margin: 0 !important;
+    background: #fafafa;
+    color: #99abb4;
+    font-size: 15px;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
+    .tdl-holder label:hover {
+      background-color: rgba(153, 171, 180, 0.1); }
+    .tdl-holder label a {
+      border-radius: 50%;
+      color: rgba(153, 171, 180, 0.5);
+      float: right;
+      line-height: normal;
+      margin-top: 15px;
+      text-align: center;
+      text-decoration: none;
+      height: 16px;
+      width: 20px;
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear; }
+      .tdl-holder label a:hover {
+        color: rgba(153, 171, 180, 0.8); }
+  .tdl-holder input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute; }
+    .tdl-holder input[type="checkbox"] + i {
+      border: 1px solid rgba(153, 171, 180, 0.3);
+      display: block;
+      height: 18px;
+      position: absolute;
+      top: 15px;
+      width: 18px;
+      z-index: 1; }
+    .tdl-holder input[type="checkbox"]:checked + i::after {
+      content: "\e64c";
+      font-family: 'themify';
+      display: block;
+      color: rgba(153, 171, 180, 0.5);
+      left: 0;
+      position: absolute;
+      top: -16px;
+      z-index: 2; }
+    .tdl-holder input[type="checkbox"]:checked ~ span {
+      text-decoration: line-through; }
+  .tdl-holder input[type="text"] {
+    height: 60px;
+    margin-top: 20px;
+    font-size: 14px; }
+
+/*# sourceMappingURL=todo-list.css.map */

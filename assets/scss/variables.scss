@@ -1,0 +1,224 @@
+
+//Font Family 
+/* 
+
+
+Googel Fonts  */
+//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+/* Googel Fonts End  
+
+*/
+
+$default-font: "Open Sans", sans-serif;
+
+
+
+$header-color: #00acc1;
+$header-bg: #fff;
+$header-icon : #99abb4; 
+$search-bg : #131c21;
+
+
+$menu-bg: #fff;
+$menu-color: #607d8b;
+$menu-active : #03a9f3;
+$menu-active-bg :  #fafafa;
+
+$color-red-error: rgb(185, 74, 72);
+$color-grey-arrow: rgba(204, 204, 204, 0.2);
+ 
+
+$active-green : #49a342;
+ 
+
+$bg-color: #f1f2f7;
+$container-bg : #f1f2f7;
+// $container-bg : #fff;
+
+$text-color-1 : #99abb4;   
+$text-color-2 : #455a64; 
+$text-color-3 : #868e96;
+
+
+$flat-color-1 : #00c292;
+$flat-color-2 : #ab8ce4;
+$flat-color-3 : #03a9f3;
+$flat-color-4 : #fb9678;
+$flat-color-5 : #66bb6a;
+$flat-color-6 : #5c6bc0;
+$flat-color-7 : #ef5350;  
+
+
+
+
+
+
+// Bootstrap  
+// stylelint-disable
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+$section-title-bg: #263238;
+$dark-text-color: #fff;
+$dark-text-second-color: #99abb4;
+$dark-border-color: rgba(120, 130, 140, 0.4);
+$dark-hover-color: #868e96;
+
+$border-color:                        $gray-200 !default;
+$layout-transition-speed:             .25s !default;
+
+
+// Cards
+$card-spacer-y:            .75rem !default;
+$card-spacer-x:            1.25rem !default;
+
+
+
+// Social Colors
+
+$facebook:                            #3b5998 !default;
+$twitter:                             #00aced !default;
+$linkedin:                            #4875b4 !default;
+$google-plus:                         #d34836 !default;
+$flickr:                              #ff0084 !default;
+$tumblr:                              #32506d !default;
+$xing:                                #026466 !default;
+$github:                              #4183c4 !default;
+$html5:                               #e34f26 !default;
+$openid:                              #f78c40 !default;
+$stack-overflow:                      #fe7a15 !default;
+$youtube:                             #b00 !default;
+$css3:                                #0170ba !default;
+$dribbble:                            #ea4c89 !default;
+$google-plus:                         #bb4b39 !default;
+$instagram:                           #517fa4 !default;
+$pinterest:                           #cb2027 !default;
+$vk:                                  #45668e !default;
+$yahoo:                               #400191 !default;
+$behance:                             #1769ff !default;
+$dropbox:                             #007ee5 !default;
+$reddit:                              #ff4500 !default;
+$spotify:                             #7ab800 !default;
+$vine:                                #00bf8f !default;
+$foursquare:                          #1073af !default;
+$vimeo:                               #aad450 !default;
+
+// Default BootStrap Variables
+$text-muted:                  $gray-600 !default;
+
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+) !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$body-bg:                   $white !default;
+$body-color:                $gray-900 !default;
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+), $theme-colors);
+// stylelint-enable
+
+
+
+
+
+
+
+
+
+
+
+.bg-flat-color-1 {background: $flat-color-1;}
+.bg-flat-color-2 {background: $flat-color-2;}
+.bg-flat-color-3 {background: $flat-color-3; }
+.bg-flat-color-4 {background: $flat-color-4;}
+.bg-flat-color-5 {background: $flat-color-5;}
+.bg-flat-color-6 {background: $flat-color-6;}
+
+.bg-transparent {background-color: transparent;}
+
+.white-color  {color: $white; }
+.flat-color-1 {color: $flat-color-1;}
+.flat-color-2 {color: $flat-color-2;}
+.flat-color-3 {color: $flat-color-3; }
+.flat-color-4 {color: $flat-color-4;}
+.flat-color-5 {color: $flat-color-5;}
+.flat-color-6 {color: $flat-color-6;}
+
+
+
+.bg-twitter {background: #1da1f2;}
+.bg-facebook {background: #3b5998;}
+.bg-instagram {background: #833ab4;}
+.bg- {background: #ef5350;}
+.bg- {background: #4dbd74;}
+.bg- {background: #66bb6a;}
+.bg-white {background-color: #fff;}
+.fade-5 {opacity: 0.5;}
+.icon-lg {font-size: 4.68em;}
+.fw-r {font-weight: normal;}
+.color-gray {color: #868e96;}
+.text-up {text-transform: uppercase;}
+.br-0 {border: none !important;}
+.black-rgba {background-color: rgba(0, 0, 0, 0.15) !important;}
+.color-white {color: #fff !important;}
+.color-red {color: #dc3545;}
+.font-3xl {font-size: 2.8125em;}
+.font-4xl {font-size: 3.75em;}
+.width-90 {width: 90px;}
+.height-15 {height: 15px;}
+.height-93 {height: 93px;}
+.height-100 {height: 100px;}
+.inline-block {display: inline-block;}
+.mb-15 {margin-bottom: 15px;}
+
