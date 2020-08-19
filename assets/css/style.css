@@ -500,15 +500,15 @@ canvas {
       text-align: center;
       padding-top: 5px; }
   .messenger-box .msg-box {
-    margin-left: 84px; }
+    margin-left: 84px;
+    margin-right: 84px; }
   .messenger-box .inner-box {
     position: relative;
     border-radius: 10px;
     background-color: #f1f2f7;
     font-size: 14px;
     color: #9aa0a4;
-    padding: 14px 20px;
-    display: table; }
+    padding: 14px 20px; }
     .messenger-box .inner-box .name {
       font-size: 16px;
       padding-bottom: 10px; }
@@ -522,11 +522,10 @@ canvas {
       border-style: solid;
       border-width: 9px;
       border-color: transparent #f1f2f7 transparent transparent; }
-  .messenger-box .msg-sent .avatar, .messenger-box .msg-sent .msg-box {
+  .messenger-box .msg-sent .avatar {
     float: right; }
   .messenger-box .msg-sent .msg-box {
-    margin-left: 0;
-    margin-right: 20px; }
+    margin-right: 85px; }
   .messenger-box .msg-sent .inner-box:after {
     left: inherit;
     right: -18px;
