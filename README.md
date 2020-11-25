@@ -72,7 +72,7 @@
 
 ### Changelog
 #### V 1.0.0
-Initial Release
+Initial Release.
 ### Authors
 [Colorlib](https://colorlib.com)
 
