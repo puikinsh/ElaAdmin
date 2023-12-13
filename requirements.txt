@@ -1,0 +1,15 @@
+asgiref==3.7.2
+dj-database-url==2.1.0
+Django==4.2.7
+django-widget-tweaks==1.5.0
+djangorestframework==3.14.0
+gunicorn==21.2.0
+packaging==23.2
+Pillow==10.1.0
+psycopg2-binary==2.9.9
+pypng==0.20220715.0
+python-dotenv==1.0.0
+pytz==2023.3.post1
+qrcode==7.4.2
+sqlparse==0.4.4
+typing_extensions==4.8.0

@@ -51,15 +51,17 @@
                                     </thead>
                                     <tbody>
                                         {% for events in events %}
-                                        <tr>
-                                            <td>{{events.name}}</td>
-                                            <td>{{events.speaker}}</td>
-                                            <td>{{events.venue}}</td>
-                                            <td>{{events.date}}</td>
-                                            <td>{{events.status}}</td>
-                                            <td><a href=""><button style="color: green;">Update</button></a></td>
-                                            <td><a href=""><button style="color: red;">Delete</button></a></td>
-                                        </tr>
+                                        <a href="">
+                                            <tr>
+                                                <td>{{events.name}}</td>
+                                                <td>{{events.speaker}}</td>
+                                                <td>{{events.venue}}</td>
+                                                <td>{{events.date}}</td>
+                                                <td>{{events.status}}</td>
+                                                <td><a href=""><button style="color: green;">Update</button></a></td>
+                                                <td><a href=""><button style="color: red;">Delete</button></a></td>
+                                            </tr>
+                                        </a>
                                         {% endfor %}
                                     </tbody>
                                 </table>
