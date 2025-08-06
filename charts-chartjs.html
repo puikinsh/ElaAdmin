@@ -1,124 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head title="ElaAdmin - ElaAdmin"}}
+<head>
+    {{> head title="Chart.js Examples"}}
+    <style>
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        canvas {
+            max-height: 300px !important;
+        }
+    </style>
+</head>
 
 <body>
-    {{> sidebar-ela}}
-    
-    <div id="right-panel" class="right-panel">
-        {{> header-ela}}
+    <div class="wrapper">
+        {{> sidebar-ela}}
         
-<div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-          <div class="row m-0">
-            <div class="col-sm-4">
-              <div class="page-header float-left">
-                <div class="page-title">
-                  <h1>Dashboard</h1>
-                </div>
-              </div>
-            </div>
-
-        <div class="content">
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <h1>Chart.js Examples</h1>
+                            <p>Interactive charts using Chart.js v4.5</p>
+                        </div>
+                    </div>
 <div class="animated fadeIn">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Yearly Sales</h4>
-                  <canvas id="sales-chart"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /# column -->
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Sales Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="sales-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Team Commits</h4>
-                  <canvas id="team-chart"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Team Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="team-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Bar chart</h4>
-                  <canvas id="barChart"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Bar Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="barChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Rader chart</h4>
-                  <canvas id="radarChart"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Radar Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="radarChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Line Chart</h4>
-                  <canvas id="lineChart"></canvas>
-                </div>
-              </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Line Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="lineChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="mb-3">Doughut Chart</h4>
-                    <canvas id="doughutChart"></canvas>
-                  </div>
-                </div>
-              </div>
-              <!-- /# column -->
-            </div>
-            <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Doughnut Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="doughutChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Pie Chart</h4>
-                  <canvas id="pieChart"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Pie Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="pieChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Polar Chart</h4>
-                  <canvas id="polarChart"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Polar Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="polarChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="mb-3">Single Bar Chart</h4>
-                  <canvas id="singelBarChart"></canvas>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Single Bar Chart</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="singelBarChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <!-- /# column -->
-          </div>
+                <!-- .animated -->
+            </main>
+            <!-- /.content -->
+            
+            {{> footer}}
         </div>
-        <!-- .animated -->
-      </div>
-      <!-- /.content -->
-        </div>
-
-        {{> footer}}
     </div>
 
     {{> scripts page="charts"}}

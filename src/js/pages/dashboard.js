@@ -1,17 +1,40 @@
 import Chart from 'chart.js/auto';
 import { formatNumber, formatCurrency } from '../main.js';
 
-// Dashboard initialization
-document.addEventListener('DOMContentLoaded', () => {
+console.log('Dashboard.js loaded, Chart.js version:', Chart.version);
+
+// Dashboard initialization - run immediately and on DOM ready
+function initializeDashboard() {
+  console.log('Dashboard initializing...');
+  console.log('Looking for chart elements...');
+  
+  // Debug: List all canvas elements
+  const allCanvas = document.querySelectorAll('canvas');
+  console.log('Found canvas elements:', allCanvas.length);
+  allCanvas.forEach((canvas, i) => {
+    console.log(`Canvas ${i}: id="${canvas.id}", class="${canvas.className}"`);
+  });
+  
   initializeSalesChart();
   initializeTrafficChart();
   initializeCounters();
-});
+}
+
+// Run now if DOM is already loaded, otherwise wait
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeDashboard);
+} else {
+  initializeDashboard();
+}
 
 // Initialize sales chart
 function initializeSalesChart() {
-  const ctx = document.getElementById('salesChart');
-  if (!ctx) return;
+  const ctx = document.getElementById('sales-chart');
+  if (!ctx) {
+    console.log('Sales chart element not found');
+    return;
+  }
+  console.log('Initializing sales chart...');
 
   new Chart(ctx, {
     type: 'line',
@@ -92,8 +115,12 @@ function initializeSalesChart() {
 
 // Initialize traffic chart
 function initializeTrafficChart() {
-  const ctx = document.getElementById('trafficChart');
-  if (!ctx) return;
+  const ctx = document.getElementById('doughnut-chart');
+  if (!ctx) {
+    console.log('Traffic chart element not found');
+    return;
+  }
+  console.log('Initializing traffic chart...');
 
   new Chart(ctx, {
     type: 'doughnut',

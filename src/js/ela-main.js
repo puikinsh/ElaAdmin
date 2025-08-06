@@ -26,16 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchTrigger = document.querySelector('.search-trigger');
     const searchForm = document.querySelector('.search-form');
     const searchClose = document.querySelector('.search-close');
+    const headerActions = document.querySelector('.header-actions');
     
     if (searchTrigger && searchForm) {
         searchTrigger.addEventListener('click', function(e) {
             e.preventDefault();
-            searchForm.classList.add('show');
+            if (headerActions) {
+                headerActions.classList.toggle('search-active');
+            }
+            searchForm.classList.toggle('show');
         });
         
         if (searchClose) {
             searchClose.addEventListener('click', function(e) {
                 e.preventDefault();
+                if (headerActions) {
+                    headerActions.classList.remove('search-active');
+                }
                 searchForm.classList.remove('show');
             });
         }

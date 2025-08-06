@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head title="Widgets - Dashboard Components"}}
+    <style>
+        .stat-widget-one, .stat-widget-four, .stat-widget-five {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .stat-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flat-color-1 { background-color: #007bff; color: white; border-radius: 50%; width: 60px; height: 60px; }
+        .flat-color-2 { background-color: #28a745; color: white; border-radius: 50%; width: 60px; height: 60px; }
+        .flat-color-3 { background-color: #ffc107; color: white; border-radius: 50%; width: 60px; height: 60px; }
+        .flat-color-4 { background-color: #dc3545; color: white; border-radius: 50%; width: 60px; height: 60px; }
+        .flat-color-5 { background-color: #6f42c1; color: white; border-radius: 50%; width: 60px; height: 60px; }
+        .flat-color-6 { background-color: #fd7e14; color: white; border-radius: 50%; width: 60px; height: 60px; }
+        .bg-flat-color-1 { background-color: #007bff !important; }
+        .bg-flat-color-2 { background-color: #28a745 !important; }
+        .bg-flat-color-3 { background-color: #ffc107 !important; }
+        .bg-flat-color-4 { background-color: #dc3545 !important; }
+        .bg-flat-color-5 { background-color: #6f42c1 !important; }
+        .bg-flat-color-6 { background-color: #fd7e14 !important; }
+        .stat-text { font-size: 1.8rem; font-weight: bold; color: #333; }
+        .stat-heading { color: #666; font-size: 0.9rem; text-transform: uppercase; }
+        .stat-digit { font-size: 1.5rem; font-weight: bold; color: #333; }
+        .count { font-weight: bold; }
+        .progress { border-radius: 10px; height: 8px !important; }
+        .widget-card { transition: transform 0.2s; }
+        .widget-card:hover { transform: translateY(-2px); }
+        .opacity-50 { opacity: 0.5; }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        {{> sidebar-ela}}
+        
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <h1>Widgets</h1>
+                            <p>Dashboard widgets and components showcase</p>
+                        </div>
+                    </div>
+
+                    <!-- Icon Stat Widgets -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon flat-color-1">
+                                            <i class="fas fa-dollar-sign"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-text">$<span class="count">23,569</span></div>
+                                            <div class="stat-heading">Revenue</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon flat-color-2">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-text"><span class="count">3,435</span></div>
+                                            <div class="stat-heading">Sales</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon flat-color-3">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-text"><span class="count">349</span></div>
+                                            <div class="stat-heading">Templates</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon flat-color-4">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-text"><span class="count">2,986</span></div>
+                                            <div class="stat-heading">Clients</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Colored Background Widgets -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-flat-color-1 widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="mb-0 fw-bold">
+                                                $<span class="count">23,569</span>
+                                            </h3>
+                                            <p class="text-light mt-1 mb-0 opacity-75">Revenue</p>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-shopping-cart fa-2x opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-flat-color-6 widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="mb-0 fw-bold">
+                                                <span class="count">85</span>%
+                                            </h3>
+                                            <p class="text-light mt-1 mb-0 opacity-75">Completion Rate</p>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-chart-bar fa-2x opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-flat-color-3 widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="mb-0 fw-bold">
+                                                <span class="count">6,569</span>
+                                            </h3>
+                                            <p class="text-light mt-1 mb-0 opacity-75">Total Clients</p>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-users fa-2x opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-flat-color-2 widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="mb-0 fw-bold">
+                                                <span class="count">1,490</span>
+                                            </h3>
+                                            <p class="text-light mt-1 mb-0 opacity-75">New Users</p>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-chart-line fa-2x opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simple Icon Widgets -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-four">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-server text-primary"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-heading">Database</div>
+                                            <div class="stat-text">Total: 765</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-four">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-user text-success"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-heading">Users</div>
+                                            <div class="stat-text">Total: 24,720</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-four">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-chart-line text-warning"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-heading">Daily Sales</div>
+                                            <div class="stat-text">Total: $76,587</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="stat-widget-four">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-wifi text-info"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-heading">Bandwidth</div>
+                                            <div class="stat-text">Total: 4TB</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Card Widgets -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">Visitors</span>
+                                        <i class="fas fa-users text-primary"></i>
+                                    </div>
+                                    <h3 class="mb-3"><span class="count">87,500</span></h3>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-flat-color-1" style="width: 85%"></div>
+                                    </div>
+                                    <small class="text-muted">85% of target</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">New Clients</span>
+                                        <i class="fas fa-user-plus text-success"></i>
+                                    </div>
+                                    <h3 class="mb-3"><span class="count">385</span></h3>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-flat-color-2" style="width: 65%"></div>
+                                    </div>
+                                    <small class="text-muted">65% of target</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card widget-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">Products Sold</span>
+                                        <i class="fas fa-shopping-bag text-warning"></i>
+                                    </div>
+                                    <h3 class="mb-3"><span class="count">1,238</span></h3>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-flat-color-3" style="width: 75%"></div>
+                                    </div>
+                                    <small class="text-muted">75% of target</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            
+            {{> footer}}
+        </div>
+    </div>
+
+    {{> scripts}}
+</body>
+</html>

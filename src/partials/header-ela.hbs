@@ -1,101 +1,51 @@
-<!-- Header-->
-<header id="header" class="header">
-    <div class="top-left">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo" /></a>
-            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo" /></a>
-            <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-        </div>
+<!-- Super Simple Working Header -->
+<header style="position: fixed; top: 0; left: 0; right: 0; height: 60px; background: white; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000;">
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <img src="images/logo.png" alt="Logo" style="height: 35px; width: auto;">
+    <button onclick="toggleSidebar()" style="background: none; border: none; font-size: 18px; cursor: pointer; padding: 8px; color: #666;">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <!-- Notifications Dropdown -->
+    <div style="position: relative;">
+      <button onclick="toggleDropdown('notifications')" style="background: none; border: none; padding: 8px 12px; cursor: pointer; position: relative; color: #666; border-radius: 4px;">
+        <i class="fa fa-bell"></i>
+        <span style="position: absolute; top: 0; right: 0; background: #dc3545; color: white; border-radius: 10px; padding: 2px 6px; font-size: 10px; min-width: 16px; text-align: center;">3</span>
+      </button>
+      <div id="notifications" style="position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 0.5rem 0; min-width: 250px; display: none; z-index: 1050;">
+        <div style="padding: 0.5rem 1rem; font-weight: 600; color: #495057; border-bottom: 1px solid #ddd; margin-bottom: 0.5rem;">Notifications</div>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'">Server alert</a>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'">New message</a>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'">System update</a>
+      </div>
     </div>
-    <div class="top-right">
-        <div class="header-menu">
-            <div class="header-left">
-                <button class="search-trigger"><i class="fa fa-search"></i></button>
-                <div class="form-inline">
-                    <form class="search-form">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search ..." aria-label="Search" />
-                        <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                    </form>
-                </div>
-
-                <div class="dropdown for-notification">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-bell"></i>
-                        <span class="count bg-danger">3</span>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="notification">
-                        <p class="red">You have 3 Notification</p>
-                        <a class="dropdown-item media" href="#">
-                            <i class="fa fa-check"></i>
-                            <p>Server #1 overloaded.</p>
-                        </a>
-                        <a class="dropdown-item media" href="#">
-                            <i class="fa fa-info"></i>
-                            <p>Server #2 overloaded.</p>
-                        </a>
-                        <a class="dropdown-item media" href="#">
-                            <i class="fa fa-warning"></i>
-                            <p>Server #3 overloaded.</p>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="dropdown for-message">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-envelope"></i>
-                        <span class="count bg-primary">4</span>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="message">
-                        <p class="red">You have 4 Mails</p>
-                        <a class="dropdown-item media" href="#">
-                            <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg" /></span>
-                            <div class="message media-body">
-                                <span class="name float-start">Jonathan Smith</span>
-                                <span class="time float-end">Just now</span>
-                                <p>Hello, this is an example msg</p>
-                            </div>
-                        </a>
-                        <a class="dropdown-item media" href="#">
-                            <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg" /></span>
-                            <div class="message media-body">
-                                <span class="name float-start">Jack Sanders</span>
-                                <span class="time float-end">5 minutes ago</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
-                            </div>
-                        </a>
-                        <a class="dropdown-item media" href="#">
-                            <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg" /></span>
-                            <div class="message media-body">
-                                <span class="name float-start">Cheryl Wheeler</span>
-                                <span class="time float-end">10 minutes ago</span>
-                                <p>Hello, this is an example msg</p>
-                            </div>
-                        </a>
-                        <a class="dropdown-item media" href="#">
-                            <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg" /></span>
-                            <div class="message media-body">
-                                <span class="name float-start">Rachel Santos</span>
-                                <span class="time float-end">15 minutes ago</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="user-area dropdown float-end">
-                <a href="#" class="dropdown-toggle active" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar" />
-                </a>
-
-                <div class="user-menu dropdown-menu">
-                    <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-                    <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-                    <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-                    <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                </div>
-            </div>
-        </div>
+    
+    <!-- Messages Dropdown -->
+    <div style="position: relative;">
+      <button onclick="toggleDropdown('messages')" style="background: none; border: none; padding: 8px 12px; cursor: pointer; position: relative; color: #666; border-radius: 4px;">
+        <i class="fa fa-envelope"></i>
+        <span style="position: absolute; top: 0; right: 0; background: #007bff; color: white; border-radius: 10px; padding: 2px 6px; font-size: 10px; min-width: 16px; text-align: center;">4</span>
+      </button>
+      <div id="messages" style="position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 0.5rem 0; min-width: 250px; display: none; z-index: 1050;">
+        <div style="padding: 0.5rem 1rem; font-weight: 600; color: #495057; border-bottom: 1px solid #ddd; margin-bottom: 0.5rem;">Messages</div>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'">John Smith</a>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'">Jane Doe</a>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'">Bob Wilson</a>
+      </div>
     </div>
+    
+    <!-- User Dropdown -->
+    <div style="position: relative;">
+      <button onclick="toggleDropdown('userMenu')" style="background: none; border: none; padding: 8px; cursor: pointer; color: #666; border-radius: 4px;">
+        <img src="images/admin.jpg" alt="User" style="width: 32px; height: 32px; border-radius: 50%;">
+      </button>
+      <div id="userMenu" style="position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 0.5rem 0; min-width: 200px; display: none; z-index: 1050;">
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'"><i class="fa fa-user"></i> Profile</a>
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'"><i class="fa fa-cog"></i> Settings</a>
+        <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #ddd;">
+        <a href="#" style="display: block; padding: 0.5rem 1rem; color: #495057; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='white'"><i class="fa fa-sign-out"></i> Logout</a>
+      </div>
+    </div>
+  </div>
 </header>
-<!-- /header -->

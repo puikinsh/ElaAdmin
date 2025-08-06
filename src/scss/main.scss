@@ -21,6 +21,11 @@
 @use 'components/forms';
 @use 'components/tables';
 @use 'components/utilities';
+@use 'components/layout-fixes';
+
+// Clean Navigation Components (New)
+@use 'components/sidebar-clean';
+@use 'components/header-clean';
 
 // Layout
 body {

@@ -32,6 +32,41 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, 'src/partials'),
       context: pageData,
       reloadOnPartialChange: true,
+      helpers: {
+        // Equality helper
+        eq: (a, b) => a === b,
+        // Includes helper for checking if string contains substring
+        includes: (str, substr) => {
+          if (!str || !substr) return false;
+          return str.toString().includes(substr.toString());
+        },
+        // Not equal helper
+        ne: (a, b) => a !== b,
+        // Greater than
+        gt: (a, b) => a > b,
+        // Less than
+        lt: (a, b) => a < b,
+        // Logical and
+        and: (a, b) => a && b,
+        // Logical or
+        or: (a, b) => a || b,
+        // If block helper
+        ifCond: function(v1, operator, v2, options) {
+          switch (operator) {
+            case '==': return (v1 == v2) ? options.fn(this) : options.inverse(this);
+            case '===': return (v1 === v2) ? options.fn(this) : options.inverse(this);
+            case '!=': return (v1 != v2) ? options.fn(this) : options.inverse(this);
+            case '!==': return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+            case '<': return (v1 < v2) ? options.fn(this) : options.inverse(this);
+            case '<=': return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+            case '>': return (v1 > v2) ? options.fn(this) : options.inverse(this);
+            case '>=': return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+            case '&&': return (v1 && v2) ? options.fn(this) : options.inverse(this);
+            case '||': return (v1 || v2) ? options.fn(this) : options.inverse(this);
+            default: return options.inverse(this);
+          }
+        }
+      }
     }),
     legacy({
       targets: ['defaults', 'not IE 11'],

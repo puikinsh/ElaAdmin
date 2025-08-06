@@ -1,99 +1,118 @@
-<!-- Left Panel -->
-<aside id="left-panel" class="left-panel">
-    <nav class="navbar navbar-expand-sm navbar-default">
-        <div id="main-menu" class="main-menu collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="{{#if (eq page 'dashboard')}}active{{/if}}">
-                    <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard</a>
-                </li>
-                <li class="menu-title">UI elements</li>
-                <!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown {{#if (includes page 'ui-')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-cogs"></i>Components
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-                        <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                        <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                        <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                        <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                        <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                        <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children dropdown {{#if (includes page 'table')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-table"></i>Tables
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                        <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children dropdown {{#if (includes page 'form')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-th"></i>Forms
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                    </ul>
-                </li>
+<!-- Working Sidebar -->
+<div id="left-panel" style="position: fixed; top: 60px; left: 0; width: 250px; height: calc(100vh - 60px); background: white; border-right: 1px solid #ddd; overflow-y: auto; z-index: 999; transition: transform 0.3s ease;">
+  <ul style="list-style: none; padding: 20px 0; margin: 0;">
+    <li style="margin: 0;">
+      <a href="index.html" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; transition: all 0.2s;">
+        <i class="fa fa-home" style="width: 20px; margin-right: 10px; text-align: center;"></i> Dashboard
+      </a>
+    </li>
+    
+    <li style="padding: 15px 20px 8px; font-size: 11px; text-transform: uppercase; font-weight: 600; color: #999; letter-spacing: 1px;">UI ELEMENTS</li>
+    
+    <li style="margin: 0;">
+      <a href="#" onclick="toggleSidebarDropdown('components')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
+        <i class="fa fa-cogs" style="width: 20px; margin-right: 10px; text-align: center;"></i> Components
+        <i id="components-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
+      </a>
+      <ul id="components" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
+        <li><a href="ui-buttons.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Buttons</a></li>
+        <li><a href="ui-badges.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Badges</a></li>
+        <li><a href="ui-tabs.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Tabs</a></li>
+        <li><a href="ui-alerts.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Alerts</a></li>
+        <li><a href="ui-modals.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Modals</a></li>
+      </ul>
+    </li>
+    
+    <li style="margin: 0;">
+      <a href="#" onclick="toggleSidebarDropdown('tables')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
+        <i class="fa fa-table" style="width: 20px; margin-right: 10px; text-align: center;"></i> Tables
+        <i id="tables-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
+      </a>
+      <ul id="tables" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
+        <li><a href="tables-basic.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Basic Table</a></li>
+        <li><a href="tables-data.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Data Table</a></li>
+      </ul>
+    </li>
+    
+    <li style="margin: 0;">
+      <a href="#" onclick="toggleSidebarDropdown('forms')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
+        <i class="fa fa-edit" style="width: 20px; margin-right: 10px; text-align: center;"></i> Forms
+        <i id="forms-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
+      </a>
+      <ul id="forms" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
+        <li><a href="forms-basic.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Basic Form</a></li>
+        <li><a href="forms-advanced.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Advanced Form</a></li>
+      </ul>
+    </li>
+    
+    <li style="margin: 0;">
+      <a href="#" onclick="toggleSidebarDropdown('charts')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
+        <i class="fa fa-bar-chart" style="width: 20px; margin-right: 10px; text-align: center;"></i> Charts
+        <i id="charts-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
+      </a>
+      <ul id="charts" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
+        <li><a href="charts-chartjs.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Chart JS</a></li>
+        <li><a href="charts-flot.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Flot Charts</a></li>
+      </ul>
+    </li>
+    
+    <li style="margin: 0;">
+      <a href="widgets.html" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; transition: all 0.2s;">
+        <i class="fa fa-puzzle-piece" style="width: 20px; margin-right: 10px; text-align: center;"></i> Widgets
+      </a>
+    </li>
+  </ul>
+</div>
 
-                <li class="menu-title">Icons</li>
-                <!-- /.menu-title -->
-
-                <li class="menu-item-has-children dropdown {{#if (includes page 'font-')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-tasks"></i>Icons
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                        <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                    </ul>
-                </li>
-                <li class="{{#if (eq page 'widgets')}}active{{/if}}">
-                    <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                </li>
-                <li class="menu-item-has-children dropdown {{#if (includes page 'chart')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-bar-chart"></i>Charts
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                        <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                        <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                    </ul>
-                </li>
-
-                <li class="menu-item-has-children dropdown {{#if (includes page 'map')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-area-chart"></i>Maps
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                        <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                    </ul>
-                </li>
-                <li class="menu-title">Extras</li>
-                <!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown {{#if (includes page 'page')}}active{{/if}}">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-glass"></i>Pages
-                    </a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</aside>
-<!-- /#left-panel -->
+<style>
+  /* Hover effects */
+  #left-panel a:hover {
+    background: #f8f9fa !important;
+    color: #007bff !important;
+    text-decoration: none !important;
+  }
+  
+  .dropdown-menu a:hover {
+    background: #e9ecef !important;
+    color: #007bff !important;
+  }
+  
+  .has-dropdown.open .fa-chevron-down {
+    transform: rotate(180deg) !important;
+  }
+  
+  .has-dropdown.open .dropdown-menu {
+    display: block !important;
+  }
+  
+  /* Main content adjustment */
+  .main-content, .right-panel {
+    margin-left: 250px !important;
+    margin-top: 60px !important;
+  }
+  
+  /* Hidden sidebar */
+  #left-panel.hidden {
+    transform: translateX(-250px) !important;
+  }
+  
+  .sidebar-hidden .main-content,
+  .sidebar-hidden .right-panel {
+    margin-left: 0 !important;
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    #left-panel {
+      transform: translateX(-250px) !important;
+    }
+    
+    #left-panel.show {
+      transform: translateX(0) !important;
+    }
+    
+    .main-content, .right-panel {
+      margin-left: 0 !important;
+    }
+  }
+</style>
