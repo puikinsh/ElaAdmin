@@ -1,0 +1,165 @@
+@use '../variables' as *;
+
+// Header Styles
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: $sidebar-width;
+  height: $header-height;
+  background-color: $header-bg;
+  box-shadow: $header-shadow;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  transition: $transition-base;
+  z-index: 1030;
+  
+  &.collapsed {
+    left: $sidebar-collapsed-width;
+  }
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+.header-toggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #878787;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: $flat-color-3;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.header-search {
+  position: relative;
+  margin-left: 30px;
+  
+  input {
+    padding: 8px 15px 8px 35px;
+    border-radius: 3px;
+    border: 1px solid #e7e7e7;
+    min-width: 200px;
+    font-size: 13px;
+    background-color: #f7f8fa;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      border-color: $flat-color-3;
+      background-color: #fff;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #99abb4;
+    font-size: 14px;
+  }
+}
+
+.header-notifications {
+  position: relative;
+  
+  .btn {
+    background: none;
+    border: none;
+    color: #878787;
+    font-size: 18px;
+    padding: 8px;
+    position: relative;
+    
+    &:hover {
+      color: $flat-color-3;
+    }
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f44336;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+  }
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e7e7e7;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    
+    .user-name {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1.2;
+      color: #272c33;
+    }
+    
+    .user-role {
+      font-size: 11px;
+      color: #99abb4;
+    }
+  }
+  
+  .dropdown-toggle::after {
+    margin-left: 8px;
+  }
+}
+
+// Mobile header adjustments
+@media (max-width: 991.98px) {
+  .header {
+    left: 0;
+  }
+  
+  .header-search {
+    display: none;
+  }
+  
+  .header-user .user-info {
+    display: none;
+  }
+}

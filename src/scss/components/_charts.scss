@@ -1,0 +1,17 @@
+// Chart component styles
+.chart-wrapper {
+  position: relative;
+  height: 350px;
+  padding: 1rem;
+}
+
+.chart-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  pointer-events: none;
+  z-index: 1000;
+}

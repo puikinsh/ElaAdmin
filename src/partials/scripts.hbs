@@ -1,0 +1,21 @@
+<!-- Core Scripts -->
+<script type="module">
+  // Import main application JavaScript
+  import '/src/js/main.js';
+  
+  // Page-specific imports can be added here based on the current page
+  const currentPage = window.location.pathname;
+  
+  // Dynamic imports for page-specific functionality
+  if (currentPage === '/' || currentPage === '/index.html') {
+    import('/src/js/pages/dashboard.js');
+  } else if (currentPage.includes('chart')) {
+    import('/src/js/pages/charts.js');
+  } else if (currentPage.includes('form')) {
+    import('/src/js/pages/forms.js');
+  } else if (currentPage.includes('table')) {
+    import('/src/js/pages/tables.js').then(module => {
+      module.initializeTablesPage();
+    });
+  }
+</script>

@@ -1,0 +1,146 @@
+// Custom variables - must be loaded before Bootstrap
+@use 'variables' as *;
+
+// Bootstrap 5 with our custom variables
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: $primary,
+  $secondary: $secondary,
+  $success: $success,
+  $info: $info,
+  $warning: $warning,
+  $danger: $danger,
+  $light: $light,
+  $dark: $dark
+);
+
+// Custom components
+@use 'components/sidebar';
+@use 'components/header';
+@use 'components/cards';
+@use 'components/charts';
+@use 'components/forms';
+@use 'components/tables';
+@use 'components/utilities';
+
+// Layout
+body {
+  font-family: $font-family-base;
+  background-color: $content-bg;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: $sidebar-width;
+  transition: $transition-base;
+  
+  &.collapsed {
+    margin-left: $sidebar-collapsed-width;
+  }
+}
+
+.content {
+  padding: $content-padding;
+  padding-top: $header-height + $content-padding;
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+    
+    &.show {
+      transform: translateX(0);
+    }
+  }
+}
+
+// Utility classes for modern layouts
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  
+  &.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  &.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  &.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @media (max-width: 767.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Modern card hover effects
+.card {
+  transition: $transition-base;
+  border: 0;
+  box-shadow: $card-box-shadow;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+}
+
+// Loading states
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid $primary;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #1a1d23;
+    --bs-body-color: #e1e2e4;
+    --bs-card-bg: #272c33;
+    --bs-border-color: #3a3f48;
+  }
+  
+  body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+  }
+  
+  .card {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-border-color);
+  }
+}
