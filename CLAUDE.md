@@ -41,6 +41,7 @@ npm run format
 ## Architecture & Structure
 
 ### Directory Structure
+
 ```
 /src
   /js
@@ -59,22 +60,22 @@ npm run format
 ```
 
 ### Modern JavaScript Patterns
+
 - ES6 modules with import/export
 - Async/await for data fetching
 - Dynamic imports for code splitting
 - No jQuery dependency (vanilla JS + Bootstrap 5)
 
 ### Templating System
+
 All HTML pages use Handlebars partials:
+
 ```html
-{{> head title="Page Title"}}
-{{> sidebar}}
-{{> header}}
-{{> footer}}
-{{> scripts}}
+{{> head title="Page Title"}} {{> sidebar}} {{> header}} {{> footer}} {{> scripts}}
 ```
 
 ### Adding New Features
+
 1. **New Pages**: Create HTML with Handlebars partials, add to vite.config.js input
 2. **New Components**: Add partial in `/src/partials/`, styles in `/src/scss/components/`
 3. **Page Logic**: Create module in `/src/js/pages/`, import dynamically in scripts.hbs

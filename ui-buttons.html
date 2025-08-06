@@ -1,223 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  {{> head title="Buttons"}}
-</head>
-<body>
-  <div class="wrapper">
-    {{> sidebar}}
-    
-    <div class="main-content">
-      {{> header}}
-      
-      <main class="content">
-        <!-- Breadcrumbs -->
-        <div class="row mb-4">
-          <div class="col-sm-4">
-            <h4 class="page-title">Buttons</h4>
-          </div>
-          <div class="col-sm-8">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb float-sm-end">
-                <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Buttons</li>
-              </ol>
-            </nav>
-          </div>
-        </div>
+  <head>
+    {{> head title="Buttons"}}
+  </head>
+  <body>
+    <div class="wrapper">
+      {{> sidebar-ela}}
 
-        <!-- Basic Buttons -->
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Basic Buttons</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-primary mb-2">Primary</button>
-                <button type="button" class="btn btn-secondary mb-2">Secondary</button>
-                <button type="button" class="btn btn-success mb-2">Success</button>
-                <button type="button" class="btn btn-danger mb-2">Danger</button>
-                <button type="button" class="btn btn-warning mb-2">Warning</button>
-                <button type="button" class="btn btn-info mb-2">Info</button>
-                <button type="button" class="btn btn-light mb-2">Light</button>
-                <button type="button" class="btn btn-dark mb-2">Dark</button>
-                <button type="button" class="btn btn-link mb-2">Link</button>
-              </div>
+      <div class="main-content">
+        {{> header-ela}}
+
+        <main class="content">
+          <!-- Breadcrumbs -->
+          <div class="row mb-4">
+            <div class="col-sm-4">
+              <h4 class="page-title">Buttons</h4>
+            </div>
+            <div class="col-sm-8">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Buttons</li>
+                </ol>
+              </nav>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Flat Color Buttons</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn bg-flat-color-1 text-white mb-2">Flat Color 1</button>
-                <button type="button" class="btn bg-flat-color-2 text-white mb-2">Flat Color 2</button>
-                <button type="button" class="btn bg-flat-color-3 text-white mb-2">Flat Color 3</button>
-                <button type="button" class="btn bg-flat-color-4 text-white mb-2">Flat Color 4</button>
-                <button type="button" class="btn bg-flat-color-5 text-white mb-2">Flat Color 5</button>
-                <button type="button" class="btn bg-flat-color-6 text-white mb-2">Flat Color 6</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Button Sizes -->
-        <div class="row mt-4">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Button Sizes</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-primary btn-lg mb-2">Large button</button>
-                <button type="button" class="btn btn-secondary btn-lg mb-2">Large button</button>
-                <br>
-                <button type="button" class="btn btn-primary mb-2">Default button</button>
-                <button type="button" class="btn btn-secondary mb-2">Default button</button>
-                <br>
-                <button type="button" class="btn btn-primary btn-sm mb-2">Small button</button>
-                <button type="button" class="btn btn-secondary btn-sm mb-2">Small button</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Outline Buttons</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-outline-primary mb-2">Primary</button>
-                <button type="button" class="btn btn-outline-secondary mb-2">Secondary</button>
-                <button type="button" class="btn btn-outline-success mb-2">Success</button>
-                <button type="button" class="btn btn-outline-danger mb-2">Danger</button>
-                <button type="button" class="btn btn-outline-warning mb-2">Warning</button>
-                <button type="button" class="btn btn-outline-info mb-2">Info</button>
-                <button type="button" class="btn btn-outline-dark mb-2">Dark</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Button States -->
-        <div class="row mt-4">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Button States</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-primary mb-2">Normal</button>
-                <button type="button" class="btn btn-primary active mb-2">Active</button>
-                <button type="button" class="btn btn-primary mb-2" disabled>Disabled</button>
-                <br>
-                <button type="button" class="btn btn-success mb-2">Normal</button>
-                <button type="button" class="btn btn-success active mb-2">Active</button>
-                <button type="button" class="btn btn-success mb-2" disabled>Disabled</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Button with Icons</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-primary mb-2">
-                  <i class="fa fa-star"></i> Left Icon
-                </button>
-                <button type="button" class="btn btn-secondary mb-2">
-                  Right Icon <i class="fa fa-heart"></i>
-                </button>
-                <button type="button" class="btn btn-success mb-2">
-                  <i class="fa fa-check"></i> Success
-                </button>
-                <button type="button" class="btn btn-warning mb-2">
-                  <i class="fa fa-warning"></i> Warning
-                </button>
-                <button type="button" class="btn btn-danger mb-2">
-                  <i class="fa fa-trash"></i> Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Button Groups -->
-        <div class="row mt-4">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Button Groups</h5>
-              </div>
-              <div class="card-body">
-                <div class="btn-group mb-3" role="group">
-                  <button type="button" class="btn btn-primary">Left</button>
-                  <button type="button" class="btn btn-primary">Middle</button>
-                  <button type="button" class="btn btn-primary">Right</button>
+          <!-- Basic Buttons -->
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Basic Buttons</h5>
                 </div>
-                
-                <br>
-                
-                <div class="btn-group mb-3" role="group">
-                  <button type="button" class="btn btn-outline-secondary">Left</button>
-                  <button type="button" class="btn btn-outline-secondary">Middle</button>
-                  <button type="button" class="btn btn-outline-secondary">Right</button>
+                <div class="card-body">
+                  <button type="button" class="btn btn-primary mb-2">Primary</button>
+                  <button type="button" class="btn btn-secondary mb-2">Secondary</button>
+                  <button type="button" class="btn btn-success mb-2">Success</button>
+                  <button type="button" class="btn btn-danger mb-2">Danger</button>
+                  <button type="button" class="btn btn-warning mb-2">Warning</button>
+                  <button type="button" class="btn btn-info mb-2">Info</button>
+                  <button type="button" class="btn btn-light mb-2">Light</button>
+                  <button type="button" class="btn btn-dark mb-2">Dark</button>
+                  <button type="button" class="btn btn-link mb-2">Link</button>
                 </div>
-                
-                <br>
-                
-                <div class="btn-group-vertical mb-3" role="group">
-                  <button type="button" class="btn btn-success">Top</button>
-                  <button type="button" class="btn btn-success">Middle</button>
-                  <button type="button" class="btn btn-success">Bottom</button>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Flat Color Buttons</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn bg-flat-color-1 text-white mb-2">
+                    Flat Color 1
+                  </button>
+                  <button type="button" class="btn bg-flat-color-2 text-white mb-2">
+                    Flat Color 2
+                  </button>
+                  <button type="button" class="btn bg-flat-color-3 text-white mb-2">
+                    Flat Color 3
+                  </button>
+                  <button type="button" class="btn bg-flat-color-4 text-white mb-2">
+                    Flat Color 4
+                  </button>
+                  <button type="button" class="btn bg-flat-color-5 text-white mb-2">
+                    Flat Color 5
+                  </button>
+                  <button type="button" class="btn bg-flat-color-6 text-white mb-2">
+                    Flat Color 6
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Social Buttons -->
-        <div class="row mt-4">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Social Media Buttons</h5>
+          <!-- Button Sizes -->
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Button Sizes</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn btn-primary btn-lg mb-2">Large button</button>
+                  <button type="button" class="btn btn-secondary btn-lg mb-2">Large button</button>
+                  <br />
+                  <button type="button" class="btn btn-primary mb-2">Default button</button>
+                  <button type="button" class="btn btn-secondary mb-2">Default button</button>
+                  <br />
+                  <button type="button" class="btn btn-primary btn-sm mb-2">Small button</button>
+                  <button type="button" class="btn btn-secondary btn-sm mb-2">Small button</button>
+                </div>
               </div>
-              <div class="card-body">
-                <button type="button" class="btn bg-facebook text-white mb-2">
-                  <i class="fab fa-facebook-f"></i> Facebook
-                </button>
-                <button type="button" class="btn bg-twitter text-white mb-2">
-                  <i class="fab fa-twitter"></i> Twitter
-                </button>
-                <button type="button" class="btn bg-instagram text-white mb-2">
-                  <i class="fab fa-instagram"></i> Instagram
-                </button>
-                <button type="button" class="btn btn-dark mb-2">
-                  <i class="fab fa-github"></i> GitHub
-                </button>
-                <button type="button" class="btn btn-danger mb-2">
-                  <i class="fab fa-youtube"></i> YouTube
-                </button>
-                <button type="button" class="btn btn-info mb-2">
-                  <i class="fab fa-linkedin-in"></i> LinkedIn
-                </button>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Outline Buttons</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn btn-outline-primary mb-2">Primary</button>
+                  <button type="button" class="btn btn-outline-secondary mb-2">Secondary</button>
+                  <button type="button" class="btn btn-outline-success mb-2">Success</button>
+                  <button type="button" class="btn btn-outline-danger mb-2">Danger</button>
+                  <button type="button" class="btn btn-outline-warning mb-2">Warning</button>
+                  <button type="button" class="btn btn-outline-info mb-2">Info</button>
+                  <button type="button" class="btn btn-outline-dark mb-2">Dark</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-      
-      {{> footer}}
+
+          <!-- Button States -->
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Button States</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn btn-primary mb-2">Normal</button>
+                  <button type="button" class="btn btn-primary active mb-2">Active</button>
+                  <button type="button" class="btn btn-primary mb-2" disabled>Disabled</button>
+                  <br />
+                  <button type="button" class="btn btn-success mb-2">Normal</button>
+                  <button type="button" class="btn btn-success active mb-2">Active</button>
+                  <button type="button" class="btn btn-success mb-2" disabled>Disabled</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Button with Icons</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn btn-primary mb-2">
+                    <i class="fa fa-star"></i> Left Icon
+                  </button>
+                  <button type="button" class="btn btn-secondary mb-2">
+                    Right Icon <i class="fa fa-heart"></i>
+                  </button>
+                  <button type="button" class="btn btn-success mb-2">
+                    <i class="fa fa-check"></i> Success
+                  </button>
+                  <button type="button" class="btn btn-warning mb-2">
+                    <i class="fa fa-warning"></i> Warning
+                  </button>
+                  <button type="button" class="btn btn-danger mb-2">
+                    <i class="fa fa-trash"></i> Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Groups -->
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Button Groups</h5>
+                </div>
+                <div class="card-body">
+                  <div class="btn-group mb-3" role="group">
+                    <button type="button" class="btn btn-primary">Left</button>
+                    <button type="button" class="btn btn-primary">Middle</button>
+                    <button type="button" class="btn btn-primary">Right</button>
+                  </div>
+
+                  <br />
+
+                  <div class="btn-group mb-3" role="group">
+                    <button type="button" class="btn btn-outline-secondary">Left</button>
+                    <button type="button" class="btn btn-outline-secondary">Middle</button>
+                    <button type="button" class="btn btn-outline-secondary">Right</button>
+                  </div>
+
+                  <br />
+
+                  <div class="btn-group-vertical mb-3" role="group">
+                    <button type="button" class="btn btn-success">Top</button>
+                    <button type="button" class="btn btn-success">Middle</button>
+                    <button type="button" class="btn btn-success">Bottom</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Buttons -->
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Social Media Buttons</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn bg-facebook text-white mb-2">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                  </button>
+                  <button type="button" class="btn bg-twitter text-white mb-2">
+                    <i class="fab fa-twitter"></i> Twitter
+                  </button>
+                  <button type="button" class="btn bg-instagram text-white mb-2">
+                    <i class="fab fa-instagram"></i> Instagram
+                  </button>
+                  <button type="button" class="btn btn-dark mb-2">
+                    <i class="fab fa-github"></i> GitHub
+                  </button>
+                  <button type="button" class="btn btn-danger mb-2">
+                    <i class="fab fa-youtube"></i> YouTube
+                  </button>
+                  <button type="button" class="btn btn-info mb-2">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {{> footer}}
+      </div>
     </div>
-  </div>
-  
-  {{> scripts}}
-</body>
+
+    {{> scripts}}
+  </body>
 </html>

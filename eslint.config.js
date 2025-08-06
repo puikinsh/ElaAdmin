@@ -15,14 +15,14 @@ export default [
         clearInterval: 'readonly',
         clearTimeout: 'readonly',
         IntersectionObserver: 'readonly',
-        process: 'readonly'
-      }
+        process: 'readonly',
+      },
     },
     rules: {
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prefer-const': 'warn',
-      'arrow-body-style': ['warn', 'as-needed']
-    }
-  }
+      'arrow-body-style': ['warn', 'as-needed'],
+    },
+  },
 ];

@@ -20,9 +20,9 @@ export function initializeTablesPage() {
       pageLength: 10,
       responsive: true,
       language: {
-        search: "_INPUT_",
-        searchPlaceholder: "Search records..."
-      }
+        search: '_INPUT_',
+        searchPlaceholder: 'Search records...',
+      },
     });
   }
 
@@ -37,33 +37,33 @@ export function initializeTablesPage() {
         {
           extend: 'copyHtml5',
           className: 'btn btn-sm btn-flat-color-1',
-          text: '<i class="fa fa-copy"></i> Copy'
+          text: '<i class="fa fa-copy"></i> Copy',
         },
         {
           extend: 'csvHtml5',
           className: 'btn btn-sm btn-flat-color-2',
-          text: '<i class="fa fa-file-csv"></i> CSV'
+          text: '<i class="fa fa-file-csv"></i> CSV',
         },
         {
           extend: 'excelHtml5',
           className: 'btn btn-sm btn-flat-color-3',
-          text: '<i class="fa fa-file-excel"></i> Excel'
+          text: '<i class="fa fa-file-excel"></i> Excel',
         },
         {
           extend: 'pdfHtml5',
           className: 'btn btn-sm btn-flat-color-4',
-          text: '<i class="fa fa-file-pdf"></i> PDF'
+          text: '<i class="fa fa-file-pdf"></i> PDF',
         },
         {
           extend: 'print',
           className: 'btn btn-sm btn-flat-color-5',
-          text: '<i class="fa fa-print"></i> Print'
-        }
+          text: '<i class="fa fa-print"></i> Print',
+        },
       ],
       language: {
-        search: "_INPUT_",
-        searchPlaceholder: "Search products..."
-      }
+        search: '_INPUT_',
+        searchPlaceholder: 'Search products...',
+      },
     });
   }
 
@@ -72,7 +72,7 @@ export function initializeTablesPage() {
   allTables.forEach(table => {
     new DataTable(table, {
       pageLength: 10,
-      responsive: true
+      responsive: true,
     });
   });
 }

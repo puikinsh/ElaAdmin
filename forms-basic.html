@@ -1,295 +1,382 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  {{> head title="Basic Forms"}}
-</head>
-<body>
-  <div class="wrapper">
-    {{> sidebar}}
-    
-    <div class="main-content">
-      {{> header}}
-      
-      <main class="content">
-        <!-- Breadcrumbs -->
-        <div class="row mb-4">
-          <div class="col-sm-4">
-            <h4 class="page-title">Basic Forms</h4>
-          </div>
-          <div class="col-sm-8">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb float-sm-end">
-                <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Basic Forms</li>
-              </ol>
-            </nav>
-          </div>
-        </div>
+  <head>
+    {{> head title="Basic Forms"}}
+  </head>
+  <body>
+    <div class="wrapper">
+      {{> sidebar-ela}}
 
-        <div class="row">
-          <!-- Basic Form Elements -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Basic Form Elements</h5>
+      <div class="main-content">
+        {{> header-ela}}
+
+        <main class="content">
+          <!-- Breadcrumbs -->
+          <div class="row mb-4">
+            <div class="col-sm-4">
+              <h4 class="page-title">Basic Forms</h4>
+            </div>
+            <div class="col-sm-8">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Basic Forms</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Basic Form Elements -->
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Basic Form Elements</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="companyName" class="form-label">Company</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="companyName"
+                        placeholder="Enter your company name"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="emailInput" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="emailInput"
+                        placeholder="Enter email"
+                      />
+                      <small class="form-text text-muted"
+                        >We'll never share your email with anyone else.</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label for="passwordInput" class="form-label">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="passwordInput"
+                        placeholder="Password"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="textArea" class="form-label">Textarea</label>
+                      <textarea
+                        class="form-control"
+                        id="textArea"
+                        rows="3"
+                        placeholder="Enter description..."
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="selectInput" class="form-label">Select</label>
+                      <select class="form-select" id="selectInput">
+                        <option selected>Choose...</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="multiSelect" class="form-label">Multiple Select</label>
+                      <select class="form-select" id="multiSelect" multiple>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        <option value="5">Option 5</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn bg-flat-color-1 text-white">Submit</button>
+                    <button type="reset" class="btn bg-flat-color-4 text-white">Reset</button>
+                  </form>
+                </div>
               </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="companyName" class="form-label">Company</label>
-                    <input type="text" class="form-control" id="companyName" placeholder="Enter your company name">
-                  </div>
-                  <div class="mb-3">
-                    <label for="emailInput" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
-                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-                  </div>
-                  <div class="mb-3">
-                    <label for="passwordInput" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-                  </div>
-                  <div class="mb-3">
-                    <label for="textArea" class="form-label">Textarea</label>
-                    <textarea class="form-control" id="textArea" rows="3" placeholder="Enter description..."></textarea>
-                  </div>
-                  <div class="mb-3">
-                    <label for="selectInput" class="form-label">Select</label>
-                    <select class="form-select" id="selectInput">
-                      <option selected>Choose...</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label for="multiSelect" class="form-label">Multiple Select</label>
-                    <select class="form-select" id="multiSelect" multiple>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                      <option value="4">Option 4</option>
-                      <option value="5">Option 5</option>
-                    </select>
-                  </div>
-                  <button type="submit" class="btn bg-flat-color-1 text-white">Submit</button>
-                  <button type="reset" class="btn bg-flat-color-4 text-white">Reset</button>
-                </form>
+            </div>
+
+            <!-- Form Controls Sizing -->
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Form Control Sizing</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="largeInput" class="form-label">Large Input</label>
+                      <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        id="largeInput"
+                        placeholder="Large input"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="defaultInput" class="form-label">Default Input</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="defaultInput"
+                        placeholder="Default input"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="smallInput" class="form-label">Small Input</label>
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        id="smallInput"
+                        placeholder="Small input"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Disabled Input</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Disabled input"
+                        disabled
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Readonly Input</label>
+                      <input type="text" class="form-control" value="Readonly input" readonly />
+                    </div>
+                    <div class="mb-3">
+                      <label for="fileInput" class="form-label">File Input</label>
+                      <input class="form-control" type="file" id="fileInput" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="multipleFiles" class="form-label">Multiple Files</label>
+                      <input class="form-control" type="file" id="multipleFiles" multiple />
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Form Controls Sizing -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Form Control Sizing</h5>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="largeInput" class="form-label">Large Input</label>
-                    <input type="text" class="form-control form-control-lg" id="largeInput" placeholder="Large input">
-                  </div>
-                  <div class="mb-3">
-                    <label for="defaultInput" class="form-label">Default Input</label>
-                    <input type="text" class="form-control" id="defaultInput" placeholder="Default input">
-                  </div>
-                  <div class="mb-3">
-                    <label for="smallInput" class="form-label">Small Input</label>
-                    <input type="text" class="form-control form-control-sm" id="smallInput" placeholder="Small input">
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Disabled Input</label>
-                    <input type="text" class="form-control" placeholder="Disabled input" disabled>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Readonly Input</label>
-                    <input type="text" class="form-control" value="Readonly input" readonly>
-                  </div>
-                  <div class="mb-3">
-                    <label for="fileInput" class="form-label">File Input</label>
-                    <input class="form-control" type="file" id="fileInput">
-                  </div>
-                  <div class="mb-3">
-                    <label for="multipleFiles" class="form-label">Multiple Files</label>
-                    <input class="form-control" type="file" id="multipleFiles" multiple>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-4">
-          <!-- Checkboxes and Radios -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Checkboxes and Radios</h5>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
-                    <label class="form-label">Checkboxes</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="check1">
-                      <label class="form-check-label" for="check1">
-                        Default checkbox
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="check2" checked>
-                      <label class="form-check-label" for="check2">
-                        Checked checkbox
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="check3" disabled>
-                      <label class="form-check-label" for="check3">
-                        Disabled checkbox
-                      </label>
-                    </div>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Radio Buttons</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="radioOptions" id="radio1" value="option1" checked>
-                      <label class="form-check-label" for="radio1">
-                        Default radio
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="radioOptions" id="radio2" value="option2">
-                      <label class="form-check-label" for="radio2">
-                        Second radio
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="radioOptions" id="radio3" value="option3" disabled>
-                      <label class="form-check-label" for="radio3">
-                        Disabled radio
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">Inline Checkboxes</label>
-                    <div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheck1" value="option1">
-                        <label class="form-check-label" for="inlineCheck1">1</label>
+          <div class="row mt-4">
+            <!-- Checkboxes and Radios -->
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Checkboxes and Radios</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Checkboxes</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1" />
+                        <label class="form-check-label" for="check1"> Default checkbox </label>
                       </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheck2" value="option2">
-                        <label class="form-check-label" for="inlineCheck2">2</label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="check2"
+                          checked
+                        />
+                        <label class="form-check-label" for="check2"> Checked checkbox </label>
                       </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheck3" value="option3">
-                        <label class="form-check-label" for="inlineCheck3">3</label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="check3"
+                          disabled
+                        />
+                        <label class="form-check-label" for="check3"> Disabled checkbox </label>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="mb-3">
-                    <label class="form-label">Switches</label>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="switch1">
-                      <label class="form-check-label" for="switch1">Default switch</label>
+                    <div class="mb-3">
+                      <label class="form-label">Radio Buttons</label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radioOptions"
+                          id="radio1"
+                          value="option1"
+                          checked
+                        />
+                        <label class="form-check-label" for="radio1"> Default radio </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radioOptions"
+                          id="radio2"
+                          value="option2"
+                        />
+                        <label class="form-check-label" for="radio2"> Second radio </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radioOptions"
+                          id="radio3"
+                          value="option3"
+                          disabled
+                        />
+                        <label class="form-check-label" for="radio3"> Disabled radio </label>
+                      </div>
                     </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="switch2" checked>
-                      <label class="form-check-label" for="switch2">Checked switch</label>
+
+                    <div class="mb-3">
+                      <label class="form-label">Inline Checkboxes</label>
+                      <div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheck1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheck1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheck2"
+                            value="option2"
+                          />
+                          <label class="form-check-label" for="inlineCheck2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheck3"
+                            value="option3"
+                          />
+                          <label class="form-check-label" for="inlineCheck3">3</label>
+                        </div>
+                      </div>
                     </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="switch3" disabled>
-                      <label class="form-check-label" for="switch3">Disabled switch</label>
+
+                    <div class="mb-3">
+                      <label class="form-label">Switches</label>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1" />
+                        <label class="form-check-label" for="switch1">Default switch</label>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch2" checked />
+                        <label class="form-check-label" for="switch2">Checked switch</label>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch3" disabled />
+                        <label class="form-check-label" for="switch3">Disabled switch</label>
+                      </div>
                     </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Input Groups -->
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Input Groups</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">With Text</label>
+                      <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Username" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Recipient's username"
+                        />
+                        <span class="input-group-text">@example.com</span>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">With Icon</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Username" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        <input type="email" class="form-control" placeholder="Email" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">With Button</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..." />
+                        <button class="btn bg-flat-color-3 text-white" type="button">Search</button>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">With Dropdown</label>
+                      <div class="input-group">
+                        <button
+                          class="btn bg-flat-color-2 text-white dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                        >
+                          Dropdown
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Multiple Inputs</label>
+                      <div class="input-group">
+                        <span class="input-group-text">First and last name</span>
+                        <input type="text" class="form-control" placeholder="First name" />
+                        <input type="text" class="form-control" placeholder="Last name" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
+        </main>
 
-          <!-- Input Groups -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Input Groups</h5>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
-                    <label class="form-label">With Text</label>
-                    <div class="input-group">
-                      <span class="input-group-text">@</span>
-                      <input type="text" class="form-control" placeholder="Username">
-                    </div>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Recipient's username">
-                      <span class="input-group-text">@example.com</span>
-                    </div>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">With Icon</label>
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="fa fa-user"></i></span>
-                      <input type="text" class="form-control" placeholder="Username">
-                    </div>
-                  </div>
-
-                  <div class="mb-3">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                      <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">With Button</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for...">
-                      <button class="btn bg-flat-color-3 text-white" type="button">Search</button>
-                    </div>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">With Dropdown</label>
-                    <div class="input-group">
-                      <button class="btn bg-flat-color-2 text-white dropdown-toggle" type="button" data-bs-toggle="dropdown">Dropdown</button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">Multiple Inputs</label>
-                    <div class="input-group">
-                      <span class="input-group-text">First and last name</span>
-                      <input type="text" class="form-control" placeholder="First name">
-                      <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      
-      {{> footer}}
+        {{> footer}}
+      </div>
     </div>
-  </div>
-  
-  {{> scripts}}
-</body>
+
+    {{> scripts}}
+  </body>
 </html>

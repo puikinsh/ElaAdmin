@@ -24,7 +24,7 @@ function initializeSidebar() {
   const sidebarToggle = document.getElementById('sidebar-toggle');
   const mainContent = document.querySelector('.main-content');
   const header = document.getElementById('header');
-  
+
   if (sidebarToggle && sidebar) {
     // Load saved state from localStorage
     const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
@@ -33,35 +33,35 @@ function initializeSidebar() {
       mainContent?.classList.add('collapsed');
       header?.classList.add('collapsed');
     }
-    
+
     sidebarToggle.addEventListener('click', () => {
       sidebar.classList.toggle('collapsed');
       mainContent?.classList.toggle('collapsed');
       header?.classList.toggle('collapsed');
-      
+
       // Save state to localStorage
       const collapsed = sidebar.classList.contains('collapsed');
       localStorage.setItem('sidebarCollapsed', collapsed);
     });
   }
-  
+
   // Mobile sidebar toggle
   if (window.innerWidth <= 991) {
     const mobileOverlay = document.createElement('div');
     mobileOverlay.className = 'sidebar-overlay';
     document.body.appendChild(mobileOverlay);
-    
+
     sidebarToggle?.addEventListener('click', () => {
       sidebar?.classList.toggle('show');
       mobileOverlay.classList.toggle('show');
     });
-    
+
     mobileOverlay.addEventListener('click', () => {
       sidebar?.classList.remove('show');
       mobileOverlay.classList.remove('show');
     });
   }
-  
+
   // Set active nav item based on current page
   setActiveNavItem();
 }
@@ -70,12 +70,12 @@ function initializeSidebar() {
 function setActiveNavItem() {
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.sidebar .nav-link');
-  
+
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '/' && href === '/index.html')) {
       link.classList.add('active');
-      
+
       // Expand parent dropdown if exists
       const parentDropdown = link.closest('.nav-dropdown');
       if (parentDropdown) {
@@ -122,15 +122,15 @@ export async function fetchData(url, options = {}) {
     const response = await fetch(url, {
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers
+        ...options.headers,
       },
-      ...options
+      ...options,
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     return await response.json();
   } catch (error) {
     console.error('Fetch error:', error);
@@ -147,16 +147,17 @@ export function formatNumber(num) {
 export function formatCurrency(amount) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD'
+    currency: 'USD',
   }).format(amount);
 }
 
 // Format dates
 export function formatDate(date, format = 'short') {
-  const options = format === 'short' 
-    ? { year: 'numeric', month: 'short', day: 'numeric' }
-    : { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-    
+  const options =
+    format === 'short'
+      ? { year: 'numeric', month: 'short', day: 'numeric' }
+      : { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+
   return new Intl.DateTimeFormat('en-US', options).format(new Date(date));
 }
 

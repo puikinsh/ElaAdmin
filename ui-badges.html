@@ -1,265 +1,283 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  {{> head title="Badges"}}
-</head>
-<body>
-  <div class="wrapper">
-    {{> sidebar}}
-    
-    <div class="main-content">
-      {{> header}}
-      
-      <main class="content">
-        <!-- Breadcrumbs -->
-        <div class="row mb-4">
-          <div class="col-sm-4">
-            <h4 class="page-title">Badges</h4>
-          </div>
-          <div class="col-sm-8">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb float-sm-end">
-                <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Badges</li>
-              </ol>
-            </nav>
-          </div>
-        </div>
+  <head>
+    {{> head title="Badges"}}
+  </head>
+  <body>
+    <div class="wrapper">
+      {{> sidebar-ela}}
 
-        <!-- Basic Badges -->
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Basic Badges</h5>
+      <div class="main-content">
+        {{> header-ela}}
+
+        <main class="content">
+          <!-- Breadcrumbs -->
+          <div class="row mb-4">
+            <div class="col-sm-4">
+              <h4 class="page-title">Badges</h4>
+            </div>
+            <div class="col-sm-8">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Badges</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Basic Badges -->
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Basic Badges</h5>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-primary me-2 mb-2">Primary</span>
+                  <span class="badge bg-secondary me-2 mb-2">Secondary</span>
+                  <span class="badge bg-success me-2 mb-2">Success</span>
+                  <span class="badge bg-danger me-2 mb-2">Danger</span>
+                  <span class="badge bg-warning text-dark me-2 mb-2">Warning</span>
+                  <span class="badge bg-info me-2 mb-2">Info</span>
+                  <span class="badge bg-light text-dark me-2 mb-2">Light</span>
+                  <span class="badge bg-dark me-2 mb-2">Dark</span>
+                </div>
               </div>
-              <div class="card-body">
-                <span class="badge bg-primary me-2 mb-2">Primary</span>
-                <span class="badge bg-secondary me-2 mb-2">Secondary</span>
-                <span class="badge bg-success me-2 mb-2">Success</span>
-                <span class="badge bg-danger me-2 mb-2">Danger</span>
-                <span class="badge bg-warning text-dark me-2 mb-2">Warning</span>
-                <span class="badge bg-info me-2 mb-2">Info</span>
-                <span class="badge bg-light text-dark me-2 mb-2">Light</span>
-                <span class="badge bg-dark me-2 mb-2">Dark</span>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Flat Color Badges</h5>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-flat-color-1 me-2 mb-2">#00c292</span>
+                  <span class="badge bg-flat-color-2 me-2 mb-2">#ab8ce4</span>
+                  <span class="badge bg-flat-color-3 me-2 mb-2">#03a9f3</span>
+                  <span class="badge bg-flat-color-4 me-2 mb-2">#fb9678</span>
+                  <span class="badge bg-flat-color-5 me-2 mb-2">#66bb6a</span>
+                  <span class="badge bg-flat-color-6 me-2 mb-2">#5c6bc0</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Flat Color Badges</h5>
-              </div>
-              <div class="card-body">
-                <span class="badge bg-flat-color-1 me-2 mb-2">#00c292</span>
-                <span class="badge bg-flat-color-2 me-2 mb-2">#ab8ce4</span>
-                <span class="badge bg-flat-color-3 me-2 mb-2">#03a9f3</span>
-                <span class="badge bg-flat-color-4 me-2 mb-2">#fb9678</span>
-                <span class="badge bg-flat-color-5 me-2 mb-2">#66bb6a</span>
-                <span class="badge bg-flat-color-6 me-2 mb-2">#5c6bc0</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Badge Sizes and Pill Badges -->
-        <div class="row mt-4">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Badge Sizes</h5>
-              </div>
-              <div class="card-body">
-                <h1>Large Heading <span class="badge bg-secondary">New</span></h1>
-                <h2>Heading 2 <span class="badge bg-secondary">New</span></h2>
-                <h3>Heading 3 <span class="badge bg-secondary">New</span></h3>
-                <h4>Heading 4 <span class="badge bg-secondary">New</span></h4>
-                <h5>Heading 5 <span class="badge bg-secondary">New</span></h5>
-                <h6>Small Heading <span class="badge bg-secondary">New</span></h6>
+          <!-- Badge Sizes and Pill Badges -->
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Badge Sizes</h5>
+                </div>
+                <div class="card-body">
+                  <h1>Large Heading <span class="badge bg-secondary">New</span></h1>
+                  <h2>Heading 2 <span class="badge bg-secondary">New</span></h2>
+                  <h3>Heading 3 <span class="badge bg-secondary">New</span></h3>
+                  <h4>Heading 4 <span class="badge bg-secondary">New</span></h4>
+                  <h5>Heading 5 <span class="badge bg-secondary">New</span></h5>
+                  <h6>Small Heading <span class="badge bg-secondary">New</span></h6>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Pill Badges</h5>
-              </div>
-              <div class="card-body">
-                <span class="badge rounded-pill bg-primary me-2 mb-2">Primary</span>
-                <span class="badge rounded-pill bg-secondary me-2 mb-2">Secondary</span>
-                <span class="badge rounded-pill bg-success me-2 mb-2">Success</span>
-                <span class="badge rounded-pill bg-danger me-2 mb-2">Danger</span>
-                <span class="badge rounded-pill bg-warning text-dark me-2 mb-2">Warning</span>
-                <span class="badge rounded-pill bg-info me-2 mb-2">Info</span>
-                <span class="badge rounded-pill bg-light text-dark me-2 mb-2">Light</span>
-                <span class="badge rounded-pill bg-dark me-2 mb-2">Dark</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Badges in Buttons -->
-        <div class="row mt-4">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Badges in Buttons</h5>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-primary me-2 mb-2">
-                  Notifications <span class="badge bg-light text-dark">4</span>
-                </button>
-                <button type="button" class="btn btn-success me-2 mb-2">
-                  Messages <span class="badge bg-light text-dark">12</span>
-                </button>
-                <button type="button" class="btn btn-warning me-2 mb-2">
-                  Warnings <span class="badge bg-light text-dark">3</span>
-                </button>
-                <button type="button" class="btn btn-danger me-2 mb-2">
-                  Errors <span class="badge bg-light text-dark">1</span>
-                </button>
-                <button type="button" class="btn btn-info me-2 mb-2">
-                  Updates <span class="badge bg-light text-dark">7</span>
-                </button>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Pill Badges</h5>
+                </div>
+                <div class="card-body">
+                  <span class="badge rounded-pill bg-primary me-2 mb-2">Primary</span>
+                  <span class="badge rounded-pill bg-secondary me-2 mb-2">Secondary</span>
+                  <span class="badge rounded-pill bg-success me-2 mb-2">Success</span>
+                  <span class="badge rounded-pill bg-danger me-2 mb-2">Danger</span>
+                  <span class="badge rounded-pill bg-warning text-dark me-2 mb-2">Warning</span>
+                  <span class="badge rounded-pill bg-info me-2 mb-2">Info</span>
+                  <span class="badge rounded-pill bg-light text-dark me-2 mb-2">Light</span>
+                  <span class="badge rounded-pill bg-dark me-2 mb-2">Dark</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Flat Color Pill Badges</h5>
+          <!-- Badges in Buttons -->
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Badges in Buttons</h5>
+                </div>
+                <div class="card-body">
+                  <button type="button" class="btn btn-primary me-2 mb-2">
+                    Notifications <span class="badge bg-light text-dark">4</span>
+                  </button>
+                  <button type="button" class="btn btn-success me-2 mb-2">
+                    Messages <span class="badge bg-light text-dark">12</span>
+                  </button>
+                  <button type="button" class="btn btn-warning me-2 mb-2">
+                    Warnings <span class="badge bg-light text-dark">3</span>
+                  </button>
+                  <button type="button" class="btn btn-danger me-2 mb-2">
+                    Errors <span class="badge bg-light text-dark">1</span>
+                  </button>
+                  <button type="button" class="btn btn-info me-2 mb-2">
+                    Updates <span class="badge bg-light text-dark">7</span>
+                  </button>
+                </div>
               </div>
-              <div class="card-body">
-                <span class="badge rounded-pill bg-flat-color-1 me-2 mb-2">Teal</span>
-                <span class="badge rounded-pill bg-flat-color-2 me-2 mb-2">Purple</span>
-                <span class="badge rounded-pill bg-flat-color-3 me-2 mb-2">Blue</span>
-                <span class="badge rounded-pill bg-flat-color-4 me-2 mb-2">Orange</span>
-                <span class="badge rounded-pill bg-flat-color-5 me-2 mb-2">Green</span>
-                <span class="badge rounded-pill bg-flat-color-6 me-2 mb-2">Indigo</span>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Flat Color Pill Badges</h5>
+                </div>
+                <div class="card-body">
+                  <span class="badge rounded-pill bg-flat-color-1 me-2 mb-2">Teal</span>
+                  <span class="badge rounded-pill bg-flat-color-2 me-2 mb-2">Purple</span>
+                  <span class="badge rounded-pill bg-flat-color-3 me-2 mb-2">Blue</span>
+                  <span class="badge rounded-pill bg-flat-color-4 me-2 mb-2">Orange</span>
+                  <span class="badge rounded-pill bg-flat-color-5 me-2 mb-2">Green</span>
+                  <span class="badge rounded-pill bg-flat-color-6 me-2 mb-2">Indigo</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Badge Counters and Notifications -->
-        <div class="row mt-4">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Badge Counters and Notifications</h5>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <h6>Navigation with Badges</h6>
-                    <ul class="list-group">
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Inbox
-                        <span class="badge bg-primary rounded-pill">14</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Sent Messages
-                        <span class="badge bg-success rounded-pill">2</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Drafts
-                        <span class="badge bg-warning text-dark rounded-pill">1</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Spam
-                        <span class="badge bg-danger rounded-pill">99+</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <h6>Status Badges</h6>
-                    <div class="d-flex flex-wrap gap-2">
-                      <span class="badge bg-success">
-                        <i class="fa fa-check"></i> Active
-                      </span>
-                      <span class="badge bg-warning text-dark">
-                        <i class="fa fa-clock"></i> Pending
-                      </span>
-                      <span class="badge bg-danger">
-                        <i class="fa fa-times"></i> Inactive
-                      </span>
-                      <span class="badge bg-info">
-                        <i class="fa fa-info-circle"></i> Processing
-                      </span>
-                      <span class="badge bg-secondary">
-                        <i class="fa fa-pause"></i> Paused
-                      </span>
-                      <span class="badge bg-dark">
-                        <i class="fa fa-ban"></i> Blocked
-                      </span>
+          <!-- Badge Counters and Notifications -->
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Badge Counters and Notifications</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6>Navigation with Badges</h6>
+                      <ul class="list-group">
+                        <li
+                          class="list-group-item d-flex justify-content-between align-items-center"
+                        >
+                          Inbox
+                          <span class="badge bg-primary rounded-pill">14</span>
+                        </li>
+                        <li
+                          class="list-group-item d-flex justify-content-between align-items-center"
+                        >
+                          Sent Messages
+                          <span class="badge bg-success rounded-pill">2</span>
+                        </li>
+                        <li
+                          class="list-group-item d-flex justify-content-between align-items-center"
+                        >
+                          Drafts
+                          <span class="badge bg-warning text-dark rounded-pill">1</span>
+                        </li>
+                        <li
+                          class="list-group-item d-flex justify-content-between align-items-center"
+                        >
+                          Spam
+                          <span class="badge bg-danger rounded-pill">99+</span>
+                        </li>
+                      </ul>
                     </div>
-                    <div class="mt-3">
-                      <h6>Link Badges</h6>
-                      <a href="#" class="badge bg-primary text-decoration-none me-2">News <span class="badge bg-light text-dark">5</span></a>
-                      <a href="#" class="badge bg-success text-decoration-none me-2">Comments <span class="badge bg-light text-dark">10</span></a>
-                      <a href="#" class="badge bg-info text-decoration-none me-2">Updates <span class="badge bg-light text-dark">2</span></a>
+                    <div class="col-md-6">
+                      <h6>Status Badges</h6>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-success"> <i class="fa fa-check"></i> Active </span>
+                        <span class="badge bg-warning text-dark">
+                          <i class="fa fa-clock"></i> Pending
+                        </span>
+                        <span class="badge bg-danger"> <i class="fa fa-times"></i> Inactive </span>
+                        <span class="badge bg-info">
+                          <i class="fa fa-info-circle"></i> Processing
+                        </span>
+                        <span class="badge bg-secondary"> <i class="fa fa-pause"></i> Paused </span>
+                        <span class="badge bg-dark"> <i class="fa fa-ban"></i> Blocked </span>
+                      </div>
+                      <div class="mt-3">
+                        <h6>Link Badges</h6>
+                        <a href="#" class="badge bg-primary text-decoration-none me-2"
+                          >News <span class="badge bg-light text-dark">5</span></a
+                        >
+                        <a href="#" class="badge bg-success text-decoration-none me-2"
+                          >Comments <span class="badge bg-light text-dark">10</span></a
+                        >
+                        <a href="#" class="badge bg-info text-decoration-none me-2"
+                          >Updates <span class="badge bg-light text-dark">2</span></a
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Badge Variations -->
-        <div class="row mt-4">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title mb-0">Badge Variations</h5>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-4">
-                    <h6>Small Badges</h6>
-                    <span class="badge bg-primary" style="font-size: 0.6em;">Extra Small</span>
-                    <span class="badge bg-secondary" style="font-size: 0.7em;">Small</span>
-                    <span class="badge bg-success">Regular</span>
-                    <span class="badge bg-danger" style="font-size: 1.1em;">Large</span>
-                  </div>
-                  <div class="col-md-4">
-                    <h6>Outlined Badges</h6>
-                    <span class="badge border border-primary text-primary bg-transparent me-1">Primary</span>
-                    <span class="badge border border-success text-success bg-transparent me-1">Success</span>
-                    <span class="badge border border-danger text-danger bg-transparent me-1">Danger</span>
-                    <span class="badge border border-warning text-warning bg-transparent me-1">Warning</span>
-                  </div>
-                  <div class="col-md-4">
-                    <h6>Position Badges</h6>
-                    <button type="button" class="btn btn-primary position-relative me-3">
-                      <i class="fa fa-envelope"></i>
-                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        99+
-                        <span class="visually-hidden">unread messages</span>
-                      </span>
-                    </button>
-                    <button type="button" class="btn btn-success position-relative">
-                      <i class="fa fa-bell"></i>
-                      <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
-                      </span>
-                    </button>
+          <!-- Badge Variations -->
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Badge Variations</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h6>Small Badges</h6>
+                      <span class="badge bg-primary" style="font-size: 0.6em">Extra Small</span>
+                      <span class="badge bg-secondary" style="font-size: 0.7em">Small</span>
+                      <span class="badge bg-success">Regular</span>
+                      <span class="badge bg-danger" style="font-size: 1.1em">Large</span>
+                    </div>
+                    <div class="col-md-4">
+                      <h6>Outlined Badges</h6>
+                      <span class="badge border border-primary text-primary bg-transparent me-1"
+                        >Primary</span
+                      >
+                      <span class="badge border border-success text-success bg-transparent me-1"
+                        >Success</span
+                      >
+                      <span class="badge border border-danger text-danger bg-transparent me-1"
+                        >Danger</span
+                      >
+                      <span class="badge border border-warning text-warning bg-transparent me-1"
+                        >Warning</span
+                      >
+                    </div>
+                    <div class="col-md-4">
+                      <h6>Position Badges</h6>
+                      <button type="button" class="btn btn-primary position-relative me-3">
+                        <i class="fa fa-envelope"></i>
+                        <span
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        >
+                          99+
+                          <span class="visually-hidden">unread messages</span>
+                        </span>
+                      </button>
+                      <button type="button" class="btn btn-success position-relative">
+                        <i class="fa fa-bell"></i>
+                        <span
+                          class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+                        >
+                          <span class="visually-hidden">New alerts</span>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-      
-      {{> footer}}
+        </main>
+
+        {{> footer}}
+      </div>
     </div>
-  </div>
-  
-  {{> scripts}}
-</body>
+
+    {{> scripts}}
+  </body>
 </html>

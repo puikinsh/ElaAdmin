@@ -1,121 +1,163 @@
-<aside class="sidebar" id="sidebar">
-  <a href="/" class="sidebar-brand">
-    <i class="fa-solid fa-layer-group sidebar-brand-icon"></i>
-    <span class="sidebar-brand-text">ElaAdmin</span>
+<aside class='sidebar' id='sidebar'>
+  <a href='/' class='sidebar-brand'>
+    <i class='fa-solid fa-layer-group sidebar-brand-icon'></i>
+    <span class='sidebar-brand-text'>ElaAdmin</span>
   </a>
-  
-  <nav class="sidebar-nav">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link active" href="/">
-          <i class="fa-solid fa-gauge nav-icon"></i>
-          <span class="nav-link-text">Dashboard</span>
+
+  <nav class='sidebar-nav'>
+    <ul class='nav flex-column'>
+      <li class='nav-item'>
+        <a class='nav-link active' href='/'>
+          <i class='fa-solid fa-gauge nav-icon'></i>
+          <span class='nav-link-text'>Dashboard</span>
         </a>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#ui-elements" role="button" aria-expanded="false">
-          <i class="fa-solid fa-layer-group nav-icon"></i>
-          <span class="nav-link-text">UI Elements</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#ui-elements'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-layer-group nav-icon'></i>
+          <span class='nav-link-text'>UI Elements</span>
         </a>
-        <div class="collapse" id="ui-elements">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/ui-alerts.html">Alerts</a></li>
-            <li><a class="dropdown-item" href="/ui-badges.html">Badges</a></li>
-            <li><a class="dropdown-item" href="/ui-buttons.html">Buttons</a></li>
-            <li><a class="dropdown-item" href="/ui-cards.html">Cards</a></li>
-            <li><a class="dropdown-item" href="/ui-grids.html">Grids</a></li>
-            <li><a class="dropdown-item" href="/ui-modals.html">Modals</a></li>
-            <li><a class="dropdown-item" href="/ui-progressbar.html">Progress Bars</a></li>
-            <li><a class="dropdown-item" href="/ui-tabs.html">Tabs</a></li>
-            <li><a class="dropdown-item" href="/ui-typgraphy.html">Typography</a></li>
+        <div class='collapse' id='ui-elements'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/ui-alerts.html'>Alerts</a></li>
+            <li><a class='dropdown-item' href='/ui-badges.html'>Badges</a></li>
+            <li><a class='dropdown-item' href='/ui-buttons.html'>Buttons</a></li>
+            <li><a class='dropdown-item' href='/ui-cards.html'>Cards</a></li>
+            <li><a class='dropdown-item' href='/ui-grids.html'>Grids</a></li>
+            <li><a class='dropdown-item' href='/ui-modals.html'>Modals</a></li>
+            <li><a class='dropdown-item' href='/ui-progressbar.html'>Progress Bars</a></li>
+            <li><a class='dropdown-item' href='/ui-tabs.html'>Tabs</a></li>
+            <li><a class='dropdown-item' href='/ui-typgraphy.html'>Typography</a></li>
           </ul>
         </div>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#charts" role="button" aria-expanded="false">
-          <i class="fa-solid fa-chart-line nav-icon"></i>
-          <span class="nav-link-text">Charts</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#charts'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-chart-line nav-icon'></i>
+          <span class='nav-link-text'>Charts</span>
         </a>
-        <div class="collapse" id="charts">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/charts-chartjs.html">Chart.js</a></li>
-            <li><a class="dropdown-item" href="/charts-flot.html">Flot Chart</a></li>
-            <li><a class="dropdown-item" href="/charts-peity.html">Peity Chart</a></li>
+        <div class='collapse' id='charts'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/charts-chartjs.html'>Chart.js</a></li>
+            <li><a class='dropdown-item' href='/charts-flot.html'>Flot Chart</a></li>
+            <li><a class='dropdown-item' href='/charts-peity.html'>Peity Chart</a></li>
           </ul>
         </div>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#forms" role="button" aria-expanded="false">
-          <i class="fa-solid fa-file-lines nav-icon"></i>
-          <span class="nav-link-text">Forms</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#forms'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-file-lines nav-icon'></i>
+          <span class='nav-link-text'>Forms</span>
         </a>
-        <div class="collapse" id="forms">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/forms-basic.html">Basic Form</a></li>
-            <li><a class="dropdown-item" href="/forms-advanced.html">Advanced Form</a></li>
+        <div class='collapse' id='forms'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/forms-basic.html'>Basic Form</a></li>
+            <li><a class='dropdown-item' href='/forms-advanced.html'>Advanced Form</a></li>
           </ul>
         </div>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false">
-          <i class="fa-solid fa-table nav-icon"></i>
-          <span class="nav-link-text">Tables</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#tables'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-table nav-icon'></i>
+          <span class='nav-link-text'>Tables</span>
         </a>
-        <div class="collapse" id="tables">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/tables-basic.html">Basic Table</a></li>
-            <li><a class="dropdown-item" href="/tables-data.html">Data Table</a></li>
+        <div class='collapse' id='tables'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/tables-basic.html'>Basic Table</a></li>
+            <li><a class='dropdown-item' href='/tables-data.html'>Data Table</a></li>
           </ul>
         </div>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#icons" role="button" aria-expanded="false">
-          <i class="fa-solid fa-icons nav-icon"></i>
-          <span class="nav-link-text">Icons</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#icons'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-icons nav-icon'></i>
+          <span class='nav-link-text'>Icons</span>
         </a>
-        <div class="collapse" id="icons">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/font-fontawesome.html">Font Awesome</a></li>
-            <li><a class="dropdown-item" href="/font-themify.html">Themify Icons</a></li>
+        <div class='collapse' id='icons'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/font-fontawesome.html'>Font Awesome</a></li>
+            <li><a class='dropdown-item' href='/font-themify.html'>Themify Icons</a></li>
           </ul>
         </div>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#maps" role="button" aria-expanded="false">
-          <i class="fa-solid fa-map nav-icon"></i>
-          <span class="nav-link-text">Maps</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#maps'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-map nav-icon'></i>
+          <span class='nav-link-text'>Maps</span>
         </a>
-        <div class="collapse" id="maps">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/maps-gmap.html">Google Maps</a></li>
-            <li><a class="dropdown-item" href="/maps-vector.html">Vector Maps</a></li>
+        <div class='collapse' id='maps'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/maps-gmap.html'>Google Maps</a></li>
+            <li><a class='dropdown-item' href='/maps-vector.html'>Vector Maps</a></li>
           </ul>
         </div>
       </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="/widgets.html">
-          <i class="fa-solid fa-puzzle-piece nav-icon"></i>
-          <span class="nav-link-text">Widgets</span>
+
+      <li class='nav-item'>
+        <a class='nav-link' href='/widgets.html'>
+          <i class='fa-solid fa-puzzle-piece nav-icon'></i>
+          <span class='nav-link-text'>Widgets</span>
         </a>
       </li>
-      
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link" data-bs-toggle="collapse" href="#pages" role="button" aria-expanded="false">
-          <i class="fa-solid fa-file nav-icon"></i>
-          <span class="nav-link-text">Pages</span>
+
+      <li class='nav-item nav-dropdown'>
+        <a
+          class='nav-link'
+          data-bs-toggle='collapse'
+          href='#pages'
+          role='button'
+          aria-expanded='false'
+        >
+          <i class='fa-solid fa-file nav-icon'></i>
+          <span class='nav-link-text'>Pages</span>
         </a>
-        <div class="collapse" id="pages">
-          <ul class="nav flex-column dropdown-menu">
-            <li><a class="dropdown-item" href="/page-login.html">Login</a></li>
-            <li><a class="dropdown-item" href="/page-register.html">Register</a></li>
-            <li><a class="dropdown-item" href="/page-forget.html">Forgot Password</a></li>
+        <div class='collapse' id='pages'>
+          <ul class='nav flex-column dropdown-menu'>
+            <li><a class='dropdown-item' href='/page-login.html'>Login</a></li>
+            <li><a class='dropdown-item' href='/page-register.html'>Register</a></li>
+            <li><a class='dropdown-item' href='/page-forget.html'>Forgot Password</a></li>
           </ul>
         </div>
       </li>

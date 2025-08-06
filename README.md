@@ -1,4 +1,5 @@
 # ElaAdmin HTML5 Admin Dashboard Template
+
 **ElaAdnin** is a responsive Bootstrap 4 Admin Template. It provides you with a collection of ready to use code snippets and utilities, custom pages, loads of charts, dashboard variations, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/elaadmin/index.html
 
 # Preview
@@ -10,6 +11,7 @@
 ### Demo Site: [Here](https://colorlib.com/polygon/elaadmin/index.html)
 
 ### TOC
+
 - [Built With](#built-with)
 - [Changelog](#changelog)
 - [Authors](#authors)
@@ -63,20 +65,24 @@
 - [Rickshaw](https://github.com/shutterstock/rickshaw)
 - [Sass](http://sass-lang.com/)
 - [Select2](https://github.com/select2/select2)
-- [simpleWeather](http://simpleweatherjs.com )
+- [simpleWeather](http://simpleweatherjs.com)
 - [Sticky-kit](https://github.com/leafo/sticky-kit)
 - [Sweetalert2](https://github.com/sweetalert2/sweetalert2)
 - [toastr](https://github.com/CodeSeven/toastr)
 - [wysihtml5](https://github.com/xing/wysihtml5)
 
-
 ### Changelog
+
 #### V 1.0.0
+
 Initial Release
+
 ### Authors
+
 [Colorlib](https://colorlib.com)
 
 ### More info
+
 - [Bootstrap admin dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
 - [Angular dashboards](https://colorlib.com/wp/angularjs-admin-templates/)
 - [Free Admin Dashboards](https://colorlib.com/wp/free-html5-admin-dashboard-templates/)

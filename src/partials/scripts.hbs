@@ -1,21 +1,28 @@
 <!-- Core Scripts -->
 <script type="module">
-  // Import main application JavaScript
-  import '/src/js/main.js';
+  // Import main ElaAdmin JavaScript
+  import '/src/js/ela-main.js';
   
-  // Page-specific imports can be added here based on the current page
-  const currentPage = window.location.pathname;
+  // Page-specific imports based on page parameter
+  const page = '{{page}}';
   
   // Dynamic imports for page-specific functionality
-  if (currentPage === '/' || currentPage === '/index.html') {
+  if (!page || page === 'dashboard') {
     import('/src/js/pages/dashboard.js');
-  } else if (currentPage.includes('chart')) {
+  } else if (page === 'charts') {
     import('/src/js/pages/charts.js');
-  } else if (currentPage.includes('form')) {
+  } else if (page === 'forms') {
     import('/src/js/pages/forms.js');
-  } else if (currentPage.includes('table')) {
+  } else if (page === 'tables') {
     import('/src/js/pages/tables.js').then(module => {
-      module.initializeTablesPage();
+      if (module.initializeTablesPage) {
+        module.initializeTablesPage();
+      }
     });
+  } else if (page === 'maps') {
+    // Load map scripts if needed
   }
 </script>
+
+<!-- Legacy scripts for old functionality -->
+<script src="/assets/js/main.js" defer></script>

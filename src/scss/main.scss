@@ -38,7 +38,7 @@ body {
   flex: 1;
   margin-left: $sidebar-width;
   transition: $transition-base;
-  
+
   &.collapsed {
     margin-left: $sidebar-collapsed-width;
   }
@@ -54,10 +54,10 @@ body {
   .main-content {
     margin-left: 0;
   }
-  
+
   .sidebar {
     transform: translateX(-100%);
-    
+
     &.show {
       transform: translateX(0);
     }
@@ -68,19 +68,19 @@ body {
 .grid {
   display: grid;
   gap: 1.5rem;
-  
+
   &.grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   &.grid-cols-3 {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   &.grid-cols-4 {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   @media (max-width: 767.98px) {
     grid-template-columns: 1fr;
   }
@@ -91,7 +91,7 @@ body {
   transition: $transition-base;
   border: 0;
   box-shadow: $card-box-shadow;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: $box-shadow;
@@ -103,7 +103,7 @@ body {
   position: relative;
   pointer-events: none;
   opacity: 0.6;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -133,12 +133,12 @@ body {
     --bs-card-bg: #272c33;
     --bs-border-color: #3a3f48;
   }
-  
+
   body {
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
   }
-  
+
   .card {
     background-color: var(--bs-card-bg);
     border-color: var(--bs-border-color);

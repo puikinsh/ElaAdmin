@@ -12,19 +12,19 @@
   transition: $transition-base;
   z-index: 1040;
   overflow-y: auto;
-  
+
   &.collapsed {
     width: $sidebar-collapsed-width;
-    
+
     .sidebar-brand-text,
     .nav-link-text {
       display: none;
     }
-    
+
     .sidebar-brand {
       justify-content: center;
     }
-    
+
     .nav-link {
       justify-content: center;
     }
@@ -42,12 +42,12 @@
   font-size: 18px;
   font-weight: 700;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  
+
   .sidebar-brand-icon {
     margin-right: 10px;
     font-size: 20px;
   }
-  
+
   &:hover {
     color: $sidebar-brand-color;
     text-decoration: none;
@@ -56,7 +56,7 @@
 
 .sidebar-nav {
   padding: 20px 0;
-  
+
   .nav {
     flex-direction: column;
   }
@@ -77,16 +77,16 @@
   font-size: 14px;
   font-weight: 400;
   position: relative;
-  
+
   &:hover {
     background-color: $sidebar-hover-bg;
     color: #ffffff;
   }
-  
+
   &.active {
     background-color: $sidebar-active-bg;
     color: #ffffff;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -97,14 +97,14 @@
       background-color: $flat-color-3;
     }
   }
-  
+
   .nav-icon {
     width: 20px;
     margin-right: 15px;
     text-align: center;
     font-size: 16px;
   }
-  
+
   .nav-link-text {
     flex: 1;
   }
@@ -113,7 +113,7 @@
 .nav-dropdown {
   .nav-link {
     position: relative;
-    
+
     &::after {
       content: '\f105';
       font-family: 'Font Awesome 6 Free';
@@ -123,12 +123,12 @@
       transition: transform 0.3s;
       font-size: 12px;
     }
-    
-    &[aria-expanded="true"]::after {
+
+    &[aria-expanded='true']::after {
       transform: rotate(90deg);
     }
   }
-  
+
   .dropdown-menu {
     position: static;
     background-color: rgba(0, 0, 0, 0.2);
@@ -136,31 +136,31 @@
     border-radius: 0;
     padding: 5px 0;
     display: block;
-    
+
     .dropdown-item {
       padding: 10px 20px 10px 50px;
       color: rgba(255, 255, 255, 0.6);
       font-size: 13px;
       transition: all 0.3s ease;
-      
+
       &:hover {
         background-color: transparent;
         color: #ffffff;
         padding-left: 55px;
       }
-      
+
       &.active {
         background-color: transparent;
         color: $flat-color-3;
       }
     }
   }
-  
+
   .collapse {
     .dropdown-menu {
       display: none;
     }
-    
+
     &.show .dropdown-menu {
       display: block;
     }
