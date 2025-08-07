@@ -249,7 +249,7 @@ We recommend creating a fresh installation of version 3.0.0 and migrating your c
 For questions about upgrading or changelog entries:
 - Check the [README.md](README.md) for documentation
 - Visit [Colorlib](https://colorlib.com) for support
-- Create an issue on GitHub for bug reports
+- Report issues on [GitHub](https://github.com/colorlib/ElaAdmin/issues)
 
 ---
 

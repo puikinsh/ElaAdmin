@@ -46,6 +46,26 @@
     "last 2 versions",
     "not dead"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colorlib/ElaAdmin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colorlib/ElaAdmin/issues"
+  },
+  "homepage": "https://github.com/colorlib/ElaAdmin#readme",
   "author": "Colorlib",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "bootstrap",
+    "bootstrap5",
+    "admin",
+    "dashboard",
+    "template",
+    "vite",
+    "responsive",
+    "html",
+    "css",
+    "javascript"
+  ]
 }

@@ -107,8 +107,8 @@
 
 1. **Clone the repository** or download the ZIP file:
 ```bash
-git clone https://github.com/your-repo/elaadmin.git
-cd elaadmin
+git clone https://github.com/colorlib/ElaAdmin.git
+cd ElaAdmin
 ```
 
 2. **Install dependencies**:
@@ -349,9 +349,10 @@ Created and maintained by [Colorlib](https://colorlib.com)
 
 For support, issues, or questions:
 
-1. Check the [documentation](https://colorlib.com/polygon/elaadmin/index.html)
-2. Search [existing issues](https://github.com/your-repo/elaadmin/issues)
-3. Create a [new issue](https://github.com/your-repo/elaadmin/issues/new)
+1. Check the [live demo](https://colorlib.com/polygon/elaadmin/index.html) for examples
+2. Review the [documentation](README.md) and [changelog](CHANGELOG.md)
+3. Search [existing issues](https://github.com/colorlib/ElaAdmin/issues)
+4. Create a [new issue](https://github.com/colorlib/ElaAdmin/issues/new)
 
 ## More Resources
 
