@@ -1,0 +1,162 @@
+@use '../variables' as *;
+
+// Table Styles
+.table {
+  margin-bottom: 0;
+
+  thead {
+    th {
+      border-bottom: 2px solid #e7e7e7;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #878787;
+      padding: 12px;
+    }
+  }
+
+  tbody {
+    td {
+      padding: 12px;
+      color: #272c33;
+      font-size: 13px;
+      vertical-align: middle;
+    }
+
+    tr:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
+}
+
+// DataTables customization
+.dataTables_wrapper {
+  .dataTables_length {
+    float: left;
+
+    label {
+      font-size: 13px;
+      color: #878787;
+      font-weight: normal;
+    }
+
+    select {
+      padding: 5px 10px;
+      border: 1px solid #e7e7e7;
+      border-radius: 3px;
+      margin: 0 5px;
+    }
+  }
+
+  .dataTables_filter {
+    float: right;
+
+    label {
+      font-size: 13px;
+      color: #878787;
+      font-weight: normal;
+    }
+
+    input {
+      padding: 5px 10px;
+      border: 1px solid #e7e7e7;
+      border-radius: 3px;
+      margin-left: 10px;
+
+      &:focus {
+        border-color: $flat-color-3;
+        outline: none;
+      }
+    }
+  }
+
+  .dataTables_info {
+    padding: 8px 0;
+    font-size: 13px;
+    color: #878787;
+  }
+
+  .dataTables_paginate {
+    float: right;
+
+    .pagination {
+      margin: 0;
+
+      .page-link {
+        padding: 5px 10px;
+        font-size: 13px;
+        border-color: #e7e7e7;
+        color: #878787;
+
+        &:hover {
+          background-color: $flat-color-3;
+          border-color: $flat-color-3;
+          color: #fff;
+        }
+      }
+
+      .page-item.active .page-link {
+        background-color: $flat-color-3;
+        border-color: $flat-color-3;
+      }
+    }
+  }
+
+  // Buttons
+  .dt-buttons {
+    float: left;
+    margin-right: 15px;
+
+    .btn {
+      margin-right: 5px;
+      padding: 5px 12px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #fff !important;
+      border: none;
+
+      &.btn-flat-color-1 {
+        background-color: $flat-color-1;
+      }
+
+      &.btn-flat-color-2 {
+        background-color: $flat-color-2;
+      }
+
+      &.btn-flat-color-3 {
+        background-color: $flat-color-3;
+      }
+
+      &.btn-flat-color-4 {
+        background-color: $flat-color-4;
+      }
+
+      &.btn-flat-color-5 {
+        background-color: $flat-color-5;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// Table responsive
+.table-responsive {
+  border: none;
+
+  .table {
+    min-width: 600px;
+  }
+}
+
+// Table modern style
+.table-modern {
+  th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Test - ElaAdmin</title>
+
+    <!-- Vite CSS Entry Point -->
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header" class="simple-header">
+      <div class="header-left">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+        <button id="menu-toggle" class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div class="header-right">
+        <div class="dropdown">
+          <button class="header-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="badge">3</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Notifications</h6></li>
+            <li><a class="dropdown-item" href="#">Server alert</a></li>
+            <li><a class="dropdown-item" href="#">New message</a></li>
+            <li><a class="dropdown-item" href="#">System update</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <button class="header-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="fa fa-envelope"></i>
+            <span class="badge">4</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Messages</h6></li>
+            <li><a class="dropdown-item" href="#">John Smith</a></li>
+            <li><a class="dropdown-item" href="#">Jane Doe</a></li>
+            <li><a class="dropdown-item" href="#">Bob Wilson</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <button class="header-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <img src="images/admin.jpg" alt="User" class="user-avatar" />
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="fa fa-cog"></i> Settings</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="simple-sidebar">
+      <ul class="simple-nav">
+        <li>
+          <a href="index.html"><i class="fa fa-home"></i> Dashboard</a>
+        </li>
+        <li class="nav-header">UI Elements</li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-trigger"
+            ><i class="fa fa-cogs"></i> Components <i class="fa fa-chevron-down"></i
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="ui-buttons.html">Buttons</a></li>
+            <li><a href="ui-badges.html">Badges</a></li>
+            <li><a href="ui-tabs.html">Tabs</a></li>
+            <li><a href="ui-alerts.html">Alerts</a></li>
+            <li><a href="ui-modals.html">Modals</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-trigger"
+            ><i class="fa fa-table"></i> Tables <i class="fa fa-chevron-down"></i
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="tables-basic.html">Basic Table</a></li>
+            <li><a href="tables-data.html">Data Table</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-trigger"
+            ><i class="fa fa-edit"></i> Forms <i class="fa fa-chevron-down"></i
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="forms-basic.html">Basic Form</a></li>
+            <li><a href="forms-advanced.html">Advanced Form</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-trigger"
+            ><i class="fa fa-bar-chart"></i> Charts <i class="fa fa-chevron-down"></i
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="charts-chartjs.html">Chart JS</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="widgets.html"><i class="fa fa-puzzle-piece"></i> Widgets</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row mb-4">
+          <div class="col">
+            <h1>Simple Working Layout</h1>
+            <p class="lead">This is a completely rebuilt, simple layout that actually works!</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">✅ What Works</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled">
+                  <li>✅ Logo positioned on left above sidebar</li>
+                  <li>✅ Header dropdowns open correctly</li>
+                  <li>✅ Hamburger menu toggles sidebar</li>
+                  <li>✅ Sidebar submenus work</li>
+                  <li>✅ Responsive design</li>
+                  <li>✅ No console errors</li>
+                  <li>✅ Clean, simple code</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">🎯 Test Features</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  <strong>Header Dropdowns:</strong> Click the bell, envelope, or user avatar to
+                  test dropdowns.
+                </p>
+                <p>
+                  <strong>Sidebar Menu:</strong> Click "Components", "Tables", etc. to test
+                  submenus.
+                </p>
+                <p><strong>Hamburger Menu:</strong> Click the hamburger icon to toggle sidebar.</p>
+                <p><strong>Responsive:</strong> Resize window to test mobile behavior.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/simple-nav.js"></script>
+  </body>
+</html>

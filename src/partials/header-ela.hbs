@@ -1,0 +1,322 @@
+<!-- Modern Header with Bootstrap 5 -->
+<header style='position: fixed; top: 0; left: 0; right: 0; height: 60px; background: white; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1030;'>
+  <div style='display: flex; align-items: center; gap: 15px;'>
+    <a href='index.html' style='display: flex; align-items: center; gap: 8px; margin-right: 10px; text-decoration: none;'>
+      <i class='fas fa-layer-group' style='font-size: 24px; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 8px; border-radius: 8px;'></i>
+      <span style='font-size: 20px; font-weight: 700; color: #2c3e50; letter-spacing: -0.5px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;'>ElaAdmin</span>
+    </a>
+    <button
+      id='sidebar-toggle'
+      style='background: none; border: none; font-size: 18px; cursor: pointer; padding: 8px; color: #666;'
+    >
+      <i class='fa fa-bars'></i>
+    </button>
+  </div>
+  
+  <div style='display: flex; align-items: center; gap: 10px;'>
+    <!-- Search Box -->
+    <div id="search-box" class="search-box" style="position: relative;">
+      <button 
+        id="search-toggle"
+        style='background: none; border: none; padding: 8px 12px; cursor: pointer; color: #666; border-radius: 4px;'
+        type="button"
+      >
+        <i class='fa fa-search'></i>
+      </button>
+      <div class="search-container" style="position: absolute; right: 0; top: 100%; margin-top: 10px; background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 15px; width: 350px; display: none; z-index: 1040;">
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="search-input"
+            class="form-control" 
+            placeholder="Search for pages, users, or features..."
+            style="border-radius: 6px 0 0 6px;"
+          >
+          <button class="btn btn-primary" type="button" style="border-radius: 0 6px 6px 0;">
+            <i class="fas fa-search"></i>
+          </button>
+          <button 
+            id="close-search"
+            class="btn btn-link position-absolute" 
+            type="button"
+            style="right: 50px; top: 50%; transform: translateY(-50%); z-index: 10; color: #999; padding: 0 5px;"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="search-suggestions mt-3" style="display: none;">
+          <h6 class="text-muted small mb-2">Quick Links</h6>
+          <div class="list-group list-group-flush">
+            <a href="index.html" class="list-group-item list-group-item-action py-2 px-0 border-0">
+              <i class="fas fa-chart-line text-primary me-2"></i> Dashboard
+            </a>
+            <a href="ui-cards.html" class="list-group-item list-group-item-action py-2 px-0 border-0">
+              <i class="fas fa-layer-group text-info me-2"></i> UI Components
+            </a>
+            <a href="forms-basic.html" class="list-group-item list-group-item-action py-2 px-0 border-0">
+              <i class="fas fa-edit text-success me-2"></i> Forms
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Notifications Dropdown -->
+    <div class="dropdown">
+      <button
+        style='background: none; border: none; padding: 8px 12px; cursor: pointer; position: relative; color: #666; border-radius: 4px;'
+        type="button"
+        id="notificationDropdown"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class='fa fa-bell'></i>
+        <span style='position: absolute; top: 0; right: 0; background: #dc3545; color: white; border-radius: 10px; padding: 2px 6px; font-size: 10px; min-width: 16px; text-align: center;'>3</span>
+      </button>
+      <div class="dropdown-menu dropdown-menu-end shadow-lg border-0" style="width: 320px; max-height: 400px; overflow-y: auto;" aria-labelledby="notificationDropdown">
+        <div class="dropdown-header bg-white border-bottom">
+          <div class="d-flex align-items-center justify-content-between">
+            <h6 class="mb-0 fw-semibold">Notifications</h6>
+            <a href="#" class="text-muted small text-decoration-none">Clear all</a>
+          </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <div class="flex-shrink-0">
+              <div class="rounded-circle bg-success bg-opacity-10 p-2">
+                <i class="fas fa-check text-success"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <h6 class="mb-1 fs-6 text-wrap">System Update Complete</h6>
+              <p class="mb-1 text-muted small text-wrap">Your system has been successfully updated to v3.0</p>
+              <small class="text-muted"><i class="far fa-clock me-1"></i>2 mins ago</small>
+            </div>
+          </div>
+        </a>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <div class="flex-shrink-0">
+              <div class="rounded-circle bg-primary bg-opacity-10 p-2">
+                <i class="fas fa-user-plus text-primary"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <h6 class="mb-1 fs-6 text-wrap">New User Registration</h6>
+              <p class="mb-1 text-muted small text-wrap">John Doe just created an account</p>
+              <small class="text-muted"><i class="far fa-clock me-1"></i>1 hour ago</small>
+            </div>
+          </div>
+        </a>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <div class="flex-shrink-0">
+              <div class="rounded-circle bg-warning bg-opacity-10 p-2">
+                <i class="fas fa-exclamation-triangle text-warning"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <h6 class="mb-1 fs-6 text-wrap">Server Alert</h6>
+              <p class="mb-1 text-muted small text-wrap">CPU usage is above 80% threshold</p>
+              <small class="text-muted"><i class="far fa-clock me-1"></i>3 hours ago</small>
+            </div>
+          </div>
+        </a>
+        
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item text-center py-2 text-primary" href="#">
+          View all notifications <i class="fas fa-arrow-right ms-1 small"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Messages Dropdown -->
+    <div class="dropdown">
+      <button
+        style='background: none; border: none; padding: 8px 12px; cursor: pointer; position: relative; color: #666; border-radius: 4px;'
+        type="button"
+        id="messageDropdown"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class='fa fa-envelope'></i>
+        <span style='position: absolute; top: 0; right: 0; background: #007bff; color: white; border-radius: 10px; padding: 2px 6px; font-size: 10px; min-width: 16px; text-align: center;'>4</span>
+      </button>
+      <div class="dropdown-menu dropdown-menu-end shadow-lg border-0" style="width: 360px; max-height: 400px; overflow-y: auto;" aria-labelledby="messageDropdown">
+        <div class="dropdown-header bg-white border-bottom">
+          <div class="d-flex align-items-center justify-content-between">
+            <h6 class="mb-0 fw-semibold">Messages</h6>
+            <a href="#" class="text-muted small text-decoration-none">Mark all read</a>
+          </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <img src="images/avatar/1.jpg" alt="User" class="rounded-circle flex-shrink-0" style="width: 40px; height: 40px; object-fit: cover;">
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="mb-0 fs-6 text-wrap">Sarah Johnson</h6>
+                <small class="text-muted text-nowrap ms-2">5 min</small>
+              </div>
+              <p class="mb-0 text-muted small text-truncate">Hey! I've finished the design mockups for the new dashboard...</p>
+              <div class="mt-1">
+                <span class="badge bg-primary bg-opacity-10 text-primary me-1">Design</span>
+                <span class="badge bg-success bg-opacity-10 text-success">Urgent</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <img src="images/avatar/2.jpg" alt="User" class="rounded-circle flex-shrink-0" style="width: 40px; height: 40px; object-fit: cover;">
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="mb-0 fs-6 text-wrap">Mike Wilson</h6>
+                <small class="text-muted text-nowrap ms-2">2 hours</small>
+              </div>
+              <p class="mb-0 text-muted small text-truncate">Can we schedule a meeting to discuss the project timeline?</p>
+              <div class="mt-1">
+                <span class="badge bg-info bg-opacity-10 text-info">Meeting</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <img src="images/avatar/3.jpg" alt="User" class="rounded-circle flex-shrink-0" style="width: 40px; height: 40px; object-fit: cover;">
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="mb-0 fs-6 text-wrap">Emma Davis</h6>
+                <small class="text-muted text-nowrap ms-2">1 day</small>
+              </div>
+              <p class="mb-0 text-muted small text-truncate">The client loved the presentation! Great work team!</p>
+              <div class="mt-1">
+                <span class="badge bg-success bg-opacity-10 text-success">Client</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a class="dropdown-item py-3" href="#">
+          <div class="d-flex align-items-start">
+            <img src="images/avatar/4.jpg" alt="User" class="rounded-circle flex-shrink-0" style="width: 40px; height: 40px; object-fit: cover;">
+            <div class="flex-grow-1 ms-3" style="min-width: 0;">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="mb-0 fs-6 text-wrap">Alex Chen</h6>
+                <small class="text-muted text-nowrap ms-2">2 days</small>
+              </div>
+              <p class="mb-0 text-muted small text-truncate">I've pushed the latest updates to the repository</p>
+              <div class="mt-1">
+                <span class="badge bg-secondary bg-opacity-10 text-secondary">Development</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item text-center py-2 text-primary" href="#">
+          View all messages <i class="fas fa-arrow-right ms-1 small"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- User Profile Dropdown -->
+    <div class="dropdown">
+      <button
+        style='background: none; border: none; padding: 8px; cursor: pointer; color: #666; border-radius: 4px;'
+        type="button"
+        id="userDropdown"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src='images/admin.jpg'
+          alt='User'
+          style='width: 32px; height: 32px; border-radius: 50%;'
+        />
+      </button>
+      <div class="dropdown-menu dropdown-menu-end shadow-lg border-0" style="width: 260px;" aria-labelledby="userDropdown">
+        <div class="p-3 bg-white border-bottom">
+          <div class="d-flex align-items-center">
+            <img src="images/admin.jpg" alt="Profile" class="rounded-circle flex-shrink-0" style="width: 45px; height: 45px; object-fit: cover;">
+            <div class="ms-3" style="min-width: 0;">
+              <h6 class="mb-0 text-wrap" style="font-size: 14px;">John Doe</h6>
+              <small class="text-muted" style="font-size: 12px;">Administrator</small>
+              <div class="mt-1">
+                <span class="badge bg-success bg-opacity-10 text-success" style="font-size: 10px;">
+                  <i class="fas fa-circle" style="font-size: 5px;"></i> Online
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <a class="dropdown-item py-2 d-flex align-items-center" href="#" style="font-size: 13px;">
+          <i class="fas fa-user text-primary me-2" style="width: 16px; text-align: center; font-size: 12px;"></i>
+          <span>My Profile</span>
+        </a>
+        
+        <a class="dropdown-item py-2 d-flex align-items-center" href="#" style="font-size: 13px;">
+          <i class="fas fa-cog text-primary me-2" style="width: 16px; text-align: center; font-size: 12px;"></i>
+          <span>Account Settings</span>
+        </a>
+        
+        <a class="dropdown-item py-2 d-flex align-items-center justify-content-between" href="#" style="font-size: 13px;">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-bell text-primary me-2" style="width: 16px; text-align: center; font-size: 12px;"></i>
+            <span>Notifications</span>
+          </div>
+          <span class="badge bg-danger" style="font-size: 10px;">12</span>
+        </a>
+        
+        <a class="dropdown-item py-2 d-flex align-items-center justify-content-between" href="#" style="font-size: 13px;">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-tasks text-primary me-2" style="width: 16px; text-align: center; font-size: 12px;"></i>
+            <span>My Tasks</span>
+          </div>
+          <span class="badge bg-primary" style="font-size: 10px;">5</span>
+        </a>
+        
+        <div class="dropdown-divider my-1"></div>
+        
+        <a class="dropdown-item py-2 d-flex align-items-center" href="#" style="font-size: 13px;">
+          <i class="fas fa-lock text-warning me-2" style="width: 16px; text-align: center; font-size: 12px;"></i>
+          <span>Lock Screen</span>
+        </a>
+        
+        <a class="dropdown-item py-2 d-flex align-items-center" href="#" style="font-size: 13px;">
+          <i class="fas fa-sign-out-alt text-danger me-2" style="width: 16px; text-align: center; font-size: 12px;"></i>
+          <span>Logout</span>
+        </a>
+        
+        <div class="dropdown-divider mt-1 mb-0"></div>
+        <div class="p-2 bg-white">
+          <div class="row g-2 text-center">
+            <div class="col-4">
+              <small class="text-muted d-block" style="font-size: 10px;">Storage</small>
+              <div class="progress mt-1" style="height: 3px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 65%"></div>
+              </div>
+              <small class="text-muted" style="font-size: 10px;">65%</small>
+            </div>
+            <div class="col-4">
+              <small class="text-muted d-block" style="font-size: 10px;">Projects</small>
+              <strong class="d-block" style="font-size: 12px;">12</strong>
+            </div>
+            <div class="col-4">
+              <small class="text-muted d-block" style="font-size: 10px;">Tasks</small>
+              <strong class="d-block" style="font-size: 12px;">34</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

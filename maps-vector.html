@@ -1,478 +1,703 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    {{> head title="Vector Maps - ElaAdmin"}}
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+      .map-container {
+        height: 400px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .stats-overlay {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        min-width: 200px;
+      }
+      
+      .stats-overlay h6 {
+        margin-bottom: 10px;
+        color: #495057;
+      }
+      
+      .stat-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      
+      .stat-item:last-child {
+        margin-bottom: 0;
+        padding-top: 8px;
+        border-top: 1px solid #e9ecef;
+        font-weight: 600;
+      }
+      
+      .chart-container {
+        position: relative;
+        height: 300px;
+        padding: 20px;
+      }
+      
+      .geo-chart {
+        height: 400px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      
+      .geo-visualization {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      
+      .data-point {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .data-point:hover {
+        transform: scale(1.5);
+        background: #fff;
+      }
+      
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+        70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+      }
+      
+      .region-selector {
+        margin-bottom: 20px;
+      }
+      
+      .region-btn {
+        margin-right: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .leaflet-container {
+        border-radius: 8px;
+      }
+      
+      .map-legend {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+      }
+      
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      
+      .legend-color {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        margin-right: 10px;
+      }
+      
+      .heatmap-demo {
+        background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+        background-size: 400% 400%;
+        animation: gradientShift 8s ease infinite;
+        height: 300px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+  </head>
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+  <body>
+    {{> sidebar-ela}}
+    {{> header-ela}}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
-</head>
-<body>
-    <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                    </li>
-                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-title">Icons</li><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
-
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
-    <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
+    <div id="right-panel" class="right-panel main-content">
+      <div class="content">
+        <div class="container-fluid">
+          <!-- Page Header -->
+          <div class="row mb-4">
+            <div class="col-sm-6">
+              <h4 class="page-title">Vector Maps & Visualizations</h4>
+              <p class="text-muted">Interactive maps and geographic data visualization</p>
             </div>
-            <div class="top-right">
-                <div class="header-menu">
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
-
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">3</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-check"></i>
-                                    <p>Server #1 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-info"></i>
-                                    <p>Server #2 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-warning"></i>
-                                    <p>Server #3 overloaded.</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-envelope"></i>
-                                <span class="count bg-primary">4</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jonathan Smith</span>
-                                        <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jack Sanders</span>
-                                        <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Cheryl Wheeler</span>
-                                        <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Rachel Santos</span>
-                                        <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-sm-6">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="#">Maps</a></li>
+                  <li class="breadcrumb-item active">Vector Maps</li>
+                </ol>
+              </nav>
             </div>
-        </header><!-- /header -->
-        <!-- Header-->
+          </div>
 
-        <div class="breadcrumbs">
-            <div class="breadcrumbs-inner">
-                <div class="row m-0">
-                    <div class="col-sm-4">
-                        <div class="page-header float-left">
-                            <div class="page-title">
-                                <h1>Dashboard</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="page-header float-right">
-                            <div class="page-title">
-                                <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Map</a></li>
-                                    <li class="active">Vector map</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
+          <!-- Interactive World Map -->
+          <div class="row mb-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0"><i class="fas fa-globe me-2"></i>Interactive World Map</h5>
                 </div>
+                <div class="card-body">
+                  <div class="region-selector">
+                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(51.505, -0.09, 10)">London</button>
+                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(40.7128, -74.0060, 10)">New York</button>
+                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(35.6762, 139.6503, 10)">Tokyo</button>
+                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(-33.8688, 151.2093, 10)">Sydney</button>
+                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(20, 0, 2)">World</button>
+                  </div>
+                  <div id="worldMap" class="map-container">
+                    <div class="stats-overlay">
+                      <h6><i class="fas fa-chart-line me-1"></i>Live Stats</h6>
+                      <div class="stat-item">
+                        <span>Active Users:</span>
+                        <span class="text-success">2,847</span>
+                      </div>
+                      <div class="stat-item">
+                        <span>Page Views:</span>
+                        <span class="text-info">18,392</span>
+                      </div>
+                      <div class="stat-item">
+                        <span>Sessions:</span>
+                        <span class="text-warning">1,256</span>
+                      </div>
+                      <div class="stat-item">
+                        <span>Total Revenue:</span>
+                        <span class="text-primary">$43,291</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Regional Data Visualization -->
+          <div class="row mb-4">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0"><i class="fas fa-chart-area me-2"></i>Regional Sales Data</h5>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="regionalChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0"><i class="fas fa-map-marked-alt me-2"></i>Geographic Distribution</h5>
+                </div>
+                <div class="card-body">
+                  <div id="geoDistributionMap" class="map-container">
+                    <!-- This will be another Leaflet map with markers -->
+                  </div>
+                  <div class="map-legend">
+                    <div class="legend-item">
+                      <div class="legend-color" style="background: #007bff;"></div>
+                      <span>High Activity (&gt;1000 users)</span>
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-color" style="background: #28a745;"></div>
+                      <span>Medium Activity (500-1000 users)</span>
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-color" style="background: #ffc107;"></div>
+                      <span>Low Activity (&lt;500 users)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Heat Map and Traffic Flow -->
+          <div class="row mb-4">
+            <div class="col-lg-8">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0"><i class="fas fa-fire me-2"></i>Traffic Heat Map</h5>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="heatmapChart"></canvas>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-4 text-center">
+                      <div class="h5 text-primary">2,847</div>
+                      <small class="text-muted">Active Sessions</small>
+                    </div>
+                    <div class="col-4 text-center">
+                      <div class="h5 text-success">18K</div>
+                      <small class="text-muted">Page Views</small>
+                    </div>
+                    <div class="col-4 text-center">
+                      <div class="h5 text-info">94.2%</div>
+                      <small class="text-muted">Uptime</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card h-100">
+                <div class="card-header">
+                  <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Traffic Sources</h5>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="trafficChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Geographic Metrics -->
+          <div class="row mb-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="card bg-primary text-white">
+                <div class="card-body text-center">
+                  <i class="fas fa-globe fa-3x mb-3 opacity-75"></i>
+                  <h3 class="mb-2">127</h3>
+                  <p class="mb-0">Countries Served</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card bg-success text-white">
+                <div class="card-body text-center">
+                  <i class="fas fa-map-marker-alt fa-3x mb-3 opacity-75"></i>
+                  <h3 class="mb-2">1,847</h3>
+                  <p class="mb-0">Active Locations</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card bg-warning text-white">
+                <div class="card-body text-center">
+                  <i class="fas fa-users fa-3x mb-3 opacity-75"></i>
+                  <h3 class="mb-2">89.2K</h3>
+                  <p class="mb-0">Global Users</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card bg-info text-white">
+                <div class="card-body text-center">
+                  <i class="fas fa-chart-line fa-3x mb-3 opacity-75"></i>
+                  <h3 class="mb-2">+23.5%</h3>
+                  <p class="mb-0">Growth Rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Table -->
+          <div class="row mb-4">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0"><i class="fas fa-table me-2"></i>Regional Performance Data</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="table-light">
+                        <tr>
+                          <th><i class="fas fa-flag me-1"></i>Region</th>
+                          <th><i class="fas fa-users me-1"></i>Users</th>
+                          <th><i class="fas fa-eye me-1"></i>Sessions</th>
+                          <th><i class="fas fa-clock me-1"></i>Avg. Duration</th>
+                          <th><i class="fas fa-chart-line me-1"></i>Bounce Rate</th>
+                          <th><i class="fas fa-dollar-sign me-1"></i>Revenue</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="flag-icon me-2">🇺🇸</span>United States</td>
+                          <td><span class="badge bg-primary">28,473</span></td>
+                          <td>45,291</td>
+                          <td>3m 42s</td>
+                          <td><span class="text-success">34.2%</span></td>
+                          <td class="text-success">$18,429</td>
+                        </tr>
+                        <tr>
+                          <td><span class="flag-icon me-2">🇬🇧</span>United Kingdom</td>
+                          <td><span class="badge bg-info">19,284</span></td>
+                          <td>31,857</td>
+                          <td>4m 15s</td>
+                          <td><span class="text-success">28.9%</span></td>
+                          <td class="text-success">$12,847</td>
+                        </tr>
+                        <tr>
+                          <td><span class="flag-icon me-2">🇩🇪</span>Germany</td>
+                          <td><span class="badge bg-warning">15,762</span></td>
+                          <td>24,193</td>
+                          <td>3m 28s</td>
+                          <td><span class="text-warning">45.1%</span></td>
+                          <td class="text-success">$9,382</td>
+                        </tr>
+                        <tr>
+                          <td><span class="flag-icon me-2">🇫🇷</span>France</td>
+                          <td><span class="badge bg-success">12,948</span></td>
+                          <td>19,472</td>
+                          <td>2m 58s</td>
+                          <td><span class="text-success">38.7%</span></td>
+                          <td class="text-success">$7,291</td>
+                        </tr>
+                        <tr>
+                          <td><span class="flag-icon me-2">🇯🇵</span>Japan</td>
+                          <td><span class="badge bg-secondary">8,473</span></td>
+                          <td>13,829</td>
+                          <td>5m 12s</td>
+                          <td><span class="text-success">22.4%</span></td>
+                          <td class="text-success">$5,847</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
 
-        <div class="content">
-            <div class="animated fadeIn">
+      {{> footer}}
+    </div>
 
-             <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>World</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+    {{> scripts}}
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Algeria</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap2" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+    <script>
+      // Initialize Leaflet maps
+      let map;
+      let geoMap;
+      
+      function initializeMap() {
+        // Main world map
+        map = L.map('worldMap').setView([20, 0], 2);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Argentina</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap3" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+        // Add markers for major cities
+        const cities = [
+          { name: 'New York', lat: 40.7128, lng: -74.0060, users: 28473 },
+          { name: 'London', lat: 51.5074, lng: -0.1278, users: 19284 },
+          { name: 'Tokyo', lat: 35.6762, lng: 139.6503, users: 15762 },
+          { name: 'Paris', lat: 48.8566, lng: 2.3522, users: 12948 },
+          { name: 'Berlin', lat: 52.5200, lng: 13.4050, users: 8473 },
+          { name: 'Sydney', lat: -33.8688, lng: 151.2093, users: 6291 },
+        ];
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Brazil</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap4" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+        cities.forEach(city => {
+          const markerSize = Math.max(8, Math.min(25, city.users / 1000));
+          const marker = L.circleMarker([city.lat, city.lng], {
+            radius: markerSize,
+            fillColor: '#007bff',
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.7
+          }).addTo(map);
+          
+          marker.bindPopup(`
+            <strong>${city.name}</strong><br>
+            Active Users: ${city.users.toLocaleString()}<br>
+            <small>Click to view details</small>
+          `);
+        });
+        
+        // Initialize Geographic Distribution Map
+        geoMap = L.map('geoDistributionMap').setView([30, 0], 2);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(geoMap);
+        
+        // Add heat map-like circles for regions
+        const regions = [
+          { name: 'North America', lat: 45, lng: -100, users: 45000, color: '#007bff' },
+          { name: 'Europe', lat: 50, lng: 10, users: 32000, color: '#28a745' },
+          { name: 'Asia', lat: 30, lng: 100, users: 18000, color: '#ffc107' },
+          { name: 'South America', lat: -15, lng: -60, users: 3000, color: '#17a2b8' },
+          { name: 'Africa', lat: 0, lng: 20, users: 2000, color: '#dc3545' },
+          { name: 'Australia', lat: -25, lng: 135, users: 5000, color: '#6610f2' }
+        ];
+        
+        regions.forEach(region => {
+          L.circle([region.lat, region.lng], {
+            color: region.color,
+            fillColor: region.color,
+            fillOpacity: 0.5,
+            radius: Math.sqrt(region.users) * 5000
+          }).addTo(geoMap).bindPopup(`
+            <strong>${region.name}</strong><br>
+            Users: ${region.users.toLocaleString()}<br>
+            ${(region.users / 1000).toFixed(1)}% of total
+          `);
+        });
+      }
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap5" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+      function setMapView(lat, lng, zoom) {
+        if (map) {
+          map.setView([lat, lng], zoom);
+        }
+      }
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Germany</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap6" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+      // Regional Chart
+      function initializeRegionalChart() {
+        const ctx = document.getElementById('regionalChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['North America', 'Europe', 'Asia Pacific', 'Latin America', 'Africa', 'Middle East'],
+            datasets: [{
+              label: 'Revenue ($K)',
+              data: [450, 320, 280, 150, 75, 95],
+              backgroundColor: [
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+              ],
+              borderColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1,
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function(value) {
+                    return '$' + value + 'K';
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Greece</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap7" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+      // Traffic Sources Chart
+      function initializeTrafficChart() {
+        const ctx = document.getElementById('trafficChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Organic', 'Direct', 'Social', 'Referral', 'Email'],
+            datasets: [{
+              data: [45, 25, 15, 10, 5],
+              backgroundColor: [
+                '#28a745',
+                '#007bff',
+                '#fd7e14',
+                '#6610f2',
+                '#20c997'
+              ],
+              borderWidth: 2,
+              borderColor: '#fff'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  padding: 15,
+                  usePointStyle: true
+                }
+              }
+            }
+          }
+        });
+      }
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Russia</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap10" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+      // Add tooltips to data points
+      document.querySelectorAll('.data-point').forEach(point => {
+        point.addEventListener('mouseenter', function(e) {
+          const tooltip = this.getAttribute('data-tooltip');
+          if (tooltip) {
+            // Simple tooltip implementation
+            const tooltipEl = document.createElement('div');
+            tooltipEl.className = 'tooltip-custom';
+            tooltipEl.innerHTML = tooltip;
+            tooltipEl.style.cssText = `
+              position: absolute;
+              background: rgba(0,0,0,0.8);
+              color: white;
+              padding: 8px 12px;
+              border-radius: 4px;
+              font-size: 12px;
+              z-index: 1000;
+              pointer-events: none;
+              top: ${e.pageY - 40}px;
+              left: ${e.pageX - 50}px;
+            `;
+            document.body.appendChild(tooltipEl);
+            this.tooltipEl = tooltipEl;
+          }
+        });
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Tunasia</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap11" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+        point.addEventListener('mouseleave', function() {
+          if (this.tooltipEl) {
+            this.tooltipEl.remove();
+            this.tooltipEl = null;
+          }
+        });
+      });
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Europe</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap12" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
+      // Initialize Heatmap Chart
+      function initializeHeatmapChart() {
+        const ctx = document.getElementById('heatmapChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
+            datasets: [{
+              label: 'North America',
+              data: [1200, 900, 1500, 2800, 2400, 2100, 1500],
+              borderColor: '#007bff',
+              backgroundColor: 'rgba(0, 123, 255, 0.1)',
+              tension: 0.4,
+              fill: true
+            }, {
+              label: 'Europe',
+              data: [800, 1200, 2100, 2400, 1800, 1500, 1000],
+              borderColor: '#28a745',
+              backgroundColor: 'rgba(40, 167, 69, 0.1)',
+              tension: 0.4,
+              fill: true
+            }, {
+              label: 'Asia',
+              data: [2100, 2400, 1800, 1500, 1800, 2400, 2200],
+              borderColor: '#ffc107',
+              backgroundColor: 'rgba(255, 193, 7, 0.1)',
+              tension: 0.4,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom'
+              },
+              title: {
+                display: true,
+                text: 'Traffic Density by Region (24h)'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Active Users'
+                }
+              },
+              x: {
+                title: {
+                  display: true,
+                  text: 'Time (UTC)'
+                }
+              }
+            }
+          }
+        });
+      }
 
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>USA</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap13" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
-
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Turkey</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap14" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
-
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Inactive Regions</h4>
-                        </div>
-                        <div class="Vector-map-js">
-                            <div id="vmap15" class="vmap"></div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
-
-
-
-            </div>
-            <!-- /# row -->
-
-
-        </div><!-- .animated -->
-    </div><!-- .content -->
-
-    <div class="clearfix"></div>
-
-    <footer class="site-footer">
-        <div class="footer-inner bg-white">
-            <div class="row">
-                <div class="col-sm-6">
-                    Copyright &copy; 2018 Ela Admin
-                </div>
-                <div class="col-sm-6 text-right">
-                    Designed by <a href="https://colorlib.com">Colorlib</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</div><!-- /#right-panel -->
-
-<!-- Right Panel -->
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
-<script src="assets/js/vmap.sampledata.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.algeria.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.argentina.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.brazil.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.france.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.germany.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.greece.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.iran.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.iraq.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.russia.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.tunisia.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.europe.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.usa.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.turkey.js"></script>
-<script src="assets/js/init/vector-init.js"></script>
-
-</body>
+      // Initialize everything when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        // Small delay to ensure all libraries are loaded
+        setTimeout(function() {
+          initializeMap();
+          initializeRegionalChart();
+          initializeTrafficChart();
+          initializeHeatmapChart();
+        }, 100);
+        
+        // Update stats periodically
+        setInterval(function() {
+          const statsElements = document.querySelectorAll('.stats-overlay .text-success, .stats-overlay .text-info, .stats-overlay .text-warning, .stats-overlay .text-primary');
+          statsElements.forEach(el => {
+            const currentValue = parseInt(el.textContent.replace(/[^0-9]/g, ''));
+            const variation = Math.floor(Math.random() * 20) - 10;
+            const newValue = Math.max(0, currentValue + variation);
+            el.textContent = el.textContent.includes('$') ? '$' + newValue.toLocaleString() : newValue.toLocaleString();
+          });
+        }, 5000);
+      });
+    </script>
+  </body>
 </html>

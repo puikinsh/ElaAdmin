@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .chart-container {
+        width: 100%;
+        height: 400px;
+        margin: 20px 0;
+      }
+      canvas {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chart.js Test</h1>
+
+    <div class="chart-container">
+      <h3>Sales Chart</h3>
+      <canvas id="sales-chart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h3>Doughnut Chart</h3>
+      <canvas id="doughnut-chart"></canvas>
+    </div>
+
+    <script type="module">
+      console.log('Loading Chart.js test...');
+
+      import Chart from 'chart.js/auto';
+      console.log('Chart.js version:', Chart.version);
+
+      // Sales Chart
+      const salesCtx = document.getElementById('sales-chart');
+      if (salesCtx) {
+        console.log('Creating sales chart...');
+        new Chart(salesCtx, {
+          type: 'line',
+          data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [
+              {
+                label: 'Sales',
+                data: [12000, 19000, 15000, 25000, 22000, 30000],
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.4,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+
+      // Doughnut Chart
+      const doughnutCtx = document.getElementById('doughnut-chart');
+      if (doughnutCtx) {
+        console.log('Creating doughnut chart...');
+        new Chart(doughnutCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Direct', 'Social', 'Referral', 'Organic'],
+            datasets: [
+              {
+                data: [35, 25, 20, 20],
+                backgroundColor: ['#007bff', '#28a745', '#ffc107', '#17a2b8'],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

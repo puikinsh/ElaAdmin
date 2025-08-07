@@ -1,0 +1,40 @@
+<!-- Bootstrap 5 JavaScript via Vite -->
+<script type='module' src='/src/js/main.js'></script>
+
+<!-- Page-specific module loading -->
+<script type='module'>
+  // Get the current page for dynamic module loading
+  const currentPath = window.location.pathname;
+  const pageName = currentPath.split('/').pop().replace('.html', '');
+  
+  // Dynamic imports for page-specific functionality
+  (async () => {
+    try {
+      if (currentPath.includes('dashboard') || currentPath === '/' || currentPath.includes('index')) {
+        const module = await import('/src/js/pages/dashboard.js');
+        console.log('Dashboard module loaded');
+      } else if (currentPath.includes('charts')) {
+        const module = await import('/src/js/pages/charts.js');
+        console.log('Charts module loaded');
+      } else if (currentPath.includes('forms')) {
+        const module = await import('/src/js/pages/forms.js');
+        console.log('Forms module loaded');
+      } else if (currentPath.includes('tables-data')) {
+        const module = await import('/src/js/pages/tables-data.js');
+        console.log('Data Tables module loaded');
+      } else if (currentPath.includes('tables')) {
+        const module = await import('/src/js/pages/tables.js');
+        if (module.initializeTablesPage) {
+          module.initializeTablesPage();
+        }
+        console.log('Tables module loaded');
+      } else if (currentPath.includes('ui-sweetalert')) {
+        const module = await import('/src/js/pages/ui-sweetalert.js');
+        console.log('SweetAlert2 module loaded');
+      }
+    } catch (error) {
+      // Module not found is okay, not all pages have specific modules
+      console.log('No specific module for this page or module not found');
+    }
+  })();
+</script>

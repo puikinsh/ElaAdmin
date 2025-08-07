@@ -1,0 +1,123 @@
+<header class='header' id='header'>
+  <button class='header-toggle' id='sidebar-toggle'>
+    <i class='fa-solid fa-bars'></i>
+  </button>
+
+  <!-- Expandable Search -->
+  <div class='header-search'>
+    <button class='search-toggle' id='search-toggle'>
+      <i class='fa-solid fa-search'></i>
+      <span>Search...</span>
+    </button>
+    <div class='search-box' id='search-box'>
+      <i class='fa-solid fa-search search-icon'></i>
+      <input type='text' placeholder='Search for anything...' id='search-input' />
+      <button class='close-search' id='close-search'>
+        <i class='fa-solid fa-times'></i>
+      </button>
+    </div>
+  </div>
+
+  <div class='header-menu'>
+    <!-- Notifications Dropdown -->
+    <div class='dropdown header-notifications'>
+      <button class='btn btn-link position-relative' data-bs-toggle='dropdown' aria-expanded='false'>
+        <i class='fa-solid fa-bell'></i>
+        <span class='notification-badge'>3</span>
+      </button>
+      <ul class='dropdown-menu dropdown-menu-end'>
+        <li class='dropdown-header'>You have 3 Notifications</li>
+        <li>
+          <a class='dropdown-item' href='#'>
+            <i class='fa-solid fa-check text-success me-2'></i>
+            Server Rebooted
+          </a>
+        </li>
+        <li>
+          <a class='dropdown-item' href='#'>
+            <i class='fa-solid fa-exclamation-triangle text-warning me-2'></i>
+            Server overloaded
+          </a>
+        </li>
+        <li>
+          <a class='dropdown-item' href='#'>
+            <i class='fa-solid fa-times text-danger me-2'></i>
+            Connection lost
+          </a>
+        </li>
+        <li><hr class='dropdown-divider' /></li>
+        <li><a class='dropdown-item text-center' href='#'>See all notifications</a></li>
+      </ul>
+    </div>
+
+    <!-- Messages Dropdown -->
+    <div class='dropdown header-messages'>
+      <button class='btn btn-link position-relative' data-bs-toggle='dropdown' aria-expanded='false'>
+        <i class='fa-solid fa-envelope'></i>
+        <span class='notification-badge'>5</span>
+      </button>
+      <ul class='dropdown-menu dropdown-menu-end'>
+        <li class='dropdown-header'>You have 5 Messages</li>
+        <li>
+          <a class='dropdown-item' href='#'>
+            <div class='d-flex align-items-center'>
+              <img src='/images/admin.jpg' alt='User' class='rounded-circle me-2' width='32' height='32' />
+              <div>
+                <div class='fw-semibold'>Jonathan Smith</div>
+                <small class='text-muted'>Just now</small>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class='dropdown-item' href='#'>
+            <div class='d-flex align-items-center'>
+              <img src='/images/admin.jpg' alt='User' class='rounded-circle me-2' width='32' height='32' />
+              <div>
+                <div class='fw-semibold'>Jack Sanders</div>
+                <small class='text-muted'>5 minutes ago</small>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class='dropdown-item' href='#'>
+            <div class='d-flex align-items-center'>
+              <img src='/images/admin.jpg' alt='User' class='rounded-circle me-2' width='32' height='32' />
+              <div>
+                <div class='fw-semibold'>Cheryl Wheeler</div>
+                <small class='text-muted'>10 minutes ago</small>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li><hr class='dropdown-divider' /></li>
+        <li><a class='dropdown-item text-center' href='#'>See all messages</a></li>
+      </ul>
+    </div>
+
+    <!-- User Profile Dropdown -->
+    <div class='dropdown header-user'>
+      <button class='btn btn-link d-flex align-items-center' data-bs-toggle='dropdown' aria-expanded='false'>
+        <img src='/images/admin.jpg' alt='Admin' class='user-avatar' />
+        <div class='user-info'>
+          <span class='user-name'>John Doe</span>
+          <span class='user-role'>Administrator</span>
+        </div>
+      </button>
+      <ul class='dropdown-menu dropdown-menu-end'>
+        <li><a class='dropdown-item' href='#'><i class='fa-solid fa-user me-2'></i>
+            My Profile</a></li>
+        <li><a class='dropdown-item' href='#'><i class='fa-solid fa-bell me-2'></i>
+            Notifications</a></li>
+        <li><a class='dropdown-item' href='#'><i class='fa-solid fa-gear me-2'></i>
+            Settings</a></li>
+        <li><hr class='dropdown-divider' /></li>
+        <li><a class='dropdown-item' href='/page-login.html'><i
+              class='fa-solid fa-power-off me-2'
+            ></i>
+            Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</header>

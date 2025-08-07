@@ -1,0 +1,398 @@
+@use '../variables' as *;
+
+// Modern Sidebar Styling
+.left-panel {
+  position: fixed;
+  top: 60px; // Start below header
+  left: 0;
+  width: $sidebar-width;
+  height: calc(100vh - 60px); // Full height minus header
+  background: #2c3e50;
+  z-index: 1000;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  // Sidebar Menu Container - Now the main container
+  .sidebar-menu {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 0; // Normal padding now that sidebar starts below header
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  // Navigation Menu
+  .nav-menu {
+    padding: 0;
+  }
+
+  // Section Titles
+  .nav-section {
+    margin: 18px 0 8px;
+    padding: 0 20px;
+
+    .nav-section-title {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  // Navigation Items
+  .nav-item {
+    position: relative;
+    margin: 2px 0;
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1.5;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+          background: $primary;
+        }
+
+        .nav-icon {
+          color: $primary;
+        }
+      }
+
+      .nav-icon {
+        font-size: 16px;
+        width: 20px;
+        margin-right: 12px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        transition: all 0.3s ease;
+      }
+
+      .nav-text {
+        flex: 1;
+        white-space: nowrap;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-arrow {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        transition: transform 0.3s ease;
+        margin-left: auto;
+      }
+    }
+
+    // Submenu styles
+    &.has-submenu {
+      &.open {
+        .nav-link {
+          background: rgba(0, 0, 0, 0.1);
+
+          .nav-arrow {
+            transform: rotate(90deg);
+          }
+        }
+
+        .nav-submenu {
+          max-height: 500px;
+        }
+      }
+    }
+
+    .nav-submenu {
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.15);
+      transition: max-height 0.3s ease;
+
+      .submenu-link {
+        display: flex;
+        align-items: center;
+        padding: 8px 20px 8px 48px;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 13px;
+        line-height: 1.5;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        &.active {
+          color: $primary;
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .submenu-icon {
+          font-size: 10px;
+          margin-right: 12px;
+          color: rgba(255, 255, 255, 0.4);
+        }
+
+        span {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  // Collapsed State (Desktop only)
+  &.collapsed {
+    width: 70px;
+
+    .sidebar-menu {
+      padding: 20px 0 10px 0;
+    }
+
+    .nav-section {
+      display: none;
+    }
+
+    .nav-item {
+      .nav-link {
+        padding: 10px 10px;
+        justify-content: center;
+        margin: 0 10px;
+        border-radius: 8px;
+
+        .nav-icon {
+          margin: 0;
+          font-size: 18px;
+          width: auto;
+        }
+
+        .nav-text,
+        .nav-arrow {
+          display: none;
+        }
+
+        &.active::before {
+          display: none;
+        }
+
+        &.active {
+          background: rgba(255, 255, 255, 0.15);
+          
+          .nav-icon {
+            color: $primary;
+          }
+        }
+      }
+
+      // Hide submenus in collapsed state
+      .nav-submenu {
+        display: none;
+      }
+    }
+
+    // Hover to expand (Desktop only)
+    &:hover {
+      width: $sidebar-width;
+
+      .nav-section {
+        display: block;
+        padding: 0 20px;
+        margin: 20px 0 10px;
+
+        .nav-section-title {
+          font-size: 11px;
+          text-align: left;
+          letter-spacing: 1px;
+        }
+      }
+
+      .nav-item {
+        .nav-link {
+          padding: 10px 20px;
+          justify-content: flex-start;
+          margin: 2px 0;
+          font-size: 14px;
+
+          .nav-icon {
+            margin-right: 12px;
+            font-size: 16px;
+            width: 20px;
+          }
+
+          .nav-text {
+            display: inline;
+          }
+
+          .nav-arrow {
+            display: inline;
+          }
+
+          &.active::before {
+            display: block;
+            width: 3px;
+          }
+        }
+
+        &.has-submenu.open {
+          .nav-submenu {
+            display: block;
+            max-height: 500px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main content offset
+.main-content,
+.right-panel {
+  margin-left: $sidebar-width;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+  padding-top: $header-height;
+}
+
+.left-panel.collapsed ~ .main-content,
+.left-panel.collapsed ~ .right-panel {
+  margin-left: 70px;
+}
+
+// Mobile styles
+@media (max-width: 991px) {
+  .left-panel {
+    width: $sidebar-width !important; // Always full width on mobile
+    transform: translateX(-100%);
+    z-index: 1050;
+    
+    // Never apply collapsed styles on mobile
+    &.collapsed {
+      width: $sidebar-width !important;
+      
+      .sidebar-header {
+        padding: 20px !important;
+        
+        .sidebar-brand {
+          justify-content: flex-start !important;
+          
+          .brand-text {
+            display: inline !important;
+          }
+          
+          i {
+            margin-right: 12px !important;
+          }
+        }
+      }
+      
+      .nav-section {
+        display: block !important;
+      }
+      
+      .nav-item {
+        .nav-link {
+          padding: 12px 20px !important;
+          justify-content: flex-start !important;
+          margin: 2px 0 !important;
+          
+          .nav-icon {
+            margin-right: 12px !important;
+            font-size: 18px !important;
+            width: 24px !important;
+          }
+          
+          .nav-text,
+          .nav-arrow {
+            display: inline !important;
+          }
+          
+          &.active::before {
+            display: block !important;
+            width: 3px !important;
+          }
+        }
+        
+        .nav-submenu {
+          display: none;
+          
+          &.show {
+            display: block !important;
+          }
+        }
+      }
+      
+      &:hover {
+        width: $sidebar-width !important; // Don't expand on hover on mobile
+      }
+    }
+    
+    // When mobile menu is open
+    &.mobile-open {
+      transform: translateX(0);
+      box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .main-content,
+  .right-panel {
+    margin-left: 0 !important;
+  }
+}
+
+// Mobile overlay
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  display: none;
+  
+  @media (max-width: 991px) {
+    &.show {
+      display: block;
+    }
+  }
+}

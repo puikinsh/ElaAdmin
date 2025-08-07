@@ -1,598 +1,479 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+    {{> head title="Grid System"}}
 </head>
+
 <body>
-    <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                    </li>
-                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-title">Icons</li><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
-
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
-    <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-            <div class="top-right">
-                <div class="header-menu">
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
+    <div class="wrapper">
+        {{> sidebar-ela}}
+        
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Grid System</h4>
                         </div>
-
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">3</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-check"></i>
-                                    <p>Server #1 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-info"></i>
-                                    <p>Server #2 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-warning"></i>
-                                    <p>Server #3 overloaded.</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-envelope"></i>
-                                <span class="count bg-primary">4</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jonathan Smith</span>
-                                        <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jack Sanders</span>
-                                        <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Cheryl Wheeler</span>
-                                        <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Rachel Santos</span>
-                                        <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header><!-- /header -->
-        <!-- Header-->
-
-        <div class="breadcrumbs">
-            <div class="breadcrumbs-inner">
-                <div class="row m-0">
-                    <div class="col-sm-4">
-                        <div class="page-header float-left">
-                            <div class="page-title">
-                                <h1>Dashboard</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="page-header float-right">
-                            <div class="page-title">
-                                <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">UI Elements</a></li>
-                                    <li class="active">Grids</li>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Components</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Grid System</li>
                                 </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Grid Options -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="me-2 fa fa-th"></i>
+                                    <strong>Bootstrap 5 Grid Options</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted mb-3">
+                                        See how aspects of the Bootstrap 5 grid system work across multiple devices with this handy table.
+                                    </p>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th class="text-center">
+                                                        Extra small<br>
+                                                        <small class="text-muted">&lt;576px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Small<br>
+                                                        <small class="text-muted">≥576px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Medium<br>
+                                                        <small class="text-muted">≥768px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Large<br>
+                                                        <small class="text-muted">≥992px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Extra large<br>
+                                                        <small class="text-muted">≥1200px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Extra extra large<br>
+                                                        <small class="text-muted">≥1400px</small>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Container max-width</th>
+                                                    <td>None (auto)</td>
+                                                    <td>540px</td>
+                                                    <td>720px</td>
+                                                    <td>960px</td>
+                                                    <td>1140px</td>
+                                                    <td>1320px</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Class prefix</th>
+                                                    <td><code>.col-</code></td>
+                                                    <td><code>.col-sm-</code></td>
+                                                    <td><code>.col-md-</code></td>
+                                                    <td><code>.col-lg-</code></td>
+                                                    <td><code>.col-xl-</code></td>
+                                                    <td><code>.col-xxl-</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row"># of columns</th>
+                                                    <td colspan="6" class="text-center">12</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Gutter width</th>
+                                                    <td colspan="6" class="text-center">1.5rem (0.75rem on left and right)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Custom gutters</th>
+                                                    <td colspan="6" class="text-center">Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Nestable</th>
+                                                    <td colspan="6" class="text-center">Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Column ordering</th>
+                                                    <td colspan="6" class="text-center">Yes</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Basic Grid Examples -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Basic Grid Examples</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted mb-4">
+                                        Basic grid layouts to get you familiar with building within the Bootstrap grid system.
+                                    </p>
+
+                                    <h5 class="mb-3">Equal Width Columns</h5>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Setting One Column Width</h5>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">.col-6</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Variable Width Content</h5>
+                                    <div class="row mb-3">
+                                        <div class="col col-lg-2">
+                                            <div class="p-3 bg-light border rounded">.col .col-lg-2</div>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <div class="p-3 bg-light border rounded">.col-md-auto (variable width)</div>
+                                        </div>
+                                        <div class="col col-lg-2">
+                                            <div class="p-3 bg-light border rounded">.col .col-lg-2</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Responsive Classes</h5>
+                                    <p class="text-muted mb-3">The Bootstrap 5 grid includes six tiers of predefined classes for building complex responsive layouts.</p>
+                                    
+                                    <div class="row mb-3">
+                                        <div class="col-sm-8">
+                                            <div class="p-3 bg-light border rounded">.col-sm-8</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 bg-light border rounded">.col-sm-4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-sm">
+                                            <div class="p-3 bg-light border rounded">.col-sm</div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="p-3 bg-light border rounded">.col-sm</div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="p-3 bg-light border rounded">.col-sm</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Mix and Match</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="p-3 bg-light border rounded">.col-12 .col-md-8</div>
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">.col-6</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">.col-6</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Examples -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Advanced Grid Features</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-3">Row Columns</h5>
+                                    <p class="text-muted mb-3">Use responsive <code>.row-cols-*</code> classes to quickly set the number of columns.</p>
+                                    
+                                    <div class="row row-cols-2 row-cols-lg-5 g-2 mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Nesting</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-9">
+                                            <div class="p-3 bg-light border rounded">
+                                                Level 1: .col-sm-9
+                                                <div class="row mt-3">
+                                                    <div class="col-8 col-sm-6">
+                                                        <div class="p-3 bg-secondary text-white rounded">Level 2: .col-8 .col-sm-6</div>
+                                                    </div>
+                                                    <div class="col-4 col-sm-6">
+                                                        <div class="p-3 bg-secondary text-white rounded">Level 2: .col-4 .col-sm-6</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="p-3 bg-light border rounded">Level 1: .col-sm-3</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Offsetting Columns</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-md-4</div>
+                                        </div>
+                                        <div class="col-md-4 offset-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-md-4 .offset-md-4</div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3 offset-md-3">
+                                            <div class="p-3 bg-light border rounded">.col-md-3 .offset-md-3</div>
+                                        </div>
+                                        <div class="col-md-3 offset-md-3">
+                                            <div class="p-3 bg-light border rounded">.col-md-3 .offset-md-3</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Gutters</h5>
+                                    <p class="text-muted mb-3">Gutters can be responsively adjusted. Use <code>.g-*</code>, <code>.gx-*</code> or <code>.gy-*</code> utilities.</p>
+                                    
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alignment Examples -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Alignment</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-3">Vertical Alignment</h5>
+                                    
+                                    <div class="row align-items-start mb-3" style="min-height: 100px; background-color: rgba(255,0,0,0.1);">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-start</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-start</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-start</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-center mb-3" style="min-height: 100px; background-color: rgba(0,255,0,0.1);">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-center</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-center</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-center</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-end mb-3" style="min-height: 100px; background-color: rgba(0,0,255,0.1);">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-end</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-end</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-end</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Horizontal Alignment</h5>
+                                    
+                                    <div class="row justify-content-start mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-start</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-start</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-center</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-center</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-end mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-end</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-end</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-around mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-around</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-around</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-between mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-between</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-between</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-evenly">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-evenly</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-evenly</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reordering -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Reordering</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-3">Order Classes</h5>
+                                    <p class="text-muted mb-3">Use <code>.order-*</code> classes for controlling the visual order.</p>
+                                    
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">First in DOM, no order applied</div>
+                                        </div>
+                                        <div class="col order-5">
+                                            <div class="p-3 bg-light border rounded">Second in DOM, order-5</div>
+                                        </div>
+                                        <div class="col order-1">
+                                            <div class="p-3 bg-light border rounded">Third in DOM, order-1</div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Responsive Order</h5>
+                                    <div class="row">
+                                        <div class="col order-last order-md-first">
+                                            <div class="p-3 bg-light border rounded">First on md+, last on mobile</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Unordered</div>
+                                        </div>
+                                        <div class="col order-first order-md-last">
+                                            <div class="p-3 bg-light border rounded">Last on md+, first on mobile</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
+            
+            {{> footer}}
         </div>
+    </div>
 
-        <div class="content">
-            <div class="animated fadeIn">
-
-                <h5 class="heading-title mb-1 text-secondary">Fixed Grid</h5>
-                <div class="row">
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                    <div class="col">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col</div>
-                        </section>
-                    </div>
-                </div>
-
-
-
-                <h5 class="heading-title mb-1 mt-4 text-secondary">Desktop Grid</h5>
-                <div class="row">
-                    <div class="col col-lg-12">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-12</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-6</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-6 ">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-6</div>
-                        </section>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-lg-4">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-4">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-4">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-3">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-3">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-3">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-3</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-2</div>
-                        </section>
-                    </div>
-                </div>
-
-
-                <h4 class="heading-title mt-5 mb-3 text-secondary">Mobile, Tablet, and Desktop</h4>
-
-                <div class="row">
-                    <div class="col-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-2</div>
-                        </section>
-                    </div>
-                    <div class="col-2">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-2</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-8">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-8</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-sm-3</div>
-                        </section>
-                    </div>
-                    <div class="col-sm-3">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-sm-3</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-6">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-6</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-md-4</div>
-                        </section>
-                    </div>
-                    <div class="col-md-4">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-md-4</div>
-                        </section>
-                    </div>
-                    <div class="col-lg-4">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-lg-4</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-sm-6</div>
-                        </section>
-                    </div>
-                    <div class="col-sm-6">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-sm-6</div>
-                        </section>
-                    </div>
-                </div>
-
-
-                <h5 class="heading-title mb-1 mt-4 text-secondary">Offset Grid</h5>
-
-                <div class="row">
-                    <div class="col-md-6 offset-md-6 col-sm-6 ml-auto">
-                        <section class="card">
-                            <div class="card-body text-secondary">col-md-6 offset-md-6 col-sm-6 </div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 offset-md-3 mr-auto ml-auto">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col-md-6 .offset-md-3</div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <section class="card">
-                            <div class="card-body text-secondary"> .col-md-4 </div>
-                        </section>
-                    </div>
-                    <div class="col-md-4 ml-auto">
-                        <section class="card">
-                            <div class="card-body text-secondary">.col-md-4 .ml-auto</div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div><!-- .content -->
-
-    <div class="clearfix"></div>
-
-    <footer class="site-footer">
-        <div class="footer-inner bg-white">
-            <div class="row">
-                <div class="col-sm-6">
-                    Copyright &copy; 2018 Ela Admin
-                </div>
-                <div class="col-sm-6 text-right">
-                    Designed by <a href="https://colorlib.com">Colorlib</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-
+    {{> scripts}}
 </body>
 </html>

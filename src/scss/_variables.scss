@@ -1,0 +1,117 @@
+// Bootstrap 5 Custom Variables
+// Original ElaAdmin Flat Colors
+$flat-color-1: #00c292;
+$flat-color-2: #ab8ce4;
+$flat-color-3: #03a9f3;
+$flat-color-4: #fb9678;
+$flat-color-5: #66bb6a;
+$flat-color-6: #5c6bc0;
+
+// Bootstrap Colors (Updated to match ElaAdmin)
+$primary: $flat-color-3;
+$secondary: #878787;
+$success: $flat-color-1;
+$info: $flat-color-3;
+$warning: $flat-color-4;
+$danger: #f44336;
+$light: #f1f2f7;
+$dark: #272c33;
+
+// Theme colors
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+// Typography
+$font-family-base:
+  'Open Sans',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
+$font-size-base: 0.875rem;
+$line-height-base: 1.5;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Components
+$border-radius: 3px;
+$box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 10px 50px 0 rgba(0, 0, 0, 0.15);
+
+// Sidebar
+$sidebar-width: 260px;
+$sidebar-collapsed-width: 80px;
+$sidebar-bg: #272c33;
+$sidebar-color: #99abb4;
+$sidebar-hover-bg: rgba(255, 255, 255, 0.05);
+$sidebar-active-bg: rgba(255, 255, 255, 0.1);
+$sidebar-brand-bg: transparent;
+$sidebar-brand-color: #ffffff;
+
+// Header
+$header-height: 60px;
+$header-bg: #ffffff;
+$header-border: #ddd;
+$header-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+// Content
+$content-bg: #f1f2f7;
+$content-padding: 30px;
+$content-card-bg: #ffffff;
+$content-text-color: #878787;
+
+// Cards
+$card-spacer-y: 1.25rem;
+$card-spacer-x: 1.25rem;
+$card-border-radius: 3px;
+$card-border-color: transparent;
+$card-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+$card-hover-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+
+// Transitions
+$transition-base: all 0.3s ease-in-out;
+$transition-fade: opacity 0.15s linear;
+$transition-collapse: height 0.35s ease;
+
+// Breakpoints (Bootstrap 5 defaults)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Container max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);

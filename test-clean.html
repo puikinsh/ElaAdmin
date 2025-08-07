@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head title="Test Clean Layout"}}
+  </head>
+  <body>
+    {{> sidebar-clean}}
+
+    <div class="main-wrapper">
+      {{> header-clean}}
+
+      <main class="content" style="margin-top: 60px; padding: 2rem">
+        <div class="container-fluid">
+          <div class="row mb-4">
+            <div class="col">
+              <h1>Clean Layout Test</h1>
+              <p>This page uses the new clean sidebar and header templates.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Test Card</h5>
+                </div>
+                <div class="card-body">
+                  <p>Testing the new layout system with proper sidebar and header navigation.</p>
+                  <ul>
+                    <li>✅ Clean HTML structure</li>
+                    <li>✅ Bootstrap 5 dropdowns</li>
+                    <li>✅ Responsive design</li>
+                    <li>✅ Proper CSS organization</li>
+                    <li>✅ Working JavaScript</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Features</h5>
+                </div>
+                <div class="card-body">
+                  <h6>Header Features:</h6>
+                  <ul>
+                    <li>Logo positioned on left</li>
+                    <li>Working dropdowns (notifications, messages, user)</li>
+                    <li>Search functionality</li>
+                    <li>Responsive hamburger menu</li>
+                  </ul>
+
+                  <h6>Sidebar Features:</h6>
+                  <ul>
+                    <li>Bootstrap 5 collapse for submenus</li>
+                    <li>Active state management</li>
+                    <li>Mobile-friendly overlay</li>
+                    <li>Smooth transitions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    {{> scripts}}
+  </body>
+</html>

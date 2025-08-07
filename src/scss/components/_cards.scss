@@ -1,0 +1,224 @@
+@use '../variables' as *;
+
+// Card Styles
+.card {
+  border: 0;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  margin-bottom: 30px;
+  background-color: $content-card-bg;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: $card-hover-shadow;
+  }
+
+  .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 20px;
+
+    .card-title {
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #272c33;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: auto;
+
+      .btn-card-action {
+        background: none;
+        border: none;
+        color: $secondary;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .card-body {
+    padding: $card-spacer-y $card-spacer-x;
+  }
+
+  .card-footer {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1rem 1.25rem;
+  }
+}
+
+// Stat cards
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+
+  .card-body {
+    padding: 25px;
+    position: relative;
+  }
+
+  &.bg-flat-color-1,
+  &.bg-flat-color-2,
+  &.bg-flat-color-3,
+  &.bg-flat-color-4,
+  &.bg-flat-color-5,
+  &.bg-flat-color-6 {
+    .stat-value,
+    .stat-label {
+      color: #fff !important;
+    }
+
+    .stat-change {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff !important;
+    }
+  }
+
+  .stat-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    opacity: 0.3;
+
+    &.color-white {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+  }
+
+  .stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #272c33;
+  }
+
+  .stat-label {
+    color: #99abb4;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .stat-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    padding: 3px 8px;
+    border-radius: 3px;
+
+    &.positive {
+      color: $flat-color-1;
+      background-color: rgba($flat-color-1, 0.1);
+    }
+
+    &.negative {
+      color: $danger;
+      background-color: rgba($danger, 0.1);
+    }
+
+    i {
+      font-size: 10px;
+    }
+  }
+}
+
+// Activity card
+.activity-card {
+  .activity-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f2f7;
+    transition: all 0.3s ease;
+
+    &:hover {
+      padding-left: 10px;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .activity-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    .activity-content {
+      flex: 1;
+
+      .activity-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #272c33;
+      }
+
+      .activity-description {
+        color: #878787;
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+
+      .activity-time {
+        color: #99abb4;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+// Chart card
+.chart-card {
+  .chart-container {
+    position: relative;
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+      }
+
+      .legend-label {
+        font-size: 0.875rem;
+        color: $secondary;
+      }
+    }
+  }
+}

@@ -1,0 +1,265 @@
+// ElaAdmin Layout Fixes for Bootstrap 5 Migration
+
+// Clean header structure - handle both page structures
+.header .header-left-section,
+.main-content .header .header-left-section {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  flex-shrink: 0;
+}
+
+.header .navbar-header,
+.main-content .header .navbar-header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+}
+
+.header .navbar-brand,
+.main-content .header .navbar-brand {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+
+  img {
+    max-height: 35px;
+    max-width: 145px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+// Ensure logo displays correctly in all states
+.right-panel .navbar-brand {
+  width: auto !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+
+  img {
+    max-height: 35px !important;
+    max-width: 145px !important;
+  }
+}
+
+// Menu toggle button positioning - keep it next to logo
+.header .menutoggle,
+.main-content .header .menutoggle {
+  margin-left: 15px;
+  padding: 8px;
+  color: #666;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+// Header right section - contains all dropdowns
+.header .header-menu,
+.main-content .header .header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.header .header-actions,
+.main-content .header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 15px;
+}
+
+.header .user-area,
+.main-content .header .user-area {
+  margin-left: 10px;
+}
+
+// Clean header layout - handle both page structures
+.header,
+.main-content .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
+
+  .header-left-section {
+    flex-shrink: 0;
+  }
+
+  .header-right-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+// Fix dropdown button styling
+.for-notification,
+.for-message {
+  .btn {
+    background: transparent;
+    border: none;
+    color: #666;
+    position: relative;
+    padding: 8px 12px;
+
+    &:hover {
+      color: #333;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .count {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      font-size: 10px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+}
+
+// Remove underlines from sidebar navigation
+aside.left-panel {
+  .nav-link,
+  .dropdown-toggle,
+  a {
+    text-decoration: none !important;
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  .menu-item-has-children > a {
+    text-decoration: none !important;
+
+    &:hover,
+    &:focus {
+      text-decoration: none !important;
+    }
+  }
+
+  .sub-menu a {
+    text-decoration: none !important;
+
+    &:hover {
+      text-decoration: none !important;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+// Ensure proper header height and alignment
+.header {
+  height: 55px;
+  display: flex;
+  align-items: center;
+
+  .top-left,
+  .top-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Fix user dropdown positioning
+.user-area {
+  .dropdown-toggle {
+    border: none;
+    background: transparent;
+    padding: 8px;
+
+    img.user-avatar {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+    }
+  }
+}
+
+// Search form improvements with new structure
+.header-actions,
+.main-content .header-actions {
+  position: relative;
+
+  &.search-active .search-form {
+    display: block;
+  }
+}
+
+.search-form {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: none;
+  min-width: 300px;
+  border-radius: 4px;
+  z-index: 1000;
+
+  &.show {
+    display: block;
+  }
+
+  .form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+}
+
+.search-trigger {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 8px 12px;
+  border-radius: 4px;
+
+  &:hover {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+// Additional layout fixes
+.navbar-header a.menutoggle {
+  color: #666 !important;
+  text-decoration: none !important;
+
+  &:hover {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+}
+
+// Responsive fixes
+@media (max-width: 991px) {
+  .header .header-left {
+    gap: 5px;
+    margin-right: 10px;
+  }
+
+  .search-form {
+    min-width: 250px;
+    right: -50px;
+  }
+}

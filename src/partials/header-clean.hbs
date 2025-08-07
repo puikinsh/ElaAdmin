@@ -1,0 +1,166 @@
+<!-- Clean Header Navigation -->
+<header id='header' class='header'>
+  <div class='header-container'>
+    <!-- Left Section: Logo + Hamburger -->
+    <div class='header-left'>
+      <div class='header-brand'>
+        <a href='./' class='brand-link' style='display: flex; align-items: center; gap: 8px; text-decoration: none; margin-right: 15px;'>
+          <i class='fas fa-layer-group' style='font-size: 24px; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 8px; border-radius: 8px;'></i>
+          <span style='font-size: 20px; font-weight: 700; color: #2c3e50; letter-spacing: -0.5px;'>ElaAdmin</span>
+        </a>
+        <button id='sidebar-toggle' class='sidebar-toggle' type='button'>
+          <i class='fa fa-bars'></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Section: Search + Dropdowns -->
+    <div class='header-right'>
+      <div class='header-actions'>
+        <!-- Search -->
+        <div class='header-search'>
+          <button class='search-btn' type='button' id='search-toggle'>
+            <i class='fa fa-search'></i>
+          </button>
+          <div class='search-dropdown' id='search-dropdown'>
+            <form class='search-form'>
+              <input type='text' class='form-control' placeholder='Search...' aria-label='Search' />
+              <button type='button' class='search-close' id='search-close'>
+                <i class='fa fa-times'></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class='dropdown header-dropdown'>
+          <button
+            class='dropdown-toggle header-btn'
+            type='button'
+            id='notifications'
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+          >
+            <i class='fa fa-bell'></i>
+            <span class='badge bg-danger'>3</span>
+          </button>
+          <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='notifications'>
+            <li class='dropdown-header'>You have 3 notifications</li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-check text-success'></i>
+                <div class='notification-content'>
+                  <span class='notification-title'>Server #1 overloaded</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-info text-info'></i>
+                <div class='notification-content'>
+                  <span class='notification-title'>Server #2 overloaded</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-warning text-warning'></i>
+                <div class='notification-content'>
+                  <span class='notification-title'>Server #3 overloaded</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Messages -->
+        <div class='dropdown header-dropdown'>
+          <button
+            class='dropdown-toggle header-btn'
+            type='button'
+            id='messages'
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+          >
+            <i class='fa fa-envelope'></i>
+            <span class='badge bg-primary'>4</span>
+          </button>
+          <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='messages'>
+            <li class='dropdown-header'>You have 4 messages</li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <img src='images/avatar/1.jpg' alt='Avatar' class='message-avatar' />
+                <div class='message-content'>
+                  <span class='message-name'>Jonathan Smith</span>
+                  <span class='message-time'>Just now</span>
+                  <p class='message-text'>Hello, this is an example message</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <img src='images/avatar/2.jpg' alt='Avatar' class='message-avatar' />
+                <div class='message-content'>
+                  <span class='message-name'>Jack Sanders</span>
+                  <span class='message-time'>5 minutes ago</span>
+                  <p class='message-text'>Lorem ipsum dolor sit amet</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <img src='images/avatar/3.jpg' alt='Avatar' class='message-avatar' />
+                <div class='message-content'>
+                  <span class='message-name'>Cheryl Wheeler</span>
+                  <span class='message-time'>10 minutes ago</span>
+                  <p class='message-text'>Hello, this is an example message</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- User Menu -->
+        <div class='dropdown header-dropdown'>
+          <button
+            class='dropdown-toggle header-btn user-btn'
+            type='button'
+            id='user-menu'
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+          >
+            <img src='images/admin.jpg' alt='User' class='user-avatar' />
+          </button>
+          <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='user-menu'>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-user'></i>
+                My Profile
+              </a>
+            </li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-bell-o'></i>
+                Notifications
+                <span class='badge bg-secondary ms-2'>13</span>
+              </a>
+            </li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-cog'></i>
+                Settings
+              </a>
+            </li>
+            <li><hr class='dropdown-divider' /></li>
+            <li>
+              <a class='dropdown-item' href='#'>
+                <i class='fa fa-power-off'></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

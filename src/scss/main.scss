@@ -1,0 +1,454 @@
+// Custom variables - must be loaded before Bootstrap
+@use 'variables' as *;
+
+// Bootstrap 5 with our custom variables
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: $primary,
+  $secondary: $secondary,
+  $success: $success,
+  $info: $info,
+  $warning: $warning,
+  $danger: $danger,
+  $light: $light,
+  $dark: $dark
+);
+
+// Custom components
+@use 'components/sidebar';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/cards';
+@use 'components/charts';
+@use 'components/forms';
+@use 'components/tables';
+@use 'components/utilities';
+@use 'components/layout-fixes';
+
+// Clean Navigation Components (New)
+@use 'components/sidebar-clean';
+@use 'components/header-clean';
+
+// Mobile Layout Override - MUST BE LAST
+@use 'components/mobile-layout';
+
+// Smooth dropdown animations - prevent jumping
+
+// Keyframe animation for smooth dropdown appearance
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px) scale(0.98);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
+
+// Reverse animation for hiding
+@keyframes dropdownFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-2px) scale(0.98);
+  }
+}
+
+// Ensure dropdown positioning is stable
+.dropdown {
+  .dropdown-toggle {
+    &::after {
+      transition: transform 0.2s ease;
+    }
+  }
+  
+  &.show {
+    .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Global dropdown fixes
+.dropdown-item {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+// Fix dropdown headers - remove all borders
+.dropdown-header {
+  border: none !important;
+  border-bottom: none !important;
+  padding-bottom: 12px;
+  margin-bottom: 0;
+}
+
+// Combined dropdown menu styles
+.dropdown-menu {
+  transform-origin: top right;
+  margin: 0 !important;
+  
+  // Custom positioned dropdowns - override Bootstrap completely
+  &.dropdown-custom-position {
+    position: fixed !important;
+    transform: none !important;
+    inset: unset !important;
+    margin: 0 !important;
+  }
+  
+  // When positioned above
+  &.dropdown-up {
+    transform-origin: bottom right;
+  }
+  
+  // Prevent initial positioning jump
+  &.dropdown-menu-end {
+    right: 0;
+    left: auto;
+  }
+  
+  // Smooth fade-in animation
+  &.dropdown-fade-in {
+    animation: dropdownFadeIn 0.18s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  // Smooth fade-out animation
+  &.dropdown-fade-out {
+    animation: dropdownFadeOut 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  // Override Bootstrap's show animation to prevent jumping
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  // Remove borders between dropdown items
+  .dropdown-item + .dropdown-item {
+    border-top: none !important;
+  }
+  
+  li {
+    border: none !important;
+  }
+  
+  // Ensure first item after header has no top border
+  .dropdown-header + li .dropdown-item,
+  li:has(.dropdown-header) + li .dropdown-item {
+    border-top: none !important;
+  }
+}
+
+// Fix button text colors for better readability
+// All colored buttons should have white text
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-info,
+.btn-dark {
+  color: #fff !important;
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:disabled,
+  &.disabled {
+    color: #fff !important;
+  }
+}
+
+// Warning and light buttons need dark text for contrast
+.btn-warning,
+.btn-light {
+  color: #212529 !important;
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:disabled,
+  &.disabled {
+    color: #212529 !important;
+  }
+}
+
+// Outline buttons should keep their original text colors
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-info,
+.btn-outline-dark {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: #fff !important;
+  }
+}
+
+.btn-outline-warning,
+.btn-outline-light {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: #212529 !important;
+  }
+}
+
+// Also apply to dropdown toggles and button groups
+.btn-group {
+  .btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-info,
+  .btn-dark,
+  .dropdown-toggle {
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-success,
+    &.btn-danger,
+    &.btn-info,
+    &.btn-dark {
+      color: #fff !important;
+    }
+    
+    &.btn-warning,
+    &.btn-light {
+      color: #212529 !important;
+    }
+  }
+}
+
+// Fix switch positioning in cards
+.card-body {
+  padding: 1.25rem; // Ensure consistent padding
+  
+  .form-check.form-switch {
+    padding-left: 2.5em; // Default Bootstrap switch spacing
+    margin-left: 0; // Remove extra left margin
+    margin-bottom: 0.75rem; // Add proper bottom spacing
+    
+    // Add spacing between switch and label
+    .form-check-input {
+      margin-right: 0.75rem; // More space between switch and label (default is 0.5rem)
+    }
+    
+    &:last-child {
+      margin-bottom: 0; // No margin on last switch
+    }
+    
+    &.form-check-inline {
+      padding-left: 2.5em; // Same spacing for inline
+      margin-right: 1.5rem; // Space between inline switches
+      margin-bottom: 0.5rem;
+      
+      .form-check-input {
+        margin-right: 0.75rem; // Consistent spacing for inline too
+      }
+    }
+  }
+  
+  // For switches in list groups
+  .list-group-item {
+    .form-check.form-switch {
+      margin-left: 0; // No extra margin in list groups
+      margin-bottom: 0;
+      
+      .form-check-input {
+        margin-right: 0.75rem; // Consistent spacing in list groups
+      }
+    }
+  }
+}
+
+// Layout
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $content-bg;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex: 1 0 auto;
+}
+
+.main-content {
+  flex: 1;
+  transition: $transition-base;
+  display: flex;
+  flex-direction: column;
+  // margin-left is now handled in sidebar.scss
+}
+
+.content {
+  padding: $content-padding;
+  padding-top: $header-height + $content-padding;
+  flex: 1 0 auto;
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+
+    &.show {
+      transform: translateX(0);
+    }
+  }
+}
+
+// Utility classes for modern layouts
+.grid {
+  display: grid;
+  gap: 1.5rem;
+
+  &.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 767.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Modern card hover effects
+.card {
+  transition: $transition-base;
+  border: 0;
+  box-shadow: $card-box-shadow;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+}
+
+// DataTable styling
+.datatable-wrapper {
+  .table {
+    margin-bottom: 0;
+  }
+  
+  thead th.sortable {
+    position: relative;
+    padding-right: 1.5rem;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    i {
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    
+    &:hover i {
+      opacity: 1;
+    }
+  }
+  
+  .datatable-info {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .pagination {
+    margin-bottom: 0;
+  }
+  
+  // Responsive table wrapper
+  .table-responsive {
+    margin: -1.25rem;
+    padding: 1.25rem;
+  }
+}
+
+// Loading states
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid $primary;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// Dropdown animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #1a1d23;
+    --bs-body-color: #e1e2e4;
+    --bs-card-bg: #272c33;
+    --bs-border-color: #3a3f48;
+  }
+
+  body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+  }
+
+  .card {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-border-color);
+  }
+}

@@ -1,0 +1,117 @@
+@use '../variables' as *;
+
+// Flat Color Classes
+.bg-flat-color-1 {
+  background: $flat-color-1 !important;
+}
+
+.bg-flat-color-2 {
+  background: $flat-color-2 !important;
+}
+
+.bg-flat-color-3 {
+  background: $flat-color-3 !important;
+}
+
+.bg-flat-color-4 {
+  background: $flat-color-4 !important;
+}
+
+.bg-flat-color-5 {
+  background: $flat-color-5 !important;
+}
+
+.bg-flat-color-6 {
+  background: $flat-color-6 !important;
+}
+
+.flat-color-1 {
+  color: $flat-color-1 !important;
+}
+
+.flat-color-2 {
+  color: $flat-color-2 !important;
+}
+
+.flat-color-3 {
+  color: $flat-color-3 !important;
+}
+
+.flat-color-4 {
+  color: $flat-color-4 !important;
+}
+
+.flat-color-5 {
+  color: $flat-color-5 !important;
+}
+
+.flat-color-6 {
+  color: $flat-color-6 !important;
+}
+
+// Utility classes
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.shadow-hover {
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: $box-shadow-lg !important;
+  }
+}
+
+// Social Media Backgrounds
+.bg-twitter {
+  background: #1da1f2 !important;
+}
+
+.bg-facebook {
+  background: #3b5998 !important;
+}
+
+.bg-instagram {
+  background: #833ab4 !important;
+}
+
+// Additional Utilities
+.color-white {
+  color: #fff !important;
+}
+
+.color-gray {
+  color: #868e96 !important;
+}
+
+.fw-r {
+  font-weight: normal !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.font-3xl {
+  font-size: 2.8125em !important;
+}
+
+.font-4xl {
+  font-size: 3.75em !important;
+}
+
+// Spacing utilities
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}

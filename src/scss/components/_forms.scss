@@ -1,0 +1,153 @@
+@use '../variables' as *;
+
+// Form Styles
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #878787;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-control,
+.form-select {
+  font-size: 13px;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $flat-color-3;
+    box-shadow: 0 0 0 0.15rem rgba($flat-color-3, 0.15);
+    outline: none;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: #f7f8fa;
+    opacity: 0.7;
+  }
+}
+
+.form-control-lg {
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.form-control-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.form-text {
+  font-size: 12px;
+  color: #99abb4;
+}
+
+// Checkboxes and Radios
+.form-check {
+  padding-left: 1.5em;
+  margin-bottom: 10px;
+
+  .form-check-input {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    border: 2px solid #e7e7e7;
+
+    &:checked {
+      background-color: $flat-color-3;
+      border-color: $flat-color-3;
+    }
+
+    &:focus {
+      border-color: $flat-color-3;
+      box-shadow: 0 0 0 0.15rem rgba($flat-color-3, 0.15);
+    }
+  }
+
+  .form-check-label {
+    font-size: 13px;
+    color: #272c33;
+  }
+}
+
+// Switches
+.form-switch {
+  .form-check-input {
+    width: 42px;
+    height: 20px;
+
+    &:checked {
+      background-color: $flat-color-1;
+      border-color: $flat-color-1;
+    }
+  }
+}
+
+// Input Groups
+.input-group {
+  .input-group-text {
+    background-color: #f7f8fa;
+    border: 1px solid #e7e7e7;
+    font-size: 13px;
+    color: #878787;
+    padding: 8px 12px;
+  }
+
+  .form-control {
+    &:focus {
+      z-index: 3;
+    }
+  }
+}
+
+// Form validation
+.is-valid {
+  border-color: $flat-color-1;
+
+  &:focus {
+    border-color: $flat-color-1;
+    box-shadow: 0 0 0 0.15rem rgba($flat-color-1, 0.15);
+  }
+}
+
+.is-invalid {
+  border-color: $danger;
+
+  &:focus {
+    border-color: $danger;
+    box-shadow: 0 0 0 0.15rem rgba($danger, 0.15);
+  }
+}
+
+.valid-feedback {
+  font-size: 12px;
+  color: $flat-color-1;
+}
+
+.invalid-feedback {
+  font-size: 12px;
+  color: $danger;
+}
+
+// Form modern style
+.form-modern {
+  .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control,
+  .form-select {
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+    }
+  }
+}
