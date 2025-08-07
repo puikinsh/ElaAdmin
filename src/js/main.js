@@ -360,91 +360,39 @@ function initializeHeaderDropdowns() {
     });
   });
 
-  // Fix dropdown positioning to prevent jumping
-  const dropdowns = document.querySelectorAll('.dropdown');
-  dropdowns.forEach(dropdown => {
-    const dropdownToggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
-    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-    
-    if (dropdownToggle && dropdownMenu) {
-      let positionInterval = null;
-      let targetPosition = {};
+  // Simple dropdown positioning fix
+  document.addEventListener('show.bs.dropdown', function(e) {
+    const dropdownMenu = e.target.nextElementSibling;
+    if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+      const rect = e.target.getBoundingClientRect();
       
-      // Pre-calculate dropdown position before showing
-      dropdownToggle.addEventListener('show.bs.dropdown', function(e) {
-        // Get toggle button position
-        const rect = this.getBoundingClientRect();
-        
-        // Add animation class immediately
-        dropdownMenu.classList.add('dropdown-fade-in', 'dropdown-custom-position');
-        
-        // Calculate target position
-        const spaceBelow = window.innerHeight - rect.bottom;
-        const estimatedHeight = 300;
-        
-        if (spaceBelow < estimatedHeight) {
-          // Position above
-          targetPosition = {
-            position: 'fixed',
-            bottom: (window.innerHeight - rect.top + 2) + 'px',
-            top: 'auto',
-            right: (window.innerWidth - rect.right) + 'px',
-            left: 'auto',
-            transform: 'none',
-            margin: '0'
-          };
-          dropdownMenu.classList.add('dropdown-up');
-        } else {
-          // Position below
-          targetPosition = {
-            position: 'fixed',
-            top: rect.bottom + 'px',
-            bottom: 'auto',
-            right: (window.innerWidth - rect.right) + 'px',
-            left: 'auto',
-            transform: 'none',
-            margin: '0'
-          };
-          dropdownMenu.classList.remove('dropdown-up');
-        }
-        
-        // Apply position immediately
-        Object.assign(dropdownMenu.style, targetPosition);
-        
-        // Keep overriding Bootstrap's positioning during animation
-        positionInterval = setInterval(() => {
-          Object.assign(dropdownMenu.style, targetPosition);
-        }, 10);
-        
-        // Stop overriding after animation completes
-        setTimeout(() => {
-          if (positionInterval) {
-            clearInterval(positionInterval);
-            positionInterval = null;
-            // One final position set
-            Object.assign(dropdownMenu.style, targetPosition);
-          }
-        }, 200);
-      });
+      // Position dropdown to the left of the button with proper spacing
+      dropdownMenu.style.position = 'fixed';
+      dropdownMenu.style.top = (rect.bottom + 2) + 'px';
+      dropdownMenu.style.left = (rect.right - 300) + 'px'; // Assume 300px width, position to left
+      dropdownMenu.style.right = 'auto';
+      dropdownMenu.style.transform = 'none';
+      dropdownMenu.style.margin = '0';
       
-      // Clean up classes when hiding
-      dropdownToggle.addEventListener('hide.bs.dropdown', function(e) {
-        // Clear any running interval
-        if (positionInterval) {
-          clearInterval(positionInterval);
-          positionInterval = null;
-        }
-        
-        // Add fade out animation
-        dropdownMenu.classList.remove('dropdown-fade-in');
-        dropdownMenu.classList.add('dropdown-fade-out');
-        
-        // Clean up after animation
-        setTimeout(() => {
-          dropdownMenu.classList.remove('dropdown-fade-out', 'dropdown-up', 'dropdown-custom-position');
-          dropdownMenu.style.cssText = '';
-        }, 150);
-      });
+      // Ensure it doesn't go off screen
+      if (parseInt(dropdownMenu.style.left) < 10) {
+        dropdownMenu.style.left = '10px';
+      }
+    }
+  });
+  
+  // Clean up on hide
+  document.addEventListener('hide.bs.dropdown', function(e) {
+    const dropdownMenu = e.target.nextElementSibling;
+    if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+      setTimeout(() => {
+        dropdownMenu.style.position = '';
+        dropdownMenu.style.top = '';
+        dropdownMenu.style.left = '';
+        dropdownMenu.style.right = '';
+        dropdownMenu.style.transform = '';
+        dropdownMenu.style.margin = '';
+      }, 150);
     }
   });
 
