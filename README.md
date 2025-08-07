@@ -1,6 +1,6 @@
 # ElaAdmin - Modern Bootstrap 5 Admin Dashboard Template
 
-**Version 3.0.0** | Released: 2025-08-06
+**Version 3.0.0** | Released: 2025-08-07
 
 **ElaAdmin** is a fully responsive, modern Bootstrap 5 Admin Dashboard Template built with Vite for optimal performance. It provides a comprehensive collection of ready-to-use components, utilities, custom pages, charts, dashboard variations, and useful widgets. This template has been completely modernized from the ground up, removing all jQuery dependencies and implementing modern ES6+ JavaScript patterns.
 
@@ -43,13 +43,14 @@
 ### UI Components
 - **Dashboard Variations**: Multiple dashboard layouts for different use cases
 - **Form Components**: Basic and advanced forms with validation
-- **Tables**: Basic tables and DataTables integration
-- **Charts**: Chart.js with responsive configurations
+- **Tables**: Basic tables and custom DataTables implementation (no jQuery)
+- **Charts**: Chart.js 4.5 with responsive configurations
 - **Cards**: Various card styles with hover effects and animations
-- **UI Elements**: Buttons, badges, alerts, modals, progress bars, and more
-- **Icons**: Font Awesome 6 and Themify icons
+- **UI Elements**: Buttons, badges, alerts, modals, progress bars, switches, and more
+- **Icons**: Font Awesome 6 with comprehensive icon sets
 - **Maps**: Google Maps and Vector Maps integration
-- **Authentication Pages**: Login, register, and password recovery
+- **Authentication Pages**: Modern login, register, and password recovery pages
+- **Search Functionality**: Expandable search with quick links
 
 ### Technical Features
 - **No jQuery Dependency**: Pure vanilla JavaScript with Bootstrap 5
@@ -80,12 +81,19 @@
 - **Dynamic Page Loading**: Lazy loading for charts and heavy components
 - **Modern Styling**: SCSS modules with `@use` and `@forward` syntax
 
-### Bug Fixes
+### Bug Fixes & Improvements
 - Fixed infinite chart sizing issues
 - Resolved canvas reuse errors in Chart.js
 - Fixed sidebar state persistence
 - Corrected Bootstrap migration issues
 - Fixed icon compatibility problems
+- Enhanced header with clickable logo linking to homepage
+- Added search icon and expandable search functionality
+- Fixed button text colors for better readability
+- Adjusted switch component spacing
+- Removed all console.log statements for production
+- Excluded test files from production build
+- Resolved all critical ESLint issues
 
 ## System Requirements
 
