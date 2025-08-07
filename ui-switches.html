@@ -1,477 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head title="UI Switches - ElaAdmin"}}
+<head>
+    {{> head title="Switches"}}
+</head>
+
 <body>
-    {{> sidebar-ela}}
-
-    <div id="right-panel" class="right-panel">
-        {{> header-ela}}
-
-        <div class="breadcrumbs">
-            <div class="breadcrumbs-inner">
-                <div class="row m-0">
-                    <div class="col-sm-4">
-                        <div class="page-header float-start">
-                            <div class="page-title">
-                                <h1>Dashboard</h1>
-                            </div>
+    <div class="wrapper">
+        {{> sidebar-ela}}
+        
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Switches</h4>
                         </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="page-header float-end">
-                            <div class="page-title">
-                                <ol class="breadcrumb text-end">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">UI Elements</a></li>
-                                    <li class="active">Switches</li>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Components</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Switches</li>
                                 </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Bootstrap 5 Default Switches -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="me-2 fa fa-toggle-on"></i>
+                                    <strong class="card-title">Bootstrap 5 Switches</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchDefault" checked>
+                                        <label class="form-check-label" for="switchDefault">Default switch</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchChecked" checked>
+                                        <label class="form-check-label" for="switchChecked">Checked switch</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled>
+                                        <label class="form-check-label" for="switchDisabled">Disabled switch</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckedDisabled" checked disabled>
+                                        <label class="form-check-label" for="switchCheckedDisabled">Checked disabled</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colored Switches -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Colored Switches</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input bg-primary border-primary" type="checkbox" role="switch" id="switchPrimary" checked>
+                                        <label class="form-check-label" for="switchPrimary">Primary</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input bg-success border-success" type="checkbox" role="switch" id="switchSuccess" checked>
+                                        <label class="form-check-label" for="switchSuccess">Success</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input bg-danger border-danger" type="checkbox" role="switch" id="switchDanger" checked>
+                                        <label class="form-check-label" for="switchDanger">Danger</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input bg-warning border-warning" type="checkbox" role="switch" id="switchWarning" checked>
+                                        <label class="form-check-label" for="switchWarning">Warning</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Switch Sizes -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Switch Sizes</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchSmall" checked style="width: 2rem; height: 1rem;">
+                                        <label class="form-check-label" for="switchSmall">Small switch</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchNormal" checked>
+                                        <label class="form-check-label" for="switchNormal">Normal switch</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchLarge" checked style="width: 3rem; height: 1.5rem;">
+                                        <label class="form-check-label" for="switchLarge">Large switch</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchXLarge" checked style="width: 4rem; height: 2rem;">
+                                        <label class="form-check-label" for="switchXLarge">Extra large switch</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inline Switches -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Inline Switches</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="inlineSwitch1" checked>
+                                        <label class="form-check-label" for="inlineSwitch1">Option 1</label>
+                                    </div>
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="inlineSwitch2">
+                                        <label class="form-check-label" for="inlineSwitch2">Option 2</label>
+                                    </div>
+                                    <div class="form-check form-switch form-check-inline">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="inlineSwitch3" checked>
+                                        <label class="form-check-label" for="inlineSwitch3">Option 3</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Switch States -->
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Switch States & Examples</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="mb-3">With Labels</h6>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="switchEmail" checked>
+                                                <label class="form-check-label" for="switchEmail">
+                                                    Email Notifications
+                                                    <small class="text-muted d-block">Receive email updates</small>
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="switchSMS">
+                                                <label class="form-check-label" for="switchSMS">
+                                                    SMS Alerts
+                                                    <small class="text-muted d-block">Get text messages</small>
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="switchPush" checked>
+                                                <label class="form-check-label" for="switchPush">
+                                                    Push Notifications
+                                                    <small class="text-muted d-block">Browser notifications</small>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="mb-3">Form Integration</h6>
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="username" class="form-label">Username</label>
+                                                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="switchRemember">
+                                                    <label class="form-check-label" for="switchRemember">Remember me</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="switchNewsletter" checked>
+                                                    <label class="form-check-label" for="switchNewsletter">Subscribe to newsletter</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="mb-3">Settings Example</h6>
+                                            <div class="list-group">
+                                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span>Dark Mode</span>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="switchDarkMode">
+                                                    </div>
+                                                </div>
+                                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span>Auto-save</span>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="switchAutoSave" checked>
+                                                    </div>
+                                                </div>
+                                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span>Analytics</span>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="switchAnalytics" checked>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Switch Implementation Table -->
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Implementation Guide</strong>
+                                </div>
+                                <div class="card-body p-0">
+                                    <table class="table table-hover table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Example</th>
+                                                <th>Code</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Basic Switch</td>
+                                                <td>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="tableSwitch1" checked>
+                                                    </div>
+                                                </td>
+                                                <td><code>&lt;div class="form-check form-switch"&gt;...&lt;/div&gt;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>With Label</td>
+                                                <td>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="tableSwitch2">
+                                                        <label class="form-check-label" for="tableSwitch2">Label</label>
+                                                    </div>
+                                                </td>
+                                                <td><code>&lt;label class="form-check-label"&gt;...&lt;/label&gt;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Disabled</td>
+                                                <td>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="tableSwitch3" disabled>
+                                                    </div>
+                                                </td>
+                                                <td><code>&lt;input ... disabled&gt;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Colored</td>
+                                                <td>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input bg-success border-success" type="checkbox" role="switch" id="tableSwitch4" checked>
+                                                    </div>
+                                                </td>
+                                                <td><code>class="... bg-success border-success"</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
+            
+            {{> footer}}
         </div>
-
-        <div class="content">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <i class="me-2 fa fa-check-square-o"></i>
-                                <strong class="card-title">3d Switch</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-3d switch-primary me-3">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-3d switch-secondary me-3">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-3d switch-success me-3">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-3d switch-warning me-3">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-3d switch-info me-3">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-3d switch-danger me-3">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch Default</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-primary me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-default switch-secondary me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-default switch-success me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-default switch-warning me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-default switch-info me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                                <label class="switch switch-default switch-danger me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch Default - Pills</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-pill switch-primary me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-pill switch-secondary me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-pill switch-success me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-pill switch-warning me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-pill switch-info me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-pill switch-danger me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch Outline</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-primary-outline me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-secondary-outline me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-success-outline me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-warning-outline me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-info-outline me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-danger-outline me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch Outline - Pills</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-primary-outline switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-secondary-outline switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-success-outline switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-warning-outline switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-info-outline switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-danger-outline switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch Outline Alternative</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-primary-outline-alt me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-secondary-outline-alt me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-success-outline-alt me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-warning-outline-alt me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-info-outline-alt me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-danger-outline-alt me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch Outline Alternative - Pills</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-primary-outline-alt switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-secondary-outline-alt switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-success-outline-alt switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-warning-outline-alt switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-info-outline-alt switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-default switch-danger-outline-alt switch-pill me-2">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span class="switch-label"></span> <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch with Text</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-text switch-primary">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-secondary">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-success">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-warning">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-info">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-danger">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Switch with Text - Pills</strong>
-                            </div>
-                            <div class="card-body">
-                                <label class="switch switch-text switch-primary switch-pill">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-secondary switch-pill">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-success switch-pill">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-warning switch-pill">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-info switch-pill">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-
-                                <label class="switch switch-text switch-danger switch-pill">
-                                    <input type="checkbox" class="switch-input" checked="true" />
-                                    <span data-on="On" data-off="Off" class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Sizes</strong>
-                            </div>
-                            <div class="card-body p-0">
-                                <table class="table table-hover table-striped table-align-middle mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Size</th>
-                                            <th>Example</th>
-                                            <th>CSS Class</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Large</td>
-                                            <td>
-                                                <label class="switch switch-3d switch-primary switch-lg">
-                                                    <input type="checkbox" class="switch-input" checked="true" />
-                                                    <span class="switch-label"></span>
-                                                    <span class="switch-handle"></span>
-                                                </label>
-                                            </td>
-                                            <td>Add following code <code>switch-lg</code></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Default</td>
-                                            <td>
-                                                <label class="switch switch-3d switch-primary">
-                                                    <input type="checkbox" class="switch-input" checked="true" />
-                                                    <span class="switch-label"></span>
-                                                    <span class="switch-handle"></span>
-                                                </label>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Small</td>
-                                            <td>
-                                                <label class="switch switch-3d switch-primary switch-sm">
-                                                    <input type="checkbox" class="switch-input" checked="true" />
-                                                    <span class="switch-label"></span>
-                                                    <span class="switch-handle"></span>
-                                                </label>
-                                            </td>
-                                            <td>Add following code <code>switch-sm</code></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Extra small</td>
-                                            <td>
-                                                <label class="switch switch-3d switch-primary switch-xs">
-                                                    <input type="checkbox" class="switch-input" checked="true" />
-                                                    <span class="switch-label"></span>
-                                                    <span class="switch-handle"></span>
-                                                </label>
-                                            </td>
-                                            <td>Add following code <code>switch-xs</code></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.col-->
-                </div>
-            </div>
-            <!-- .animated -->
-        </div>
-        <!-- .content -->
-
-        {{> footer}}
     </div>
-    <!-- /#right-panel -->
 
     {{> scripts}}
 </body>

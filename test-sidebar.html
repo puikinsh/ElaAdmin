@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head title="Test Sidebar - ElaAdmin"}}
+  </head>
+  <body>
+    {{> sidebar-ela}}
+    {{> header}}
+    
+    <!-- Main Content (without header inside) -->
+    <div id="right-panel" class="right-panel main-content">
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Sidebar Test Page</h4>
+                </div>
+                <div class="card-body">
+                  <h5>Testing Sidebar Functionality</h5>
+                  <ul>
+                    <li>Click the hamburger menu to collapse/expand the sidebar</li>
+                    <li>When collapsed, only icons should be visible</li>
+                    <li>Hover over the collapsed sidebar to temporarily expand it</li>
+                    <li>Click on dropdown items to expand/collapse submenus</li>
+                    <li>Test responsive behavior by resizing the window</li>
+                  </ul>
+
+                  <div class="mt-4">
+                    <h6>Current Features:</h6>
+                    <ul>
+                      <li>✅ Modern dark theme (#2c3e50)</li>
+                      <li>✅ Smooth animations and transitions</li>
+                      <li>✅ Icon-only view when collapsed (70px width)</li>
+                      <li>✅ Hover to expand when collapsed</li>
+                      <li>✅ Dropdown menus with chevron indicators</li>
+                      <li>✅ Active state indicators</li>
+                      <li>✅ Section titles for organization</li>
+                      <li>✅ Mobile responsive with overlay</li>
+                      <li>✅ Persistent collapse state (localStorage)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{> footer}}
+    </div>
+
+    {{> scripts}}
+  </body>
+</html>

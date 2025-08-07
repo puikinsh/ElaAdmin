@@ -10,14 +10,14 @@ console.log('Charts script loading...');
 // Initialize charts function
 function runChartsInitialization() {
   console.log('Charts.js initializing...');
-  
+
   // Debug: List all canvas elements
   const allCanvas = document.querySelectorAll('canvas');
   console.log('Found canvas elements in charts.js:', allCanvas.length);
   allCanvas.forEach((canvas, i) => {
     console.log(`Charts canvas ${i}: id="${canvas.id}", class="${canvas.className}"`);
   });
-  
+
   initializeCharts();
 }
 
@@ -33,27 +33,36 @@ export function initializeCharts() {
     console.log('Charts already initialized, skipping...');
     return;
   }
-  
+
   console.log('Initializing all charts...');
   chartsInitialized = true;
-  
+
   // Sales Chart (sales-chart)
   const salesChartElement = document.getElementById('sales-chart');
   if (salesChartElement) {
     console.log('Creating sales chart...');
     try {
+      // Destroy existing chart if it exists
+      const existingChart = Chart.getChart(salesChartElement);
+      if (existingChart) {
+        console.log('Destroying existing sales chart...');
+        existingChart.destroy();
+      }
+
       new Chart(salesChartElement, {
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-          datasets: [{
-            label: 'Sales',
-            data: [12000, 19000, 15000, 25000, 22000, 30000],
-            borderColor: 'rgb(75, 192, 192)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            tension: 0.4,
-            fill: true
-          }]
+          datasets: [
+            {
+              label: 'Sales',
+              data: [12000, 19000, 15000, 25000, 22000, 30000],
+              borderColor: 'rgb(75, 192, 192)',
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              tension: 0.4,
+              fill: true,
+            },
+          ],
         },
         options: {
           responsive: true,
@@ -62,30 +71,30 @@ export function initializeCharts() {
           plugins: {
             legend: {
               display: true,
-              position: 'top'
+              position: 'top',
             },
             tooltip: {
               mode: 'index',
-              intersect: false
-            }
+              intersect: false,
+            },
           },
           scales: {
             x: {
               display: true,
               title: {
                 display: true,
-                text: 'Months'
-              }
+                text: 'Months',
+              },
             },
             y: {
               display: true,
               title: {
                 display: true,
-                text: 'Sales ($)'
-              }
-            }
-          }
-        }
+                text: 'Sales ($)',
+              },
+            },
+          },
+        },
       });
       console.log('Sales chart created successfully');
     } catch (error) {
@@ -104,27 +113,29 @@ export function initializeCharts() {
         type: 'bar',
         data: {
           labels: ['Developer', 'Designer', 'Marketing', 'Sales', 'Support'],
-          datasets: [{
-            label: 'Team Members',
-            data: [12, 8, 6, 9, 5],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 2,
-            borderRadius: 4,
-            borderSkipped: false,
-          }]
+          datasets: [
+            {
+              label: 'Team Members',
+              data: [12, 8, 6, 9, 5],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+              ],
+              borderWidth: 2,
+              borderRadius: 4,
+              borderSkipped: false,
+            },
+          ],
         },
         options: {
           responsive: true,
@@ -133,28 +144,28 @@ export function initializeCharts() {
           plugins: {
             legend: {
               display: true,
-              position: 'top'
+              position: 'top',
             },
             tooltip: {
               backgroundColor: 'rgba(0, 0, 0, 0.8)',
               titleColor: 'white',
-              bodyColor: 'white'
-            }
+              bodyColor: 'white',
+            },
           },
           scales: {
             x: {
               grid: {
-                display: false
-              }
+                display: false,
+              },
             },
             y: {
               beginAtZero: true,
               grid: {
-                color: 'rgba(0, 0, 0, 0.1)'
-              }
-            }
-          }
-        }
+                color: 'rgba(0, 0, 0, 0.1)',
+              },
+            },
+          },
+        },
       });
       console.log('Team chart created successfully');
     } catch (error) {
@@ -171,29 +182,32 @@ export function initializeCharts() {
       type: 'radar',
       data: {
         labels: ['Running', 'Swimming', 'Eating', 'Cycling', 'Sleeping'],
-        datasets: [{
-          label: 'Person A',
-          data: [20, 10, 4, 2, 8],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(255, 99, 132, 1)'
-        }, {
-          label: 'Person B',
-          data: [15, 20, 12, 6, 10],
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
-        }]
+        datasets: [
+          {
+            label: 'Person A',
+            data: [20, 10, 4, 2, 8],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(255, 99, 132, 1)',
+          },
+          {
+            label: 'Person B',
+            data: [15, 20, 12, 6, 10],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(54, 162, 235, 1)',
+          },
+        ],
       },
       options: {
-        responsive: true
-      }
+        responsive: true,
+      },
     });
   }
 
@@ -204,13 +218,15 @@ export function initializeCharts() {
       type: 'line',
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'Dataset 1',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
+        datasets: [
+          {
+            label: 'Dataset 1',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1,
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -218,47 +234,56 @@ export function initializeCharts() {
           legend: {
             display: true,
             position: 'top',
-          }
-        }
-      }
+          },
+        },
+      },
     });
   }
 
   // Doughnut Chart
   const doughnutChartElement = document.getElementById('doughnut-chart');
   if (doughnutChartElement) {
+    // Destroy existing chart if it exists
+    const existingChart = Chart.getChart(doughnutChartElement);
+    if (existingChart) {
+      console.log('Destroying existing doughnut chart...');
+      existingChart.destroy();
+    }
+
     new Chart(doughnutChartElement, {
       type: 'doughnut',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
-        datasets: [{
-          label: 'Dataset',
-          data: [12, 19, 3, 5, 2],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ],
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [12, 19, 3, 5, 2],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
         responsive: true,
         plugins: {
           legend: {
             position: 'top',
-          }
-        }
-      }
+          },
+        },
+      },
     });
   }
 
@@ -269,25 +294,23 @@ export function initializeCharts() {
       type: 'pie',
       data: {
         labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [{
-          label: 'Dataset',
-          data: [300, 50, 100],
-          backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-          ],
-          hoverOffset: 4
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [300, 50, 100],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+            hoverOffset: 4,
+          },
+        ],
       },
       options: {
         responsive: true,
         plugins: {
           legend: {
             position: 'top',
-          }
-        }
-      }
+          },
+        },
+      },
     });
   }
 
@@ -298,70 +321,75 @@ export function initializeCharts() {
       type: 'polarArea',
       data: {
         labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
-        datasets: [{
-          label: 'Dataset',
-          data: [11, 16, 7, 3, 14],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(201, 203, 207, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
-          ],
-          borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(75, 192, 192)',
-            'rgb(255, 205, 86)',
-            'rgb(201, 203, 207)',
-            'rgb(54, 162, 235)'
-          ],
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [11, 16, 7, 3, 14],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(201, 203, 207, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+              'rgb(255, 99, 132)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 205, 86)',
+              'rgb(201, 203, 207)',
+              'rgb(54, 162, 235)',
+            ],
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
         responsive: true,
         plugins: {
           legend: {
             position: 'top',
-          }
-        }
-      }
+          },
+        },
+      },
     });
   }
 
   // Single Bar Chart (single-bar-chart and singelBarChart)
-  const singleBarChartElement = document.getElementById('single-bar-chart') || document.getElementById('singelBarChart');
+  const singleBarChartElement =
+    document.getElementById('single-bar-chart') || document.getElementById('singelBarChart');
   if (singleBarChartElement) {
     new Chart(singleBarChartElement, {
       type: 'bar',
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
         responsive: true,
         plugins: {
           legend: {
-            display: false
-          }
+            display: false,
+          },
         },
         scales: {
           y: {
-            beginAtZero: true
-          }
-        }
-      }
+            beginAtZero: true,
+          },
+        },
+      },
     });
   }
 
   // Additional chart mappings for HTML file IDs
-  
+
   // Bar Chart (barChart)
   const barChartElement = document.getElementById('barChart');
   if (barChartElement) {
@@ -369,36 +397,38 @@ export function initializeCharts() {
       type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: 'Dataset',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
         responsive: true,
         scales: {
           y: {
-            beginAtZero: true
-          }
-        }
-      }
+            beginAtZero: true,
+          },
+        },
+      },
     });
   }
 
@@ -409,18 +439,20 @@ export function initializeCharts() {
       type: 'radar',
       data: {
         labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling'],
-        datasets: [{
-          label: 'My First Dataset',
-          data: [65, 59, 90, 81, 56, 55],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'My First Dataset',
+            data: [65, 59, 90, 81, 56, 55],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
-        responsive: true
-      }
+        responsive: true,
+      },
     });
   }
 
@@ -431,17 +463,19 @@ export function initializeCharts() {
       type: 'line',
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'My Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
+        datasets: [
+          {
+            label: 'My Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1,
+          },
+        ],
       },
       options: {
-        responsive: true
-      }
+        responsive: true,
+      },
     });
   }
 
@@ -452,20 +486,18 @@ export function initializeCharts() {
       type: 'doughnut',
       data: {
         labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [{
-          label: 'My Dataset',
-          data: [300, 50, 100],
-          backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-          ],
-          hoverOffset: 4
-        }]
+        datasets: [
+          {
+            label: 'My Dataset',
+            data: [300, 50, 100],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+            hoverOffset: 4,
+          },
+        ],
       },
       options: {
-        responsive: true
-      }
+        responsive: true,
+      },
     });
   }
 
@@ -476,20 +508,18 @@ export function initializeCharts() {
       type: 'pie',
       data: {
         labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [{
-          label: 'Dataset',
-          data: [300, 50, 100],
-          backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-          ],
-          hoverOffset: 4
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [300, 50, 100],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+            hoverOffset: 4,
+          },
+        ],
       },
       options: {
-        responsive: true
-      }
+        responsive: true,
+      },
     });
   }
 
@@ -500,29 +530,31 @@ export function initializeCharts() {
       type: 'polarArea',
       data: {
         labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
-        datasets: [{
-          label: 'Dataset',
-          data: [11, 16, 7, 3, 14],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(201, 203, 207, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
-          ],
-          borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(75, 192, 192)',
-            'rgb(255, 205, 86)',
-            'rgb(201, 203, 207)',
-            'rgb(54, 162, 235)'
-          ],
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'Dataset',
+            data: [11, 16, 7, 3, 14],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(201, 203, 207, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+              'rgb(255, 99, 132)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 205, 86)',
+              'rgb(201, 203, 207)',
+              'rgb(54, 162, 235)',
+            ],
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
-        responsive: true
-      }
+        responsive: true,
+      },
     });
   }
 }

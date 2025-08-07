@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head title="Modern Icons"}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0.5rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-align: center;
+        }
+        .icon-item:hover {
+            background-color: var(--bs-light);
+            transform: translateY(-2px);
+        }
+        .icon-item i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--bs-primary);
+        }
+        .icon-item .icon-name {
+            font-size: 0.75rem;
+            color: var(--bs-secondary);
+            word-break: break-all;
+        }
+        .icon-search {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+        }
+        .tab-pane {
+            padding-top: 1rem;
+        }
+        .icon-size-demo i {
+            margin: 0 0.5rem;
+        }
+        .icon-color-demo i {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        {{> sidebar-ela}}
+        
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Modern Icons</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Icons</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Modern Icons</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Icon Libraries Tabs -->
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fontawesome" type="button">
+                                        <i class="fab fa-font-awesome me-2"></i>Font Awesome 6
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bootstrap" type="button">
+                                        <i class="bi bi-bootstrap me-2"></i>Bootstrap Icons
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#usage" type="button">
+                                        <i class="fas fa-code me-2"></i>Usage Examples
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <!-- Font Awesome Tab -->
+                                <div class="tab-pane fade show active" id="fontawesome">
+                                    <div class="icon-search">
+                                        <input type="text" class="form-control" id="faSearch" placeholder="Search Font Awesome icons...">
+                                    </div>
+
+                                    <h5 class="mb-3">Common Icons</h5>
+                                    <div class="icon-grid" id="faCommon">
+                                        <div class="icon-item">
+                                            <i class="fas fa-home"></i>
+                                            <span class="icon-name">fa-home</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-user"></i>
+                                            <span class="icon-name">fa-user</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-cog"></i>
+                                            <span class="icon-name">fa-cog</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-search"></i>
+                                            <span class="icon-name">fa-search</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span class="icon-name">fa-heart</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-star"></i>
+                                            <span class="icon-name">fa-star</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-bell"></i>
+                                            <span class="icon-name">fa-bell</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-envelope"></i>
+                                            <span class="icon-name">fa-envelope</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span class="icon-name">fa-trash</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span class="icon-name">fa-edit</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-check"></i>
+                                            <span class="icon-name">fa-check</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-times"></i>
+                                            <span class="icon-name">fa-times</span>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Navigation & Arrows</h5>
+                                    <div class="icon-grid">
+                                        <div class="icon-item">
+                                            <i class="fas fa-arrow-up"></i>
+                                            <span class="icon-name">fa-arrow-up</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-arrow-down"></i>
+                                            <span class="icon-name">fa-arrow-down</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-arrow-left"></i>
+                                            <span class="icon-name">fa-arrow-left</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-arrow-right"></i>
+                                            <span class="icon-name">fa-arrow-right</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-chevron-up"></i>
+                                            <span class="icon-name">fa-chevron-up</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-chevron-down"></i>
+                                            <span class="icon-name">fa-chevron-down</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-chevron-left"></i>
+                                            <span class="icon-name">fa-chevron-left</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-chevron-right"></i>
+                                            <span class="icon-name">fa-chevron-right</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-angle-double-up"></i>
+                                            <span class="icon-name">fa-angle-double-up</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-angle-double-down"></i>
+                                            <span class="icon-name">fa-angle-double-down</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-caret-up"></i>
+                                            <span class="icon-name">fa-caret-up</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-caret-down"></i>
+                                            <span class="icon-name">fa-caret-down</span>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Business & Commerce</h5>
+                                    <div class="icon-grid">
+                                        <div class="icon-item">
+                                            <i class="fas fa-chart-line"></i>
+                                            <span class="icon-name">fa-chart-line</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-chart-bar"></i>
+                                            <span class="icon-name">fa-chart-bar</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-chart-pie"></i>
+                                            <span class="icon-name">fa-chart-pie</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="icon-name">fa-dollar-sign</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="icon-name">fa-shopping-cart</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-credit-card"></i>
+                                            <span class="icon-name">fa-credit-card</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span class="icon-name">fa-briefcase</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-building"></i>
+                                            <span class="icon-name">fa-building</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-calculator"></i>
+                                            <span class="icon-name">fa-calculator</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-coins"></i>
+                                            <span class="icon-name">fa-coins</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-receipt"></i>
+                                            <span class="icon-name">fa-receipt</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-wallet"></i>
+                                            <span class="icon-name">fa-wallet</span>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Files & Documents</h5>
+                                    <div class="icon-grid">
+                                        <div class="icon-item">
+                                            <i class="fas fa-file"></i>
+                                            <span class="icon-name">fa-file</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span class="icon-name">fa-file-alt</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span class="icon-name">fa-file-pdf</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-file-word"></i>
+                                            <span class="icon-name">fa-file-word</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-file-excel"></i>
+                                            <span class="icon-name">fa-file-excel</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-file-image"></i>
+                                            <span class="icon-name">fa-file-image</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-folder"></i>
+                                            <span class="icon-name">fa-folder</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-folder-open"></i>
+                                            <span class="icon-name">fa-folder-open</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-download"></i>
+                                            <span class="icon-name">fa-download</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-upload"></i>
+                                            <span class="icon-name">fa-upload</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-paperclip"></i>
+                                            <span class="icon-name">fa-paperclip</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-copy"></i>
+                                            <span class="icon-name">fa-copy</span>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Social & Brands</h5>
+                                    <div class="icon-grid">
+                                        <div class="icon-item">
+                                            <i class="fab fa-facebook"></i>
+                                            <span class="icon-name">fa-facebook</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-twitter"></i>
+                                            <span class="icon-name">fa-twitter</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-instagram"></i>
+                                            <span class="icon-name">fa-instagram</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-linkedin"></i>
+                                            <span class="icon-name">fa-linkedin</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-github"></i>
+                                            <span class="icon-name">fa-github</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-youtube"></i>
+                                            <span class="icon-name">fa-youtube</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-google"></i>
+                                            <span class="icon-name">fa-google</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-apple"></i>
+                                            <span class="icon-name">fa-apple</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-microsoft"></i>
+                                            <span class="icon-name">fa-microsoft</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-slack"></i>
+                                            <span class="icon-name">fa-slack</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-discord"></i>
+                                            <span class="icon-name">fa-discord</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fab fa-whatsapp"></i>
+                                            <span class="icon-name">fa-whatsapp</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bootstrap Icons Tab -->
+                                <div class="tab-pane fade" id="bootstrap">
+                                    <div class="icon-search">
+                                        <input type="text" class="form-control" id="biSearch" placeholder="Search Bootstrap icons...">
+                                    </div>
+
+                                    <h5 class="mb-3">Common Icons</h5>
+                                    <div class="icon-grid" id="biCommon">
+                                        <div class="icon-item">
+                                            <i class="bi bi-house"></i>
+                                            <span class="icon-name">bi-house</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-person"></i>
+                                            <span class="icon-name">bi-person</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-gear"></i>
+                                            <span class="icon-name">bi-gear</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-search"></i>
+                                            <span class="icon-name">bi-search</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-heart"></i>
+                                            <span class="icon-name">bi-heart</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-star"></i>
+                                            <span class="icon-name">bi-star</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-bell"></i>
+                                            <span class="icon-name">bi-bell</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-envelope"></i>
+                                            <span class="icon-name">bi-envelope</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-trash"></i>
+                                            <span class="icon-name">bi-trash</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-pencil"></i>
+                                            <span class="icon-name">bi-pencil</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-check"></i>
+                                            <span class="icon-name">bi-check</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-x"></i>
+                                            <span class="icon-name">bi-x</span>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Bootstrap Specific</h5>
+                                    <div class="icon-grid">
+                                        <div class="icon-item">
+                                            <i class="bi bi-bootstrap"></i>
+                                            <span class="icon-name">bi-bootstrap</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-bootstrap-fill"></i>
+                                            <span class="icon-name">bi-bootstrap-fill</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-list"></i>
+                                            <span class="icon-name">bi-list</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-grid"></i>
+                                            <span class="icon-name">bi-grid</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-grid-3x3"></i>
+                                            <span class="icon-name">bi-grid-3x3</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-columns"></i>
+                                            <span class="icon-name">bi-columns</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-layout-text-sidebar"></i>
+                                            <span class="icon-name">bi-layout-text-sidebar</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-card-text"></i>
+                                            <span class="icon-name">bi-card-text</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-menu-button"></i>
+                                            <span class="icon-name">bi-menu-button</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-toggles"></i>
+                                            <span class="icon-name">bi-toggles</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-sliders"></i>
+                                            <span class="icon-name">bi-sliders</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-palette"></i>
+                                            <span class="icon-name">bi-palette</span>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Media & Files</h5>
+                                    <div class="icon-grid">
+                                        <div class="icon-item">
+                                            <i class="bi bi-image"></i>
+                                            <span class="icon-name">bi-image</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-camera"></i>
+                                            <span class="icon-name">bi-camera</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-play-circle"></i>
+                                            <span class="icon-name">bi-play-circle</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-pause-circle"></i>
+                                            <span class="icon-name">bi-pause-circle</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-volume-up"></i>
+                                            <span class="icon-name">bi-volume-up</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-volume-mute"></i>
+                                            <span class="icon-name">bi-volume-mute</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-file-earmark"></i>
+                                            <span class="icon-name">bi-file-earmark</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-file-pdf"></i>
+                                            <span class="icon-name">bi-file-pdf</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-file-word"></i>
+                                            <span class="icon-name">bi-file-word</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-file-excel"></i>
+                                            <span class="icon-name">bi-file-excel</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-file-zip"></i>
+                                            <span class="icon-name">bi-file-zip</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="bi bi-folder"></i>
+                                            <span class="icon-name">bi-folder</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Usage Examples Tab -->
+                                <div class="tab-pane fade" id="usage">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <strong>Icon Sizes</strong>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6>Font Awesome Sizes</h6>
+                                                    <div class="icon-size-demo mb-3">
+                                                        <i class="fas fa-star fa-xs"></i>
+                                                        <i class="fas fa-star fa-sm"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star fa-lg"></i>
+                                                        <i class="fas fa-star fa-2x"></i>
+                                                        <i class="fas fa-star fa-3x"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="fas fa-star fa-xs"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-sm"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-lg"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-2x"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-3x"&gt;&lt;/i&gt;</code></pre>
+
+                                                    <h6 class="mt-4">Bootstrap Icons with Font Size</h6>
+                                                    <div class="icon-size-demo mb-3">
+                                                        <i class="bi bi-star" style="font-size: 0.75rem;"></i>
+                                                        <i class="bi bi-star" style="font-size: 1rem;"></i>
+                                                        <i class="bi bi-star" style="font-size: 1.5rem;"></i>
+                                                        <i class="bi bi-star" style="font-size: 2rem;"></i>
+                                                        <i class="bi bi-star" style="font-size: 3rem;"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="bi bi-star" style="font-size: 1rem;"&gt;&lt;/i&gt;
+&lt;i class="bi bi-star" style="font-size: 2rem;"&gt;&lt;/i&gt;
+&lt;i class="bi bi-star" style="font-size: 3rem;"&gt;&lt;/i&gt;</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <strong>Icon Colors</strong>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6>Using Bootstrap Text Colors</h6>
+                                                    <div class="icon-color-demo mb-3">
+                                                        <i class="fas fa-heart text-primary"></i>
+                                                        <i class="fas fa-heart text-secondary"></i>
+                                                        <i class="fas fa-heart text-success"></i>
+                                                        <i class="fas fa-heart text-danger"></i>
+                                                        <i class="fas fa-heart text-warning"></i>
+                                                        <i class="fas fa-heart text-info"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="fas fa-heart text-primary"&gt;&lt;/i&gt;
+&lt;i class="fas fa-heart text-success"&gt;&lt;/i&gt;
+&lt;i class="fas fa-heart text-danger"&gt;&lt;/i&gt;</code></pre>
+
+                                                    <h6 class="mt-4">Custom Colors</h6>
+                                                    <div class="icon-color-demo mb-3">
+                                                        <i class="bi bi-heart-fill" style="color: #e91e63;"></i>
+                                                        <i class="bi bi-heart-fill" style="color: #9c27b0;"></i>
+                                                        <i class="bi bi-heart-fill" style="color: #673ab7;"></i>
+                                                        <i class="bi bi-heart-fill" style="color: #3f51b5;"></i>
+                                                        <i class="bi bi-heart-fill" style="color: #00bcd4;"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="bi bi-heart-fill" style="color: #e91e63;"&gt;&lt;/i&gt;</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <strong>Icon Animations</strong>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6>Font Awesome Animations</h6>
+                                                    <div class="mb-3">
+                                                        <i class="fas fa-spinner fa-spin fa-2x me-3"></i>
+                                                        <i class="fas fa-circle-notch fa-spin fa-2x me-3"></i>
+                                                        <i class="fas fa-sync fa-spin fa-2x me-3"></i>
+                                                        <i class="fas fa-cog fa-spin fa-2x me-3"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="fas fa-spinner fa-spin"&gt;&lt;/i&gt;
+&lt;i class="fas fa-circle-notch fa-spin"&gt;&lt;/i&gt;
+&lt;i class="fas fa-sync fa-spin"&gt;&lt;/i&gt;</code></pre>
+
+                                                    <h6 class="mt-4">Pulse Animation</h6>
+                                                    <div class="mb-3">
+                                                        <i class="fas fa-heart fa-beat fa-2x me-3 text-danger"></i>
+                                                        <i class="fas fa-bell fa-shake fa-2x me-3 text-warning"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="fas fa-heart fa-beat"&gt;&lt;/i&gt;
+&lt;i class="fas fa-bell fa-shake"&gt;&lt;/i&gt;</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <strong>Icon Styles</strong>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6>Font Awesome Styles</h6>
+                                                    <div class="mb-3">
+                                                        <i class="fas fa-user fa-2x me-3"></i>
+                                                        <i class="far fa-user fa-2x me-3"></i>
+                                                        <i class="fab fa-github fa-2x me-3"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="fas fa-user"&gt;&lt;/i&gt; &lt;!-- Solid --&gt;
+&lt;i class="far fa-user"&gt;&lt;/i&gt; &lt;!-- Regular --&gt;
+&lt;i class="fab fa-github"&gt;&lt;/i&gt; &lt;!-- Brands --&gt;</code></pre>
+
+                                                    <h6 class="mt-4">Bootstrap Icons Variants</h6>
+                                                    <div class="mb-3">
+                                                        <i class="bi bi-heart fa-2x me-3"></i>
+                                                        <i class="bi bi-heart-fill fa-2x me-3"></i>
+                                                        <i class="bi bi-heart-half fa-2x me-3"></i>
+                                                    </div>
+                                                    <pre><code>&lt;i class="bi bi-heart"&gt;&lt;/i&gt;
+&lt;i class="bi bi-heart-fill"&gt;&lt;/i&gt;
+&lt;i class="bi bi-heart-half"&gt;&lt;/i&gt;</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <strong>Usage in Components</strong>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6>Buttons with Icons</h6>
+                                                    <div class="mb-3">
+                                                        <button class="btn btn-primary me-2">
+                                                            <i class="fas fa-download me-2"></i>Download
+                                                        </button>
+                                                        <button class="btn btn-success me-2">
+                                                            <i class="fas fa-check me-2"></i>Success
+                                                        </button>
+                                                        <button class="btn btn-danger me-2">
+                                                            <i class="fas fa-trash me-2"></i>Delete
+                                                        </button>
+                                                        <button class="btn btn-info me-2">
+                                                            <i class="bi bi-info-circle me-2"></i>Info
+                                                        </button>
+                                                    </div>
+
+                                                    <h6 class="mt-4">Input Groups</h6>
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="input-group">
+                                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                                <input type="text" class="form-control" placeholder="Username">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="input-group">
+                                                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                                                <input type="email" class="form-control" placeholder="Email">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <h6 class="mt-4">List Groups</h6>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            <i class="fas fa-home me-2 text-primary"></i>Home
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <i class="fas fa-user me-2 text-success"></i>Profile
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <i class="fas fa-cog me-2 text-secondary"></i>Settings
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            {{> footer}}
+        </div>
+    </div>
+
+    {{> scripts}}
+    <script>
+        // Search functionality for Font Awesome icons
+        document.getElementById('faSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const icons = document.querySelectorAll('#fontawesome .icon-item');
+            
+            icons.forEach(icon => {
+                const iconName = icon.querySelector('.icon-name').textContent.toLowerCase();
+                if (iconName.includes(searchTerm)) {
+                    icon.style.display = 'flex';
+                } else {
+                    icon.style.display = 'none';
+                }
+            });
+        });
+
+        // Search functionality for Bootstrap icons
+        document.getElementById('biSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const icons = document.querySelectorAll('#bootstrap .icon-item');
+            
+            icons.forEach(icon => {
+                const iconName = icon.querySelector('.icon-name').textContent.toLowerCase();
+                if (iconName.includes(searchTerm)) {
+                    icon.style.display = 'flex';
+                } else {
+                    icon.style.display = 'none';
+                }
+            });
+        });
+
+        // Copy icon class to clipboard on click
+        document.querySelectorAll('.icon-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const iconClass = this.querySelector('i').className;
+                navigator.clipboard.writeText(`<i class="${iconClass}"></i>`);
+                
+                // Show feedback
+                const originalText = this.querySelector('.icon-name').textContent;
+                this.querySelector('.icon-name').textContent = 'Copied!';
+                setTimeout(() => {
+                    this.querySelector('.icon-name').textContent = originalText;
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

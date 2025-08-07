@@ -37,3 +37,5 @@ lerna-debug.log*
 # Vite
 .vite/
 vite.config.js.timestamp-*
+CLAUDE.md
+CLAUDE.md

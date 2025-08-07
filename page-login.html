@@ -1,52 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-{{> head title="ElaAdmin - ElaAdmin"}}
+  <head>
+    {{> head title="Login"}}
+  </head>
 
-<body>
-<div class="sufee-login d-flex align-content-center flex-wrap">
+  <body class="bg-light">
+    <div class="min-vh-100 d-flex align-items-center justify-content-center p-4">
       <div class="container">
-        <div class="login-content">
-          <div class="login-logo">
-            <a href="index.html">
-              <img class="align-content" src="images/logo.png" alt="" />
-            </a>
-          </div>
-          <div class="login-form">
-            <form>
-              <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control" placeholder="Email" />
-              </div>
-              <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="Password" />
-              </div>
-              <div class="checkbox">
-                <label> <input type="checkbox" /> Remember Me </label>
-                <label class="pull-right">
-                  <a href="#">Forgotten Password?</a>
-                </label>
-              </div>
-              <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
-              <div class="social-login-content">
-                <div class="social-button">
-                  <button type="button" class="btn social facebook btn-flat btn-addon mb-3">
-                    <i class="ti-facebook"></i>Sign in with facebook
-                  </button>
-                  <button type="button" class="btn social twitter btn-flat btn-addon mt-2">
-                    <i class="ti-twitter"></i>Sign in with twitter
-                  </button>
+        <div class="row justify-content-center">
+          <div class="col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <!-- Logo -->
+            <div class="text-center mb-4">
+              <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
+                <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
+                  <i class="fas fa-layer-group text-primary" style="font-size: 2rem;"></i>
                 </div>
+                <h1 class="mb-0 fw-bold text-dark">ElaAdmin</h1>
+              </a>
+            </div>
+
+            <!-- Login Card -->
+            <div class="card shadow border-0" style="border-radius: 12px;">
+              <div class="card-body p-5">
+                <h4 class="card-title text-center mb-1">Welcome Back!</h4>
+                <p class="text-center text-muted mb-4 small">Please sign in to your account</p>
+                
+                <form>
+                  <!-- Email Input -->
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-white">
+                        <i class="fas fa-envelope text-muted"></i>
+                      </span>
+                      <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email" 
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Password Input -->
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-white">
+                        <i class="fas fa-lock text-muted"></i>
+                      </span>
+                      <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password" 
+                        placeholder="Enter your password"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Remember & Forgot -->
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="remember">
+                      <label class="form-check-label" for="remember">
+                        Remember me
+                      </label>
+                    </div>
+                    <a href="pages-forget.html" class="text-decoration-none small">
+                      Forgot Password?
+                    </a>
+                  </div>
+
+                  <!-- Sign In Button -->
+                  <button type="submit" class="btn btn-primary w-100 py-2 mb-4">
+                    <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                  </button>
+
+                  <!-- Divider -->
+                  <div class="position-relative text-center mb-4">
+                    <hr class="text-muted">
+                    <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small">
+                      or continue with
+                    </span>
+                  </div>
+
+                  <!-- Social Login Buttons -->
+                  <div class="row g-2 mb-4">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger w-100 py-2">
+                        <i class="fab fa-google"></i>
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-primary w-100 py-2">
+                        <i class="fab fa-facebook-f"></i>
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-dark w-100 py-2">
+                        <i class="fab fa-x-twitter"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Sign Up Link -->
+                  <div class="text-center">
+                    <p class="text-muted mb-0 small">
+                      Don't have an account? 
+                      <a href="page-register.html" class="text-decoration-none">
+                        Create one here
+                      </a>
+                    </p>
+                  </div>
+                </form>
               </div>
-              <div class="register-link m-t-15 text-center">
-                <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     {{> scripts}}
-</body>
+  </body>
 </html>

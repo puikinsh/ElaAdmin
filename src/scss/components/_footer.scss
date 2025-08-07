@@ -1,0 +1,72 @@
+@use '../variables' as *;
+
+// Footer Styles
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e7e7e7;
+  padding: 1rem 0;
+  margin-top: auto; // Push footer to bottom when using flexbox
+  
+  // Copyright text styling
+  p {
+    font-size: 12px; // Smaller text size (reduced by 2px from default 14px)
+    margin-bottom: 0;
+    color: #6c757d;
+  }
+  
+  a {
+    color: $primary;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      text-decoration: underline;
+      color: darken($primary, 10%);
+    }
+  }
+}
+
+// Ensure proper sticky footer behavior
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// Main content wrapper should grow to push footer down
+.right-panel,
+.main-content {
+  flex: 1 0 auto; // Grow and shrink, but don't allow to be smaller than content
+  display: flex;
+  flex-direction: column;
+}
+
+// Content area should also grow
+.content {
+  flex: 1 0 auto;
+}
+
+// Ensure footer is always at bottom
+.footer {
+  flex-shrink: 0; // Don't allow footer to shrink
+}
+
+// Mobile adjustments
+@media (max-width: 767.98px) {
+  .footer {
+    padding: 0.75rem 0;
+    
+    p {
+      font-size: 11px; // Even smaller on mobile
+    }
+    
+    .text-md-end {
+      text-align: left !important;
+      margin-top: 0.5rem;
+    }
+  }
+}

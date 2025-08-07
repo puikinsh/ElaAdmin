@@ -45,7 +45,7 @@ class NavigationManager {
     }
 
     // Close search when clicking outside
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       if (!e.target.closest('.header-search')) {
         this.closeSearch();
       }
@@ -61,7 +61,7 @@ class NavigationManager {
 
     // Prevent dropdown close when clicking inside
     document.querySelectorAll('.dropdown-menu').forEach(menu => {
-      menu.addEventListener('click', (e) => {
+      menu.addEventListener('click', e => {
         e.stopPropagation();
       });
     });
@@ -73,7 +73,7 @@ class NavigationManager {
     if (window.innerWidth <= 991) {
       // Mobile behavior
       const isOpen = this.sidebar.classList.contains('show');
-      
+
       if (isOpen) {
         this.closeSidebar();
       } else {
@@ -82,7 +82,7 @@ class NavigationManager {
     } else {
       // Desktop behavior
       this.sidebar.classList.toggle('collapsed');
-      
+
       // Save state to localStorage
       const isCollapsed = this.sidebar.classList.contains('collapsed');
       localStorage.setItem('sidebarCollapsed', isCollapsed.toString());
@@ -114,7 +114,7 @@ class NavigationManager {
     if (!searchContainer) return;
 
     const isActive = searchContainer.classList.contains('active');
-    
+
     if (isActive) {
       this.closeSearch();
     } else {
@@ -138,13 +138,13 @@ class NavigationManager {
     if (window.innerWidth > 991) {
       // Desktop mode
       this.closeSidebar();
-      
+
       // Restore collapsed state from localStorage
       const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
       if (this.sidebar) {
         this.sidebar.classList.toggle('collapsed', isCollapsed);
       }
-      
+
       // Remove overlay if it exists
       if (this.sidebarOverlay) {
         this.sidebarOverlay.remove();
@@ -156,7 +156,7 @@ class NavigationManager {
         this.createSidebarOverlay();
         this.sidebarOverlay.addEventListener('click', () => this.closeSidebar());
       }
-      
+
       // Remove collapsed class on mobile
       if (this.sidebar) {
         this.sidebar.classList.remove('collapsed');
@@ -175,7 +175,7 @@ class NavigationManager {
     const collapseElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
     collapseElements.forEach(element => {
       new bootstrap.Collapse(element.getAttribute('data-bs-target'), {
-        toggle: false
+        toggle: false,
       });
     });
 

@@ -1,118 +1,204 @@
-<!-- Working Sidebar -->
-<div id="left-panel" style="position: fixed; top: 60px; left: 0; width: 250px; height: calc(100vh - 60px); background: white; border-right: 1px solid #ddd; overflow-y: auto; z-index: 999; transition: transform 0.3s ease;">
-  <ul style="list-style: none; padding: 20px 0; margin: 0;">
-    <li style="margin: 0;">
-      <a href="index.html" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; transition: all 0.2s;">
-        <i class="fa fa-home" style="width: 20px; margin-right: 10px; text-align: center;"></i> Dashboard
-      </a>
-    </li>
-    
-    <li style="padding: 15px 20px 8px; font-size: 11px; text-transform: uppercase; font-weight: 600; color: #999; letter-spacing: 1px;">UI ELEMENTS</li>
-    
-    <li style="margin: 0;">
-      <a href="#" onclick="toggleSidebarDropdown('components')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
-        <i class="fa fa-cogs" style="width: 20px; margin-right: 10px; text-align: center;"></i> Components
-        <i id="components-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
-      </a>
-      <ul id="components" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
-        <li><a href="ui-buttons.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Buttons</a></li>
-        <li><a href="ui-badges.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Badges</a></li>
-        <li><a href="ui-tabs.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Tabs</a></li>
-        <li><a href="ui-alerts.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Alerts</a></li>
-        <li><a href="ui-modals.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Modals</a></li>
-      </ul>
-    </li>
-    
-    <li style="margin: 0;">
-      <a href="#" onclick="toggleSidebarDropdown('tables')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
-        <i class="fa fa-table" style="width: 20px; margin-right: 10px; text-align: center;"></i> Tables
-        <i id="tables-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
-      </a>
-      <ul id="tables" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
-        <li><a href="tables-basic.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Basic Table</a></li>
-        <li><a href="tables-data.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Data Table</a></li>
-      </ul>
-    </li>
-    
-    <li style="margin: 0;">
-      <a href="#" onclick="toggleSidebarDropdown('forms')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
-        <i class="fa fa-edit" style="width: 20px; margin-right: 10px; text-align: center;"></i> Forms
-        <i id="forms-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
-      </a>
-      <ul id="forms" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
-        <li><a href="forms-basic.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Basic Form</a></li>
-        <li><a href="forms-advanced.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Advanced Form</a></li>
-      </ul>
-    </li>
-    
-    <li style="margin: 0;">
-      <a href="#" onclick="toggleSidebarDropdown('charts')" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; position: relative; transition: all 0.2s;">
-        <i class="fa fa-bar-chart" style="width: 20px; margin-right: 10px; text-align: center;"></i> Charts
-        <i id="charts-arrow" class="fa fa-chevron-down" style="position: absolute; right: 20px; transition: transform 0.2s; font-size: 12px;"></i>
-      </a>
-      <ul id="charts" style="background: #f8f9fa; list-style: none; padding: 0; margin: 0; display: none;">
-        <li><a href="charts-chartjs.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Chart JS</a></li>
-        <li><a href="charts-flot.html" style="display: block; padding: 8px 50px; font-size: 14px; color: #666; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#e9ecef'; this.style.color='#007bff'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#666'">Flot Charts</a></li>
-      </ul>
-    </li>
-    
-    <li style="margin: 0;">
-      <a href="widgets.html" style="display: block; padding: 12px 20px; color: #555; text-decoration: none; transition: all 0.2s;">
-        <i class="fa fa-puzzle-piece" style="width: 20px; margin-right: 10px; text-align: center;"></i> Widgets
-      </a>
-    </li>
-  </ul>
-</div>
+<!-- Left Panel -->
+<aside id='left-panel' class='left-panel'>
+  <!-- Navigation Menu -->
+  <div class='sidebar-menu'>
+    <nav class='nav-menu'>
+      <!-- Dashboard -->
+      <div class='nav-item'>
+        <a href='index.html' class='nav-link active'>
+          <i class='nav-icon fas fa-tachometer-alt'></i>
+          <span class='nav-text'>Dashboard</span>
+        </a>
+      </div>
 
-<style>
-  /* Hover effects */
-  #left-panel a:hover {
-    background: #f8f9fa !important;
-    color: #007bff !important;
-    text-decoration: none !important;
-  }
-  
-  .dropdown-menu a:hover {
-    background: #e9ecef !important;
-    color: #007bff !important;
-  }
-  
-  .has-dropdown.open .fa-chevron-down {
-    transform: rotate(180deg) !important;
-  }
-  
-  .has-dropdown.open .dropdown-menu {
-    display: block !important;
-  }
-  
-  /* Main content adjustment */
-  .main-content, .right-panel {
-    margin-left: 250px !important;
-    margin-top: 60px !important;
-  }
-  
-  /* Hidden sidebar */
-  #left-panel.hidden {
-    transform: translateX(-250px) !important;
-  }
-  
-  .sidebar-hidden .main-content,
-  .sidebar-hidden .right-panel {
-    margin-left: 0 !important;
-  }
-  
-  /* Mobile */
-  @media (max-width: 768px) {
-    #left-panel {
-      transform: translateX(-250px) !important;
-    }
-    
-    #left-panel.show {
-      transform: translateX(0) !important;
-    }
-    
-    .main-content, .right-panel {
-      margin-left: 0 !important;
-    }
-  }
-</style>
+      <!-- UI Elements Section -->
+      <div class='nav-section'>
+        <span class='nav-section-title'>UI ELEMENTS</span>
+      </div>
+
+      <!-- Components Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='components'>
+          <i class='nav-icon fas fa-puzzle-piece'></i>
+          <span class='nav-text'>Components</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='components-menu'>
+          <a href='ui-buttons.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Buttons</span>
+          </a>
+          <a href='ui-badges.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Badges</span>
+          </a>
+          <a href='ui-tabs.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Tabs</span>
+          </a>
+          <a href='ui-cards.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Cards</span>
+          </a>
+          <a href='ui-alerts.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Alerts</span>
+          </a>
+          <a href='ui-progressbar.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Progress Bars</span>
+          </a>
+          <a href='ui-modals.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Modals</span>
+          </a>
+          <a href='ui-switches.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Switches</span>
+          </a>
+          <a href='ui-grids.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Grids</span>
+          </a>
+          <a href='ui-typgraphy.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Typography</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tables Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='tables'>
+          <i class='nav-icon fas fa-table'></i>
+          <span class='nav-text'>Tables</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='tables-menu'>
+          <a href='tables-basic.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Basic Table</span>
+          </a>
+          <a href='tables-data.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Data Table</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Forms Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='forms'>
+          <i class='nav-icon fas fa-edit'></i>
+          <span class='nav-text'>Forms</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='forms-menu'>
+          <a href='forms-basic.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Basic Form</span>
+          </a>
+          <a href='forms-advanced.html' class='submenu-link'>
+            <i class='submenu-icon far fa-circle'></i>
+            <span>Advanced Form</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Icons Section -->
+      <div class='nav-section'>
+        <span class='nav-section-title'>ICONS & CHARTS</span>
+      </div>
+
+      <!-- Icons Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='icons'>
+          <i class='nav-icon fas fa-icons'></i>
+          <span class='nav-text'>Icons</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='icons-menu'>
+          <a href='font-fontawesome.html' class='submenu-link'>
+            <i class='submenu-icon fab fa-font-awesome'></i>
+            <span>Font Awesome</span>
+          </a>
+          <a href='font-icons.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-icons'></i>
+            <span>Modern Icons</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Widgets -->
+      <div class='nav-item'>
+        <a href='widgets.html' class='nav-link'>
+          <i class='nav-icon fas fa-th-large'></i>
+          <span class='nav-text'>Widgets</span>
+        </a>
+      </div>
+
+      <!-- Charts Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='charts'>
+          <i class='nav-icon fas fa-chart-bar'></i>
+          <span class='nav-text'>Charts</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='charts-menu'>
+          <a href='charts-chartjs.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-chart-line'></i>
+            <span>Chart JS</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Maps Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='maps'>
+          <i class='nav-icon fas fa-map-marked-alt'></i>
+          <span class='nav-text'>Maps</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='maps-menu'>
+          <a href='maps-gmap.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-map'></i>
+            <span>Google Maps</span>
+          </a>
+          <a href='maps-vector.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-vector-square'></i>
+            <span>Vector Maps</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Extras Section -->
+      <div class='nav-section'>
+        <span class='nav-section-title'>EXTRAS</span>
+      </div>
+
+      <!-- Pages Dropdown -->
+      <div class='nav-item has-submenu'>
+        <a href='#' class='nav-link' data-menu='pages'>
+          <i class='nav-icon fas fa-file-alt'></i>
+          <span class='nav-text'>Pages</span>
+          <i class='nav-arrow fas fa-chevron-right'></i>
+        </a>
+        <div class='nav-submenu' id='pages-menu'>
+          <a href='page-login.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-sign-in-alt'></i>
+            <span>Login</span>
+          </a>
+          <a href='page-register.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-user-plus'></i>
+            <span>Register</span>
+          </a>
+          <a href='pages-forget.html' class='submenu-link'>
+            <i class='submenu-icon fas fa-key'></i>
+            <span>Forget Password</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</aside>
+<!-- End Left Panel -->

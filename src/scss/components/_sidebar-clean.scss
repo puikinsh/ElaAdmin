@@ -17,7 +17,7 @@
 
   @media (max-width: 991.98px) {
     transform: translateX(-280px);
-    
+
     &.show {
       transform: translateX(0);
     }
@@ -42,7 +42,7 @@
   color: #6c757d;
   letter-spacing: 0.05em;
   margin-top: 1rem;
-  
+
   &:first-child {
     margin-top: 0;
   }
@@ -92,7 +92,7 @@
     font-size: 12px;
   }
 
-  &[aria-expanded="true"] .submenu-arrow {
+  &[aria-expanded='true'] .submenu-arrow {
     transform: rotate(180deg);
   }
 }

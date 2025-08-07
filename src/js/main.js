@@ -13,81 +13,168 @@ window.bootstrap = bootstrap;
 // Main application initialization
 document.addEventListener('DOMContentLoaded', () => {
   initializeSidebar();
+  initializeSearch();
   initializeTooltips();
   initializePopovers();
   initializeNotifications();
+  initializeHeaderDropdowns();
 });
 
 // Sidebar toggle functionality
 function initializeSidebar() {
-  const sidebar = document.getElementById('sidebar');
+  const leftPanel = document.getElementById('left-panel');
   const sidebarToggle = document.getElementById('sidebar-toggle');
-  const mainContent = document.querySelector('.main-content');
-  const header = document.getElementById('header');
+  const body = document.body;
 
-  if (sidebarToggle && sidebar) {
-    // Load saved state from localStorage
+  // Only apply saved collapsed state on desktop
+  if (window.innerWidth > 991) {
     const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
-    if (isCollapsed) {
-      sidebar.classList.add('collapsed');
-      mainContent?.classList.add('collapsed');
-      header?.classList.add('collapsed');
+    if (isCollapsed && leftPanel) {
+      leftPanel.classList.add('collapsed');
     }
+  }
 
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-      mainContent?.classList.toggle('collapsed');
-      header?.classList.toggle('collapsed');
+  // Create overlay element if it doesn't exist
+  let overlay = document.querySelector('.sidebar-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    body.appendChild(overlay);
+  }
 
-      // Save state to localStorage
-      const collapsed = sidebar.classList.contains('collapsed');
-      localStorage.setItem('sidebarCollapsed', collapsed);
+  // Toggle sidebar
+  if (sidebarToggle && leftPanel) {
+    sidebarToggle.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (window.innerWidth <= 991) {
+        // Mobile behavior - slide in/out
+        const isOpen = leftPanel.classList.contains('mobile-open');
+        
+        if (isOpen) {
+          // Close sidebar
+          leftPanel.classList.remove('mobile-open');
+          overlay.classList.remove('show');
+          body.style.overflow = ''; // Re-enable scrolling
+        } else {
+          // Open sidebar
+          leftPanel.classList.add('mobile-open');
+          overlay.classList.add('show');
+          body.style.overflow = 'hidden'; // Prevent body scroll when menu is open
+        }
+      } else {
+        // Desktop behavior - collapse/expand
+        leftPanel.classList.toggle('collapsed');
+        const collapsed = leftPanel.classList.contains('collapsed');
+        localStorage.setItem('sidebarCollapsed', collapsed);
+      }
     });
   }
 
-  // Mobile sidebar toggle
-  if (window.innerWidth <= 991) {
-    const mobileOverlay = document.createElement('div');
-    mobileOverlay.className = 'sidebar-overlay';
-    document.body.appendChild(mobileOverlay);
-
-    sidebarToggle?.addEventListener('click', () => {
-      sidebar?.classList.toggle('show');
-      mobileOverlay.classList.toggle('show');
-    });
-
-    mobileOverlay.addEventListener('click', () => {
-      sidebar?.classList.remove('show');
-      mobileOverlay.classList.remove('show');
+  // Close mobile sidebar when clicking overlay
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      if (window.innerWidth <= 991) {
+        leftPanel?.classList.remove('mobile-open');
+        overlay.classList.remove('show');
+        body.style.overflow = '';
+      }
     });
   }
+
+  // Initialize dropdown functionality
+  initializeDropdowns();
 
   // Set active nav item based on current page
   setActiveNavItem();
+
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (window.innerWidth > 991) {
+        // Remove mobile classes on desktop
+        leftPanel?.classList.remove('mobile-open');
+        document.querySelector('.sidebar-overlay')?.classList.remove('show');
+      }
+    }, 250);
+  });
+}
+
+// Handle dropdown toggles
+function initializeDropdowns() {
+  const navLinks = document.querySelectorAll('.has-submenu > .nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      const parent = link.closest('.has-submenu');
+      const isOpen = parent.classList.contains('open');
+
+      // Close all other dropdowns
+      document.querySelectorAll('.has-submenu.open').forEach(item => {
+        if (item !== parent) {
+          item.classList.remove('open');
+        }
+      });
+
+      // Toggle current dropdown
+      parent.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Handle submenu link clicks
+  document.querySelectorAll('.submenu-link').forEach(link => {
+    link.addEventListener('click', e => {
+      // Remove active class from all submenu links
+      document.querySelectorAll('.submenu-link').forEach(l => l.classList.remove('active'));
+      // Add active class to clicked link
+      link.classList.add('active');
+    });
+  });
 }
 
 // Set active navigation item
 function setActiveNavItem() {
-  const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.sidebar .nav-link');
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-  navLinks.forEach(link => {
+  // Handle main nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '/' && href === '/index.html')) {
+    if (href === currentPath) {
       link.classList.add('active');
 
-      // Expand parent dropdown if exists
-      const parentDropdown = link.closest('.nav-dropdown');
-      if (parentDropdown) {
-        const dropdownToggle = parentDropdown.querySelector('[data-bs-toggle="collapse"]');
-        const dropdownMenu = parentDropdown.querySelector('.collapse');
-        if (dropdownToggle && dropdownMenu) {
-          dropdownMenu.classList.add('show');
-          dropdownToggle.setAttribute('aria-expanded', 'true');
+      // If it's a submenu item, open parent dropdown
+      const parent = link.closest('.has-submenu');
+      if (parent) {
+        parent.classList.add('open');
+      }
+    } else if (href === '#') {
+      // Check submenu items
+      const parent = link.closest('.has-submenu');
+      if (parent) {
+        const hasActiveChild = parent.querySelector(`.submenu-link[href="${currentPath}"]`);
+        if (hasActiveChild) {
+          parent.classList.add('open');
+          hasActiveChild.classList.add('active');
         }
       }
-    } else {
-      link.classList.remove('active');
+    }
+  });
+
+  // Handle submenu links
+  document.querySelectorAll('.submenu-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+      link.classList.add('active');
+      // Open parent dropdown
+      const parent = link.closest('.has-submenu');
+      if (parent) {
+        parent.classList.add('open');
+      }
     }
   });
 }
@@ -183,6 +270,93 @@ export function debounce(func, wait) {
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
+}
+
+// Initialize expandable search
+function initializeSearch() {
+  const searchToggle = document.getElementById('search-toggle');
+  const searchBox = document.getElementById('search-box');
+  const closeSearch = document.getElementById('close-search');
+  const searchInput = document.getElementById('search-input');
+
+  if (searchToggle && searchBox) {
+    // Open search box
+    searchToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      searchBox.classList.add('active');
+      searchInput?.focus();
+    });
+
+    // Close search box
+    closeSearch?.addEventListener('click', (e) => {
+      e.preventDefault();
+      searchBox.classList.remove('active');
+      searchInput.value = '';
+    });
+
+    // Close on Escape key
+    searchInput?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchBox.classList.remove('active');
+        searchInput.value = '';
+      }
+    });
+
+    // Handle search submission
+    searchInput?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+          console.log('Searching for:', searchTerm);
+          // Add your search logic here
+        }
+      }
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
+        searchBox.classList.remove('active');
+      }
+    });
+  }
+}
+
+// Initialize header dropdowns (Bootstrap 5 handles most of this)
+function initializeHeaderDropdowns() {
+  // Add custom click handlers for action buttons in dropdowns
+  document.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Handle specific actions here if needed
+      const action = this.textContent.trim();
+      
+      // Example: Handle logout
+      if (action === 'Logout') {
+        e.preventDefault();
+        console.log('Logout clicked');
+        // Add logout logic here
+      }
+      
+      // Example: Handle clear all notifications
+      if (this.textContent.includes('Clear all')) {
+        e.preventDefault();
+        console.log('Clear all notifications');
+        // Add clear logic here
+      }
+    });
+  });
+
+  // Add animation classes when dropdowns are shown
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('show.bs.dropdown', function() {
+      const menu = this.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.style.animation = 'fadeIn 0.2s ease-in-out';
+      }
+    });
+  });
 }
 
 // Export for use in other modules

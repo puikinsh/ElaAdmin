@@ -1,149 +1,37 @@
-<!-- Bootstrap 5 JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap 5 JavaScript via Vite -->
+<script type='module' src='/src/js/main.js'></script>
 
-<!-- Super Simple Working JavaScript -->
-<script>
-console.log('Simple JavaScript loading...');
-
-// Global functions that work with onclick
-function toggleSidebar() {
-  console.log('Toggle sidebar called');
-  const sidebar = document.getElementById('left-panel');
-  
-  if (sidebar) {
-    if (window.innerWidth <= 768) {
-      sidebar.classList.toggle('show');
-      console.log('Mobile sidebar toggled');
-    } else {
-      sidebar.classList.toggle('hidden');
-      document.body.classList.toggle('sidebar-hidden');
-      console.log('Desktop sidebar toggled');
-    }
-  }
-}
-
-function toggleDropdown(id) {
-  console.log('Toggle dropdown called:', id);
-  
-  // Close all dropdowns first
-  const allDropdowns = ['notifications', 'messages', 'userMenu'];
-  allDropdowns.forEach(dropdownId => {
-    const dropdown = document.getElementById(dropdownId);
-    if (dropdown && dropdownId !== id) {
-      dropdown.style.display = 'none';
-    }
-  });
-  
-  // Toggle the clicked dropdown
-  const dropdown = document.getElementById(id);
-  if (dropdown) {
-    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-      dropdown.style.display = 'block';
-      console.log('Dropdown opened:', id);
-    } else {
-      dropdown.style.display = 'none';
-      console.log('Dropdown closed:', id);
-    }
-  }
-}
-
-function toggleSidebarDropdown(id) {
-  console.log('Toggle sidebar dropdown called:', id);
-  
-  const dropdown = document.getElementById(id);
-  const arrow = document.getElementById(id + '-arrow');
-  
-  if (dropdown && arrow) {
-    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-      dropdown.style.display = 'block';
-      arrow.style.transform = 'rotate(180deg)';
-      console.log('Sidebar dropdown opened:', id);
-    } else {
-      dropdown.style.display = 'none';
-      arrow.style.transform = 'rotate(0deg)';
-      console.log('Sidebar dropdown closed:', id);
-    }
-  }
-}
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('[onclick*="toggleDropdown"]')) {
-    const allDropdowns = ['notifications', 'messages', 'userMenu'];
-    allDropdowns.forEach(id => {
-      const dropdown = document.getElementById(id);
-      if (dropdown) {
-        dropdown.style.display = 'none';
-      }
-    });
-  }
-});
-
-console.log('Simple JavaScript loaded successfully');
-</script>
-
-<!-- Dynamic Module Loading -->
-<script type="module">
-  console.log('Module script loading...');
-  
-  // Page-specific imports based on page parameter
-  const page = '{{page}}';
-  console.log('Page parameter:', page);
+<!-- Page-specific module loading -->
+<script type='module'>
+  // Get the current page for dynamic module loading
+  const currentPath = window.location.pathname;
+  const pageName = currentPath.split('/').pop().replace('.html', '');
   
   // Dynamic imports for page-specific functionality
-  if (!page || page === 'dashboard') {
-    console.log('Loading dashboard module...');
+  (async () => {
     try {
-      const module = await import('/src/js/pages/dashboard.js');
-      console.log('Dashboard module loaded');
-    } catch (error) {
-      console.log('Dashboard module not found or error:', error);
-    }
-  } else if (page === 'charts') {
-    console.log('Loading charts module...');
-    try {
-      const module = await import('/src/js/pages/charts.js');
-      console.log('Charts module loaded successfully');
-    } catch (error) {
-      console.error('Error loading charts module:', error);
-    }
-  } else if (page === 'forms') {
-    try {
-      const module = await import('/src/js/pages/forms.js');
-    } catch (error) {
-      console.log('Forms module not found:', error);
-    }
-  } else if (page === 'tables') {
-    try {
-      const module = await import('/src/js/pages/tables.js');
-      if (module.initializeTablesPage) {
-        module.initializeTablesPage();
+      if (currentPath.includes('dashboard') || currentPath === '/' || currentPath.includes('index')) {
+        const module = await import('/src/js/pages/dashboard.js');
+        console.log('Dashboard module loaded');
+      } else if (currentPath.includes('charts')) {
+        const module = await import('/src/js/pages/charts.js');
+        console.log('Charts module loaded');
+      } else if (currentPath.includes('forms')) {
+        const module = await import('/src/js/pages/forms.js');
+        console.log('Forms module loaded');
+      } else if (currentPath.includes('tables-data')) {
+        const module = await import('/src/js/pages/tables-data.js');
+        console.log('Data Tables module loaded');
+      } else if (currentPath.includes('tables')) {
+        const module = await import('/src/js/pages/tables.js');
+        if (module.initializeTablesPage) {
+          module.initializeTablesPage();
+        }
+        console.log('Tables module loaded');
       }
     } catch (error) {
-      console.log('Tables module not found:', error);
+      // Module not found is okay, not all pages have specific modules
+      console.log('No specific module for this page or module not found');
     }
-  }
-
-  // Load charts on all chart-related pages
-  const currentPath = window.location.pathname;
-  if (currentPath.includes('charts-') || currentPath.includes('chart')) {
-    console.log('Loading charts for page:', currentPath);
-    try {
-      const module = await import('/src/js/pages/charts.js');
-      console.log('Charts module loaded successfully');
-    } catch (error) {
-      console.error('Error loading charts module:', error);
-    }
-  }
-  
-  // Load charts for dashboard (index.html)
-  if (currentPath.includes('index.html') || currentPath === '/' || currentPath === '') {
-    console.log('Loading charts for dashboard page');
-    try {
-      const module = await import('/src/js/pages/charts.js');
-      console.log('Dashboard charts module loaded successfully');
-    } catch (error) {
-      console.error('Error loading dashboard charts module:', error);
-    }
-  }
+  })();
 </script>

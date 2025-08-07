@@ -1,208 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head title="ElaAdmin - ElaAdmin"}}
+<head>
+    {{> head title="Advanced Forms"}}
+</head>
 
 <body>
-    {{> sidebar-ela}}
-    
-    <div id="right-panel" class="right-panel">
-        {{> header-ela}}
+    <div class="wrapper">
+        {{> sidebar-ela}}
         
-<div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-          <div class="row m-0">
-            <div class="col-sm-4">
-              <div class="page-header float-left">
-                <div class="page-title">
-                  <h1>Dashboard</h1>
-                </div>
-              </div>
-            </div>
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Advanced Forms</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Advanced Forms</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
 
-        <div class="content">
-<div class="animated fadeIn">
-          <div class="row">
-            <div class="col-xs-6 col-sm-6">
-              <div class="card">
-                <div class="card-header">
-                  <strong>Masked Input</strong> <small> Small Text Mask</small>
-                </div>
-                <div class="card-body card-block">
-                  <div class="form-group">
-                    <label class="form-control-label">Date input</label>
-                    <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                      <input class="form-control" />
-                    </div>
-                    <small class="form-text text-muted">ex. 99/99/9999</small>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label">Phone input</label>
-                    <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                      <input class="form-control" />
-                    </div>
-                    <small class="form-text text-muted">ex. (999) 999-9999</small>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label">Taxpayer Identification Numbers</label>
-                    <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-usd"></i></div>
-                      <input class="form-control" />
-                    </div>
-                    <small class="form-text text-muted">ex. 99-9999999</small>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label">Social Security Number</label>
-                    <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                      <input class="form-control" />
-                    </div>
-                    <small class="form-text text-muted">ex. 999-99-9999</small>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label">Eye Script</label>
-                    <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                      <input class="form-control" />
-                    </div>
-                    <small class="form-text text-muted">ex. ~9.99 ~9.99 999</small>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label">Credit Card Number</label>
-                    <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
-                      <input class="form-control" />
-                    </div>
-                    <small class="form-text text-muted">ex. 9999 9999 9999 9999</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+                    <div class="row">
+                        <!-- Input Groups -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="me-2 fa fa-keyboard"></i>
+                                    <strong>Input Groups</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Username</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">@</span>
+                                            <input type="text" class="form-control" placeholder="Username">
+                                        </div>
+                                    </div>
 
-            <div class="col-xs-6 col-sm-6">
-              <div class="card">
-                <div class="card-header">
-                  <strong class="card-title">Standard Select</strong>
-                </div>
-                <div class="card-body">
-                  <select
-                    data-placeholder="Choose a Country..."
-                    class="standardSelect"
-                    tabindex="1"
-                  >
-                    <option value="" label="default"></option>
-                    <option value="United States">United States</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Aland Islands">Aland Islands</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="American Samoa">American Samoa</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Anguilla">Anguilla</option>
-                    <option value="Antarctica">Antarctica</option>
-                  </select>
-                </div>
-              </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Email">
+                                            <span class="input-group-text">@example.com</span>
+                                        </div>
+                                    </div>
 
-              <div class="card">
-                <div class="card-header">
-                  <strong class="card-title">Multi Select</strong>
-                </div>
-                <div class="card-body">
-                  <select data-placeholder="Choose a country..." multiple class="standardSelect">
-                    <option value="" label="default"></option>
-                    <option value="United States">United States</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Aland Islands">Aland Islands</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="American Samoa">American Samoa</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Anguilla">Anguilla</option>
-                    <option value="Antarctica">Antarctica</option>
-                  </select>
-                </div>
-              </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Price</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control" placeholder="Amount">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
 
-              <div class="card">
-                <div class="card-header">
-                  <strong class="card-title">Multi Select with Groups</strong>
+                                    <div class="mb-3">
+                                        <label class="form-label">URL</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">https://</span>
+                                            <input type="text" class="form-control" placeholder="example.com">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">With Button</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search for...">
+                                            <button class="btn btn-outline-secondary" type="button">
+                                                <i class="fa fa-search"></i> Search
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">With Dropdown</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Icon Inputs -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Icon Inputs</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Date Input</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone Input</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                            <input type="tel" class="form-control" placeholder="(999) 999-9999">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Input</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                            <input type="email" class="form-control" placeholder="email@example.com">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Password Input</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                            <input type="password" class="form-control" placeholder="Password">
+                                            <button class="btn btn-outline-secondary" type="button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Credit Card</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                            <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Location</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                                            <input type="text" class="form-control" placeholder="Enter location">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Select Controls -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Select Controls</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Basic Select</label>
+                                        <select class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Multiple Select</label>
+                                        <select class="form-select" multiple>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Select with Groups</label>
+                                        <select class="form-select">
+                                            <option selected>Choose team...</option>
+                                            <optgroup label="NFC East">
+                                                <option>Dallas Cowboys</option>
+                                                <option>New York Giants</option>
+                                                <option>Philadelphia Eagles</option>
+                                                <option>Washington Commanders</option>
+                                            </optgroup>
+                                            <optgroup label="NFC North">
+                                                <option>Chicago Bears</option>
+                                                <option>Detroit Lions</option>
+                                                <option>Green Bay Packers</option>
+                                                <option>Minnesota Vikings</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Size Variants</label>
+                                        <select class="form-select form-select-lg mb-2">
+                                            <option>Large select</option>
+                                        </select>
+                                        <select class="form-select mb-2">
+                                            <option>Normal select</option>
+                                        </select>
+                                        <select class="form-select form-select-sm">
+                                            <option>Small select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- File Inputs -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>File Inputs</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Default file input</label>
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="formFileMultiple" class="form-label">Multiple files</label>
+                                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="formFileDisabled" class="form-label">Disabled file input</label>
+                                        <input class="form-control" type="file" id="formFileDisabled" disabled>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Small file input</label>
+                                        <input class="form-control form-control-sm" type="file" id="formFileSm">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="formFileLg" class="form-label">Large file input</label>
+                                        <input class="form-control form-control-lg" type="file" id="formFileLg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Range & Color -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Range & Color Inputs</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="customRange1" class="form-label">Range Input</label>
+                                        <input type="range" class="form-range" id="customRange1">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="customRange2" class="form-label">Range with Steps</label>
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange2">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="customRange3" class="form-label">Range with Min/Max</label>
+                                        <input type="range" class="form-range" min="0" max="100" id="customRange3">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="exampleColorInput" class="form-label">Color Picker</label>
+                                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Multiple Colors</label>
+                                        <div class="d-flex gap-2">
+                                            <input type="color" class="form-control form-control-color" value="#007bff">
+                                            <input type="color" class="form-control form-control-color" value="#28a745">
+                                            <input type="color" class="form-control form-control-color" value="#dc3545">
+                                            <input type="color" class="form-control form-control-color" value="#ffc107">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Lists -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Data Lists</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="exampleDataList" class="form-label">Countries</label>
+                                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                                        <datalist id="datalistOptions">
+                                            <option value="United States">
+                                            <option value="United Kingdom">
+                                            <option value="Canada">
+                                            <option value="Australia">
+                                            <option value="Germany">
+                                            <option value="France">
+                                            <option value="Spain">
+                                            <option value="Italy">
+                                            <option value="Japan">
+                                            <option value="China">
+                                        </datalist>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="browserDataList" class="form-label">Browsers</label>
+                                        <input class="form-control" list="browsers" id="browserDataList" placeholder="Choose browser...">
+                                        <datalist id="browsers">
+                                            <option value="Chrome">
+                                            <option value="Firefox">
+                                            <option value="Safari">
+                                            <option value="Edge">
+                                            <option value="Opera">
+                                        </datalist>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="timeDataList" class="form-label">Time Zones</label>
+                                        <input class="form-control" list="timezones" id="timeDataList" placeholder="Select time zone...">
+                                        <datalist id="timezones">
+                                            <option value="Pacific Standard Time (PST)">
+                                            <option value="Mountain Standard Time (MST)">
+                                            <option value="Central Standard Time (CST)">
+                                            <option value="Eastern Standard Time (EST)">
+                                            <option value="Greenwich Mean Time (GMT)">
+                                            <option value="Central European Time (CET)">
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Labels -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Floating Labels</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Email address</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Password</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="floatingSelect">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <label for="floatingSelect">Works with selects</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea">Comments</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Validation -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Form Validation</strong>
+                                </div>
+                                <div class="card-body">
+                                    <form class="needs-validation" novalidate>
+                                        <div class="mb-3">
+                                            <label for="validationCustom01" class="form-label">First name</label>
+                                            <input type="text" class="form-control" id="validationCustom01" required>
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please provide a valid first name.</div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="validationCustom02" class="form-label">Last name</label>
+                                            <input type="text" class="form-control" id="validationCustom02" required>
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please provide a valid last name.</div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="validationCustomUsername" class="form-label">Username</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text">@</span>
+                                                <input type="text" class="form-control" id="validationCustomUsername" required>
+                                                <div class="invalid-feedback">Please choose a username.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="invalidCheck" required>
+                                                <label class="form-check-label" for="invalidCheck">
+                                                    Agree to terms and conditions
+                                                </label>
+                                                <div class="invalid-feedback">
+                                                    You must agree before submitting.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="btn btn-primary" type="submit">Submit form</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Input Sizing -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Input Sizing</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <input class="form-control form-control-lg" type="text" placeholder="Large input">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input class="form-control" type="text" placeholder="Default input">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input class="form-control form-control-sm" type="text" placeholder="Small input">
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="input-group input-group-lg mb-3">
+                                        <span class="input-group-text">Large</span>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Default</span>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="input-group input-group-sm mb-3">
+                                        <span class="input-group-text">Small</span>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Readonly & Disabled -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Readonly & Disabled</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Readonly Input</label>
+                                        <input class="form-control" type="text" value="Readonly input here..." readonly>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Readonly Plain Text</label>
+                                        <input class="form-control-plaintext" type="text" value="email@example.com" readonly>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Disabled Input</label>
+                                        <input class="form-control" type="text" value="Disabled input" disabled>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Disabled Select</label>
+                                        <select class="form-select" disabled>
+                                            <option>Disabled select</option>
+                                        </select>
+                                    </div>
+
+                                    <fieldset disabled>
+                                        <legend>Disabled fieldset</legend>
+                                        <div class="mb-3">
+                                            <label class="form-label">Disabled input</label>
+                                            <input type="text" class="form-control" placeholder="Disabled input">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Disabled select</label>
+                                            <select class="form-select">
+                                                <option>Disabled select</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HTML5 Input Types -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>HTML5 Input Types</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Date</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Time</label>
+                                            <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">DateTime Local</label>
+                                            <input type="datetime-local" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Month</label>
+                                            <input type="month" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Week</label>
+                                            <input type="week" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Number</label>
+                                            <input type="number" class="form-control" placeholder="123">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" placeholder="email@example.com">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">URL</label>
+                                            <input type="url" class="form-control" placeholder="https://example.com">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Search</label>
+                                            <input type="search" class="form-control" placeholder="Search...">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Tel</label>
+                                            <input type="tel" class="form-control" placeholder="(999) 999-9999">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Password</label>
+                                            <input type="password" class="form-control" placeholder="Password">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Color</label>
+                                            <input type="color" class="form-control form-control-color" value="#563d7c">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                  <select
-                    data-placeholder="Your Favorite Football Team"
-                    multiple
-                    class="standardSelect"
-                    tabindex="5"
-                  >
-                    <option value="" label="default"></option>
-                    <optgroup label="NFC EAST">
-                      <option>Dallas Cowboys</option>
-                      <option>New York Giants</option>
-                      <option>Philadelphia Eagles</option>
-                      <option>Washington Redskins</option>
-                    </optgroup>
-                    <optgroup label="NFC NORTH">
-                      <option>Chicago Bears</option>
-                      <option>Detroit Lions</option>
-                      <option>Green Bay Packers</option>
-                      <option>Minnesota Vikings</option>
-                    </optgroup>
-                    <optgroup label="NFC SOUTH">
-                      <option>Atlanta Falcons</option>
-                      <option>Carolina Panthers</option>
-                      <option>New Orleans Saints</option>
-                      <option>Tampa Bay Buccaneers</option>
-                    </optgroup>
-                    <optgroup label="NFC WEST">
-                      <option>Arizona Cardinals</option>
-                      <option>St. Louis Rams</option>
-                      <option>San Francisco 49ers</option>
-                      <option>Seattle Seahawks</option>
-                    </optgroup>
-                    <optgroup label="AFC EAST">
-                      <option>Buffalo Bills</option>
-                      <option>Miami Dolphins</option>
-                      <option>New England Patriots</option>
-                      <option>New York Jets</option>
-                    </optgroup>
-                    <optgroup label="AFC NORTH">
-                      <option>Baltimore Ravens</option>
-                      <option>Cincinnati Bengals</option>
-                      <option>Cleveland Browns</option>
-                      <option>Pittsburgh Steelers</option>
-                    </optgroup>
-                    <optgroup label="AFC SOUTH">
-                      <option>Houston Texans</option>
-                      <option>Indianapolis Colts</option>
-                      <option>Jacksonville Jaguars</option>
-                      <option>Tennessee Titans</option>
-                    </optgroup>
-                    <optgroup label="AFC WEST">
-                      <option>Denver Broncos</option>
-                      <option>Kansas City Chiefs</option>
-                      <option>Oakland Raiders</option>
-                      <option>San Diego Chargers</option>
-                    </optgroup>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
+            </main>
+            
+            {{> footer}}
         </div>
-        <!-- .animated -->
-      </div>
-      <!-- .content -->
-        </div>
-
-        {{> footer}}
     </div>
 
-    {{> scripts page="forms"}}
+    {{> scripts}}
+    <script>
+        // Form validation script
+        (function() {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 </html>

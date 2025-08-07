@@ -1,62 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head title="ElaAdmin - ElaAdmin"}}
+<head>
+    {{> head title="Typography"}}
+</head>
 
 <body>
-    {{> sidebar-ela}}
-    
-    <div id="right-panel" class="right-panel">
-        {{> header-ela}}
+    <div class="wrapper">
+        {{> sidebar-ela}}
         
-<div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-          <div class="row m-0">
-            <div class="col-sm-4">
-              <div class="page-header float-left">
-                <div class="page-title">
-                  <h1>Dashboard</h1>
-                </div>
-              </div>
-            </div>
-
-        <div class="content">
-<div class="animated fadeIn">
-          <div class="ui-typography">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <strong class="card-title" v-if="headerText">Typography</strong>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="typo-headers">
-                      <h1 class="pb-2 display-4">Very Important Information H1</h1>
-                      <h2 class="pb-2 display-5">Sections & Modal Names H2</h2>
-                      <h3 class="pb-2 display-5">Articles & Block Headings H3</h3>
-                      <h4 class="pb-2 display-5">Random Tiny Heading H4</h4>
-                      <h5 class="pb-2 display-5">Random Tiny Heading H5</h5>
-                      <h6 class="pb-4 display-5">Random Tiny Heading H6</h6>
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Typography</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Components</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Typography</li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
-                    <div class="typo-articles">
-                      <p>
-                        The unique stripes of zebras make them one of the animals most familiar to
-                        people. They occur in a variety of habitats, such as grasslands, savannas,
-                        <span class="bg-flat-color-1 text-light">woodlands</span>, thorny
-                        scrublands, <span class="clickable-text">mountains</span> , and coastal
-                        hills. However, various anthropogenic factors have had a severe impact on
-                        zebra populations, in particular hunting for skins and habitat destruction.
-                        Grévy's zebra and the mountain <mark>highlighted text</mark> zebra are
-                        endangered.
-                      </p>
-                      <blockquote class="blockquote mt-3 text-end">
-                        <p>
-                          Blockquotes. However, various anthropogenic factors have had a severe
-                          impact on zebra populations, in particular hunting for skins.
-                        </p>
-        </div>
 
-        {{> footer}}
+                    <div class="row">
+                        <!-- Headings -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="me-2 fa fa-heading"></i>
+                                    <strong class="card-title">Headings</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h1>h1. Bootstrap heading</h1>
+                                    <h2>h2. Bootstrap heading</h2>
+                                    <h3>h3. Bootstrap heading</h3>
+                                    <h4>h4. Bootstrap heading</h4>
+                                    <h5>h5. Bootstrap heading</h5>
+                                    <h6>h6. Bootstrap heading</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Display Headings -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Display Headings</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="display-6">Display 6</h1>
+                                    <h1 class="display-5">Display 5</h1>
+                                    <h1 class="display-4">Display 4</h1>
+                                    <h1 class="display-3">Display 3</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lead & Body Text -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Lead & Body Text</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="lead">
+                                        This is a lead paragraph. It stands out from regular paragraphs with larger font size and weight. Make a paragraph stand out by adding <code>.lead</code>.
+                                    </p>
+                                    <p>
+                                        You can use the mark tag to <mark>highlight</mark> text. This is regular body text that shows the default typography styles applied in Bootstrap 5. The framework provides a solid typographic foundation with carefully chosen font sizes, line heights, and spacing.
+                                    </p>
+                                    <p>
+                                        <del>This line of text is meant to be treated as deleted text.</del>
+                                    </p>
+                                    <p>
+                                        <s>This line of text is meant to be treated as no longer accurate.</s>
+                                    </p>
+                                    <p>
+                                        <ins>This line of text is meant to be treated as an addition to the document.</ins>
+                                    </p>
+                                    <p>
+                                        <u>This line of text will render as underlined.</u>
+                                    </p>
+                                    <p>
+                                        <small>This line of text is meant to be treated as fine print.</small>
+                                    </p>
+                                    <p>
+                                        <strong>This line rendered as bold text.</strong>
+                                    </p>
+                                    <p>
+                                        <em>This line rendered as italicized text.</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Utilities -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Text Colors</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-primary">.text-primary</p>
+                                    <p class="text-secondary">.text-secondary</p>
+                                    <p class="text-success">.text-success</p>
+                                    <p class="text-danger">.text-danger</p>
+                                    <p class="text-warning bg-dark">.text-warning</p>
+                                    <p class="text-info bg-dark">.text-info</p>
+                                    <p class="text-light bg-dark">.text-light</p>
+                                    <p class="text-dark">.text-dark</p>
+                                    <p class="text-body">.text-body</p>
+                                    <p class="text-muted">.text-muted</p>
+                                    <p class="text-white bg-dark">.text-white</p>
+                                    <p class="text-black-50">.text-black-50</p>
+                                    <p class="text-white-50 bg-dark">.text-white-50</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Alignment -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Text Alignment</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-start">Start aligned text on all viewport sizes.</p>
+                                    <p class="text-center">Center aligned text on all viewport sizes.</p>
+                                    <p class="text-end">End aligned text on all viewport sizes.</p>
+                                    
+                                    <hr>
+                                    
+                                    <p class="text-sm-start">Start aligned text on viewports sized SM or wider.</p>
+                                    <p class="text-md-center">Center aligned text on viewports sized MD or wider.</p>
+                                    <p class="text-lg-end">End aligned text on viewports sized LG or wider.</p>
+                                    
+                                    <hr>
+                                    
+                                    <p class="text-nowrap bg-light" style="width: 8rem;">
+                                        This text should overflow the parent.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Transform -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Text Transform</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-lowercase">Lowercased text.</p>
+                                    <p class="text-uppercase">Uppercased text.</p>
+                                    <p class="text-capitalize">Capitalized text.</p>
+                                    
+                                    <hr>
+                                    
+                                    <p class="fw-bold">Bold text.</p>
+                                    <p class="fw-bolder">Bolder weight text (relative to the parent element).</p>
+                                    <p class="fw-normal">Normal weight text.</p>
+                                    <p class="fw-light">Light weight text.</p>
+                                    <p class="fw-lighter">Lighter weight text (relative to the parent element).</p>
+                                    <p class="fst-italic">Italic text.</p>
+                                    <p class="fst-normal">Text with normal font style</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Font Sizes -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Font Sizes</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="fs-1">.fs-1 text</p>
+                                    <p class="fs-2">.fs-2 text</p>
+                                    <p class="fs-3">.fs-3 text</p>
+                                    <p class="fs-4">.fs-4 text</p>
+                                    <p class="fs-5">.fs-5 text</p>
+                                    <p class="fs-6">.fs-6 text</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blockquotes -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Blockquotes</strong>
+                                </div>
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer">
+                                            Someone famous in <cite title="Source Title">Source Title</cite>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="text-center">
+                                        <blockquote class="blockquote">
+                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer">
+                                            Someone famous in <cite title="Source Title">Source Title</cite>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="text-end">
+                                        <blockquote class="blockquote">
+                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer">
+                                            Someone famous in <cite title="Source Title">Source Title</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lists -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Lists</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5>Unordered List</h5>
+                                    <ul>
+                                        <li>This is a list.</li>
+                                        <li>It appears completely unstyled.</li>
+                                        <li>Structurally, it's still a list.</li>
+                                        <li>However, this style only applies to immediate child elements.</li>
+                                        <li>Nested lists:
+                                            <ul>
+                                                <li>are unaffected by this style</li>
+                                                <li>will still show a bullet</li>
+                                                <li>and have appropriate left margin</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h5 class="mt-4">Ordered List</h5>
+                                    <ol>
+                                        <li>First item</li>
+                                        <li>Second item</li>
+                                        <li>Third item</li>
+                                        <li>Fourth item</li>
+                                    </ol>
+
+                                    <h5 class="mt-4">Unstyled List</h5>
+                                    <ul class="list-unstyled">
+                                        <li>This is a list.</li>
+                                        <li>It appears completely unstyled.</li>
+                                        <li>Structurally, it's still a list.</li>
+                                        <li>However, this style only applies to immediate child elements.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inline Lists & Description Lists -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Inline & Description Lists</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5>Inline List</h5>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">This is a list item.</li>
+                                        <li class="list-inline-item">And another one.</li>
+                                        <li class="list-inline-item">But they're displayed inline.</li>
+                                    </ul>
+
+                                    <h5 class="mt-4">Description List</h5>
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Description lists</dt>
+                                        <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+                                        <dt class="col-sm-3">Term</dt>
+                                        <dd class="col-sm-9">
+                                            <p>Definition for the term.</p>
+                                            <p>And some more placeholder definition text.</p>
+                                        </dd>
+
+                                        <dt class="col-sm-3">Another term</dt>
+                                        <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+
+                                        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+                                        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+
+                                        <dt class="col-sm-3">Nesting</dt>
+                                        <dd class="col-sm-9">
+                                            <dl class="row">
+                                                <dt class="col-sm-4">Nested definition list</dt>
+                                                <dd class="col-sm-8">I heard you like definition lists.</dd>
+                                            </dl>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Code -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Code</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5>Inline Code</h5>
+                                    <p>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape HTML angle brackets.</p>
+                                    <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
+
+                                    <h5 class="mt-4">Code Blocks</h5>
+                                    <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;p&gt;And another line of sample text here...&lt;/p&gt;</code></pre>
+
+                                    <h5 class="mt-4">Variables</h5>
+                                    <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
+
+                                    <h5 class="mt-4">User Input</h5>
+                                    <p>To switch directories, type <kbd>cd</kbd> followed by the name of the directory.</p>
+                                    <p>To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
+
+                                    <h5 class="mt-4">Sample Output</h5>
+                                    <samp>This text is meant to be treated as sample output from a computer program.</samp>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Abbreviations & Addresses -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Abbreviations</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p><abbr title="attribute">attr</abbr></p>
+                                    <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+                                    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+                                    <p>You can use <abbr title="Cascading Style Sheets">CSS</abbr> to style your <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Addresses -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Addresses</strong>
+                                </div>
+                                <div class="card-body">
+                                    <address>
+                                        <strong>Twitter, Inc.</strong><br>
+                                        1355 Market Street, Suite 900<br>
+                                        San Francisco, CA 94103<br>
+                                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                                    </address>
+
+                                    <address>
+                                        <strong>Full Name</strong><br>
+                                        <a href="mailto:#">first.last@example.com</a>
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Line Height -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Line Height</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="lh-1">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+                                    <p class="lh-sm">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+                                    <p class="lh-base">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+                                    <p class="lh-lg">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Decoration -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Text Decoration</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-decoration-underline">This text has a line underneath it.</p>
+                                    <p class="text-decoration-line-through">This text has a line through it.</p>
+                                    <a href="#" class="text-decoration-none">This link has its text decoration removed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            {{> footer}}
+        </div>
     </div>
 
     {{> scripts}}

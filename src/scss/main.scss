@@ -16,6 +16,7 @@
 // Custom components
 @use 'components/sidebar';
 @use 'components/header';
+@use 'components/footer';
 @use 'components/cards';
 @use 'components/charts';
 @use 'components/forms';
@@ -27,31 +28,199 @@
 @use 'components/sidebar-clean';
 @use 'components/header-clean';
 
+// Mobile Layout Override - MUST BE LAST
+@use 'components/mobile-layout';
+
+// Global dropdown fixes
+.dropdown-item {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+// Fix dropdown headers - remove all borders
+.dropdown-header {
+  border: none !important;
+  border-bottom: none !important;
+  padding-bottom: 12px;
+  margin-bottom: 0;
+}
+
+// Remove borders between dropdown items
+.dropdown-menu {
+  .dropdown-item + .dropdown-item {
+    border-top: none !important;
+  }
+  
+  li {
+    border: none !important;
+  }
+  
+  // Ensure first item after header has no top border
+  .dropdown-header + li .dropdown-item,
+  li:has(.dropdown-header) + li .dropdown-item {
+    border-top: none !important;
+  }
+}
+
+// Fix button text colors for better readability
+// All colored buttons should have white text
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-info,
+.btn-dark {
+  color: #fff !important;
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:disabled,
+  &.disabled {
+    color: #fff !important;
+  }
+}
+
+// Warning and light buttons need dark text for contrast
+.btn-warning,
+.btn-light {
+  color: #212529 !important;
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:disabled,
+  &.disabled {
+    color: #212529 !important;
+  }
+}
+
+// Outline buttons should keep their original text colors
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-info,
+.btn-outline-dark {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: #fff !important;
+  }
+}
+
+.btn-outline-warning,
+.btn-outline-light {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: #212529 !important;
+  }
+}
+
+// Also apply to dropdown toggles and button groups
+.btn-group {
+  .btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-info,
+  .btn-dark,
+  .dropdown-toggle {
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-success,
+    &.btn-danger,
+    &.btn-info,
+    &.btn-dark {
+      color: #fff !important;
+    }
+    
+    &.btn-warning,
+    &.btn-light {
+      color: #212529 !important;
+    }
+  }
+}
+
+// Fix switch positioning in cards
+.card-body {
+  padding: 1.25rem; // Ensure consistent padding
+  
+  .form-check.form-switch {
+    padding-left: 2.5em; // Default Bootstrap switch spacing
+    margin-left: 0; // Remove extra left margin
+    margin-bottom: 0.75rem; // Add proper bottom spacing
+    
+    // Add spacing between switch and label
+    .form-check-input {
+      margin-right: 0.75rem; // More space between switch and label (default is 0.5rem)
+    }
+    
+    &:last-child {
+      margin-bottom: 0; // No margin on last switch
+    }
+    
+    &.form-check-inline {
+      padding-left: 2.5em; // Same spacing for inline
+      margin-right: 1.5rem; // Space between inline switches
+      margin-bottom: 0.5rem;
+      
+      .form-check-input {
+        margin-right: 0.75rem; // Consistent spacing for inline too
+      }
+    }
+  }
+  
+  // For switches in list groups
+  .list-group-item {
+    .form-check.form-switch {
+      margin-left: 0; // No extra margin in list groups
+      margin-bottom: 0;
+      
+      .form-check-input {
+        margin-right: 0.75rem; // Consistent spacing in list groups
+      }
+    }
+  }
+}
+
 // Layout
+html {
+  height: 100%;
+}
+
 body {
   font-family: $font-family-base;
   background-color: $content-bg;
-  min-height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
   display: flex;
   min-height: 100vh;
+  flex: 1 0 auto;
 }
 
 .main-content {
   flex: 1;
-  margin-left: $sidebar-width;
   transition: $transition-base;
-
-  &.collapsed {
-    margin-left: $sidebar-collapsed-width;
-  }
+  display: flex;
+  flex-direction: column;
+  // margin-left is now handled in sidebar.scss
 }
 
 .content {
   padding: $content-padding;
   padding-top: $header-height + $content-padding;
+  flex: 1 0 auto;
 }
 
 // Responsive adjustments
@@ -103,6 +272,46 @@ body {
   }
 }
 
+// DataTable styling
+.datatable-wrapper {
+  .table {
+    margin-bottom: 0;
+  }
+  
+  thead th.sortable {
+    position: relative;
+    padding-right: 1.5rem;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    i {
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    
+    &:hover i {
+      opacity: 1;
+    }
+  }
+  
+  .datatable-info {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .pagination {
+    margin-bottom: 0;
+  }
+  
+  // Responsive table wrapper
+  .table-responsive {
+    margin: -1.25rem;
+    padding: 1.25rem;
+  }
+}
+
 // Loading states
 .loading {
   position: relative;
@@ -127,6 +336,18 @@ body {
 @keyframes spin {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// Dropdown animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

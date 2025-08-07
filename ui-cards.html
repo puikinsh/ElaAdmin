@@ -1,362 +1,383 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  {{> head title="Cards - ElaAdmin"}}
+<head>
+    {{> head title="Cards"}}
+    <style>
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .social-links a { color: #6c757d; margin: 0 8px; font-size: 1.2rem; transition: color 0.3s ease; }
+        .social-links a:hover { color: #007bff; }
+        .corner-ribon { position: absolute; top: 10px; right: 10px; background: #007bff; color: white; 
+                        width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; 
+                        justify-content: center; font-size: 1.2rem; }
+        .blue-ribon { background: #007bff; }
+        .black-ribon { background: #343a40; }
+        .blue-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .twt-feed { position: relative; padding: 20px; color: white; }
+        .wtt-mark { position: absolute; top: 20px; right: 20px; font-size: 2rem; opacity: 0.3; }
+        .weather-category ul { list-style: none; padding: 0; margin: 0; display: flex; }
+        .weather-category li { flex: 1; text-align: center; padding: 15px; border-right: 1px solid #eee; }
+        .weather-category li:last-child { border-right: none; }
+        .weather-category li h5 { margin: 0; font-weight: bold; color: #007bff; }
+        .twt-category li.active { background: #f8f9fa; }
+        .twt-write { padding: 15px; background: #f8f9fa; }
+        .twt-footer { padding: 15px; background: #f8f9fa; border-top: 1px solid #dee2e6; }
+        .profile-image { width: 85px; height: 85px; object-fit: cover; }
+        .feed-box .card { position: relative; overflow: hidden; }
+        .list-group-item a { color: inherit; text-decoration: none; }
+        .list-group-item a:hover { color: #007bff; }
+    </style>
+</head>
 
-  <body>
-    {{> sidebar-ela}}
+<body>
+    <div class="wrapper">
+        {{> sidebar-ela}}
+        
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Cards</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Components</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Cards</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
 
-    <div id="right-panel" class="right-panel">
-      {{> header-ela}}
+                    <div class="animated fadeIn">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card card-hover shadow-sm">
+                                    <div class="card-header bg-primary text-white">
+                                        <strong class="card-title mb-0">Profile Card</strong>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <img
+                                            class="rounded-circle mb-3 profile-image"
+                                            src="images/admin.jpg"
+                                            alt="Profile picture"
+                                        />
+                                        <h5 class="mb-1">Steven Lee</h5>
+                                        <div class="text-muted mb-3">
+                                            <i class="fas fa-map-marker-alt"></i> California, United States
+                                        </div>
+                                        <div class="social-links">
+                                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-      <div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-          <div class="row m-0">
-            <div class="col-sm-4">
-              <div class="page-header float-left">
-                <div class="page-title">
-                  <h1>Cards</h1>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-8">
-              <div class="page-header float-right">
-                <div class="page-title">
-                  <ol class="breadcrumb text-right">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="#">UI Elements</a></li>
-                    <li class="active">Cards</li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                            <div class="col-md-4">
+                                <div class="card card-hover shadow-sm">
+                                    <div class="card-body text-center">
+                                        <img
+                                            class="rounded-circle mb-3 profile-image"
+                                            src="images/admin.jpg"
+                                            alt="Profile picture"
+                                        />
+                                        <h5 class="mb-1">Maria Garcia</h5>
+                                        <div class="text-muted mb-3">
+                                            <i class="fas fa-map-marker-alt"></i> New York, United States
+                                        </div>
+                                        <div class="social-links">
+                                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-light text-center">
+                                        <strong class="text-muted">UI/UX Designer</strong>
+                                    </div>
+                                </div>
+                            </div>
 
-      <div class="content">
-        <div class="animated fadeIn">
-          <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-hover shadow-sm">
+                                    <div class="card-header bg-success text-white">
+                                        <i class="fas fa-user"></i>
+                                        <strong class="card-title ms-2 mb-0">Team Lead</strong>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <img
+                                            class="rounded-circle mb-3 profile-image"
+                                            src="images/admin.jpg"
+                                            alt="Profile picture"
+                                        />
+                                        <h5 class="mb-1">John Smith</h5>
+                                        <div class="text-muted mb-3">
+                                            <i class="fas fa-map-marker-alt"></i> London, United Kingdom
+                                        </div>
+                                        <div class="social-links">
+                                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card card-hover shadow-sm">
+                                    <div class="card-header bg-dark text-white">
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                class="rounded-circle me-3 profile-image"
+                                                src="images/admin.jpg"
+                                                alt="Profile picture"
+                                            />
+                                            <div>
+                                                <h5 class="text-light mb-0">Jim Doe</h5>
+                                                <small class="text-light opacity-75">Project Manager</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-envelope me-2"></i> Mail Inbox</span>
+                                                <span class="badge bg-primary rounded-pill">10</span>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-tasks me-2"></i> Recent Activity</span>
+                                                <span class="badge bg-danger rounded-pill">15</span>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-bell me-2"></i> Notifications</span>
+                                                <span class="badge bg-success rounded-pill">11</span>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-comments me-2"></i> Messages</span>
+                                                <span class="badge bg-warning rounded-pill">03</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card card-hover shadow-sm">
+                                    <div class="card-body text-center">
+                                        <div class="corner-ribon blue-ribon">
+                                            <i class="fab fa-twitter"></i>
+                                        </div>
+                                        <img
+                                            class="rounded-circle mb-3 profile-image"
+                                            src="images/admin.jpg"
+                                            alt="Profile picture"
+                                        />
+                                        <h4 class="mb-3">Alex Johnson</h4>
+                                        <p class="text-muted mb-3">
+                                            Just launched a new project with <a href="#" class="text-primary">@teamawesome</a> - Check it out!
+                                            <a href="#" class="text-primary">alexjohnson.dev</a>
+                                        </p>
+                                        <p class="small text-muted">
+                                            Excited to share this innovative solution that combines modern design principles
+                                            with cutting-edge technology. Looking forward to your feedback!
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-light text-center">
+                                        <small class="text-muted"><i class="far fa-clock"></i> 2 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card card-hover shadow-sm">
+                                    <div class="twt-feed blue-bg">
+                                        <div class="corner-ribon black-ribon">
+                                            <i class="fab fa-twitter"></i>
+                                        </div>
+                                        <div class="fab fa-twitter wtt-mark"></div>
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                class="rounded-circle me-3 profile-image"
+                                                src="images/admin.jpg"
+                                                alt="Profile picture"
+                                            />
+                                            <div>
+                                                <h5 class="text-white mb-0">Sarah Wilson</h5>
+                                                <small class="text-light opacity-75">Social Media Manager</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="weather-category twt-category">
+                                        <ul>
+                                            <li class="active">
+                                                <h5>1,250</h5>
+                                                <small>Posts</small>
+                                            </li>
+                                            <li>
+                                                <h5>2,140</h5>
+                                                <small>Following</small>
+                                            </li>
+                                            <li>
+                                                <h5>8,965</h5>
+                                                <small>Followers</small>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="twt-write">
+                                        <textarea
+                                            placeholder="What's happening?"
+                                            rows="2"
+                                            class="form-control"
+                                        ></textarea>
+                                    </div>
+                                    <div class="twt-footer">
+                                        <a href="#" class="text-primary me-3"><i class="fas fa-camera"></i></a>
+                                        <a href="#" class="text-primary me-2"><i class="fas fa-map-marker-alt"></i></a>
+                                        <small class="text-muted">Manchester, UK</small>
+                                        <span class="float-end">
+                                            <button class="btn btn-primary btn-sm">Tweet</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
             <div class="col-md-4">
-              <div class="card">
+              <div class="card card-hover shadow-sm">
+                <div class="card-header bg-info text-white">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <strong class="card-title mb-0">Card with Toggle</strong>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="cardToggle1" checked>
+                      <label class="form-check-label text-white" for="cardToggle1"></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <i class="fas fa-toggle-on text-success me-2"></i>
+                    This card demonstrates a toggle switch in the header. Perfect for settings 
+                    or feature controls in your dashboard.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card card-hover shadow-sm">
                 <div class="card-header">
-                  <strong class="card-title mb-3">Profile Card</strong>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <strong class="card-title mb-0">
+                      <i class="fas fa-check-circle text-success me-2"></i>Card with Label
+                    </strong>
+                    <span class="badge bg-success">Success</span>
+                  </div>
                 </div>
                 <div class="card-body">
-                  <div class="mx-auto d-block">
-                    <img
-                      class="rounded-circle mx-auto d-block"
-                      src="images/admin.jpg"
-                      alt="Card image cap"
-                    />
-                    <h5 class="text-center mt-2 mb-1">Steven Lee</h5>
-                    <div class="location text-center">
-                      <i class="fa fa-map-marker"></i> California, United States
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="card-text text-center">
-                    <a href="#"><i class="fa fa-facebook pe-1"></i></a>
-                    <a href="#"><i class="fa fa-twitter pe-1"></i></a>
-                    <a href="#"><i class="fa fa-linkedin pe-1"></i></a>
-                    <a href="#"><i class="fa fa-pinterest pe-1"></i></a>
-                  </div>
+                  <p class="card-text">
+                    This card showcases how to effectively use badges and status indicators 
+                    to provide quick visual feedback about the card's content or state.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mx-auto d-block">
-                    <img
-                      class="rounded-circle mx-auto d-block"
-                      src="images/admin.jpg"
-                      alt="Card image cap"
-                    />
-                    <h5 class="text-center mt-2 mb-1">Steven Lee</h5>
-                    <div class="location text-center">
-                      <i class="fa fa-map-marker"></i> California, United States
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="card-text text-center">
-                    <a href="#"><i class="fa fa-facebook pe-1"></i></a>
-                    <a href="#"><i class="fa fa-twitter pe-1"></i></a>
-                    <a href="#"><i class="fa fa-linkedin pe-1"></i></a>
-                    <a href="#"><i class="fa fa-pinterest pe-1"></i></a>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <strong class="card-title mb-3">Profile Card</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
+              <div class="card card-hover shadow-sm">
                 <div class="card-header">
-                  <i class="fa fa-user"></i><strong class="card-title ps-2">Profile Card</strong>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <strong class="card-title mb-0">
+                      <i class="fas fa-exclamation-triangle text-danger me-2"></i>Notification Card
+                    </strong>
+                    <span class="badge bg-danger">49</span>
+                  </div>
                 </div>
                 <div class="card-body">
-                  <div class="mx-auto d-block">
-                    <img
-                      class="rounded-circle mx-auto d-block"
-                      src="images/admin.jpg"
-                      alt="Card image cap"
-                    />
-                    <h5 class="text-center mt-2 mb-1">Steven Lee</h5>
-                    <div class="location text-center">
-                      <i class="fa fa-map-marker"></i> California, United States
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="card-text text-center">
-                    <a href="#"><i class="fa fa-facebook pe-1"></i></a>
-                    <a href="#"><i class="fa fa-twitter pe-1"></i></a>
-                    <a href="#"><i class="fa fa-linkedin pe-1"></i></a>
-                    <a href="#"><i class="fa fa-pinterest pe-1"></i></a>
-                  </div>
+                  <p class="card-text">
+                    <i class="fas fa-bell me-2 text-warning"></i>
+                    This card displays notification counts and alerts. Great for showing 
+                    pending items, messages, or important updates that require attention.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <aside class="profile-nav alt">
-                <section class="card">
-                  <div class="card-header user-header alt bg-dark">
-                    <div class="d-flex align-items-center">
-                      <a href="#">
-                        <img
-                          class="align-self-center rounded-circle me-3"
-                          style="width: 85px; height: 85px"
-                          alt=""
-                          src="images/admin.jpg"
-                        />
-                      </a>
-                      <div>
-                        <h2 class="text-light display-6">Jim Doe</h2>
-                        <p class="text-light">Project Manager</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <a href="#" class="d-flex justify-content-between align-items-center">
-                        <span><i class="fa fa-envelope-o"></i> Mail Inbox</span>
-                        <span class="badge bg-primary rounded-pill">10</span>
-                      </a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="#" class="d-flex justify-content-between align-items-center">
-                        <span><i class="fa fa-tasks"></i> Recent Activity</span>
-                        <span class="badge bg-danger rounded-pill">15</span>
-                      </a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="#" class="d-flex justify-content-between align-items-center">
-                        <span><i class="fa fa-bell-o"></i> Notification</span>
-                        <span class="badge bg-success rounded-pill">11</span>
-                      </a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="#" class="d-flex justify-content-between align-items-center">
-                        <span><i class="fa fa-comments-o"></i> Message</span>
-                        <span class="badge bg-warning rounded-pill">03</span>
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </aside>
+              <div class="card border border-primary card-hover shadow-sm">
+                <div class="card-header border-primary">
+                  <strong class="card-title mb-0">
+                    <i class="fas fa-palette text-primary me-2"></i>Primary Outline
+                  </strong>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <i class="fas fa-info-circle text-primary me-2"></i>
+                    Outlined cards provide a subtle way to categorize content while 
+                    maintaining a clean, minimal design aesthetic.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="col-md-4">
-              <div class="feed-box text-center">
-                <section class="card">
-                  <div class="card-body">
-                    <div class="corner-ribon blue-ribon">
-                      <i class="fa fa-twitter"></i>
-                    </div>
-                    <a href="#">
-                      <img
-                        class="align-self-center rounded-circle me-3"
-                        style="width: 85px; height: 85px"
-                        alt=""
-                        src="images/admin.jpg"
-                      />
-                    </a>
-                    <h2>Kanye West</h2>
-                    <p>
-                      Just got a pretty neat project via <a href="#">@ooomf</a> - Give it a try
-                      <a href="#">http://t.co/e02DwGEeOJ</a>
+              <div class="card border border-secondary card-hover shadow-sm">
+                <div class="card-header border-secondary">
+                  <strong class="card-title mb-0">
+                    <i class="fas fa-cog text-secondary me-2"></i>Secondary Outline
+                  </strong>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <i class="fas fa-wrench text-secondary me-2"></i>
+                    Secondary outlined cards are perfect for less prominent content 
+                    or supplementary information in your interface.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card border border-success card-hover shadow-sm">
+                <div class="card-header border-success">
+                  <strong class="card-title mb-0">
+                    <i class="fas fa-check text-success me-2"></i>Success Outline
+                  </strong>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <i class="fas fa-thumbs-up text-success me-2"></i>
+                    Success outlined cards are ideal for highlighting positive outcomes, 
+                    completed tasks, or successful operations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-warning card-hover shadow-sm">
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0 text-dark">
+                    <p class="text-dark">
+                      <i class="fas fa-quote-left me-2"></i>
+                      "Innovation distinguishes between a leader and a follower. 
+                      Great design is about making something memorable and meaningful."
                     </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, laudantium
-                      explicabo autem molestias eaque, mollitia impedit, officia repudiandae culpa
-                      nemo veritatis quisquam totam error voluptate vel, quod nihil nobis tempora.
-                    </p>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <section class="card">
-                <div class="twt-feed blue-bg">
-                  <div class="corner-ribon black-ribon">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                  <div class="fa fa-twitter wtt-mark"></div>
-
-                  <div class="d-flex align-items-center">
-                    <a href="#">
-                      <img
-                        class="align-self-center rounded-circle me-3"
-                        style="width: 85px; height: 85px"
-                        alt=""
-                        src="images/admin.jpg"
-                      />
-                    </a>
-                    <div>
-                      <h2 class="text-white display-6">Jim Doe</h2>
-                      <p class="text-light">Project Manager</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="weather-category twt-category">
-                  <ul>
-                    <li class="active">
-                      <h5>750</h5>
-                      Tweets
-                    </li>
-                    <li>
-                      <h5>865</h5>
-                      Following
-                    </li>
-                    <li>
-                      <h5>3645</h5>
-                      Followers
-                    </li>
-                  </ul>
-                </div>
-                <div class="twt-write col-sm-12">
-                  <textarea
-                    placeholder="Write your Tweet and Enter"
-                    rows="1"
-                    class="form-control t-text-area"
-                  ></textarea>
-                </div>
-                <footer class="twt-footer">
-                  <a href="#"><i class="fa fa-camera"></i></a>
-                  <a href="#"><i class="fa fa-map-marker"></i></a>
-                  New Castle, UK
-                  <span class="float-end"> 32 </span>
-                </footer>
-              </section>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-header">
-                  <strong class="card-title">Card with switch</strong>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-header">
-                  <strong class="card-title"
-                    >Card with Label
-                    <small
-                      ><span class="badge bg-success float-end mt-1">Success</span></small
-                    ></strong
-                  >
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-header">
-                  <strong class="card-title"
-                    >Card with Label
-                    <small><span class="badge bg-danger float-end mt-1">49</span></small></strong
-                  >
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card border border-primary">
-                <div class="card-header">
-                  <strong class="card-title">Card Outline</strong>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card border border-secondary">
-                <div class="card-header">
-                  <strong class="card-title">Card Outline</strong>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card border border-success">
-                <div class="card-header">
-                  <strong class="card-title">Card Outline</strong>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card bg-warning">
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0 text-light">
-                    <p class="text-light">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                      a ante.
-                    </p>
-                    <footer class="blockquote-footer text-light">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
+                    <footer class="blockquote-footer text-dark mt-3">
+                      <i class="fas fa-user me-1"></i>
+                      Steve Jobs in <cite title="Apple Inc.">Apple Inc.</cite>
                     </footer>
                   </blockquote>
                 </div>
@@ -364,15 +385,17 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card bg-danger">
+              <div class="card bg-danger card-hover shadow-sm">
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
                     <p class="text-light">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                      a ante.
+                      <i class="fas fa-exclamation-circle me-2"></i>
+                      "The way to get started is to quit talking and begin doing. 
+                      Success is not final, failure is not fatal."
                     </p>
-                    <footer class="blockquote-footer text-light">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
+                    <footer class="blockquote-footer text-light mt-3">
+                      <i class="fas fa-award me-1"></i>
+                      Walt Disney in <cite title="Disney Studios">Disney Studios</cite>
                     </footer>
                   </blockquote>
                 </div>
@@ -380,15 +403,17 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card bg-primary">
+              <div class="card bg-primary card-hover shadow-sm">
                 <div class="card-body">
                   <blockquote class="blockquote mb-0 text-light">
                     <p class="text-light">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                      a ante.
+                      <i class="fas fa-lightbulb me-2"></i>
+                      "Design is not just what it looks like and feels like. 
+                      Design is how it works. Simplicity is the ultimate sophistication."
                     </p>
-                    <footer class="blockquote-footer text-light">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
+                    <footer class="blockquote-footer text-light mt-3">
+                      <i class="fas fa-star me-1"></i>
+                      Leonardo da Vinci in <cite title="Renaissance">Renaissance Era</cite>
                     </footer>
                   </blockquote>
                 </div>
@@ -396,104 +421,170 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card">
+              <div class="card card-hover shadow-sm">
                 <div class="card-header bg-secondary">
-                  <strong class="card-title text-light">Card Header</strong>
+                  <strong class="card-title text-light mb-0">
+                    <i class="fas fa-server text-light me-2"></i>Server Status
+                  </strong>
                 </div>
                 <div class="card-body text-white bg-primary">
                   <p class="card-text text-light">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                    <i class="fas fa-signal text-light me-2"></i>
+                    All systems operational. Server uptime: 99.9%. 
+                    Last maintenance completed successfully on schedule.
                   </p>
+                  <div class="d-flex justify-content-between mt-3">
+                    <small class="text-light"><i class="fas fa-clock me-1"></i>Updated 2 min ago</small>
+                    <span class="badge bg-success">Online</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="card">
+              <div class="card card-hover shadow-sm">
                 <div class="card-header bg-success">
-                  <strong class="card-title text-light">Card Header</strong>
+                  <strong class="card-title text-light mb-0">
+                    <i class="fas fa-chart-line text-light me-2"></i>Sales Report
+                  </strong>
                 </div>
-                <div class="card-body text-white bg-warning">
-                  <p class="card-text text-light">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                <div class="card-body text-dark bg-warning">
+                  <p class="card-text text-dark">
+                    <i class="fas fa-arrow-up text-success me-2"></i>
+                    Monthly sales increased by 25%. Q4 targets exceeded. 
+                    Customer satisfaction ratings remain high.
                   </p>
+                  <div class="d-flex justify-content-between mt-3">
+                    <small class="text-dark"><i class="fas fa-calendar me-1"></i>This month</small>
+                    <span class="badge bg-success">+25%</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="card">
+              <div class="card card-hover shadow-sm">
                 <div class="card-header bg-dark">
-                  <strong class="card-title text-light">Card Header</strong>
+                  <strong class="card-title text-light mb-0">
+                    <i class="fas fa-shield-alt text-light me-2"></i>Security Alert
+                  </strong>
                 </div>
                 <div class="card-body text-white bg-danger">
                   <p class="card-text text-light">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                    <i class="fas fa-exclamation-triangle text-light me-2"></i>
+                    3 failed login attempts detected. Security protocols activated. 
+                    Review access logs immediately.
                   </p>
+                  <div class="d-flex justify-content-between mt-3">
+                    <small class="text-light"><i class="fas fa-clock me-1"></i>5 min ago</small>
+                    <span class="badge bg-light text-dark">Action Required</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://i.imgur.com/ue0AB6J.png"
-                  alt="Card image cap"
-                />
+              <div class="card card-hover shadow-sm">
+                <div class="position-relative">
+                  <img
+                    class="card-img-top"
+                    src="images/avatar/1.jpg"
+                    alt="Project Dashboard"
+                    style="height: 200px; object-fit: cover;"
+                  />
+                  <div class="position-absolute top-0 end-0 m-2">
+                    <span class="badge bg-primary">Featured</span>
+                  </div>
+                </div>
                 <div class="card-body">
-                  <h4 class="card-title mb-3">Card Image Title</h4>
+                  <h4 class="card-title mb-3">
+                    <i class="fas fa-project-diagram text-primary me-2"></i>Project Dashboard
+                  </h4>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                    A comprehensive project management dashboard with real-time analytics, 
+                    task tracking, and team collaboration features.
                   </p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <small class="text-muted"><i class="far fa-clock me-1"></i>Updated today</small>
+                    <button class="btn btn-primary btn-sm">
+                      <i class="fas fa-arrow-right"></i> View
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://i.imgur.com/hrS2McC.png"
-                  alt="Card image cap"
-                />
+              <div class="card card-hover shadow-sm">
+                <div class="position-relative">
+                  <img
+                    class="card-img-top"
+                    src="images/avatar/2.jpg"
+                    alt="Analytics Report"
+                    style="height: 200px; object-fit: cover;"
+                  />
+                  <div class="position-absolute top-0 end-0 m-2">
+                    <span class="badge bg-success">New</span>
+                  </div>
+                </div>
                 <div class="card-body">
-                  <h4 class="card-title mb-3">Card Image Title</h4>
+                  <h4 class="card-title mb-3">
+                    <i class="fas fa-chart-bar text-success me-2"></i>Analytics Report
+                  </h4>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                    Detailed analytics and performance metrics with interactive charts, 
+                    data visualization, and automated reporting capabilities.
                   </p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <small class="text-muted"><i class="far fa-calendar me-1"></i>This week</small>
+                    <button class="btn btn-success btn-sm">
+                      <i class="fas fa-download"></i> Export
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://i.imgur.com/MUBS4Gh.png"
-                  alt="Card image cap"
-                />
+              <div class="card card-hover shadow-sm">
+                <div class="position-relative">
+                  <img
+                    class="card-img-top"
+                    src="images/avatar/3.jpg"
+                    alt="User Management"
+                    style="height: 200px; object-fit: cover;"
+                  />
+                  <div class="position-absolute top-0 end-0 m-2">
+                    <span class="badge bg-warning text-dark">Popular</span>
+                  </div>
+                </div>
                 <div class="card-body">
-                  <h4 class="card-title mb-3">Card Image Title</h4>
+                  <h4 class="card-title mb-3">
+                    <i class="fas fa-users text-warning me-2"></i>User Management
+                  </h4>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                    Complete user management system with role-based access control, 
+                    user profiles, permissions, and activity monitoring.
                   </p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <small class="text-muted"><i class="fas fa-users me-1"></i>1,240 users</small>
+                    <button class="btn btn-warning btn-sm">
+                      <i class="fas fa-cog"></i> Manage
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+                    </div>
+                    <!-- .animated -->
+                </div>
+            </main>
+            <!-- .content -->
+            
+            {{> footer}}
         </div>
-      </div>
-
-      {{> footer}}
     </div>
 
-    {{> scripts page="cards"}}
-  </body>
+    {{> scripts}}
+</body>
 </html>

@@ -51,22 +51,33 @@ export default defineConfig({
         // Logical or
         or: (a, b) => a || b,
         // If block helper
-        ifCond: function(v1, operator, v2, options) {
+        ifCond: function (v1, operator, v2, options) {
           switch (operator) {
-            case '==': return (v1 == v2) ? options.fn(this) : options.inverse(this);
-            case '===': return (v1 === v2) ? options.fn(this) : options.inverse(this);
-            case '!=': return (v1 != v2) ? options.fn(this) : options.inverse(this);
-            case '!==': return (v1 !== v2) ? options.fn(this) : options.inverse(this);
-            case '<': return (v1 < v2) ? options.fn(this) : options.inverse(this);
-            case '<=': return (v1 <= v2) ? options.fn(this) : options.inverse(this);
-            case '>': return (v1 > v2) ? options.fn(this) : options.inverse(this);
-            case '>=': return (v1 >= v2) ? options.fn(this) : options.inverse(this);
-            case '&&': return (v1 && v2) ? options.fn(this) : options.inverse(this);
-            case '||': return (v1 || v2) ? options.fn(this) : options.inverse(this);
-            default: return options.inverse(this);
+            case '==':
+              return v1 == v2 ? options.fn(this) : options.inverse(this);
+            case '===':
+              return v1 === v2 ? options.fn(this) : options.inverse(this);
+            case '!=':
+              return v1 != v2 ? options.fn(this) : options.inverse(this);
+            case '!==':
+              return v1 !== v2 ? options.fn(this) : options.inverse(this);
+            case '<':
+              return v1 < v2 ? options.fn(this) : options.inverse(this);
+            case '<=':
+              return v1 <= v2 ? options.fn(this) : options.inverse(this);
+            case '>':
+              return v1 > v2 ? options.fn(this) : options.inverse(this);
+            case '>=':
+              return v1 >= v2 ? options.fn(this) : options.inverse(this);
+            case '&&':
+              return v1 && v2 ? options.fn(this) : options.inverse(this);
+            case '||':
+              return v1 || v2 ? options.fn(this) : options.inverse(this);
+            default:
+              return options.inverse(this);
           }
-        }
-      }
+        },
+      },
     }),
     legacy({
       targets: ['defaults', 'not IE 11'],

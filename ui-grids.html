@@ -1,267 +1,479 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  {{> head title="Grids - ElaAdmin"}}
+<head>
+    {{> head title="Grid System"}}
+</head>
 
-  <body>
-    {{> sidebar-ela}}
-
-    <div id="right-panel" class="right-panel">
-      {{> header-ela}}
-
-      <div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-          <div class="row m-0">
-            <div class="col-sm-4">
-              <div class="page-header float-left">
-                <div class="page-title">
-                  <h1>Grids</h1>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-8">
-              <div class="page-header float-right">
-                <div class="page-title">
-                  <ol class="breadcrumb text-right">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="#">UI Elements</a></li>
-                    <li class="active">Grids</li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="animated fadeIn">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-header">
-                  <strong>Grid Options</strong>
-                </div>
-                <div class="card-body">
-                  <p class="text-muted m-b-15">
-                    See how aspects of the Bootstrap grid system work across multiple devices with a
-                    handy table.
-                  </p>
-
-                  <table class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th class="text-center">
-                          Extra small<br />
-                          <small>&lt;576px</small>
-                        </th>
-                        <th class="text-center">
-                          Small<br />
-                          <small>≥576px</small>
-                        </th>
-                        <th class="text-center">
-                          Medium<br />
-                          <small>≥768px</small>
-                        </th>
-                        <th class="text-center">
-                          Large<br />
-                          <small>≥992px</small>
-                        </th>
-                        <th class="text-center">
-                          Extra large<br />
-                          <small>≥1200px</small>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th class="text-nowrap" scope="row">Max container width</th>
-                        <td>None (auto)</td>
-                        <td>540px</td>
-                        <td>720px</td>
-                        <td>960px</td>
-                        <td>1140px</td>
-                      </tr>
-                      <tr>
-                        <th class="text-nowrap" scope="row">Class prefix</th>
-                        <td><code>.col-</code></td>
-                        <td><code>.col-sm-</code></td>
-                        <td><code>.col-md-</code></td>
-                        <td><code>.col-lg-</code></td>
-                        <td><code>.col-xl-</code></td>
-                      </tr>
-                      <tr>
-                        <th class="text-nowrap" scope="row"># of columns</th>
-                        <td colspan="5">12</td>
-                      </tr>
-                      <tr>
-                        <th class="text-nowrap" scope="row">Gutter width</th>
-                        <td colspan="5">30px (15px on each side of a column)</td>
-                      </tr>
-                      <tr>
-                        <th class="text-nowrap" scope="row">Nestable</th>
-                        <td colspan="5">Yes</td>
-                      </tr>
-                      <tr>
-                        <th class="text-nowrap" scope="row">Column ordering</th>
-                        <td colspan="5">Yes</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-header">
-                  <strong>Grid Examples</strong>
-                </div>
-                <div class="card-body">
-                  <p class="text-muted m-b-20">
-                    Basic grid layouts to get you familiar with building within the Bootstrap grid
-                    system.
-                  </p>
-
-                  <h4>Three equal columns</h4>
-                  <p>
-                    Get three equal-width columns
-                    <strong>starting at desktops and scaling to large desktops</strong>. On mobile
-                    devices, tablets and below, the columns will automatically stack.
-                  </p>
-                  <div class="row mb-3">
-                    <div class="col-md-4">
-                      <div class="p-3 bg-light border">.col-md-4</div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="p-3 bg-light border">.col-md-4</div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="p-3 bg-light border">.col-md-4</div>
-                    </div>
-                  </div>
-
-                  <h4>Two columns</h4>
-                  <p>
-                    Get two columns
-                    <strong>starting at desktops and scaling to large desktops</strong>.
-                  </p>
-                  <div class="row mb-3">
-                    <div class="col-md-8">
-                      <div class="p-3 bg-light border">.col-md-8</div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="p-3 bg-light border">.col-md-4</div>
-                    </div>
-                  </div>
-
-                  <h4>Full width, single column</h4>
-                  <p class="warning">No grid classes are necessary for full-width elements.</p>
-
-                  <hr />
-
-                  <h4>Two columns with two nested columns</h4>
-                  <p>
-                    Per the documentation, nesting is easy—just put a row of columns within an
-                    existing column. This gives you two columns
-                    <strong>starting at desktops and scaling to large desktops</strong>, with
-                    another two (equal widths) within the larger column.
-                  </p>
-                  <p>
-                    At mobile device sizes, tablets and down, these columns and their nested columns
-                    will stack.
-                  </p>
-                  <div class="row mb-3">
-                    <div class="col-md-8">
-                      <div class="p-3 bg-light border">
-                        .col-md-8
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="p-3 bg-secondary text-white mt-2">.col-md-6</div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="p-3 bg-secondary text-white mt-2">.col-md-6</div>
-                          </div>
+<body>
+    <div class="wrapper">
+        {{> sidebar-ela}}
+        
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Grid System</h4>
                         </div>
-                      </div>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Components</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Grid System</li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="p-3 bg-light border">.col-md-4</div>
-                    </div>
-                  </div>
 
-                  <hr />
+                    <div class="row">
+                        <!-- Grid Options -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="me-2 fa fa-th"></i>
+                                    <strong>Bootstrap 5 Grid Options</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted mb-3">
+                                        See how aspects of the Bootstrap 5 grid system work across multiple devices with this handy table.
+                                    </p>
 
-                  <h4>Mixed: mobile and desktop</h4>
-                  <p>
-                    The Bootstrap 5 grid system has five tiers of classes: xs (extra small), sm
-                    (small), md (medium), lg (large), and xl (extra large). You can use nearly any
-                    combination of these classes to create more dynamic and flexible layouts.
-                  </p>
-                  <p>
-                    Each tier of classes scales up, meaning if you plan on setting the same widths
-                    for xs and sm, you only need to specify xs.
-                  </p>
-                  <div class="row mb-3">
-                    <div class="col-12 col-md-8">
-                      <div class="p-3 bg-light border">.col-12 .col-md-8</div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <div class="p-3 bg-light border">.col-6 .col-md-4</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-6 col-md-4">
-                      <div class="p-3 bg-light border">.col-6 .col-md-4</div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <div class="p-3 bg-light border">.col-6 .col-md-4</div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <div class="p-3 bg-light border">.col-6 .col-md-4</div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="p-3 bg-light border">.col-6</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="p-3 bg-light border">.col-6</div>
-                    </div>
-                  </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th class="text-center">
+                                                        Extra small<br>
+                                                        <small class="text-muted">&lt;576px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Small<br>
+                                                        <small class="text-muted">≥576px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Medium<br>
+                                                        <small class="text-muted">≥768px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Large<br>
+                                                        <small class="text-muted">≥992px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Extra large<br>
+                                                        <small class="text-muted">≥1200px</small>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Extra extra large<br>
+                                                        <small class="text-muted">≥1400px</small>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Container max-width</th>
+                                                    <td>None (auto)</td>
+                                                    <td>540px</td>
+                                                    <td>720px</td>
+                                                    <td>960px</td>
+                                                    <td>1140px</td>
+                                                    <td>1320px</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Class prefix</th>
+                                                    <td><code>.col-</code></td>
+                                                    <td><code>.col-sm-</code></td>
+                                                    <td><code>.col-md-</code></td>
+                                                    <td><code>.col-lg-</code></td>
+                                                    <td><code>.col-xl-</code></td>
+                                                    <td><code>.col-xxl-</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row"># of columns</th>
+                                                    <td colspan="6" class="text-center">12</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Gutter width</th>
+                                                    <td colspan="6" class="text-center">1.5rem (0.75rem on left and right)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Custom gutters</th>
+                                                    <td colspan="6" class="text-center">Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Nestable</th>
+                                                    <td colspan="6" class="text-center">Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Column ordering</th>
+                                                    <td colspan="6" class="text-center">Yes</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                  <hr />
+                        <!-- Basic Grid Examples -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Basic Grid Examples</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted mb-4">
+                                        Basic grid layouts to get you familiar with building within the Bootstrap grid system.
+                                    </p>
 
-                  <h4>Mixed: mobile, tablet, and desktop</h4>
-                  <div class="row mb-3">
-                    <div class="col-12 col-sm-6 col-lg-8">
-                      <div class="p-3 bg-light border">.col-12 .col-sm-6 .col-lg-8</div>
+                                    <h5 class="mb-3">Equal Width Columns</h5>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Setting One Column Width</h5>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">.col-6</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">.col</div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Variable Width Content</h5>
+                                    <div class="row mb-3">
+                                        <div class="col col-lg-2">
+                                            <div class="p-3 bg-light border rounded">.col .col-lg-2</div>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <div class="p-3 bg-light border rounded">.col-md-auto (variable width)</div>
+                                        </div>
+                                        <div class="col col-lg-2">
+                                            <div class="p-3 bg-light border rounded">.col .col-lg-2</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Responsive Classes</h5>
+                                    <p class="text-muted mb-3">The Bootstrap 5 grid includes six tiers of predefined classes for building complex responsive layouts.</p>
+                                    
+                                    <div class="row mb-3">
+                                        <div class="col-sm-8">
+                                            <div class="p-3 bg-light border rounded">.col-sm-8</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 bg-light border rounded">.col-sm-4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-sm">
+                                            <div class="p-3 bg-light border rounded">.col-sm</div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="p-3 bg-light border rounded">.col-sm</div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="p-3 bg-light border rounded">.col-sm</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Mix and Match</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="p-3 bg-light border rounded">.col-12 .col-md-8</div>
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-6 .col-md-4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">.col-6</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">.col-6</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Examples -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Advanced Grid Features</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-3">Row Columns</h5>
+                                    <p class="text-muted mb-3">Use responsive <code>.row-cols-*</code> classes to quickly set the number of columns.</p>
+                                    
+                                    <div class="row row-cols-2 row-cols-lg-5 g-2 mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Column</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Nesting</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-9">
+                                            <div class="p-3 bg-light border rounded">
+                                                Level 1: .col-sm-9
+                                                <div class="row mt-3">
+                                                    <div class="col-8 col-sm-6">
+                                                        <div class="p-3 bg-secondary text-white rounded">Level 2: .col-8 .col-sm-6</div>
+                                                    </div>
+                                                    <div class="col-4 col-sm-6">
+                                                        <div class="p-3 bg-secondary text-white rounded">Level 2: .col-4 .col-sm-6</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="p-3 bg-light border rounded">Level 1: .col-sm-3</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Offsetting Columns</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-md-4</div>
+                                        </div>
+                                        <div class="col-md-4 offset-md-4">
+                                            <div class="p-3 bg-light border rounded">.col-md-4 .offset-md-4</div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3 offset-md-3">
+                                            <div class="p-3 bg-light border rounded">.col-md-3 .offset-md-3</div>
+                                        </div>
+                                        <div class="col-md-3 offset-md-3">
+                                            <div class="p-3 bg-light border rounded">.col-md-3 .offset-md-3</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Gutters</h5>
+                                    <p class="text-muted mb-3">Gutters can be responsively adjusted. Use <code>.g-*</code>, <code>.gx-*</code> or <code>.gy-*</code> utilities.</p>
+                                    
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light border rounded">Custom gutter</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alignment Examples -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Alignment</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-3">Vertical Alignment</h5>
+                                    
+                                    <div class="row align-items-start mb-3" style="min-height: 100px; background-color: rgba(255,0,0,0.1);">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-start</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-start</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-start</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-center mb-3" style="min-height: 100px; background-color: rgba(0,255,0,0.1);">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-center</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-center</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-center</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-end mb-3" style="min-height: 100px; background-color: rgba(0,0,255,0.1);">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-end</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-end</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">align-items-end</div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h5 class="mb-3">Horizontal Alignment</h5>
+                                    
+                                    <div class="row justify-content-start mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-start</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-start</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-center</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-center</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-end mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-end</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-end</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-around mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-around</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-around</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-between mb-3">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-between</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-between</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-evenly">
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-evenly</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light border rounded">justify-content-evenly</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reordering -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Reordering</strong>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-3">Order Classes</h5>
+                                    <p class="text-muted mb-3">Use <code>.order-*</code> classes for controlling the visual order.</p>
+                                    
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">First in DOM, no order applied</div>
+                                        </div>
+                                        <div class="col order-5">
+                                            <div class="p-3 bg-light border rounded">Second in DOM, order-5</div>
+                                        </div>
+                                        <div class="col order-1">
+                                            <div class="p-3 bg-light border rounded">Third in DOM, order-1</div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-3">Responsive Order</h5>
+                                    <div class="row">
+                                        <div class="col order-last order-md-first">
+                                            <div class="p-3 bg-light border rounded">First on md+, last on mobile</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="p-3 bg-light border rounded">Unordered</div>
+                                        </div>
+                                        <div class="col order-first order-md-last">
+                                            <div class="p-3 bg-light border rounded">Last on md+, first on mobile</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6 col-lg-4">
-                      <div class="p-3 bg-light border">.col-6 .col-lg-4</div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-6 col-sm-4">
-                      <div class="p-3 bg-light border">.col-6 .col-sm-4</div>
-                    </div>
-                    <div class="col-6 col-sm-4">
-                      <div class="p-3 bg-light border">.col-6 .col-sm-4</div>
-                    </div>
-                    <div class="col-6 col-sm-4">
-                      <div class="p-3 bg-light border">.col-6 .col-sm-4</div>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+            </main>
+            
+            {{> footer}}
         </div>
-      </div>
-
-      {{> footer}}
     </div>
 
-    {{> scripts page="grids"}}
-  </body>
+    {{> scripts}}
+</body>
 </html>

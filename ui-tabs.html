@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head title="ElaAdmin - ElaAdmin"}}
+<head>
+    {{> head title="Tabs"}}
+</head>
 
 <body>
-    {{> sidebar-ela}}
-    
-    <div id="right-panel" class="right-panel">
-        {{> header-ela}}
+    <div class="wrapper">
+        {{> sidebar-ela}}
         
-<div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-          <div class="row m-0">
-            <div class="col-sm-4">
-              <div class="page-header float-left">
-                <div class="page-title">
-                  <h1>Dashboard</h1>
-                </div>
-              </div>
-            </div>
+        <div class="main-content">
+            {{> header-ela}}
+            
+            <main class="content">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <h4 class="page-title">Tabs</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Components</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Tabs</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
 
-        <div class="content">
-<div class="row">
+                    <div class="animated fadeIn">
+                        <div class="row">
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header">
@@ -386,14 +395,15 @@
                 </div>
               </div>
             </div>
-          </div>
+                        </div>
+                    </div>
+                    <!-- .animated -->
+                </div>
+            </main>
+            <!-- .content -->
+            
+            {{> footer}}
         </div>
-        <!-- /# column -->
-      </div>
-      <!-- .content -->
-        </div>
-
-        {{> footer}}
     </div>
 
     {{> scripts}}

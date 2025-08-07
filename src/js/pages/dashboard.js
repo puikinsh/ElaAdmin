@@ -7,14 +7,14 @@ console.log('Dashboard.js loaded, Chart.js version:', Chart.version);
 function initializeDashboard() {
   console.log('Dashboard initializing...');
   console.log('Looking for chart elements...');
-  
+
   // Debug: List all canvas elements
   const allCanvas = document.querySelectorAll('canvas');
   console.log('Found canvas elements:', allCanvas.length);
   allCanvas.forEach((canvas, i) => {
     console.log(`Canvas ${i}: id="${canvas.id}", class="${canvas.className}"`);
   });
-  
+
   initializeSalesChart();
   initializeTrafficChart();
   initializeCounters();
@@ -35,6 +35,13 @@ function initializeSalesChart() {
     return;
   }
   console.log('Initializing sales chart...');
+
+  // Destroy existing chart if it exists
+  const existingChart = Chart.getChart(ctx);
+  if (existingChart) {
+    console.log('Destroying existing sales chart...');
+    existingChart.destroy();
+  }
 
   new Chart(ctx, {
     type: 'line',
@@ -121,6 +128,13 @@ function initializeTrafficChart() {
     return;
   }
   console.log('Initializing traffic chart...');
+
+  // Destroy existing chart if it exists
+  const existingChart = Chart.getChart(ctx);
+  if (existingChart) {
+    console.log('Destroying existing traffic chart...');
+    existingChart.destroy();
+  }
 
   new Chart(ctx, {
     type: 'doughnut',

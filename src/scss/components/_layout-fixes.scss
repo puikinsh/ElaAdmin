@@ -23,7 +23,7 @@
   padding: 0;
   margin: 0;
   line-height: 1;
-  
+
   img {
     max-height: 35px;
     max-width: 145px;
@@ -39,7 +39,7 @@
   width: auto !important;
   line-height: 1 !important;
   padding: 0 !important;
-  
+
   img {
     max-height: 35px !important;
     max-width: 145px !important;
@@ -55,7 +55,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  
+
   &:hover {
     color: #333;
     text-decoration: none;
@@ -92,11 +92,11 @@
   align-items: center;
   justify-content: space-between;
   height: 55px;
-  
+
   .header-left-section {
     flex-shrink: 0;
   }
-  
+
   .header-right-section {
     flex: 1;
     display: flex;
@@ -115,12 +115,12 @@
     color: #666;
     position: relative;
     padding: 8px 12px;
-    
+
     &:hover {
       color: #333;
-      background: rgba(0,0,0,0.05);
+      background: rgba(0, 0, 0, 0.05);
     }
-    
+
     .count {
       position: absolute;
       top: 2px;
@@ -141,27 +141,27 @@ aside.left-panel {
   .dropdown-toggle,
   a {
     text-decoration: none !important;
-    
+
     &:hover {
       text-decoration: none !important;
     }
   }
-  
+
   .menu-item-has-children > a {
     text-decoration: none !important;
-    
+
     &:hover,
     &:focus {
       text-decoration: none !important;
     }
   }
-  
+
   .sub-menu a {
     text-decoration: none !important;
-    
+
     &:hover {
       text-decoration: none !important;
-      background-color: rgba(0,0,0,0.05);
+      background-color: rgba(0, 0, 0, 0.05);
     }
   }
 }
@@ -171,7 +171,7 @@ aside.left-panel {
   height: 55px;
   display: flex;
   align-items: center;
-  
+
   .top-left,
   .top-right {
     height: 100%;
@@ -186,7 +186,7 @@ aside.left-panel {
     border: none;
     background: transparent;
     padding: 8px;
-    
+
     img.user-avatar {
       width: 32px;
       height: 32px;
@@ -199,7 +199,7 @@ aside.left-panel {
 .header-actions,
 .main-content .header-actions {
   position: relative;
-  
+
   &.search-active .search-form {
     display: block;
   }
@@ -210,17 +210,17 @@ aside.left-panel {
   top: 100%;
   right: 0;
   background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
   display: none;
   min-width: 300px;
   border-radius: 4px;
   z-index: 1000;
-  
+
   &.show {
     display: block;
   }
-  
+
   .form-control {
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -233,10 +233,10 @@ aside.left-panel {
   color: #666;
   padding: 8px 12px;
   border-radius: 4px;
-  
+
   &:hover {
     color: #333;
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -244,7 +244,7 @@ aside.left-panel {
 .navbar-header a.menutoggle {
   color: #666 !important;
   text-decoration: none !important;
-  
+
   &:hover {
     color: #333 !important;
     text-decoration: none !important;
@@ -257,7 +257,7 @@ aside.left-panel {
     gap: 5px;
     margin-right: 10px;
   }
-  
+
   .search-form {
     min-width: 250px;
     right: -50px;
