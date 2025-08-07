@@ -77,7 +77,7 @@
           <!-- Charts Row -->
           <div class="row g-4 mb-4">
             <div class="col-xl-8">
-              <div class="card chart-card">
+              <div class="card chart-card h-100">
                 <div class="card-header d-flex align-items-center">
                   <h5 class="card-title mb-0">Sales Overview</h5>
                   <div class="card-actions ms-auto">
@@ -87,7 +87,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-container">
+                  <div class="chart-container" style="height: 350px;">
                     <canvas id="sales-chart"></canvas>
                   </div>
                 </div>
@@ -95,15 +95,15 @@
             </div>
 
             <div class="col-xl-4">
-              <div class="card chart-card">
+              <div class="card chart-card h-100">
                 <div class="card-header">
                   <h5 class="card-title mb-0">Traffic Sources</h5>
                 </div>
-                <div class="card-body">
-                  <div class="chart-container">
+                <div class="card-body d-flex flex-column">
+                  <div class="chart-container" style="height: 250px;">
                     <canvas id="doughnut-chart"></canvas>
                   </div>
-                  <div class="chart-legend">
+                  <div class="chart-legend mt-auto">
                     <div class="legend-item">
                       <span class="legend-color" style="background: #007bff"></span>
                       <span class="legend-label">Direct</span>
@@ -197,12 +197,10 @@
                         <tr>
                           <td>
                             <div class="d-flex align-items-center">
-                              <img
-                                src="/images/product1.jpg"
-                                alt="Product"
-                                class="rounded me-2"
-                                width="40"
-                              />
+                              <div class="rounded me-2 d-flex align-items-center justify-content-center" 
+                                   style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <i class="fas fa-box text-white"></i>
+                              </div>
                               <span>Premium Widget</span>
                             </div>
                           </td>
@@ -213,12 +211,10 @@
                         <tr>
                           <td>
                             <div class="d-flex align-items-center">
-                              <img
-                                src="/images/product2.jpg"
-                                alt="Product"
-                                class="rounded me-2"
-                                width="40"
-                              />
+                              <div class="rounded me-2 d-flex align-items-center justify-content-center" 
+                                   style="width: 40px; height: 40px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <i class="fas fa-cube text-white"></i>
+                              </div>
                               <span>Standard Package</span>
                             </div>
                           </td>
@@ -229,12 +225,10 @@
                         <tr>
                           <td>
                             <div class="d-flex align-items-center">
-                              <img
-                                src="/images/product3.jpg"
-                                alt="Product"
-                                class="rounded me-2"
-                                width="40"
-                              />
+                              <div class="rounded me-2 d-flex align-items-center justify-content-center" 
+                                   style="width: 40px; height: 40px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <i class="fas fa-layer-group text-white"></i>
+                              </div>
                               <span>Basic Module</span>
                             </div>
                           </td>
@@ -245,12 +239,10 @@
                         <tr>
                           <td>
                             <div class="d-flex align-items-center">
-                              <img
-                                src="/images/product4.jpg"
-                                alt="Product"
-                                class="rounded me-2"
-                                width="40"
-                              />
+                              <div class="rounded me-2 d-flex align-items-center justify-content-center" 
+                                   style="width: 40px; height: 40px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                <i class="fas fa-gift text-white"></i>
+                              </div>
                               <span>Pro Bundle</span>
                             </div>
                           </td>

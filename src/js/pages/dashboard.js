@@ -1,19 +1,11 @@
 import Chart from 'chart.js/auto';
 import { formatNumber, formatCurrency } from '../main.js';
 
-console.log('Dashboard.js loaded, Chart.js version:', Chart.version);
+// Dashboard module loaded
 
 // Dashboard initialization - run immediately and on DOM ready
 function initializeDashboard() {
-  console.log('Dashboard initializing...');
-  console.log('Looking for chart elements...');
-
-  // Debug: List all canvas elements
-  const allCanvas = document.querySelectorAll('canvas');
-  console.log('Found canvas elements:', allCanvas.length);
-  allCanvas.forEach((canvas, i) => {
-    console.log(`Canvas ${i}: id="${canvas.id}", class="${canvas.className}"`);
-  });
+  // Initialize dashboard components
 
   initializeSalesChart();
   initializeTrafficChart();
@@ -31,15 +23,15 @@ if (document.readyState === 'loading') {
 function initializeSalesChart() {
   const ctx = document.getElementById('sales-chart');
   if (!ctx) {
-    console.log('Sales chart element not found');
+    // Sales chart element not found
     return;
   }
-  console.log('Initializing sales chart...');
+  // Initialize sales chart
 
   // Destroy existing chart if it exists
   const existingChart = Chart.getChart(ctx);
   if (existingChart) {
-    console.log('Destroying existing sales chart...');
+    // Destroy existing chart
     existingChart.destroy();
   }
 
@@ -124,15 +116,15 @@ function initializeSalesChart() {
 function initializeTrafficChart() {
   const ctx = document.getElementById('doughnut-chart');
   if (!ctx) {
-    console.log('Traffic chart element not found');
+    // Traffic chart element not found
     return;
   }
-  console.log('Initializing traffic chart...');
+  // Initialize traffic chart
 
   // Destroy existing chart if it exists
   const existingChart = Chart.getChart(ctx);
   if (existingChart) {
-    console.log('Destroying existing traffic chart...');
+    // Destroy existing chart
     existingChart.destroy();
   }
 

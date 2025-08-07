@@ -2,15 +2,16 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import handlebars from 'vite-plugin-handlebars';
-import legacy from '@vitejs/plugin-legacy';
 import { readdirSync } from 'fs';
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = resolve(__filename, '..');
 
-// Get all HTML files in root directory
-const htmlFiles = readdirSync('.').filter(file => file.endsWith('.html'));
+// Get all HTML files in root directory (excluding test files)
+const htmlFiles = readdirSync('.')
+  .filter(file => file.endsWith('.html'))
+  .filter(file => !file.startsWith('test-')); // Exclude test files
 
 // Create input object for Vite build
 const input = htmlFiles.reduce((acc, file) => {
@@ -78,9 +79,6 @@ export default defineConfig({
           }
         },
       },
-    }),
-    legacy({
-      targets: ['defaults', 'not IE 11'],
     }),
   ],
   resolve: {

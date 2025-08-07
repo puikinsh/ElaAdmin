@@ -205,24 +205,19 @@ function initializeNotifications() {
 
 // Utility function for API calls
 export async function fetchData(url, options = {}) {
-  try {
-    const response = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...options.headers,
-      },
-      ...options,
-    });
+  const response = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+    ...options,
+  });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Fetch error:', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+
+  return await response.json();
 }
 
 // Format numbers with commas
@@ -308,7 +303,7 @@ function initializeSearch() {
         e.preventDefault();
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
-          console.log('Searching for:', searchTerm);
+          // Process search term
           // Add your search logic here
         }
       }
@@ -334,14 +329,14 @@ function initializeHeaderDropdowns() {
       // Example: Handle logout
       if (action === 'Logout') {
         e.preventDefault();
-        console.log('Logout clicked');
+        // Handle logout
         // Add logout logic here
       }
       
       // Example: Handle clear all notifications
       if (this.textContent.includes('Clear all')) {
         e.preventDefault();
-        console.log('Clear all notifications');
+        // Clear notifications
         // Add clear logic here
       }
     });

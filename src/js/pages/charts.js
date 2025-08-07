@@ -4,19 +4,11 @@ import Chart from 'chart.js/auto';
 // Initialize tracking variable at module level
 let chartsInitialized = false;
 
-console.log('Chart.js version:', Chart.version);
-console.log('Charts script loading...');
+// Charts module initialization
 
 // Initialize charts function
 function runChartsInitialization() {
-  console.log('Charts.js initializing...');
-
-  // Debug: List all canvas elements
-  const allCanvas = document.querySelectorAll('canvas');
-  console.log('Found canvas elements in charts.js:', allCanvas.length);
-  allCanvas.forEach((canvas, i) => {
-    console.log(`Charts canvas ${i}: id="${canvas.id}", class="${canvas.className}"`);
-  });
+  // Initialize chart components
 
   initializeCharts();
 }
@@ -30,22 +22,22 @@ if (document.readyState === 'loading') {
 
 export function initializeCharts() {
   if (chartsInitialized) {
-    console.log('Charts already initialized, skipping...');
+    // Charts already initialized
     return;
   }
 
-  console.log('Initializing all charts...');
+  // Initialize all charts
   chartsInitialized = true;
 
   // Sales Chart (sales-chart)
   const salesChartElement = document.getElementById('sales-chart');
   if (salesChartElement) {
-    console.log('Creating sales chart...');
+    // Create sales chart
     try {
       // Destroy existing chart if it exists
       const existingChart = Chart.getChart(salesChartElement);
       if (existingChart) {
-        console.log('Destroying existing sales chart...');
+        // Destroy existing chart
         existingChart.destroy();
       }
 
@@ -96,18 +88,18 @@ export function initializeCharts() {
           },
         },
       });
-      console.log('Sales chart created successfully');
+      // Sales chart created
     } catch (error) {
       console.error('Error creating sales chart:', error);
     }
   } else {
-    console.log('Sales chart element not found');
+    // Sales chart element not found
   }
 
   // Team Chart
   const teamChartElement = document.getElementById('team-chart');
   if (teamChartElement) {
-    console.log('Creating team chart...');
+    // Create team chart
     try {
       new Chart(teamChartElement, {
         type: 'bar',
@@ -167,12 +159,12 @@ export function initializeCharts() {
           },
         },
       });
-      console.log('Team chart created successfully');
+      // Team chart created
     } catch (error) {
       console.error('Error creating team chart:', error);
     }
   } else {
-    console.log('Team chart element not found');
+    // Team chart element not found
   }
 
   // Radar Chart
@@ -246,7 +238,7 @@ export function initializeCharts() {
     // Destroy existing chart if it exists
     const existingChart = Chart.getChart(doughnutChartElement);
     if (existingChart) {
-      console.log('Destroying existing doughnut chart...');
+      // Destroy existing chart
       existingChart.destroy();
     }
 

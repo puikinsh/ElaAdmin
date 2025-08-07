@@ -71,4 +71,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-console.log('Simple navigation loaded successfully');
+// Simple navigation loaded
