@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head title="SweetAlert2 - Beautiful Alerts"}}
+  </head>
+
+  <body>
+    <div class="wrapper">
+      {{> sidebar-ela}}
+
+      <div class="main-content">
+        {{> header-ela}}
+
+        <main class="content">
+          <div class="container-fluid">
+            <div class="row mb-4">
+              <div class="col">
+                <h1>SweetAlert2</h1>
+                <p>Beautiful, responsive, customizable replacement for JavaScript's popup boxes</p>
+              </div>
+            </div>
+
+            <!-- Basic Alerts -->
+            <div class="row g-4 mb-5">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Basic Examples</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-primary w-100" id="basic-alert">
+                          <i class="fas fa-info-circle me-2"></i>Basic Alert
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-success w-100" id="success-alert">
+                          <i class="fas fa-check-circle me-2"></i>Success
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-danger w-100" id="error-alert">
+                          <i class="fas fa-times-circle me-2"></i>Error
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-warning w-100" id="warning-alert">
+                          <i class="fas fa-exclamation-triangle me-2"></i>Warning
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Alerts -->
+            <div class="row g-4 mb-5">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Interactive Examples</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-info w-100" id="confirm-alert">
+                          <i class="fas fa-question-circle me-2"></i>Confirm Dialog
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-secondary w-100" id="input-alert">
+                          <i class="fas fa-keyboard me-2"></i>Input Dialog
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-dark w-100" id="ajax-alert">
+                          <i class="fas fa-cloud-download-alt me-2"></i>AJAX Request
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-purple w-100" id="chaining-alert" style="background: #6f42c1; color: white; border-color: #6f42c1;">
+                          <i class="fas fa-link me-2"></i>Chained Modals
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Advanced Examples -->
+            <div class="row g-4 mb-5">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Advanced Features</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-outline-primary w-100" id="timer-alert">
+                          <i class="fas fa-clock me-2"></i>Auto Close Timer
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-outline-success w-100" id="html-alert">
+                          <i class="fas fa-code me-2"></i>HTML Content
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-outline-danger w-100" id="custom-alert">
+                          <i class="fas fa-palette me-2"></i>Custom Styling
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-outline-warning w-100" id="image-alert">
+                          <i class="fas fa-image me-2"></i>With Image
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Toast Examples -->
+            <div class="row g-4 mb-5">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Toast Notifications</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-success w-100" id="toast-success">
+                          <i class="fas fa-check me-2"></i>Success Toast
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-info w-100" id="toast-info">
+                          <i class="fas fa-info me-2"></i>Info Toast
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-warning w-100" id="toast-warning">
+                          <i class="fas fa-exclamation me-2"></i>Warning Toast
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-danger w-100" id="toast-error">
+                          <i class="fas fa-times me-2"></i>Error Toast
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Position Examples -->
+            <div class="row g-4 mb-5">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Positioning</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="top-start">
+                          <i class="fas fa-arrow-up me-2"></i>Top Start
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="top-center">
+                          <i class="fas fa-arrow-up me-2"></i>Top Center
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="top-end">
+                          <i class="fas fa-arrow-up me-2"></i>Top End
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="center-start">
+                          <i class="fas fa-arrow-left me-2"></i>Center Start
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="center">
+                          <i class="fas fa-crosshairs me-2"></i>Center
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="center-end">
+                          <i class="fas fa-arrow-right me-2"></i>Center End
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="bottom-start">
+                          <i class="fas fa-arrow-down me-2"></i>Bottom Start
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="bottom-center">
+                          <i class="fas fa-arrow-down me-2"></i>Bottom Center
+                        </button>
+                      </div>
+                      <div class="col-md-4">
+                        <button class="btn btn-outline-secondary w-100" id="bottom-end">
+                          <i class="fas fa-arrow-down me-2"></i>Bottom End
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mixed Examples -->
+            <div class="row g-4">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Special Examples</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-gradient-primary w-100" id="queue-alert" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+                          <i class="fas fa-list me-2"></i>Queue Example
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-gradient-success w-100" id="mixin-alert" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none;">
+                          <i class="fas fa-blender me-2"></i>Mixin Example
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-gradient-info w-100" id="progress-alert" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none;">
+                          <i class="fas fa-tasks me-2"></i>Progress Steps
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <button class="btn btn-gradient-warning w-100" id="delete-confirm" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border: none;">
+                          <i class="fas fa-trash me-2"></i>Delete Confirm
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {{> footer}}
+      </div>
+    </div>
+
+    {{> scripts}}
+    <script type="module">
+      import('/src/js/pages/ui-sweetalert.js').then(module => {
+        console.log('SweetAlert2 module loaded directly');
+      }).catch(err => {
+        console.error('Failed to load SweetAlert2 module:', err);
+      });
+    </script>
+  </body>
+</html>

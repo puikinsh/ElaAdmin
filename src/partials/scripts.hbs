@@ -28,6 +28,9 @@
           module.initializeTablesPage();
         }
         console.log('Tables module loaded');
+      } else if (currentPath.includes('ui-sweetalert')) {
+        const module = await import('/src/js/pages/ui-sweetalert.js');
+        console.log('SweetAlert2 module loaded');
       }
     } catch (error) {
       // Module not found is okay, not all pages have specific modules

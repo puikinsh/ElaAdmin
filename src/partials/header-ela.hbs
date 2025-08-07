@@ -1,10 +1,10 @@
 <!-- Modern Header with Bootstrap 5 -->
 <header style='position: fixed; top: 0; left: 0; right: 0; height: 60px; background: white; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1030;'>
   <div style='display: flex; align-items: center; gap: 15px;'>
-    <div style='display: flex; align-items: center; gap: 8px; margin-right: 10px;'>
+    <a href='index.html' style='display: flex; align-items: center; gap: 8px; margin-right: 10px; text-decoration: none;'>
       <i class='fas fa-layer-group' style='font-size: 24px; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 8px; border-radius: 8px;'></i>
       <span style='font-size: 20px; font-weight: 700; color: #2c3e50; letter-spacing: -0.5px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;'>ElaAdmin</span>
-    </div>
+    </a>
     <button
       id='sidebar-toggle'
       style='background: none; border: none; font-size: 18px; cursor: pointer; padding: 8px; color: #666;'
@@ -14,6 +14,53 @@
   </div>
   
   <div style='display: flex; align-items: center; gap: 10px;'>
+    <!-- Search Box -->
+    <div id="search-box" class="search-box" style="position: relative;">
+      <button 
+        id="search-toggle"
+        style='background: none; border: none; padding: 8px 12px; cursor: pointer; color: #666; border-radius: 4px;'
+        type="button"
+      >
+        <i class='fa fa-search'></i>
+      </button>
+      <div class="search-container" style="position: absolute; right: 0; top: 100%; margin-top: 10px; background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 15px; width: 350px; display: none; z-index: 1040;">
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="search-input"
+            class="form-control" 
+            placeholder="Search for pages, users, or features..."
+            style="border-radius: 6px 0 0 6px;"
+          >
+          <button class="btn btn-primary" type="button" style="border-radius: 0 6px 6px 0;">
+            <i class="fas fa-search"></i>
+          </button>
+          <button 
+            id="close-search"
+            class="btn btn-link position-absolute" 
+            type="button"
+            style="right: 50px; top: 50%; transform: translateY(-50%); z-index: 10; color: #999; padding: 0 5px;"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="search-suggestions mt-3" style="display: none;">
+          <h6 class="text-muted small mb-2">Quick Links</h6>
+          <div class="list-group list-group-flush">
+            <a href="index.html" class="list-group-item list-group-item-action py-2 px-0 border-0">
+              <i class="fas fa-chart-line text-primary me-2"></i> Dashboard
+            </a>
+            <a href="ui-cards.html" class="list-group-item list-group-item-action py-2 px-0 border-0">
+              <i class="fas fa-layer-group text-info me-2"></i> UI Components
+            </a>
+            <a href="forms-basic.html" class="list-group-item list-group-item-action py-2 px-0 border-0">
+              <i class="fas fa-edit text-success me-2"></i> Forms
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Notifications Dropdown -->
     <div class="dropdown">
       <button

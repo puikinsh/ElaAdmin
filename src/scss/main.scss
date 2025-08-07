@@ -31,6 +31,49 @@
 // Mobile Layout Override - MUST BE LAST
 @use 'components/mobile-layout';
 
+// Smooth dropdown animations - prevent jumping
+
+// Keyframe animation for smooth dropdown appearance
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px) scale(0.98);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
+
+// Reverse animation for hiding
+@keyframes dropdownFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-2px) scale(0.98);
+  }
+}
+
+// Ensure dropdown positioning is stable
+.dropdown {
+  .dropdown-toggle {
+    &::after {
+      transition: transform 0.2s ease;
+    }
+  }
+  
+  &.show {
+    .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 // Global dropdown fixes
 .dropdown-item {
   border: none !important;
@@ -46,8 +89,47 @@
   margin-bottom: 0;
 }
 
-// Remove borders between dropdown items
+// Combined dropdown menu styles
 .dropdown-menu {
+  transform-origin: top right;
+  margin: 0 !important;
+  
+  // Custom positioned dropdowns - override Bootstrap completely
+  &.dropdown-custom-position {
+    position: fixed !important;
+    transform: none !important;
+    inset: unset !important;
+    margin: 0 !important;
+  }
+  
+  // When positioned above
+  &.dropdown-up {
+    transform-origin: bottom right;
+  }
+  
+  // Prevent initial positioning jump
+  &.dropdown-menu-end {
+    right: 0;
+    left: auto;
+  }
+  
+  // Smooth fade-in animation
+  &.dropdown-fade-in {
+    animation: dropdownFadeIn 0.18s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  // Smooth fade-out animation
+  &.dropdown-fade-out {
+    animation: dropdownFadeOut 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  // Override Bootstrap's show animation to prevent jumping
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  // Remove borders between dropdown items
   .dropdown-item + .dropdown-item {
     border-top: none !important;
   }

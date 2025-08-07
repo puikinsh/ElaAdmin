@@ -270,30 +270,48 @@ export function debounce(func, wait) {
 // Initialize expandable search
 function initializeSearch() {
   const searchToggle = document.getElementById('search-toggle');
-  const searchBox = document.getElementById('search-box');
+  const searchContainer = document.querySelector('.search-container');
   const closeSearch = document.getElementById('close-search');
   const searchInput = document.getElementById('search-input');
+  const searchSuggestions = document.querySelector('.search-suggestions');
 
-  if (searchToggle && searchBox) {
+  if (searchToggle && searchContainer) {
     // Open search box
     searchToggle.addEventListener('click', (e) => {
       e.preventDefault();
-      searchBox.classList.add('active');
-      searchInput?.focus();
+      e.stopPropagation();
+      const isVisible = searchContainer.style.display !== 'none';
+      searchContainer.style.display = isVisible ? 'none' : 'block';
+      if (!isVisible) {
+        searchInput?.focus();
+        // Show suggestions when opening
+        if (searchSuggestions) {
+          searchSuggestions.style.display = 'block';
+        }
+      }
     });
 
     // Close search box
     closeSearch?.addEventListener('click', (e) => {
       e.preventDefault();
-      searchBox.classList.remove('active');
+      e.stopPropagation();
+      searchContainer.style.display = 'none';
       searchInput.value = '';
     });
 
     // Close on Escape key
     searchInput?.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        searchBox.classList.remove('active');
+        searchContainer.style.display = 'none';
         searchInput.value = '';
+      }
+    });
+
+    // Handle search input
+    searchInput?.addEventListener('input', (e) => {
+      // Show/hide suggestions based on input
+      if (searchSuggestions) {
+        searchSuggestions.style.display = e.target.value.trim() ? 'none' : 'block';
       }
     });
 
@@ -311,14 +329,14 @@ function initializeSearch() {
 
     // Click outside to close
     document.addEventListener('click', (e) => {
-      if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
-        searchBox.classList.remove('active');
+      if (!searchContainer.contains(e.target) && !searchToggle.contains(e.target)) {
+        searchContainer.style.display = 'none';
       }
     });
   }
 }
 
-// Initialize header dropdowns (Bootstrap 5 handles most of this)
+// Initialize header dropdowns with smooth positioning
 function initializeHeaderDropdowns() {
   // Add custom click handlers for action buttons in dropdowns
   document.querySelectorAll('.dropdown-menu a').forEach(link => {
@@ -342,8 +360,95 @@ function initializeHeaderDropdowns() {
     });
   });
 
-  // Add animation classes when dropdowns are shown
+  // Fix dropdown positioning to prevent jumping
   const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    const dropdownToggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    
+    if (dropdownToggle && dropdownMenu) {
+      let positionInterval = null;
+      let targetPosition = {};
+      
+      // Pre-calculate dropdown position before showing
+      dropdownToggle.addEventListener('show.bs.dropdown', function(e) {
+        // Get toggle button position
+        const rect = this.getBoundingClientRect();
+        
+        // Add animation class immediately
+        dropdownMenu.classList.add('dropdown-fade-in', 'dropdown-custom-position');
+        
+        // Calculate target position
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const estimatedHeight = 300;
+        
+        if (spaceBelow < estimatedHeight) {
+          // Position above
+          targetPosition = {
+            position: 'fixed',
+            bottom: (window.innerHeight - rect.top + 2) + 'px',
+            top: 'auto',
+            right: (window.innerWidth - rect.right) + 'px',
+            left: 'auto',
+            transform: 'none',
+            margin: '0'
+          };
+          dropdownMenu.classList.add('dropdown-up');
+        } else {
+          // Position below
+          targetPosition = {
+            position: 'fixed',
+            top: rect.bottom + 'px',
+            bottom: 'auto',
+            right: (window.innerWidth - rect.right) + 'px',
+            left: 'auto',
+            transform: 'none',
+            margin: '0'
+          };
+          dropdownMenu.classList.remove('dropdown-up');
+        }
+        
+        // Apply position immediately
+        Object.assign(dropdownMenu.style, targetPosition);
+        
+        // Keep overriding Bootstrap's positioning during animation
+        positionInterval = setInterval(() => {
+          Object.assign(dropdownMenu.style, targetPosition);
+        }, 10);
+        
+        // Stop overriding after animation completes
+        setTimeout(() => {
+          if (positionInterval) {
+            clearInterval(positionInterval);
+            positionInterval = null;
+            // One final position set
+            Object.assign(dropdownMenu.style, targetPosition);
+          }
+        }, 200);
+      });
+      
+      // Clean up classes when hiding
+      dropdownToggle.addEventListener('hide.bs.dropdown', function(e) {
+        // Clear any running interval
+        if (positionInterval) {
+          clearInterval(positionInterval);
+          positionInterval = null;
+        }
+        
+        // Add fade out animation
+        dropdownMenu.classList.remove('dropdown-fade-in');
+        dropdownMenu.classList.add('dropdown-fade-out');
+        
+        // Clean up after animation
+        setTimeout(() => {
+          dropdownMenu.classList.remove('dropdown-fade-out', 'dropdown-up', 'dropdown-custom-position');
+          dropdownMenu.style.cssText = '';
+        }, 150);
+      });
+    }
+  });
+
+  // Add animation classes when dropdowns are shown
   dropdowns.forEach(dropdown => {
     dropdown.addEventListener('show.bs.dropdown', function() {
       const menu = this.querySelector('.dropdown-menu');
