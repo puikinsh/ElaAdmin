@@ -8,7 +8,7 @@
 
 ### Screenshot
 
-![ElaAdmin admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/ela-admin-free-admin-panel-template.jpg)
+![ElaAdmin admin dashboard template preview](elaadmin-dashboard-template.png)
 
 ### Demo Site: [View Live Demo](https://colorlib.com/polygon/elaadmin/index.html)
 
