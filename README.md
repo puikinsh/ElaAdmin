@@ -61,6 +61,77 @@
 - **Development Tools**: ESLint and Prettier configured
 - **Cross-Browser Compatible**: Works on all modern browsers
 
+## Premium Admin Templates
+
+Level up your next project with a premium dashboard. The templates below from [DashboardPack](https://dashboardpack.com/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin) include dedicated support, frequent updates, and battle-tested code.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/tailpanel/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin">
+        <img src="screenshots/tailpanel.png" alt="TailPanel — high-performance React dashboard with Tailwind utility classes" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/tailpanel/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>TailPanel</strong></a>
+      <br>
+      <sub>React + TypeScript + Tailwind CSS + Vite. 9 dashboards, instant theme switching.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/admindek-html/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin">
+        <img src="screenshots/admindek.png" alt="Admindek — data-driven Bootstrap 5 admin panel with 100+ components" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/admindek-html/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>Admindek</strong></a>
+      <br>
+      <sub>Bootstrap 5 + vanilla JS. 100+ components, dark/light toggle, RTL, color presets.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/adminty-html-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin">
+        <img src="screenshots/adminty.png" alt="Adminty — wide-ranging Bootstrap 5 admin template with 160+ screens" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/adminty-html-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>Adminty</strong></a>
+      <br>
+      <sub>Bootstrap 5. 160+ screens for dashboards, e-commerce, CRM, and more.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin">
+        <img src="screenshots/architectui.png" alt="ArchitectUI — enterprise admin UI kit with 250+ reusable components" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>ArchitectUI</strong></a>
+      <br>
+      <sub>Bootstrap 5. 250+ reusable components, modular codebase, 9 dashboard configurations.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/kero-jquery-html-dashboard-pro/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin">
+        <img src="screenshots/kero.png" alt="Kero — clean admin interface with horizontal and vertical navigation" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/kero-jquery-html-dashboard-pro/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>Kero</strong></a>
+      <br>
+      <sub>Bootstrap 5 + Webpack. Horizontal and vertical nav modes, full SASS theming.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/cryptocurrency-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin">
+        <img src="screenshots/cryptocurrency.png" alt="Cryptocurrency Dashboard — Bitcoin and DeFi admin management panel" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/cryptocurrency-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>Cryptocurrency Dashboard</strong></a>
+      <br>
+      <sub>Bootstrap. Tailored for Bitcoin, DeFi, and ICO management applications.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="https://dashboardpack.com/?utm_source=github&utm_medium=readme&utm_campaign=elaadmin"><strong>Shop All Premium Templates</strong></a>
+</p>
+
 ## What's New in Version 3.0
 
 ### Major Changes
