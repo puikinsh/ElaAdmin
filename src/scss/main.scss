@@ -24,10 +24,6 @@
 @use 'components/utilities';
 @use 'components/layout-fixes';
 
-// Clean Navigation Components (New)
-@use 'components/sidebar-clean';
-@use 'components/header-clean';
-
 // Mobile Layout Override - MUST BE LAST
 @use 'components/mobile-layout';
 
@@ -66,7 +62,7 @@
       transition: transform 0.2s ease;
     }
   }
-  
+
   &.show {
     .dropdown-toggle::after {
       transform: rotate(180deg);
@@ -93,7 +89,7 @@
 .dropdown-menu {
   transform-origin: top right;
   margin: 0 !important;
-  
+
   // Custom positioned dropdowns - override Bootstrap completely
   &.dropdown-custom-position {
     position: fixed !important;
@@ -101,43 +97,43 @@
     inset: unset !important;
     margin: 0 !important;
   }
-  
+
   // When positioned above
   &.dropdown-up {
     transform-origin: bottom right;
   }
-  
+
   // Prevent initial positioning jump
   &.dropdown-menu-end {
     right: 0;
     left: auto;
   }
-  
+
   // Smooth fade-in animation
   &.dropdown-fade-in {
     animation: dropdownFadeIn 0.18s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
-  
+
   // Smooth fade-out animation
   &.dropdown-fade-out {
     animation: dropdownFadeOut 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
-  
+
   // Override Bootstrap's show animation to prevent jumping
   &.show {
     display: block;
     opacity: 1;
   }
-  
+
   // Remove borders between dropdown items
   .dropdown-item + .dropdown-item {
     border-top: none !important;
   }
-  
+
   li {
     border: none !important;
   }
-  
+
   // Ensure first item after header has no top border
   .dropdown-header + li .dropdown-item,
   li:has(.dropdown-header) + li .dropdown-item {
@@ -154,7 +150,7 @@
 .btn-info,
 .btn-dark {
   color: #fff !important;
-  
+
   &:hover,
   &:focus,
   &:active,
@@ -169,7 +165,7 @@
 .btn-warning,
 .btn-light {
   color: #212529 !important;
-  
+
   &:hover,
   &:focus,
   &:active,
@@ -222,7 +218,7 @@
     &.btn-dark {
       color: #fff !important;
     }
-    
+
     &.btn-warning,
     &.btn-light {
       color: #212529 !important;
@@ -233,38 +229,38 @@
 // Fix switch positioning in cards
 .card-body {
   padding: 1.25rem; // Ensure consistent padding
-  
+
   .form-check.form-switch {
     padding-left: 2.5em; // Default Bootstrap switch spacing
     margin-left: 0; // Remove extra left margin
     margin-bottom: 0.75rem; // Add proper bottom spacing
-    
+
     // Add spacing between switch and label
     .form-check-input {
       margin-right: 0.75rem; // More space between switch and label (default is 0.5rem)
     }
-    
+
     &:last-child {
       margin-bottom: 0; // No margin on last switch
     }
-    
+
     &.form-check-inline {
       padding-left: 2.5em; // Same spacing for inline
       margin-right: 1.5rem; // Space between inline switches
       margin-bottom: 0.5rem;
-      
+
       .form-check-input {
         margin-right: 0.75rem; // Consistent spacing for inline too
       }
     }
   }
-  
+
   // For switches in list groups
   .list-group-item {
     .form-check.form-switch {
       margin-left: 0; // No extra margin in list groups
       margin-bottom: 0;
-      
+
       .form-check-input {
         margin-right: 0.75rem; // Consistent spacing in list groups
       }
@@ -359,34 +355,34 @@ body {
   .table {
     margin-bottom: 0;
   }
-  
+
   thead th.sortable {
     position: relative;
     padding-right: 1.5rem;
-    
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.02);
     }
-    
+
     i {
       opacity: 0.5;
       transition: opacity 0.2s;
     }
-    
+
     &:hover i {
       opacity: 1;
     }
   }
-  
+
   .datatable-info {
     font-size: 0.875rem;
     color: #6c757d;
   }
-  
+
   .pagination {
     margin-bottom: 0;
   }
-  
+
   // Responsive table wrapper
   .table-responsive {
     margin: -1.25rem;

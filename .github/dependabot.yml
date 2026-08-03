@@ -1,0 +1,56 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+    # Grouping keeps the PR count low: without it, a Vite or DataTables bump
+    # arrives as several separate PRs that must be merged in lockstep anyway.
+    groups:
+      build-toolchain:
+        patterns:
+          - 'vite'
+          - 'vite-plugin-*'
+          - 'sass'
+          - 'rolldown*'
+      linting:
+        patterns:
+          - 'eslint'
+          - '@eslint/*'
+          - 'eslint-config-*'
+          - 'prettier'
+          - 'globals'
+      datatables:
+        patterns:
+          - 'datatables.net*'
+      frontend:
+        patterns:
+          - 'bootstrap'
+          - 'bootstrap-icons'
+          - '@popperjs/*'
+          - '@fortawesome/*'
+          - '@fontsource*/*'
+          - 'chart.js'
+          - 'leaflet'
+          - 'sweetalert2'
+      # Security patches should never wait for the weekly grouped PR.
+      security:
+        applies-to: security-updates
+        patterns:
+          - '*'
+
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    labels:
+      - dependencies
+    groups:
+      actions:
+        patterns:
+          - '*'

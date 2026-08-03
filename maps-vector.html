@@ -2,11 +2,7 @@
 <html lang="en">
   <head>
     {{> head title="Vector Maps - ElaAdmin"}}
-    <!-- Chart.js for data visualization -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Leaflet for interactive maps -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Chart.js and Leaflet are bundled from npm by Vite (see the module script below) -->
     <style>
       .map-container {
         height: 400px;
@@ -14,7 +10,7 @@
         overflow: hidden;
         position: relative;
       }
-      
+
       .stats-overlay {
         position: absolute;
         top: 10px;
@@ -22,35 +18,35 @@
         background: rgba(255, 255, 255, 0.95);
         padding: 15px;
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
         min-width: 200px;
       }
-      
+
       .stats-overlay h6 {
         margin-bottom: 10px;
         color: #495057;
       }
-      
+
       .stat-item {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
       }
-      
+
       .stat-item:last-child {
         margin-bottom: 0;
         padding-top: 8px;
         border-top: 1px solid #e9ecef;
         font-weight: 600;
       }
-      
+
       .chart-container {
         position: relative;
         height: 300px;
         padding: 20px;
       }
-      
+
       .geo-chart {
         height: 400px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -62,7 +58,7 @@
         justify-content: center;
         color: white;
       }
-      
+
       .geo-visualization {
         position: relative;
         width: 100%;
@@ -72,7 +68,7 @@
         justify-content: center;
         flex-direction: column;
       }
-      
+
       .data-point {
         position: absolute;
         width: 12px;
@@ -83,51 +79,57 @@
         cursor: pointer;
         transition: all 0.3s ease;
       }
-      
+
       .data-point:hover {
         transform: scale(1.5);
         background: #fff;
       }
-      
+
       @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-        70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
       }
-      
+
       .region-selector {
         margin-bottom: 20px;
       }
-      
+
       .region-btn {
         margin-right: 10px;
         margin-bottom: 5px;
       }
-      
+
       .leaflet-container {
         border-radius: 8px;
       }
-      
+
       .map-legend {
         background: rgba(255, 255, 255, 0.95);
         padding: 15px;
         border-radius: 8px;
         margin-top: 15px;
       }
-      
+
       .legend-item {
         display: flex;
         align-items: center;
         margin-bottom: 5px;
       }
-      
+
       .legend-color {
         width: 20px;
         height: 20px;
         border-radius: 3px;
         margin-right: 10px;
       }
-      
+
       .heatmap-demo {
         background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
         background-size: 400% 400%;
@@ -141,18 +143,23 @@
         font-size: 1.2rem;
         text-align: center;
       }
-      
+
       @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     </style>
   </head>
 
   <body>
-    {{> sidebar-ela}}
-    {{> header-ela}}
+    {{> sidebar-ela}} {{> header-ela}}
 
     <div id="right-panel" class="right-panel main-content">
       <div class="content">
@@ -183,11 +190,36 @@
                 </div>
                 <div class="card-body">
                   <div class="region-selector">
-                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(51.505, -0.09, 10)">London</button>
-                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(40.7128, -74.0060, 10)">New York</button>
-                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(35.6762, 139.6503, 10)">Tokyo</button>
-                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(-33.8688, 151.2093, 10)">Sydney</button>
-                    <button class="btn btn-sm btn-outline-primary region-btn" onclick="setMapView(20, 0, 2)">World</button>
+                    <button
+                      class="btn btn-sm btn-outline-primary region-btn"
+                      onclick="setMapView(51.505, -0.09, 10)"
+                    >
+                      London
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-primary region-btn"
+                      onclick="setMapView(40.7128, -74.006, 10)"
+                    >
+                      New York
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-primary region-btn"
+                      onclick="setMapView(35.6762, 139.6503, 10)"
+                    >
+                      Tokyo
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-primary region-btn"
+                      onclick="setMapView(-33.8688, 151.2093, 10)"
+                    >
+                      Sydney
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-primary region-btn"
+                      onclick="setMapView(20, 0, 2)"
+                    >
+                      World
+                    </button>
                   </div>
                   <div id="worldMap" class="map-container">
                     <div class="stats-overlay">
@@ -232,7 +264,9 @@
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="mb-0"><i class="fas fa-map-marked-alt me-2"></i>Geographic Distribution</h5>
+                  <h5 class="mb-0">
+                    <i class="fas fa-map-marked-alt me-2"></i>Geographic Distribution
+                  </h5>
                 </div>
                 <div class="card-body">
                   <div id="geoDistributionMap" class="map-container">
@@ -240,15 +274,15 @@
                   </div>
                   <div class="map-legend">
                     <div class="legend-item">
-                      <div class="legend-color" style="background: #007bff;"></div>
+                      <div class="legend-color" style="background: #007bff"></div>
                       <span>High Activity (&gt;1000 users)</span>
                     </div>
                     <div class="legend-item">
-                      <div class="legend-color" style="background: #28a745;"></div>
+                      <div class="legend-color" style="background: #28a745"></div>
                       <span>Medium Activity (500-1000 users)</span>
                     </div>
                     <div class="legend-item">
-                      <div class="legend-color" style="background: #ffc107;"></div>
+                      <div class="legend-color" style="background: #ffc107"></div>
                       <span>Low Activity (&lt;500 users)</span>
                     </div>
                   </div>
@@ -407,7 +441,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -416,26 +449,32 @@
 
     {{> scripts}}
 
-    <script>
+    <script type="module">
+      // Bundled from npm instead of a CDN: versions are locked, the payload is
+      // fingerprinted, and no third-party origin is contacted at runtime.
+      import Chart from 'chart.js/auto';
+      import L from 'leaflet';
+      import 'leaflet/dist/leaflet.css';
+
       // Initialize Leaflet maps
       let map;
       let geoMap;
-      
+
       function initializeMap() {
         // Main world map
         map = L.map('worldMap').setView([20, 0], 2);
-        
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors'
+          attribution: '© OpenStreetMap contributors',
         }).addTo(map);
 
         // Add markers for major cities
         const cities = [
-          { name: 'New York', lat: 40.7128, lng: -74.0060, users: 28473 },
+          { name: 'New York', lat: 40.7128, lng: -74.006, users: 28473 },
           { name: 'London', lat: 51.5074, lng: -0.1278, users: 19284 },
           { name: 'Tokyo', lat: 35.6762, lng: 139.6503, users: 15762 },
           { name: 'Paris', lat: 48.8566, lng: 2.3522, users: 12948 },
-          { name: 'Berlin', lat: 52.5200, lng: 13.4050, users: 8473 },
+          { name: 'Berlin', lat: 52.52, lng: 13.405, users: 8473 },
           { name: 'Sydney', lat: -33.8688, lng: 151.2093, users: 6291 },
         ];
 
@@ -447,23 +486,23 @@
             color: '#fff',
             weight: 2,
             opacity: 1,
-            fillOpacity: 0.7
+            fillOpacity: 0.7,
           }).addTo(map);
-          
+
           marker.bindPopup(`
             <strong>${city.name}</strong><br>
             Active Users: ${city.users.toLocaleString()}<br>
             <small>Click to view details</small>
           `);
         });
-        
+
         // Initialize Geographic Distribution Map
         geoMap = L.map('geoDistributionMap').setView([30, 0], 2);
-        
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors'
+          attribution: '© OpenStreetMap contributors',
         }).addTo(geoMap);
-        
+
         // Add heat map-like circles for regions
         const regions = [
           { name: 'North America', lat: 45, lng: -100, users: 45000, color: '#007bff' },
@@ -471,15 +510,15 @@
           { name: 'Asia', lat: 30, lng: 100, users: 18000, color: '#ffc107' },
           { name: 'South America', lat: -15, lng: -60, users: 3000, color: '#17a2b8' },
           { name: 'Africa', lat: 0, lng: 20, users: 2000, color: '#dc3545' },
-          { name: 'Australia', lat: -25, lng: 135, users: 5000, color: '#6610f2' }
+          { name: 'Australia', lat: -25, lng: 135, users: 5000, color: '#6610f2' },
         ];
-        
+
         regions.forEach(region => {
           L.circle([region.lat, region.lng], {
             color: region.color,
             fillColor: region.color,
             fillOpacity: 0.5,
-            radius: Math.sqrt(region.users) * 5000
+            radius: Math.sqrt(region.users) * 5000,
           }).addTo(geoMap).bindPopup(`
             <strong>${region.name}</strong><br>
             Users: ${region.users.toLocaleString()}<br>
@@ -500,49 +539,58 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['North America', 'Europe', 'Asia Pacific', 'Latin America', 'Africa', 'Middle East'],
-            datasets: [{
-              label: 'Revenue ($K)',
-              data: [450, 320, 280, 150, 75, 95],
-              backgroundColor: [
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(255, 99, 132, 0.8)',
-                'rgba(255, 206, 86, 0.8)',
-                'rgba(75, 192, 192, 0.8)',
-                'rgba(153, 102, 255, 0.8)',
-                'rgba(255, 159, 64, 0.8)'
-              ],
-              borderColor: [
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1,
-              borderRadius: 4
-            }]
+            labels: [
+              'North America',
+              'Europe',
+              'Asia Pacific',
+              'Latin America',
+              'Africa',
+              'Middle East',
+            ],
+            datasets: [
+              {
+                label: 'Revenue ($K)',
+                data: [450, 320, 280, 150, 75, 95],
+                backgroundColor: [
+                  'rgba(54, 162, 235, 0.8)',
+                  'rgba(255, 99, 132, 0.8)',
+                  'rgba(255, 206, 86, 0.8)',
+                  'rgba(75, 192, 192, 0.8)',
+                  'rgba(153, 102, 255, 0.8)',
+                  'rgba(255, 159, 64, 0.8)',
+                ],
+                borderColor: [
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
+                ],
+                borderWidth: 1,
+                borderRadius: 4,
+              },
+            ],
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
               legend: {
-                display: false
-              }
+                display: false,
+              },
             },
             scales: {
               y: {
                 beginAtZero: true,
                 ticks: {
-                  callback: function(value) {
+                  callback: function (value) {
                     return '$' + value + 'K';
-                  }
-                }
-              }
-            }
-          }
+                  },
+                },
+              },
+            },
+          },
         });
       }
 
@@ -553,18 +601,14 @@
           type: 'doughnut',
           data: {
             labels: ['Organic', 'Direct', 'Social', 'Referral', 'Email'],
-            datasets: [{
-              data: [45, 25, 15, 10, 5],
-              backgroundColor: [
-                '#28a745',
-                '#007bff',
-                '#fd7e14',
-                '#6610f2',
-                '#20c997'
-              ],
-              borderWidth: 2,
-              borderColor: '#fff'
-            }]
+            datasets: [
+              {
+                data: [45, 25, 15, 10, 5],
+                backgroundColor: ['#28a745', '#007bff', '#fd7e14', '#6610f2', '#20c997'],
+                borderWidth: 2,
+                borderColor: '#fff',
+              },
+            ],
           },
           options: {
             responsive: true,
@@ -574,17 +618,17 @@
                 position: 'bottom',
                 labels: {
                   padding: 15,
-                  usePointStyle: true
-                }
-              }
-            }
-          }
+                  usePointStyle: true,
+                },
+              },
+            },
+          },
         });
       }
 
       // Add tooltips to data points
       document.querySelectorAll('.data-point').forEach(point => {
-        point.addEventListener('mouseenter', function(e) {
+        point.addEventListener('mouseenter', function (e) {
           const tooltip = this.getAttribute('data-tooltip');
           if (tooltip) {
             // Simple tooltip implementation
@@ -608,7 +652,7 @@
           }
         });
 
-        point.addEventListener('mouseleave', function() {
+        point.addEventListener('mouseleave', function () {
           if (this.tooltipEl) {
             this.tooltipEl.remove();
             this.tooltipEl = null;
@@ -623,78 +667,86 @@
           type: 'line',
           data: {
             labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
-            datasets: [{
-              label: 'North America',
-              data: [1200, 900, 1500, 2800, 2400, 2100, 1500],
-              borderColor: '#007bff',
-              backgroundColor: 'rgba(0, 123, 255, 0.1)',
-              tension: 0.4,
-              fill: true
-            }, {
-              label: 'Europe',
-              data: [800, 1200, 2100, 2400, 1800, 1500, 1000],
-              borderColor: '#28a745',
-              backgroundColor: 'rgba(40, 167, 69, 0.1)',
-              tension: 0.4,
-              fill: true
-            }, {
-              label: 'Asia',
-              data: [2100, 2400, 1800, 1500, 1800, 2400, 2200],
-              borderColor: '#ffc107',
-              backgroundColor: 'rgba(255, 193, 7, 0.1)',
-              tension: 0.4,
-              fill: true
-            }]
+            datasets: [
+              {
+                label: 'North America',
+                data: [1200, 900, 1500, 2800, 2400, 2100, 1500],
+                borderColor: '#007bff',
+                backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                tension: 0.4,
+                fill: true,
+              },
+              {
+                label: 'Europe',
+                data: [800, 1200, 2100, 2400, 1800, 1500, 1000],
+                borderColor: '#28a745',
+                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                tension: 0.4,
+                fill: true,
+              },
+              {
+                label: 'Asia',
+                data: [2100, 2400, 1800, 1500, 1800, 2400, 2200],
+                borderColor: '#ffc107',
+                backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                tension: 0.4,
+                fill: true,
+              },
+            ],
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
               legend: {
-                position: 'bottom'
+                position: 'bottom',
               },
               title: {
                 display: true,
-                text: 'Traffic Density by Region (24h)'
-              }
+                text: 'Traffic Density by Region (24h)',
+              },
             },
             scales: {
               y: {
                 beginAtZero: true,
                 title: {
                   display: true,
-                  text: 'Active Users'
-                }
+                  text: 'Active Users',
+                },
               },
               x: {
                 title: {
                   display: true,
-                  text: 'Time (UTC)'
-                }
-              }
-            }
-          }
+                  text: 'Time (UTC)',
+                },
+              },
+            },
+          },
         });
       }
 
       // Initialize everything when page loads
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         // Small delay to ensure all libraries are loaded
-        setTimeout(function() {
+        setTimeout(function () {
           initializeMap();
           initializeRegionalChart();
           initializeTrafficChart();
           initializeHeatmapChart();
         }, 100);
-        
+
         // Update stats periodically
-        setInterval(function() {
-          const statsElements = document.querySelectorAll('.stats-overlay .text-success, .stats-overlay .text-info, .stats-overlay .text-warning, .stats-overlay .text-primary');
+        setInterval(function () {
+          const statsElements = document.querySelectorAll(
+            '.stats-overlay .text-success, .stats-overlay .text-info, .stats-overlay .text-warning, .stats-overlay .text-primary'
+          );
           statsElements.forEach(el => {
             const currentValue = parseInt(el.textContent.replace(/[^0-9]/g, ''));
             const variation = Math.floor(Math.random() * 20) - 10;
             const newValue = Math.max(0, currentValue + variation);
-            el.textContent = el.textContent.includes('$') ? '$' + newValue.toLocaleString() : newValue.toLocaleString();
+            el.textContent = el.textContent.includes('$')
+              ? '$' + newValue.toLocaleString()
+              : newValue.toLocaleString();
           });
         }, 5000);
       });

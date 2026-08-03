@@ -6,19 +6,19 @@
   border-top: 1px solid #e7e7e7;
   padding: 1rem 0;
   margin-top: auto; // Push footer to bottom when using flexbox
-  
+
   // Copyright text styling
   p {
     font-size: 12px; // Smaller text size (reduced by 2px from default 14px)
     margin-bottom: 0;
     color: #6c757d;
   }
-  
+
   a {
     color: $primary;
     text-decoration: none;
     transition: all 0.2s ease;
-    
+
     &:hover {
       text-decoration: underline;
       color: darken($primary, 10%);
@@ -59,11 +59,11 @@ body {
 @media (max-width: 767.98px) {
   .footer {
     padding: 0.75rem 0;
-    
+
     p {
       font-size: 11px; // Even smaller on mobile
     }
-    
+
     .text-md-end {
       text-align: left !important;
       margin-top: 0.5rem;

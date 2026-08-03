@@ -1,40 +1,25 @@
-<!-- Bootstrap 5 JavaScript via Vite -->
+<!-- Core bundle: Bootstrap 5, styles and shared layout behaviour -->
 <script type='module' src='/src/js/main.js'></script>
 
-<!-- Page-specific module loading -->
+<!-- Page-specific modules, code-split by Vite and loaded on demand -->
 <script type='module'>
-  // Get the current page for dynamic module loading
-  const currentPath = window.location.pathname;
-  const pageName = currentPath.split('/').pop().replace('.html', '');
-  
-  // Dynamic imports for page-specific functionality
-  (async () => {
-    try {
-      if (currentPath.includes('dashboard') || currentPath === '/' || currentPath.includes('index')) {
-        const module = await import('/src/js/pages/dashboard.js');
-        console.log('Dashboard module loaded');
-      } else if (currentPath.includes('charts')) {
-        const module = await import('/src/js/pages/charts.js');
-        console.log('Charts module loaded');
-      } else if (currentPath.includes('forms')) {
-        const module = await import('/src/js/pages/forms.js');
-        console.log('Forms module loaded');
-      } else if (currentPath.includes('tables-data')) {
-        const module = await import('/src/js/pages/tables-data.js');
-        console.log('Data Tables module loaded');
-      } else if (currentPath.includes('tables')) {
-        const module = await import('/src/js/pages/tables.js');
-        if (module.initializeTablesPage) {
-          module.initializeTablesPage();
-        }
-        console.log('Tables module loaded');
-      } else if (currentPath.includes('ui-sweetalert')) {
-        const module = await import('/src/js/pages/ui-sweetalert.js');
-        console.log('SweetAlert2 module loaded');
-      }
-    } catch (error) {
-      // Module not found is okay, not all pages have specific modules
-      console.log('No specific module for this page or module not found');
-    }
-  })();
+  // Explicit route table. Each value uses a literal import specifier so Vite can
+  // statically analyse it and emit one lazily-loaded chunk per page.
+  const routes = {
+    index: () => import('/src/js/pages/dashboard.js'),
+    'charts-chartjs': () => import('/src/js/pages/charts.js').then(m => m.initializeCharts()),
+    'forms-basic': () => import('/src/js/pages/forms.js').then(m => m.initializeFormsPage()),
+    'forms-advanced': () => import('/src/js/pages/forms.js').then(m => m.initializeFormsPage()),
+    'tables-basic': () => import('/src/js/pages/tables.js').then(m => m.initializeTablesPage()),
+    'tables-data': () => import('/src/js/pages/tables-data.js'),
+    'ui-sweetalert': () => import('/src/js/pages/ui-sweetalert.js'),
+  };
+
+  const file = window.location.pathname.split('/').pop() || 'index.html';
+  const page = file.replace(/\.html$/, '') || 'index';
+
+  // Pages with no entry simply have no page module — that is not an error.
+  routes[page]?.().catch(error => {
+    console.error(`Failed to load the "${page}" page module:`, error);
+  });
 </script>

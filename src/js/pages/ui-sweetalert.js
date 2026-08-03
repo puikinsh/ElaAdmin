@@ -2,7 +2,6 @@ import Swal from 'sweetalert2';
 
 // Initialize immediately when module loads
 function initializeSweetAlert() {
-  console.log('SweetAlert2 module initializing...');
   // Basic Alerts
   document.getElementById('basic-alert')?.addEventListener('click', () => {
     Swal.fire('Hello World!', 'This is a basic SweetAlert2 popup', 'info');
@@ -29,8 +28,8 @@ function initializeSweetAlert() {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
       if (result.isConfirmed) {
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
       }
@@ -44,11 +43,11 @@ function initializeSweetAlert() {
       inputLabel: 'Your email address',
       inputPlaceholder: 'Enter your email address',
       showCancelButton: true,
-      inputValidator: (value) => {
+      inputValidator: value => {
         if (!value) {
           return 'You need to enter an email!';
         }
-      }
+      },
     });
 
     if (email) {
@@ -61,13 +60,13 @@ function initializeSweetAlert() {
       title: 'Submit your GitHub username',
       input: 'text',
       inputAttributes: {
-        autocapitalize: 'off'
+        autocapitalize: 'off',
       },
       showCancelButton: true,
       confirmButtonText: 'Look up',
       showLoaderOnConfirm: true,
-      preConfirm: (login) => {
-        return fetch(`//api.github.com/users/${login}`)
+      preConfirm: login =>
+        fetch(`//api.github.com/users/${login}`)
           .then(response => {
             if (!response.ok) {
               throw new Error(response.statusText);
@@ -76,10 +75,9 @@ function initializeSweetAlert() {
           })
           .catch(error => {
             Swal.showValidationMessage(`Request failed: ${error}`);
-          });
-      },
-      allowOutsideClick: () => !Swal.isLoading()
-    }).then((result) => {
+          }),
+      allowOutsideClick: () => !Swal.isLoading(),
+    }).then(result => {
       if (result.isConfirmed) {
         Swal.fire({
           title: `${result.value.login}'s avatar`,
@@ -97,24 +95,26 @@ function initializeSweetAlert() {
       input: 'text',
       confirmButtonText: 'Next &rarr;',
       showCancelButton: true,
-      progressSteps: ['1', '2', '3']
-    }).queue([
-      {
-        title: 'Question 1',
-        text: 'What is your name?'
-      },
-      'What is your favorite color?',
-      'What is your favorite programming language?'
-    ]).then((result) => {
-      if (result.value) {
-        const answers = JSON.stringify(result.value);
-        Swal.fire({
-          title: 'All done!',
-          html: `Your answers: <pre>${answers}</pre>`,
-          confirmButtonText: 'Lovely!'
-        });
-      }
-    });
+      progressSteps: ['1', '2', '3'],
+    })
+      .queue([
+        {
+          title: 'Question 1',
+          text: 'What is your name?',
+        },
+        'What is your favorite color?',
+        'What is your favorite programming language?',
+      ])
+      .then(result => {
+        if (result.value) {
+          const answers = JSON.stringify(result.value);
+          Swal.fire({
+            title: 'All done!',
+            html: `Your answers: <pre>${answers}</pre>`,
+            confirmButtonText: 'Lovely!',
+          });
+        }
+      });
   });
 
   // Advanced Features
@@ -134,10 +134,10 @@ function initializeSweetAlert() {
       },
       willClose: () => {
         clearInterval(timerInterval);
-      }
-    }).then((result) => {
+      },
+    }).then(result => {
       if (result.dismiss === Swal.DismissReason.timer) {
-        console.log('I was closed by the timer');
+        // Closed automatically by the timer
       }
     });
   });
@@ -156,7 +156,7 @@ function initializeSweetAlert() {
       confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
       confirmButtonAriaLabel: 'Thumbs up, great!',
       cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
-      cancelButtonAriaLabel: 'Thumbs down'
+      cancelButtonAriaLabel: 'Thumbs down',
     });
   });
 
@@ -164,16 +164,16 @@ function initializeSweetAlert() {
     Swal.fire({
       title: 'Custom animation with Animate.css',
       showClass: {
-        popup: 'animate__animated animate__fadeInDown'
+        popup: 'animate__animated animate__fadeInDown',
       },
       hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
+        popup: 'animate__animated animate__fadeOutUp',
       },
       customClass: {
         confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
+        cancelButton: 'btn btn-danger',
       },
-      buttonsStyling: false
+      buttonsStyling: false,
     });
   });
 
@@ -195,37 +195,37 @@ function initializeSweetAlert() {
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
-    didOpen: (toast) => {
+    didOpen: toast => {
       toast.addEventListener('mouseenter', Swal.stopTimer);
       toast.addEventListener('mouseleave', Swal.resumeTimer);
-    }
+    },
   });
 
   document.getElementById('toast-success')?.addEventListener('click', () => {
     Toast.fire({
       icon: 'success',
-      title: 'Signed in successfully'
+      title: 'Signed in successfully',
     });
   });
 
   document.getElementById('toast-info')?.addEventListener('click', () => {
     Toast.fire({
       icon: 'info',
-      title: 'Info message here'
+      title: 'Info message here',
     });
   });
 
   document.getElementById('toast-warning')?.addEventListener('click', () => {
     Toast.fire({
       icon: 'warning',
-      title: 'Warning: Check your input'
+      title: 'Warning: Check your input',
     });
   });
 
   document.getElementById('toast-error')?.addEventListener('click', () => {
     Toast.fire({
       icon: 'error',
-      title: 'Error occurred!'
+      title: 'Error occurred!',
     });
   });
 
@@ -236,7 +236,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Top Start Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -246,7 +246,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Top Center Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -256,7 +256,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Top End Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -266,7 +266,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Center Start Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -276,7 +276,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Center Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -286,7 +286,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Center End Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -296,7 +296,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Bottom Start Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -306,7 +306,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Bottom Center Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -316,7 +316,7 @@ function initializeSweetAlert() {
       icon: 'success',
       title: 'Bottom End Position',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   });
 
@@ -325,47 +325,49 @@ function initializeSweetAlert() {
     Swal.mixin({
       confirmButtonText: 'Next &rarr;',
       showCancelButton: true,
-      progressSteps: ['1', '2', '3']
-    }).queue([
-      {
-        title: 'Step 1',
-        text: 'This is the first step'
-      },
-      {
-        title: 'Step 2',
-        text: 'This is the second step'
-      },
-      {
-        title: 'Step 3',
-        text: 'This is the final step'
-      }
-    ]).then((result) => {
-      if (result.value) {
-        Swal.fire({
-          title: 'All steps completed!',
-          confirmButtonText: 'Finish'
-        });
-      }
-    });
+      progressSteps: ['1', '2', '3'],
+    })
+      .queue([
+        {
+          title: 'Step 1',
+          text: 'This is the first step',
+        },
+        {
+          title: 'Step 2',
+          text: 'This is the second step',
+        },
+        {
+          title: 'Step 3',
+          text: 'This is the final step',
+        },
+      ])
+      .then(result => {
+        if (result.value) {
+          Swal.fire({
+            title: 'All steps completed!',
+            confirmButtonText: 'Finish',
+          });
+        }
+      });
   });
 
   document.getElementById('mixin-alert')?.addEventListener('click', () => {
     const MySwal = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success me-2',
-        cancelButton: 'btn btn-danger'
+        cancelButton: 'btn btn-danger',
       },
-      buttonsStyling: false
+      buttonsStyling: false,
     });
 
     MySwal.fire({
       title: 'Are you sure?',
-      text: "This is a mixin example with custom button styling",
+      text: 'This is a mixin example with custom button styling',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, proceed!',
       cancelButtonText: 'No, cancel!',
-      reverseButtons: true
+      reverseButtons: true,
     });
   });
 
@@ -377,26 +379,26 @@ function initializeSweetAlert() {
       showClass: {
         backdrop: 'swal2-noanimation',
         popup: '',
-        icon: ''
+        icon: '',
       },
       hideClass: {
-        popup: ''
-      }
+        popup: '',
+      },
     });
   });
 
   document.getElementById('delete-confirm')?.addEventListener('click', () => {
     Swal.fire({
       title: 'Delete this item?',
-      text: "This action cannot be undone!",
+      text: 'This action cannot be undone!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Yes, delete it!',
       cancelButtonText: 'Cancel',
-      reverseButtons: true
-    }).then((result) => {
+      reverseButtons: true,
+    }).then(result => {
       if (result.isConfirmed) {
         // Simulate deletion
         Swal.fire({
@@ -405,20 +407,12 @@ function initializeSweetAlert() {
           timerProgressBar: true,
           didOpen: () => {
             Swal.showLoading();
-          }
+          },
         }).then(() => {
-          Swal.fire(
-            'Deleted!',
-            'The item has been deleted.',
-            'success'
-          );
+          Swal.fire('Deleted!', 'The item has been deleted.', 'success');
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Cancelled',
-          'Your item is safe :)',
-          'error'
-        );
+        Swal.fire('Cancelled', 'Your item is safe :)', 'error');
       }
     });
   });

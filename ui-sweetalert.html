@@ -80,7 +80,11 @@
                         </button>
                       </div>
                       <div class="col-md-3 col-sm-6">
-                        <button class="btn btn-purple w-100" id="chaining-alert" style="background: #6f42c1; color: white; border-color: #6f42c1;">
+                        <button
+                          class="btn btn-purple w-100"
+                          id="chaining-alert"
+                          style="background: #6f42c1; color: white; border-color: #6f42c1"
+                        >
                           <i class="fas fa-link me-2"></i>Chained Modals
                         </button>
                       </div>
@@ -230,22 +234,54 @@
                   <div class="card-body">
                     <div class="row g-3">
                       <div class="col-md-3 col-sm-6">
-                        <button class="btn btn-gradient-primary w-100" id="queue-alert" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+                        <button
+                          class="btn btn-gradient-primary w-100"
+                          id="queue-alert"
+                          style="
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            color: white;
+                            border: none;
+                          "
+                        >
                           <i class="fas fa-list me-2"></i>Queue Example
                         </button>
                       </div>
                       <div class="col-md-3 col-sm-6">
-                        <button class="btn btn-gradient-success w-100" id="mixin-alert" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none;">
+                        <button
+                          class="btn btn-gradient-success w-100"
+                          id="mixin-alert"
+                          style="
+                            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                            color: white;
+                            border: none;
+                          "
+                        >
                           <i class="fas fa-blender me-2"></i>Mixin Example
                         </button>
                       </div>
                       <div class="col-md-3 col-sm-6">
-                        <button class="btn btn-gradient-info w-100" id="progress-alert" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none;">
+                        <button
+                          class="btn btn-gradient-info w-100"
+                          id="progress-alert"
+                          style="
+                            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                            color: white;
+                            border: none;
+                          "
+                        >
                           <i class="fas fa-tasks me-2"></i>Progress Steps
                         </button>
                       </div>
                       <div class="col-md-3 col-sm-6">
-                        <button class="btn btn-gradient-warning w-100" id="delete-confirm" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border: none;">
+                        <button
+                          class="btn btn-gradient-warning w-100"
+                          id="delete-confirm"
+                          style="
+                            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+                            color: white;
+                            border: none;
+                          "
+                        >
                           <i class="fas fa-trash me-2"></i>Delete Confirm
                         </button>
                       </div>
@@ -263,11 +299,13 @@
 
     {{> scripts}}
     <script type="module">
-      import('/src/js/pages/ui-sweetalert.js').then(module => {
-        console.log('SweetAlert2 module loaded directly');
-      }).catch(err => {
-        console.error('Failed to load SweetAlert2 module:', err);
-      });
+      import('/src/js/pages/ui-sweetalert.js')
+        .then(module => {
+          console.log('SweetAlert2 module loaded directly');
+        })
+        .catch(err => {
+          console.error('Failed to load SweetAlert2 module:', err);
+        });
     </script>
   </body>
 </html>

@@ -4,26 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ElaAdmin Documentation - Bootstrap 5 Admin Template</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Inter is self-hosted via @fontsource so no request reaches Google Fonts.
+         The variable font covers every weight in a single file. -->
+    <script type="module">
+      import '@fontsource-variable/inter/wght.css';
+    </script>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      
+
       body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family:
+          'Inter Variable',
+          'Inter',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
         color: #4a5568;
         line-height: 1.6;
         background: #f7fafc;
       }
-      
+
       .docs-container {
         display: flex;
         min-height: 100vh;
       }
-      
+
       /* Sidebar */
       .docs-sidebar {
         width: 280px;
@@ -34,7 +45,7 @@
         overflow-y: auto;
         padding: 2rem 0;
       }
-      
+
       .docs-logo {
         padding: 0 2rem;
         margin-bottom: 2rem;
@@ -42,11 +53,11 @@
         font-weight: 700;
         color: #2d3748;
       }
-      
+
       .docs-nav-section {
         margin-bottom: 1.5rem;
       }
-      
+
       .docs-nav-title {
         padding: 0 2rem;
         font-size: 0.75rem;
@@ -56,7 +67,7 @@
         color: #a0aec0;
         margin-bottom: 0.5rem;
       }
-      
+
       .docs-nav-item {
         display: block;
         padding: 0.5rem 2rem;
@@ -65,19 +76,19 @@
         transition: all 0.2s;
         border-left: 3px solid transparent;
       }
-      
+
       .docs-nav-item:hover {
         background: #f7fafc;
         color: #2b6cb0;
       }
-      
+
       .docs-nav-item.active {
         background: #edf2f7;
         color: #2b6cb0;
         border-left-color: #2b6cb0;
         font-weight: 500;
       }
-      
+
       /* Main Content */
       .docs-main {
         margin-left: 280px;
@@ -85,11 +96,11 @@
         padding: 3rem;
         max-width: 1000px;
       }
-      
+
       .docs-section {
         margin-bottom: 4rem;
       }
-      
+
       .docs-section h1 {
         color: #1a202c;
         font-size: 2.5rem;
@@ -98,41 +109,42 @@
         padding-bottom: 1rem;
         border-bottom: 2px solid #e2e8f0;
       }
-      
+
       .docs-section h2 {
         color: #2d3748;
         font-size: 2rem;
         font-weight: 600;
         margin: 3rem 0 1.5rem;
       }
-      
+
       .docs-section h3 {
         color: #2d3748;
         font-size: 1.5rem;
         font-weight: 600;
         margin: 2rem 0 1rem;
       }
-      
+
       .docs-section h4 {
         color: #4a5568;
         font-size: 1.25rem;
         font-weight: 500;
         margin: 1.5rem 0 0.75rem;
       }
-      
+
       .docs-section p {
         margin-bottom: 1rem;
         color: #4a5568;
       }
-      
-      .docs-section ul, .docs-section ol {
+
+      .docs-section ul,
+      .docs-section ol {
         margin: 1rem 0 1rem 2rem;
       }
-      
+
       .docs-section li {
         margin-bottom: 0.5rem;
       }
-      
+
       /* Code Blocks */
       .code-block {
         background: #1a202c;
@@ -143,14 +155,14 @@
         overflow-x: auto;
         position: relative;
       }
-      
+
       .code-block pre {
         margin: 0;
         font-family: 'Courier New', monospace;
         font-size: 0.9rem;
         line-height: 1.5;
       }
-      
+
       .code-copy {
         position: absolute;
         top: 0.75rem;
@@ -165,11 +177,11 @@
         opacity: 0.7;
         transition: opacity 0.2s;
       }
-      
+
       .code-copy:hover {
         opacity: 1;
       }
-      
+
       code {
         background: #edf2f7;
         color: #d53f8c;
@@ -178,7 +190,7 @@
         font-family: 'Courier New', monospace;
         font-size: 0.875em;
       }
-      
+
       /* Alert Boxes */
       .alert {
         padding: 1rem 1.25rem;
@@ -186,31 +198,31 @@
         margin: 1.5rem 0;
         border-left: 4px solid;
       }
-      
+
       .alert-info {
         background: #ebf8ff;
         border-color: #3182ce;
         color: #2c5282;
       }
-      
+
       .alert-success {
         background: #f0fff4;
         border-color: #48bb78;
         color: #22543d;
       }
-      
+
       .alert-warning {
         background: #fffdf7;
         border-color: #ed8936;
         color: #744210;
       }
-      
+
       .alert-danger {
         background: #fff5f5;
         border-color: #fc8181;
         color: #742a2a;
       }
-      
+
       /* Tables */
       .docs-table {
         width: 100%;
@@ -219,9 +231,9 @@
         background: white;
         border-radius: 0.5rem;
         overflow: hidden;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       }
-      
+
       .docs-table th {
         background: #f7fafc;
         padding: 0.75rem 1rem;
@@ -230,16 +242,16 @@
         color: #2d3748;
         border-bottom: 1px solid #e2e8f0;
       }
-      
+
       .docs-table td {
         padding: 0.75rem 1rem;
         border-bottom: 1px solid #e2e8f0;
       }
-      
+
       .docs-table tr:last-child td {
         border-bottom: none;
       }
-      
+
       /* Feature Grid */
       .feature-grid {
         display: grid;
@@ -247,37 +259,39 @@
         gap: 1.5rem;
         margin: 2rem 0;
       }
-      
+
       .feature-card {
         background: white;
         padding: 1.5rem;
         border-radius: 0.5rem;
         text-align: center;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
       }
-      
+
       .feature-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
-      
+
       .feature-icon {
         font-size: 2rem;
         margin-bottom: 0.75rem;
       }
-      
+
       .feature-card h5 {
         color: #2d3748;
         margin-bottom: 0.5rem;
       }
-      
+
       .feature-card p {
         color: #718096;
         font-size: 0.875rem;
         margin: 0;
       }
-      
+
       /* Badge */
       .badge {
         display: inline-block;
@@ -287,27 +301,27 @@
         font-weight: 600;
         margin-right: 0.5rem;
       }
-      
+
       .badge-primary {
         background: #3182ce;
         color: white;
       }
-      
+
       .badge-success {
         background: #48bb78;
         color: white;
       }
-      
+
       .badge-warning {
         background: #ed8936;
         color: white;
       }
-      
+
       .badge-info {
         background: #4299e1;
         color: white;
       }
-      
+
       /* Quick Links */
       .quick-links {
         display: flex;
@@ -315,7 +329,7 @@
         margin-bottom: 2rem;
         flex-wrap: wrap;
       }
-      
+
       .quick-link {
         display: inline-flex;
         align-items: center;
@@ -329,23 +343,23 @@
         transition: all 0.2s;
         font-weight: 500;
       }
-      
+
       .quick-link:hover {
         background: #2b6cb0;
         color: white;
         text-decoration: none;
       }
-      
+
       .quick-link-primary {
         background: #2b6cb0;
         color: white;
       }
-      
+
       .quick-link-primary:hover {
         background: #2c5282;
         border-color: #2c5282;
       }
-      
+
       /* Mobile Toggle */
       .mobile-toggle {
         display: none;
@@ -359,12 +373,12 @@
         border-radius: 0.25rem;
         cursor: pointer;
       }
-      
+
       .mobile-toggle svg {
         width: 24px;
         height: 24px;
       }
-      
+
       /* Responsive */
       @media (max-width: 768px) {
         .docs-sidebar {
@@ -372,98 +386,103 @@
           transition: transform 0.3s;
           z-index: 999;
         }
-        
+
         .docs-sidebar.active {
           transform: translateX(0);
         }
-        
+
         .docs-main {
           margin-left: 0;
           padding: 1.5rem;
         }
-        
+
         .mobile-toggle {
           display: block;
         }
-        
+
         .feature-grid {
           grid-template-columns: 1fr;
         }
-        
+
         .quick-links {
           flex-direction: column;
         }
-        
+
         .quick-link {
           width: 100%;
           justify-content: center;
         }
       }
-      
+
       /* Links */
       a {
         color: #2b6cb0;
         text-decoration: none;
       }
-      
+
       a:hover {
         text-decoration: underline;
       }
-      
+
       /* List Styles */
       .check-list {
         list-style: none;
         padding: 0;
         margin: 1rem 0;
       }
-      
+
       .check-list li {
         position: relative;
         padding-left: 2rem;
         margin-bottom: 0.75rem;
       }
-      
+
       .check-list li:before {
-        content: "✓";
+        content: '✓';
         position: absolute;
         left: 0;
         color: #48bb78;
         font-weight: bold;
         font-size: 1.25rem;
       }
-      
+
       /* Info Cards */
       .info-card {
         background: white;
         border-radius: 0.5rem;
         padding: 1.5rem;
         margin: 1.5rem 0;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       }
-      
+
       .info-card h4 {
         color: #2d3748;
         margin-bottom: 0.75rem;
       }
-      
+
       .info-card p {
         margin-bottom: 0.5rem;
       }
     </style>
   </head>
-  
+
   <body>
     <button class="mobile-toggle" onclick="toggleSidebar()">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
       </svg>
     </button>
-    
+
     <div class="docs-container">
       <!-- Sidebar -->
       <nav class="docs-sidebar" id="sidebar">
         <div class="docs-logo">📚 ElaAdmin Docs</div>
-        
+
         <div class="docs-nav-section">
           <div class="docs-nav-title">Getting Started</div>
           <a href="#introduction" class="docs-nav-item active">Introduction</a>
@@ -472,7 +491,7 @@
           <a href="#structure" class="docs-nav-item">Project Structure</a>
           <a href="#migration" class="docs-nav-item">Migration Guide</a>
         </div>
-        
+
         <div class="docs-nav-section">
           <div class="docs-nav-title">Development</div>
           <a href="#development" class="docs-nav-item">Development Setup</a>
@@ -480,7 +499,7 @@
           <a href="#deployment" class="docs-nav-item">Deployment</a>
           <a href="#optimization" class="docs-nav-item">Optimization</a>
         </div>
-        
+
         <div class="docs-nav-section">
           <div class="docs-nav-title">Components</div>
           <a href="#layout" class="docs-nav-item">Layout</a>
@@ -491,14 +510,14 @@
           <a href="#icons" class="docs-nav-item">Icons</a>
           <a href="#maps" class="docs-nav-item">Maps</a>
         </div>
-        
+
         <div class="docs-nav-section">
           <div class="docs-nav-title">Pages</div>
           <a href="#pages" class="docs-nav-item">Available Pages</a>
           <a href="#auth" class="docs-nav-item">Authentication</a>
           <a href="#errors" class="docs-nav-item">Error Pages</a>
         </div>
-        
+
         <div class="docs-nav-section">
           <div class="docs-nav-title">Customization</div>
           <a href="#theming" class="docs-nav-item">Theming</a>
@@ -506,7 +525,7 @@
           <a href="#javascript" class="docs-nav-item">JavaScript</a>
           <a href="#rtl" class="docs-nav-item">RTL Support</a>
         </div>
-        
+
         <div class="docs-nav-section">
           <div class="docs-nav-title">Resources</div>
           <a href="#plugins" class="docs-nav-item">Plugins</a>
@@ -517,32 +536,44 @@
           <a href="#license" class="docs-nav-item">License</a>
         </div>
       </nav>
-      
+
       <!-- Main Content -->
       <main class="docs-main">
         <div class="quick-links">
-          <a href="https://colorlib.com/polygon/elaadmin/index.html" target="_blank" class="quick-link quick-link-primary">
+          <a
+            href="https://colorlib.com/polygon/elaadmin/index.html"
+            target="_blank"
+            class="quick-link quick-link-primary"
+          >
             🚀 Live Preview
           </a>
           <a href="https://github.com/puikinsh/ElaAdmin" target="_blank" class="quick-link">
             📦 GitHub Repository
           </a>
-          <a href="index.html" class="quick-link">
-            🏠 Local Demo
-          </a>
+          <a href="index.html" class="quick-link"> 🏠 Local Demo </a>
         </div>
-        
+
         <section id="introduction" class="docs-section">
           <h1>ElaAdmin Documentation</h1>
-          <p>Welcome to the official documentation for ElaAdmin - a modern, responsive Bootstrap 5 admin dashboard template with over 30+ ready-to-use pages and comprehensive UI components.</p>
-          
+          <p>
+            Welcome to the official documentation for ElaAdmin - a modern, responsive Bootstrap 5
+            admin dashboard template with over 30+ ready-to-use pages and comprehensive UI
+            components.
+          </p>
+
           <div class="alert alert-info">
-            <strong>Version 3.0 Release</strong> - Complete Bootstrap 5 migration with Vite 7, removal of jQuery dependency, modern ES6+ JavaScript, Handlebars templating, and significant performance improvements.
+            <strong>Version 3.0 Release</strong> - Complete Bootstrap 5 migration with Vite 7,
+            removal of jQuery dependency, modern ES6+ JavaScript, Handlebars templating, and
+            significant performance improvements.
           </div>
-          
+
           <h2>Overview</h2>
-          <p>ElaAdmin is a professional admin dashboard template designed for building modern web applications. It provides a clean, intuitive interface with extensive customization options and a comprehensive set of pre-built components.</p>
-          
+          <p>
+            ElaAdmin is a professional admin dashboard template designed for building modern web
+            applications. It provides a clean, intuitive interface with extensive customization
+            options and a comprehensive set of pre-built components.
+          </p>
+
           <h3>Key Technologies</h3>
           <div class="feature-grid">
             <div class="feature-card">
@@ -576,7 +607,7 @@
               <p>Data visualization</p>
             </div>
           </div>
-          
+
           <h3>What's Included</h3>
           <ul class="check-list">
             <li>30+ Ready-to-use HTML pages</li>
@@ -593,43 +624,55 @@
             <li>Clean and commented code</li>
           </ul>
         </section>
-        
+
         <section id="quickstart" class="docs-section">
           <h2>Quick Start</h2>
           <p>Get ElaAdmin up and running in less than 5 minutes with these simple steps.</p>
-          
+
           <div class="info-card">
             <h4>Option 1: Download from GitHub</h4>
             <ol>
-              <li>Visit the <a href="https://github.com/puikinsh/ElaAdmin" target="_blank">GitHub repository</a></li>
+              <li>
+                Visit the
+                <a href="https://github.com/puikinsh/ElaAdmin" target="_blank">GitHub repository</a>
+              </li>
               <li>Click the "Code" button and select "Download ZIP"</li>
               <li>Extract the files to your project directory</li>
               <li>Follow the installation steps below</li>
             </ol>
           </div>
-          
+
           <div class="info-card">
             <h4>Option 2: Clone via Git</h4>
             <div class="code-block">
               <button class="code-copy" onclick="copyCode(this)">Copy</button>
-              <pre>git clone https://github.com/puikinsh/ElaAdmin.git
+              <pre>
+git clone https://github.com/puikinsh/ElaAdmin.git
 cd ElaAdmin
 npm install
 npm run dev</pre>
             </div>
           </div>
-          
+
           <div class="info-card">
             <h4>Option 3: View Live Demo</h4>
             <p>Preview the template before downloading:</p>
-            <a href="https://colorlib.com/polygon/elaadmin/index.html" target="_blank" class="quick-link">View Live Demo →</a>
+            <a
+              href="https://colorlib.com/polygon/elaadmin/index.html"
+              target="_blank"
+              class="quick-link"
+              >View Live Demo →</a
+            >
           </div>
         </section>
-        
+
         <section id="installation" class="docs-section">
           <h2>Installation</h2>
-          <p>Detailed installation instructions for setting up ElaAdmin in your development environment.</p>
-          
+          <p>
+            Detailed installation instructions for setting up ElaAdmin in your development
+            environment.
+          </p>
+
           <h3>System Requirements</h3>
           <ul>
             <li><strong>Node.js:</strong> Version 18.0 or higher</li>
@@ -637,26 +680,31 @@ npm run dev</pre>
             <li><strong>Git:</strong> For version control (optional)</li>
             <li><strong>Code Editor:</strong> VS Code, Sublime Text, or any modern editor</li>
           </ul>
-          
+
           <h3>Installation Steps</h3>
-          
+
           <h4>1. Install Node.js</h4>
-          <p>Download and install Node.js from <a href="https://nodejs.org" target="_blank">nodejs.org</a>. This will also install npm.</p>
-          
+          <p>
+            Download and install Node.js from
+            <a href="https://nodejs.org" target="_blank">nodejs.org</a>. This will also install npm.
+          </p>
+
           <h4>2. Verify Installation</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre># Check Node.js version
+            <pre>
+# Check Node.js version
 node --version
 
 # Check npm version
 npm --version</pre>
           </div>
-          
+
           <h4>3. Install Dependencies</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre># Navigate to project directory
+            <pre>
+# Navigate to project directory
 cd elaadmin
 
 # Install all dependencies
@@ -665,33 +713,37 @@ npm install
 # If you encounter issues, try:
 npm install --legacy-peer-deps</pre>
           </div>
-          
+
           <h4>4. Start Development Server</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre># Start Vite dev server
+            <pre>
+# Start Vite dev server
 npm run dev
 
 # Server will start at http://localhost:3000</pre>
           </div>
-          
+
           <h3>Common Installation Issues</h3>
-          
+
           <div class="alert alert-warning">
-            <strong>Port Already in Use:</strong> If port 3000 is busy, Vite will automatically use the next available port (3001, 3002, etc.)
+            <strong>Port Already in Use:</strong> If port 3000 is busy, Vite will automatically use
+            the next available port (3001, 3002, etc.)
           </div>
-          
+
           <div class="alert alert-danger">
-            <strong>Permission Errors:</strong> On macOS/Linux, you might need to use <code>sudo npm install</code> or fix npm permissions.
+            <strong>Permission Errors:</strong> On macOS/Linux, you might need to use
+            <code>sudo npm install</code> or fix npm permissions.
           </div>
         </section>
-        
+
         <section id="structure" class="docs-section">
           <h2>Project Structure</h2>
           <p>Understanding the organization of files and directories in ElaAdmin.</p>
-          
+
           <div class="code-block">
-            <pre>elaadmin/
+            <pre>
+elaadmin/
 │
 ├── src/                         # Source files
 │   ├── js/                      # JavaScript files
@@ -740,31 +792,42 @@ npm run dev
 ├── CLAUDE.md                 # AI assistance guide
 └── documentation.html        # This documentation</pre>
           </div>
-          
+
           <h3>Key Directories Explained</h3>
-          
+
           <div class="info-card">
             <h4>📁 src/js/</h4>
-            <p>Contains all JavaScript source files. The <code>main.js</code> is the entry point that initializes Bootstrap and common functionality. Page-specific scripts are in the <code>pages/</code> subdirectory.</p>
+            <p>
+              Contains all JavaScript source files. The <code>main.js</code> is the entry point that
+              initializes Bootstrap and common functionality. Page-specific scripts are in the
+              <code>pages/</code> subdirectory.
+            </p>
           </div>
-          
+
           <div class="info-card">
             <h4>📁 src/scss/</h4>
-            <p>SCSS source files for styling. Uses modern SCSS module syntax with <code>@use</code> and <code>@forward</code>. Variables and mixins are centralized for easy theming.</p>
+            <p>
+              SCSS source files for styling. Uses modern SCSS module syntax with
+              <code>@use</code> and <code>@forward</code>. Variables and mixins are centralized for
+              easy theming.
+            </p>
           </div>
-          
+
           <div class="info-card">
             <h4>📁 src/partials/</h4>
-            <p>Handlebars template partials for reusable components. These are automatically included during the build process to reduce code duplication.</p>
+            <p>
+              Handlebars template partials for reusable components. These are automatically included
+              during the build process to reduce code duplication.
+            </p>
           </div>
         </section>
-        
+
         <section id="migration" class="docs-section">
           <h2>Migration Guide</h2>
           <p>Upgrading from ElaAdmin 2.x to 3.0 or migrating from other templates.</p>
-          
+
           <h3>What's Changed in v3.0</h3>
-          
+
           <table class="docs-table">
             <thead>
               <tr>
@@ -806,13 +869,14 @@ npm run dev
               </tr>
             </tbody>
           </table>
-          
+
           <h3>Migration Steps</h3>
-          
+
           <h4>1. Update Bootstrap Classes</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// Bootstrap 4 → Bootstrap 5
+            <pre>
+// Bootstrap 4 → Bootstrap 5
 .ml-* → .ms-*  (margin-left to margin-start)
 .mr-* → .me-*  (margin-right to margin-end)
 .pl-* → .ps-*  (padding-left to padding-start)
@@ -823,11 +887,12 @@ data-toggle → data-bs-toggle
 data-target → data-bs-target
 data-dismiss → data-bs-dismiss</pre>
           </div>
-          
+
           <h4>2. Remove jQuery Dependencies</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// Old jQuery code
+            <pre>
+// Old jQuery code
 $('#myButton').click(function() {
   $('#myModal').modal('show');
 });
@@ -838,11 +903,12 @@ document.getElementById('myButton').addEventListener('click', function() {
   modal.show();
 });</pre>
           </div>
-          
+
           <h4>3. Update Form Classes</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// Bootstrap 4
+            <pre>
+// Bootstrap 4
 &lt;div class="form-group"&gt;
   &lt;label&gt;Email&lt;/label&gt;
   &lt;input class="form-control"&gt;
@@ -855,15 +921,16 @@ document.getElementById('myButton').addEventListener('click', function() {
 &lt;/div&gt;</pre>
           </div>
         </section>
-        
+
         <section id="development" class="docs-section">
           <h2>Development Setup</h2>
           <p>Configure your development environment for optimal productivity.</p>
-          
+
           <h3>Development Server</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre># Start development server with hot reload
+            <pre>
+# Start development server with hot reload
 npm run dev
 
 # The server provides:
@@ -872,7 +939,7 @@ npm run dev
 # - Error overlay
 # - Network access for mobile testing</pre>
           </div>
-          
+
           <h3>Available NPM Scripts</h3>
           <table class="docs-table">
             <thead>
@@ -904,13 +971,14 @@ npm run dev
               </tr>
             </tbody>
           </table>
-          
+
           <h3>Creating New Pages</h3>
-          
+
           <h4>Step 1: Create HTML File</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;!doctype html&gt;
+            <pre>
+&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     {{> head title="My New Page"}}
@@ -932,11 +1000,12 @@ npm run dev
   &lt;/body&gt;
 &lt;/html&gt;</pre>
           </div>
-          
+
           <h4>Step 2: Add Page-Specific JavaScript (Optional)</h4>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// src/js/pages/my-page.js
+            <pre>
+// src/js/pages/my-page.js
 import Chart from 'chart.js/auto';
 
 // Your page-specific code
@@ -944,19 +1013,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize components
 });</pre>
           </div>
-          
+
           <h4>Step 3: Update Scripts Partial</h4>
-          <p>Add your page to the dynamic loading in <code>src/partials/scripts.hbs</code> if it needs specific JavaScript.</p>
+          <p>
+            Add your page to the dynamic loading in <code>src/partials/scripts.hbs</code> if it
+            needs specific JavaScript.
+          </p>
         </section>
-        
+
         <section id="build" class="docs-section">
           <h2>Build Process</h2>
           <p>Understanding the Vite build process and optimization techniques.</p>
-          
+
           <h3>Production Build</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre># Create optimized production build
+            <pre>
+# Create optimized production build
 npm run build
 
 # Output structure:
@@ -970,7 +1043,7 @@ dist/
 ├── index.html                  # Entry point
 └── ... (other HTML files)</pre>
           </div>
-          
+
           <h3>Build Features</h3>
           <ul class="check-list">
             <li>Automatic code splitting for optimal loading</li>
@@ -981,24 +1054,25 @@ dist/
             <li>Cache busting with hashed filenames</li>
             <li>Automatic vendor chunk extraction</li>
           </ul>
-          
+
           <h3>Preview Production Build</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre># Build and preview
+            <pre>
+# Build and preview
 npm run build
 npm run preview
 
 # Opens at http://localhost:4173</pre>
           </div>
         </section>
-        
+
         <section id="deployment" class="docs-section">
           <h2>Deployment</h2>
           <p>Deploy ElaAdmin to various hosting platforms.</p>
-          
+
           <h3>Static Hosting (Recommended)</h3>
-          
+
           <div class="info-card">
             <h4>Netlify</h4>
             <ol>
@@ -1009,24 +1083,26 @@ npm run preview
               <li>Deploy</li>
             </ol>
           </div>
-          
+
           <div class="info-card">
             <h4>Vercel</h4>
             <div class="code-block">
               <button class="code-copy" onclick="copyCode(this)">Copy</button>
-              <pre># Install Vercel CLI
+              <pre>
+# Install Vercel CLI
 npm i -g vercel
 
 # Deploy
 vercel --prod</pre>
             </div>
           </div>
-          
+
           <div class="info-card">
             <h4>GitHub Pages</h4>
             <div class="code-block">
               <button class="code-copy" onclick="copyCode(this)">Copy</button>
-              <pre># Install gh-pages
+              <pre>
+# Install gh-pages
 npm install --save-dev gh-pages
 
 # Add to package.json scripts:
@@ -1036,7 +1112,7 @@ npm install --save-dev gh-pages
 npm run deploy</pre>
             </div>
           </div>
-          
+
           <h3>Traditional Web Hosting</h3>
           <ol>
             <li>Run <code>npm run build</code></li>
@@ -1044,15 +1120,16 @@ npm run deploy</pre>
             <li>Ensure your server serves <code>index.html</code> as the default</li>
           </ol>
         </section>
-        
+
         <section id="layout" class="docs-section">
           <h2>Layout Structure</h2>
           <p>ElaAdmin uses a flexible layout system with reusable components.</p>
-          
+
           <h3>Basic Layout</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;div class="wrapper"&gt;
+            <pre>
+&lt;div class="wrapper"&gt;
   &lt;!-- Sidebar --&gt;
   &lt;aside id="left-panel" class="left-panel"&gt;
     &lt;!-- Navigation menu --&gt;
@@ -1079,11 +1156,12 @@ npm run deploy</pre>
   &lt;/div&gt;
 &lt;/div&gt;</pre>
           </div>
-          
+
           <h3>Sidebar Navigation</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;nav class="nav-menu"&gt;
+            <pre>
+&lt;nav class="nav-menu"&gt;
   &lt;!-- Single item --&gt;
   &lt;div class="nav-item"&gt;
     &lt;a href="index.html" class="nav-link"&gt;
@@ -1109,15 +1187,16 @@ npm run deploy</pre>
 &lt;/nav&gt;</pre>
           </div>
         </section>
-        
+
         <section id="components" class="docs-section">
           <h2>UI Components</h2>
           <p>Comprehensive collection of pre-built UI components.</p>
-          
+
           <h3>Cards</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;!-- Basic Card --&gt;
+            <pre>
+&lt;!-- Basic Card --&gt;
 &lt;div class="card"&gt;
   &lt;div class="card-header"&gt;
     &lt;h4 class="card-title"&gt;Card Title&lt;/h4&gt;
@@ -1145,11 +1224,12 @@ npm run deploy</pre>
   &lt;/div&gt;
 &lt;/div&gt;</pre>
           </div>
-          
+
           <h3>Alerts</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;!-- Dismissible Alert --&gt;
+            <pre>
+&lt;!-- Dismissible Alert --&gt;
 &lt;div class="alert alert-success alert-dismissible fade show"&gt;
   &lt;strong&gt;Success!&lt;/strong&gt; Your changes have been saved.
   &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
@@ -1163,11 +1243,12 @@ npm run deploy</pre>
 &lt;div class="alert alert-warning"&gt;Warning alert&lt;/div&gt;
 &lt;div class="alert alert-info"&gt;Info alert&lt;/div&gt;</pre>
           </div>
-          
+
           <h3>Buttons</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;!-- Button Styles --&gt;
+            <pre>
+&lt;!-- Button Styles --&gt;
 &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
 &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
@@ -1185,11 +1266,12 @@ npm run deploy</pre>
   &lt;i class="fas fa-download me-2"&gt;&lt;/i&gt;Download
 &lt;/button&gt;</pre>
           </div>
-          
+
           <h3>Modals</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;!-- Modal Trigger --&gt;
+            <pre>
+&lt;!-- Modal Trigger --&gt;
 &lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
   Launch Modal
 &lt;/button&gt;
@@ -1214,15 +1296,16 @@ npm run deploy</pre>
 &lt;/div&gt;</pre>
           </div>
         </section>
-        
+
         <section id="forms" class="docs-section">
           <h2>Forms</h2>
           <p>Bootstrap 5 form components with validation support.</p>
-          
+
           <h3>Basic Form</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;form class="needs-validation" novalidate&gt;
+            <pre>
+&lt;form class="needs-validation" novalidate&gt;
   &lt;div class="mb-3"&gt;
     &lt;label for="email" class="form-label"&gt;Email address&lt;/label&gt;
     &lt;input type="email" class="form-control" id="email" required&gt;
@@ -1260,11 +1343,12 @@ npm run deploy</pre>
   &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</pre>
           </div>
-          
+
           <h3>Form Validation JavaScript</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// Bootstrap 5 form validation
+            <pre>
+// Bootstrap 5 form validation
 (function() {
   'use strict';
   
@@ -1285,15 +1369,16 @@ npm run deploy</pre>
 })();</pre>
           </div>
         </section>
-        
+
         <section id="tables" class="docs-section">
           <h2>Tables</h2>
           <p>Responsive tables with DataTables integration for advanced features.</p>
-          
+
           <h3>Basic Table</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>&lt;div class="table-responsive"&gt;
+            <pre>
+&lt;div class="table-responsive"&gt;
   &lt;table class="table table-striped"&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -1321,11 +1406,12 @@ npm run deploy</pre>
   &lt;/table&gt;
 &lt;/div&gt;</pre>
           </div>
-          
+
           <h3>DataTables Integration</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// Initialize DataTable
+            <pre>
+// Initialize DataTable
 import DataTable from 'datatables.net-bs5';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1341,15 +1427,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });</pre>
           </div>
         </section>
-        
+
         <section id="charts" class="docs-section">
           <h2>Charts</h2>
           <p>Multiple chart libraries integrated for data visualization.</p>
-          
+
           <h3>Chart.js Example</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>import Chart from 'chart.js/auto';
+            <pre>
+import Chart from 'chart.js/auto';
 
 // Line Chart
 const ctx = document.getElementById('lineChart').getContext('2d');
@@ -1377,7 +1464,7 @@ const lineChart = new Chart(ctx, {
   }
 });</pre>
           </div>
-          
+
           <h3>Available Chart Types</h3>
           <ul class="check-list">
             <li>Line Charts</li>
@@ -1390,11 +1477,11 @@ const lineChart = new Chart(ctx, {
             <li>Scatter Charts</li>
           </ul>
         </section>
-        
+
         <section id="pages" class="docs-section">
           <h2>Available Pages</h2>
           <p>ElaAdmin includes 30+ ready-to-use pages for various purposes.</p>
-          
+
           <h3>Dashboard Pages</h3>
           <ul>
             <li><strong>index.html</strong> - Main dashboard with statistics</li>
@@ -1402,7 +1489,7 @@ const lineChart = new Chart(ctx, {
             <li><strong>index3.html</strong> - E-commerce dashboard</li>
             <li><strong>index4.html</strong> - Analytics dashboard</li>
           </ul>
-          
+
           <h3>UI Components</h3>
           <ul>
             <li><strong>ui-buttons.html</strong> - Button variations</li>
@@ -1417,26 +1504,26 @@ const lineChart = new Chart(ctx, {
             <li><strong>ui-typgraphy.html</strong> - Typography</li>
             <li><strong>ui-sweetalert.html</strong> - SweetAlert2 examples</li>
           </ul>
-          
+
           <h3>Forms</h3>
           <ul>
             <li><strong>forms-basic.html</strong> - Basic form elements</li>
             <li><strong>forms-advanced.html</strong> - Advanced components</li>
           </ul>
-          
+
           <h3>Tables</h3>
           <ul>
             <li><strong>tables-basic.html</strong> - Basic tables</li>
             <li><strong>tables-data.html</strong> - DataTables integration</li>
           </ul>
-          
+
           <h3>Charts</h3>
           <ul>
             <li><strong>charts-chartjs.html</strong> - Chart.js examples</li>
             <li><strong>charts-flot.html</strong> - Flot charts</li>
             <li><strong>charts-peity.html</strong> - Peity charts</li>
           </ul>
-          
+
           <h3>Icons & Maps</h3>
           <ul>
             <li><strong>font-fontawesome.html</strong> - Font Awesome icons</li>
@@ -1444,7 +1531,7 @@ const lineChart = new Chart(ctx, {
             <li><strong>maps-gmap.html</strong> - Google Maps</li>
             <li><strong>maps-vector.html</strong> - Vector maps</li>
           </ul>
-          
+
           <h3>Other Pages</h3>
           <ul>
             <li><strong>widgets.html</strong> - Widget collection</li>
@@ -1454,15 +1541,16 @@ const lineChart = new Chart(ctx, {
             <li><strong>pages-404.html</strong> - 404 error page</li>
           </ul>
         </section>
-        
+
         <section id="theming" class="docs-section">
           <h2>Theming</h2>
           <p>Customize ElaAdmin's appearance to match your brand.</p>
-          
+
           <h3>Color Variables</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// src/scss/_variables.scss
+            <pre>
+// src/scss/_variables.scss
 
 // Primary colors
 $primary: #0d6efd;
@@ -1487,11 +1575,12 @@ $sidebar-collapsed-width: 70px;
 $header-height: 70px;
 $footer-height: 60px;</pre>
           </div>
-          
+
           <h3>Typography</h3>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
-            <pre>// Font settings
+            <pre>
+// Font settings
 $font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
 $font-size-base: 1rem;
 $font-weight-base: 400;
@@ -1509,20 +1598,22 @@ $headings-font-weight: 600;
 $headings-line-height: 1.2;
 $headings-color: $dark;</pre>
           </div>
-          
+
           <h3>Creating Custom Themes</h3>
           <ol>
-            <li>Copy <code>src/scss/_variables.scss</code> to <code>_variables-custom.scss</code></li>
+            <li>
+              Copy <code>src/scss/_variables.scss</code> to <code>_variables-custom.scss</code>
+            </li>
             <li>Modify the color values in your custom file</li>
             <li>Update <code>main.scss</code> to import your custom variables</li>
             <li>Rebuild the project with <code>npm run build</code></li>
           </ol>
         </section>
-        
+
         <section id="plugins" class="docs-section">
           <h2>Included Plugins</h2>
           <p>ElaAdmin comes with a comprehensive set of pre-integrated plugins.</p>
-          
+
           <table class="docs-table">
             <thead>
               <tr>
@@ -1590,11 +1681,11 @@ $headings-color: $dark;</pre>
             </tbody>
           </table>
         </section>
-        
+
         <section id="browser" class="docs-section">
           <h2>Browser Support</h2>
           <p>ElaAdmin is tested and supported on all modern browsers.</p>
-          
+
           <table class="docs-table">
             <thead>
               <tr>
@@ -1636,16 +1727,17 @@ $headings-color: $dark;</pre>
               </tr>
             </tbody>
           </table>
-          
+
           <div class="alert alert-warning">
-            <strong>Note:</strong> Internet Explorer is not supported as Bootstrap 5 has dropped IE support.
+            <strong>Note:</strong> Internet Explorer is not supported as Bootstrap 5 has dropped IE
+            support.
           </div>
         </section>
-        
+
         <section id="changelog" class="docs-section">
           <h2>Changelog</h2>
           <p>Track the evolution of ElaAdmin through version updates.</p>
-          
+
           <div class="info-card">
             <h4>Version 3.0.0 - <small>August 2025</small></h4>
             <ul>
@@ -1661,7 +1753,7 @@ $headings-color: $dark;</pre>
               <li>Optimized bundle size by 40%</li>
             </ul>
           </div>
-          
+
           <div class="info-card">
             <h4>Version 2.1.0 - <small>June 2023</small></h4>
             <ul>
@@ -1672,7 +1764,7 @@ $headings-color: $dark;</pre>
               <li>Bug fixes and performance improvements</li>
             </ul>
           </div>
-          
+
           <div class="info-card">
             <h4>Version 2.0.0 - <small>January 2023</small></h4>
             <ul>
@@ -1684,132 +1776,181 @@ $headings-color: $dark;</pre>
             </ul>
           </div>
         </section>
-        
+
         <section id="faq" class="docs-section">
           <h2>Frequently Asked Questions</h2>
-          
+
           <div class="info-card">
             <h4>Can I use ElaAdmin for commercial projects?</h4>
-            <p>Yes! ElaAdmin is released under the MIT license, which allows both personal and commercial use.</p>
+            <p>
+              Yes! ElaAdmin is released under the MIT license, which allows both personal and
+              commercial use.
+            </p>
           </div>
-          
+
           <div class="info-card">
             <h4>Do I need to keep the footer credits?</h4>
             <p>No, you can remove or modify the footer credits as needed for your project.</p>
           </div>
-          
+
           <div class="info-card">
             <h4>Is jQuery required?</h4>
-            <p>No, version 3.0 has completely removed jQuery dependency. All functionality uses vanilla JavaScript.</p>
+            <p>
+              No, version 3.0 has completely removed jQuery dependency. All functionality uses
+              vanilla JavaScript.
+            </p>
           </div>
-          
+
           <div class="info-card">
             <h4>How do I update from version 2.x?</h4>
-            <p>Check the <a href="#migration">Migration Guide</a> section for detailed upgrade instructions.</p>
+            <p>
+              Check the <a href="#migration">Migration Guide</a> section for detailed upgrade
+              instructions.
+            </p>
           </div>
-          
+
           <div class="info-card">
             <h4>Can I use only specific components?</h4>
             <p>Yes, the modular structure allows you to use only the components you need.</p>
           </div>
-          
+
           <div class="info-card">
             <h4>Is there TypeScript support?</h4>
-            <p>Currently, ElaAdmin uses vanilla JavaScript. TypeScript support is planned for a future release.</p>
+            <p>
+              Currently, ElaAdmin uses vanilla JavaScript. TypeScript support is planned for a
+              future release.
+            </p>
           </div>
         </section>
-        
+
         <section id="support" class="docs-section">
           <h2>Support</h2>
           <p>Get help when you need it.</p>
-          
+
           <div class="alert alert-success">
             <h4>📚 Documentation</h4>
             <p>This comprehensive guide covers all aspects of using and customizing ElaAdmin.</p>
           </div>
-          
+
           <div class="alert alert-info">
             <h4>💬 GitHub Issues</h4>
-            <p>For bug reports and feature requests, please use the <a href="https://github.com/puikinsh/ElaAdmin/issues" target="_blank">GitHub Issues</a> page.</p>
+            <p>
+              For bug reports and feature requests, please use the
+              <a href="https://github.com/puikinsh/ElaAdmin/issues" target="_blank"
+                >GitHub Issues</a
+              >
+              page.
+            </p>
           </div>
-          
+
           <div class="alert alert-warning">
             <h4>📧 Email Support</h4>
-            <p>For additional support, contact the Colorlib team through their <a href="https://colorlib.com/wp/contact-us/" target="_blank">contact page</a>.</p>
+            <p>
+              For additional support, contact the Colorlib team through their
+              <a href="https://colorlib.com/wp/contact-us/" target="_blank">contact page</a>.
+            </p>
           </div>
-          
+
           <h3>Useful Resources</h3>
           <ul>
-            <li><a href="https://github.com/puikinsh/ElaAdmin" target="_blank">GitHub Repository</a></li>
-            <li><a href="https://colorlib.com/polygon/elaadmin/index.html" target="_blank">Live Preview</a></li>
+            <li>
+              <a href="https://github.com/puikinsh/ElaAdmin" target="_blank">GitHub Repository</a>
+            </li>
+            <li>
+              <a href="https://colorlib.com/polygon/elaadmin/index.html" target="_blank"
+                >Live Preview</a
+              >
+            </li>
             <li><a href="https://colorlib.com" target="_blank">Colorlib Website</a></li>
-            <li><a href="https://getbootstrap.com/docs/5.3/" target="_blank">Bootstrap 5 Documentation</a></li>
+            <li>
+              <a href="https://getbootstrap.com/docs/5.3/" target="_blank"
+                >Bootstrap 5 Documentation</a
+              >
+            </li>
             <li><a href="https://vitejs.dev/guide/" target="_blank">Vite Documentation</a></li>
           </ul>
         </section>
-        
+
         <section id="license" class="docs-section">
           <h2>License</h2>
           <p>ElaAdmin is open source and available under the MIT License.</p>
-          
+
           <div class="info-card">
             <h4>MIT License</h4>
             <p>Copyright (c) 2025 Colorlib</p>
-            <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-            <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+            <p>
+              Permission is hereby granted, free of charge, to any person obtaining a copy of this
+              software and associated documentation files (the "Software"), to deal in the Software
+              without restriction, including without limitation the rights to use, copy, modify,
+              merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+              permit persons to whom the Software is furnished to do so, subject to the following
+              conditions:
+            </p>
+            <p>
+              The above copyright notice and this permission notice shall be included in all copies
+              or substantial portions of the Software.
+            </p>
+            <p>
+              THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+              INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+              PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+              HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+              CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+              OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+            </p>
           </div>
-          
+
           <div class="alert alert-success">
-            <strong>Summary:</strong> You are free to use ElaAdmin in personal and commercial projects. You can modify, distribute, and even sell it as part of your product.
+            <strong>Summary:</strong> You are free to use ElaAdmin in personal and commercial
+            projects. You can modify, distribute, and even sell it as part of your product.
           </div>
         </section>
       </main>
     </div>
-    
+
     <script>
       // Sidebar toggle for mobile
       function toggleSidebar() {
         document.getElementById('sidebar').classList.toggle('active');
       }
-      
+
       // Active navigation
       const navItems = document.querySelectorAll('.docs-nav-item');
       const sections = document.querySelectorAll('.docs-section');
-      
+
       navItems.forEach(item => {
-        item.addEventListener('click', function(e) {
+        item.addEventListener('click', function (e) {
           e.preventDefault();
-          
+
           // Remove active from all
           navItems.forEach(nav => nav.classList.remove('active'));
-          
+
           // Add active to clicked
           this.classList.add('active');
-          
+
           // Scroll to section
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
-          
+
           // Close mobile sidebar
           if (window.innerWidth < 768) {
             document.getElementById('sidebar').classList.remove('active');
           }
         });
       });
-      
+
       // Highlight active section on scroll
       window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
-          if (scrollY >= (sectionTop - 100)) {
+          if (scrollY >= sectionTop - 100) {
             current = section.getAttribute('id');
           }
         });
-        
+
         navItems.forEach(item => {
           item.classList.remove('active');
           if (item.getAttribute('href') === `#${current}`) {
@@ -1817,17 +1958,17 @@ $headings-color: $dark;</pre>
           }
         });
       });
-      
+
       // Copy code function
       function copyCode(button) {
         const codeBlock = button.parentElement.querySelector('pre');
         const text = codeBlock.textContent;
-        
+
         navigator.clipboard.writeText(text).then(() => {
           const originalText = button.textContent;
           button.textContent = 'Copied!';
           button.style.background = '#48bb78';
-          
+
           setTimeout(() => {
             button.textContent = originalText;
             button.style.background = '';

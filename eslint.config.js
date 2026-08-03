@@ -1,36 +1,47 @@
 import js from '@eslint/js';
+import globals from 'globals';
+import prettier from 'eslint-config-prettier';
 
 export default [
-  js.configs.recommended,
   {
-    ignores: ['dist/**', 'node_modules/**', '*.min.js', 'coverage/**', 'build/**'],
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'build/**', '**/*.min.js'],
   },
+
+  js.configs.recommended,
+
+  // Browser source
   {
+    files: ['src/**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: {
-        window: 'readonly',
-        document: 'readonly',
-        console: 'readonly',
-        setTimeout: 'readonly',
-        setInterval: 'readonly',
-        clearInterval: 'readonly',
-        clearTimeout: 'readonly',
-        IntersectionObserver: 'readonly',
-        process: 'readonly',
-        localStorage: 'readonly',
-        fetch: 'readonly',
-        Notification: 'readonly',
-        Blob: 'readonly',
-        URL: 'readonly',
-      },
+      globals: globals.browser,
     },
     rules: {
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'no-console': ['warn', { allow: ['warn', 'error'] }],
-      'prefer-const': 'warn',
+      'prefer-const': 'error',
+      'no-var': 'error',
+      eqeqeq: ['error', 'smart'],
+      'object-shorthand': 'warn',
+      'prefer-template': 'warn',
       'arrow-body-style': ['warn', 'as-needed'],
     },
   },
+
+  // Build tooling and config files run in Node
+  {
+    files: ['*.config.js', 'scripts/**/*.js'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.node,
+    },
+    rules: {
+      'no-console': 'off',
+    },
+  },
+
+  // Must stay last so formatting rules defer to Prettier
+  prettier,
 ];

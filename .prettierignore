@@ -1,0 +1,17 @@
+# Build output
+dist/
+build/
+coverage/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Handlebars partials — Prettier's glimmer parser is for Ember templates and
+# mangles the plain-HTML partials used here.
+*.hbs
+
+# Vendored or generated assets
+*.min.js
+*.min.css
+images/

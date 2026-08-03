@@ -17,48 +17,54 @@
         background: #fff;
         border: 1px solid #e9ecef;
       }
-      
+
       .icon-showcase:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
       }
-      
+
       .icon-showcase i {
         font-size: 2rem;
         margin-bottom: 10px;
         display: block;
       }
-      
+
       .icon-showcase:hover i {
         animation: pulse 0.5s;
       }
-      
+
       @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
-      
+
       .icon-showcase .icon-name {
         font-size: 0.875rem;
         font-weight: 500;
         word-break: break-word;
       }
-      
+
       .icon-style-selector {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
         margin-bottom: 20px;
       }
-      
+
       .icon-style-selector .btn {
         flex: 1;
         min-width: 120px;
       }
-      
+
       .color-showcase {
         padding: 30px;
         border-radius: 12px;
@@ -67,7 +73,7 @@
         position: relative;
         overflow: hidden;
       }
-      
+
       .color-showcase i {
         font-size: 3rem;
         margin-bottom: 15px;
@@ -75,12 +81,12 @@
         position: relative;
         z-index: 1;
       }
-      
+
       .color-showcase h5 {
         position: relative;
         z-index: 1;
       }
-      
+
       .color-showcase::before {
         content: '';
         position: absolute;
@@ -88,25 +94,29 @@
         right: -50%;
         width: 200%;
         height: 200%;
-        background: rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.1);
         transform: rotate(45deg);
         transition: all 0.5s ease;
       }
-      
+
       .color-showcase:hover::before {
         right: -100%;
       }
-      
+
       .animated-icon {
         display: inline-block;
         animation: spin 2s linear infinite;
       }
-      
+
       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
-      
+
       .icon-size-demo {
         display: flex;
         align-items: center;
@@ -116,15 +126,15 @@
         background: #f8f9fa;
         border-radius: 8px;
       }
-      
+
       .icon-size-demo i {
         color: #007bff;
       }
-      
+
       .brand-icon {
         transition: all 0.3s ease;
       }
-      
+
       .brand-icon:hover {
         transform: scale(1.2);
       }
@@ -132,8 +142,7 @@
   </head>
 
   <body>
-    {{> sidebar-ela}}
-    {{> header-ela}}
+    {{> sidebar-ela}} {{> header-ela}}
 
     <div id="right-panel" class="right-panel main-content">
       <div class="content">
@@ -208,25 +217,37 @@
                 <div class="card-body">
                   <div class="row g-3">
                     <div class="col-md-3">
-                      <div class="color-showcase" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                      <div
+                        class="color-showcase"
+                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                      >
                         <i class="fas fa-rocket"></i>
                         <h5>Launch</h5>
                       </div>
                     </div>
                     <div class="col-md-3">
-                      <div class="color-showcase" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                      <div
+                        class="color-showcase"
+                        style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+                      >
                         <i class="fas fa-heart"></i>
                         <h5>Favorite</h5>
                       </div>
                     </div>
                     <div class="col-md-3">
-                      <div class="color-showcase" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                      <div
+                        class="color-showcase"
+                        style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+                      >
                         <i class="fas fa-cloud"></i>
                         <h5>Cloud</h5>
                       </div>
                     </div>
                     <div class="col-md-3">
-                      <div class="color-showcase" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                      <div
+                        class="color-showcase"
+                        style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+                      >
                         <i class="fas fa-check-circle"></i>
                         <h5>Success</h5>
                       </div>
@@ -448,51 +469,51 @@
                 <div class="card-body">
                   <div class="row g-3 text-center">
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-facebook fa-3x brand-icon" style="color: #1877f2;"></i>
+                      <i class="fab fa-facebook fa-3x brand-icon" style="color: #1877f2"></i>
                       <p class="mt-2"><code>fa-facebook</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-twitter fa-3x brand-icon" style="color: #1da1f2;"></i>
+                      <i class="fab fa-twitter fa-3x brand-icon" style="color: #1da1f2"></i>
                       <p class="mt-2"><code>fa-twitter</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-instagram fa-3x brand-icon" style="color: #e4405f;"></i>
+                      <i class="fab fa-instagram fa-3x brand-icon" style="color: #e4405f"></i>
                       <p class="mt-2"><code>fa-instagram</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-linkedin fa-3x brand-icon" style="color: #0077b5;"></i>
+                      <i class="fab fa-linkedin fa-3x brand-icon" style="color: #0077b5"></i>
                       <p class="mt-2"><code>fa-linkedin</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-github fa-3x brand-icon" style="color: #333;"></i>
+                      <i class="fab fa-github fa-3x brand-icon" style="color: #333"></i>
                       <p class="mt-2"><code>fa-github</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-youtube fa-3x brand-icon" style="color: #ff0000;"></i>
+                      <i class="fab fa-youtube fa-3x brand-icon" style="color: #ff0000"></i>
                       <p class="mt-2"><code>fa-youtube</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-google fa-3x brand-icon" style="color: #4285f4;"></i>
+                      <i class="fab fa-google fa-3x brand-icon" style="color: #4285f4"></i>
                       <p class="mt-2"><code>fa-google</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-apple fa-3x brand-icon" style="color: #000;"></i>
+                      <i class="fab fa-apple fa-3x brand-icon" style="color: #000"></i>
                       <p class="mt-2"><code>fa-apple</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-microsoft fa-3x brand-icon" style="color: #f25022;"></i>
+                      <i class="fab fa-microsoft fa-3x brand-icon" style="color: #f25022"></i>
                       <p class="mt-2"><code>fa-microsoft</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-amazon fa-3x brand-icon" style="color: #ff9900;"></i>
+                      <i class="fab fa-amazon fa-3x brand-icon" style="color: #ff9900"></i>
                       <p class="mt-2"><code>fa-amazon</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-slack fa-3x brand-icon" style="color: #4a154b;"></i>
+                      <i class="fab fa-slack fa-3x brand-icon" style="color: #4a154b"></i>
                       <p class="mt-2"><code>fa-slack</code></p>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                      <i class="fab fa-discord fa-3x brand-icon" style="color: #5865f2;"></i>
+                      <i class="fab fa-discord fa-3x brand-icon" style="color: #5865f2"></i>
                       <p class="mt-2"><code>fa-discord</code></p>
                     </div>
                   </div>
@@ -513,18 +534,32 @@
                     <div class="col-md-6">
                       <h6>List Icons</h6>
                       <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Completed Task</li>
-                        <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Failed Task</li>
-                        <li class="mb-2"><i class="fas fa-clock text-warning me-2"></i>Pending Task</li>
+                        <li class="mb-2">
+                          <i class="fas fa-check text-success me-2"></i>Completed Task
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-times text-danger me-2"></i>Failed Task
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-clock text-warning me-2"></i>Pending Task
+                        </li>
                         <li class="mb-2"><i class="fas fa-sync text-info me-2"></i>In Progress</li>
                       </ul>
                     </div>
                     <div class="col-md-6">
                       <h6>Button Icons</h6>
-                      <button class="btn btn-primary mb-2"><i class="fas fa-download me-2"></i>Download</button>
-                      <button class="btn btn-success mb-2 ms-2"><i class="fas fa-check me-2"></i>Save</button>
-                      <button class="btn btn-danger mb-2 ms-2"><i class="fas fa-trash me-2"></i>Delete</button>
-                      <button class="btn btn-warning mb-2 ms-2"><i class="fas fa-edit me-2"></i>Edit</button>
+                      <button class="btn btn-primary mb-2">
+                        <i class="fas fa-download me-2"></i>Download
+                      </button>
+                      <button class="btn btn-success mb-2 ms-2">
+                        <i class="fas fa-check me-2"></i>Save
+                      </button>
+                      <button class="btn btn-danger mb-2 ms-2">
+                        <i class="fas fa-trash me-2"></i>Delete
+                      </button>
+                      <button class="btn btn-warning mb-2 ms-2">
+                        <i class="fas fa-edit me-2"></i>Edit
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -574,7 +609,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -582,11 +616,11 @@
     </div>
 
     {{> scripts}}
-    
+
     <script>
       // Copy icon class to clipboard on click
       document.querySelectorAll('.icon-showcase').forEach(element => {
-        element.addEventListener('click', function() {
+        element.addEventListener('click', function () {
           const iconClass = this.querySelector('i').className;
           navigator.clipboard.writeText(iconClass).then(() => {
             // Show toast or notification

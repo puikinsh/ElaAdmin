@@ -51,7 +51,7 @@ function initializeSidebar() {
       if (window.innerWidth <= 991) {
         // Mobile behavior - slide in/out
         const isOpen = leftPanel.classList.contains('mobile-open');
-        
+
         if (isOpen) {
           // Close sidebar
           leftPanel.classList.remove('mobile-open');
@@ -128,7 +128,7 @@ function initializeDropdowns() {
 
   // Handle submenu link clicks
   document.querySelectorAll('.submenu-link').forEach(link => {
-    link.addEventListener('click', e => {
+    link.addEventListener('click', () => {
       // Remove active class from all submenu links
       document.querySelectorAll('.submenu-link').forEach(l => l.classList.remove('active'));
       // Add active class to clicked link
@@ -277,7 +277,7 @@ function initializeSearch() {
 
   if (searchToggle && searchContainer) {
     // Open search box
-    searchToggle.addEventListener('click', (e) => {
+    searchToggle.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
       const isVisible = searchContainer.style.display !== 'none';
@@ -292,7 +292,7 @@ function initializeSearch() {
     });
 
     // Close search box
-    closeSearch?.addEventListener('click', (e) => {
+    closeSearch?.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
       searchContainer.style.display = 'none';
@@ -300,7 +300,7 @@ function initializeSearch() {
     });
 
     // Close on Escape key
-    searchInput?.addEventListener('keydown', (e) => {
+    searchInput?.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         searchContainer.style.display = 'none';
         searchInput.value = '';
@@ -308,7 +308,7 @@ function initializeSearch() {
     });
 
     // Handle search input
-    searchInput?.addEventListener('input', (e) => {
+    searchInput?.addEventListener('input', e => {
       // Show/hide suggestions based on input
       if (searchSuggestions) {
         searchSuggestions.style.display = e.target.value.trim() ? 'none' : 'block';
@@ -316,7 +316,7 @@ function initializeSearch() {
     });
 
     // Handle search submission
-    searchInput?.addEventListener('keypress', (e) => {
+    searchInput?.addEventListener('keypress', e => {
       if (e.key === 'Enter') {
         e.preventDefault();
         const searchTerm = searchInput.value.trim();
@@ -328,7 +328,7 @@ function initializeSearch() {
     });
 
     // Click outside to close
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       if (!searchContainer.contains(e.target) && !searchToggle.contains(e.target)) {
         searchContainer.style.display = 'none';
       }
@@ -340,17 +340,17 @@ function initializeSearch() {
 function initializeHeaderDropdowns() {
   // Add custom click handlers for action buttons in dropdowns
   document.querySelectorAll('.dropdown-menu a').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       // Handle specific actions here if needed
       const action = this.textContent.trim();
-      
+
       // Example: Handle logout
       if (action === 'Logout') {
         e.preventDefault();
         // Handle logout
         // Add logout logic here
       }
-      
+
       // Example: Handle clear all notifications
       if (this.textContent.includes('Clear all')) {
         e.preventDefault();
@@ -361,28 +361,28 @@ function initializeHeaderDropdowns() {
   });
 
   // Simple dropdown positioning fix
-  document.addEventListener('show.bs.dropdown', function(e) {
+  document.addEventListener('show.bs.dropdown', function (e) {
     const dropdownMenu = e.target.nextElementSibling;
     if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
       const rect = e.target.getBoundingClientRect();
-      
+
       // Position dropdown to the left of the button with proper spacing
       dropdownMenu.style.position = 'fixed';
-      dropdownMenu.style.top = (rect.bottom + 2) + 'px';
-      dropdownMenu.style.left = (rect.right - 300) + 'px'; // Assume 300px width, position to left
+      dropdownMenu.style.top = `${rect.bottom + 2}px`;
+      dropdownMenu.style.left = `${rect.right - 300}px`; // Assume 300px width, position to left
       dropdownMenu.style.right = 'auto';
       dropdownMenu.style.transform = 'none';
       dropdownMenu.style.margin = '0';
-      
+
       // Ensure it doesn't go off screen
       if (parseInt(dropdownMenu.style.left) < 10) {
         dropdownMenu.style.left = '10px';
       }
     }
   });
-  
+
   // Clean up on hide
-  document.addEventListener('hide.bs.dropdown', function(e) {
+  document.addEventListener('hide.bs.dropdown', function (e) {
     const dropdownMenu = e.target.nextElementSibling;
     if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
       setTimeout(() => {
@@ -397,8 +397,8 @@ function initializeHeaderDropdowns() {
   });
 
   // Add animation classes when dropdowns are shown
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('show.bs.dropdown', function() {
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('show.bs.dropdown', function () {
       const menu = this.querySelector('.dropdown-menu');
       if (menu) {
         menu.style.animation = 'fadeIn 0.2s ease-in-out';

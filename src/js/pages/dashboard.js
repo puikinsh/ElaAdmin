@@ -77,7 +77,7 @@ function initializeSalesChart() {
           mode: 'index',
           intersect: false,
           callbacks: {
-            label: function (context) {
+            label(context) {
               let label = context.dataset.label || '';
               if (label) {
                 label += ': ';
@@ -97,7 +97,7 @@ function initializeSalesChart() {
         y: {
           beginAtZero: true,
           ticks: {
-            callback: function (value) {
+            callback(value) {
               return formatCurrency(value);
             },
           },
@@ -149,8 +149,8 @@ function initializeTrafficChart() {
         },
         tooltip: {
           callbacks: {
-            label: function (context) {
-              return context.label + ': ' + context.parsed + '%';
+            label(context) {
+              return `${context.label}: ${context.parsed}%`;
             },
           },
         },
@@ -190,7 +190,7 @@ function animateCounter(element) {
   const isCurrency = text.includes('$');
 
   // Extract number from text
-  let target = parseFloat(text.replace(/[^0-9.]/g, ''));
+  const target = parseFloat(text.replace(/[^0-9.]/g, ''));
   if (isNaN(target)) return;
 
   const duration = 2000;
@@ -204,9 +204,9 @@ function animateCounter(element) {
       clearInterval(timer);
     }
 
-    let displayValue = Math.floor(current);
+    const displayValue = Math.floor(current);
     if (isPercentage) {
-      element.innerText = displayValue.toFixed(1) + '%';
+      element.innerText = `${displayValue.toFixed(1)}%`;
     } else if (isCurrency) {
       element.innerText = formatCurrency(displayValue);
     } else {
@@ -234,7 +234,7 @@ function updateRandomStat() {
   value += change;
 
   if (isPercentage) {
-    randomStat.innerText = value.toFixed(1) + '%';
+    randomStat.innerText = `${value.toFixed(1)}%`;
   } else if (isCurrency) {
     randomStat.innerText = formatCurrency(Math.floor(value));
   } else {

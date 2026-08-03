@@ -216,7 +216,7 @@
 
         &.active {
           background: rgba(255, 255, 255, 0.15);
-          
+
           .nav-icon {
             color: $primary;
           }
@@ -304,75 +304,75 @@
     width: $sidebar-width !important; // Always full width on mobile
     transform: translateX(-100%);
     z-index: 1050;
-    
+
     // Never apply collapsed styles on mobile
     &.collapsed {
       width: $sidebar-width !important;
-      
+
       .sidebar-header {
         padding: 20px !important;
-        
+
         .sidebar-brand {
           justify-content: flex-start !important;
-          
+
           .brand-text {
             display: inline !important;
           }
-          
+
           i {
             margin-right: 12px !important;
           }
         }
       }
-      
+
       .nav-section {
         display: block !important;
       }
-      
+
       .nav-item {
         .nav-link {
           padding: 12px 20px !important;
           justify-content: flex-start !important;
           margin: 2px 0 !important;
-          
+
           .nav-icon {
             margin-right: 12px !important;
             font-size: 18px !important;
             width: 24px !important;
           }
-          
+
           .nav-text,
           .nav-arrow {
             display: inline !important;
           }
-          
+
           &.active::before {
             display: block !important;
             width: 3px !important;
           }
         }
-        
+
         .nav-submenu {
           display: none;
-          
+
           &.show {
             display: block !important;
           }
         }
       }
-      
+
       &:hover {
         width: $sidebar-width !important; // Don't expand on hover on mobile
       }
     }
-    
+
     // When mobile menu is open
     &.mobile-open {
       transform: translateX(0);
       box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
     }
   }
-  
+
   .main-content,
   .right-panel {
     margin-left: 0 !important;
@@ -389,7 +389,7 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 1040;
   display: none;
-  
+
   @media (max-width: 991px) {
     &.show {
       display: block;

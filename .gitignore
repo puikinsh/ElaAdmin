@@ -10,8 +10,15 @@ coverage/
 dist/
 build/
 
+# Build caches
+.sass-cache/
+.vite/
+vite.config.js.timestamp-*
+*.css.map
+
 # Misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -34,9 +41,5 @@ lerna-debug.log*
 *.sln
 *.sw?
 
-# Vite
-.vite/
-vite.config.js.timestamp-*
-CLAUDE.md
-CLAUDE.md
+# Local scratch notes
 BOOTSTRAP5_VITE7_MIGRATION_GUIDE.md
