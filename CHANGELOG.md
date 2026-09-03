@@ -5,6 +5,38 @@ All notable changes to the ElaAdmin Dashboard Template will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Dependencies
+
+Routine dependency refresh — every package now sits on its latest published
+version and `npm audit` reports **0 vulnerabilities**.
+
+- `datatables.net-bs5` 3.0.1 → 3.0.3
+- `datatables.net-buttons-bs5` 4.0.1 → 4.0.2
+- `datatables.net-responsive-bs5` 4.0.1 → 4.0.3
+- `eslint` 10.8.1 → 10.9.1
+- `globals` 17.11.0 → 17.12.0
+- `sass` 1.102.0 → 1.103.1
+- `vite` 8.2.1 → 8.2.2
+
+### Security
+
+Two transitive advisories cleared, both reachable only through the dev toolchain:
+
+- **`nanoid` < 3.3.18** (high) — custom generators loop indefinitely when size
+  is zero ([GHSA-2v37-7h3g-55p8](https://github.com/advisories/GHSA-2v37-7h3g-55p8)).
+  Pulled in beneath Vite.
+- **`@humanfs/node` < 0.16.8** (moderate) — recursive copy follows symlinks and
+  copies data from outside the source tree
+  ([GHSA-p498-v437-472g](https://github.com/advisories/GHSA-p498-v437-472g)).
+  Pulled in beneath ESLint.
+
+No runtime dependency changed a major version, so the shipped markup and CSS are
+untouched. Verified with `npm run lint`, `npm run build`, and a headless render of
+seven built pages (dashboard, both table pages, charts, advanced forms, maps and
+the documentation) checking for JavaScript errors and failed requests.
+
 ## [4.0.0] - 2026-08-03
 
 ### Major Release - Security, Toolchain and Build Modernization
