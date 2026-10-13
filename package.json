@@ -30,7 +30,7 @@
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1",
+    "bootstrap-icons": "^1.13.2",
     "chart.js": "^4.5.1",
     "datatables.net-bs5": "^3.0.3",
     "datatables.net-buttons-bs5": "^4.0.2",
