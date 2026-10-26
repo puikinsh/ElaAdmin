@@ -37,7 +37,7 @@
     "datatables.net-responsive-bs5": "^4.0.3",
     "jszip": "^3.10.1",
     "leaflet": "^1.9.4",
-    "pdfmake": "^0.3.11",
+    "pdfmake": "^0.3.12",
     "sweetalert2": "^11.26.25"
   },
   "overrides": {
