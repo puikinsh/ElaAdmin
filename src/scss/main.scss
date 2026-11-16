@@ -428,23 +428,3 @@ body {
     transform: translateY(0);
   }
 }
-
-// Dark mode support
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bs-body-bg: #1a1d23;
-    --bs-body-color: #e1e2e4;
-    --bs-card-bg: #272c33;
-    --bs-border-color: #3a3f48;
-  }
-
-  body {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
-  }
-
-  .card {
-    background-color: var(--bs-card-bg);
-    border-color: var(--bs-border-color);
-  }
-}
