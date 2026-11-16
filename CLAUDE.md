@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ElaAdmin (Version 4.0.0) is a modernized Bootstrap 5 Admin Dashboard Template built with Vite. It features a component-based architecture with Handlebars templating, modern ES6+ JavaScript, and optimized build processes.
+ElaAdmin (Version 4.0.1) is a modernized Bootstrap 5 Admin Dashboard Template built with Vite. It features a component-based architecture with Handlebars templating, modern ES6+ JavaScript, and optimized build processes.
 
 ## Key Technologies
 

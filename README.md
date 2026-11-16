@@ -1,6 +1,6 @@
 # ElaAdmin - Modern Bootstrap 5 Admin Dashboard Template
 
-**Version 4.0.0** | Released: 2026-08-03
+**Version 4.0.1** | Released: 2026-11-16
 
 **ElaAdmin** is a fully responsive, modern Bootstrap 5 Admin Dashboard Template built with Vite for optimal performance. It provides a comprehensive collection of ready-to-use components, utilities, custom pages, charts, dashboard variations, and useful widgets. This template has been completely modernized from the ground up, removing all jQuery dependencies and implementing modern ES6+ JavaScript patterns.
 

@@ -1,6 +1,6 @@
 {
   "name": "elaadmin-modern",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Modern Bootstrap 5 Admin Dashboard Template with Vite Build System",
   "type": "module",
   "scripts": {
