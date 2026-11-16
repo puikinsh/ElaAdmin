@@ -73,8 +73,8 @@ export default defineConfig({
       input,
       output: {
         // Keep large, rarely-changing vendor code in stable long-cache chunks.
-        // `advancedChunks` is Rolldown's native API (Vite 8 replaced Rollup with it).
-        advancedChunks: {
+        // `codeSplitting` is Rolldown's native API (Vite 8 replaced Rollup with it).
+        codeSplitting: {
           groups: [
             { name: 'vendor-bootstrap', test: /node_modules[\\/](bootstrap|@popperjs)[\\/]/ },
             { name: 'vendor-charts', test: /node_modules[\\/]chart\.js[\\/]/ },

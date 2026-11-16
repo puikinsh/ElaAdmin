@@ -7,10 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.1] - 2026-11-16
+
+### Fixed
+
+- Removed a half-finished `prefers-color-scheme: dark` block. The template ships
+  no dark theme, so on dark-preference systems only the body and cards darkened
+  while headers, card headings and the login page stayed light, leaving
+  unreadable dark-on-dark text.
+- Build config uses Rolldown's `codeSplitting` instead of the deprecated
+  `advancedChunks`, silencing the Vite 8.3 build warning.
+
 ### Dependencies
 
-Routine dependency refresh — every package now sits on its latest published
-version and `npm audit` reports **0 vulnerabilities**.
+Every package is on its latest release and `npm audit` reports **0
+vulnerabilities** (including the critical `handlebars` advisories, now 4.7.10).
+
+- Bootstrap 5.3.8 → 5.3.9, Bootstrap Icons 1.13.1 → 1.13.2
+- Chart.js 4.5.1 → 4.6.1
+- DataTables 3.0.3 → 3.1.5, Buttons 4.0.2 → 4.1.3, Responsive 4.0.3 → 4.1.1
+- pdfmake 0.3.11 → 0.3.14, JSZip 3.10.1 → 3.10.2
+- Vite 8.2.2 → 8.3.8, Sass 1.103.1 → 1.108.2, ESLint 10.9.1 → 10.15.0,
+  Prettier 3.9.6 → 3.10.1, globals 17.12.0 → 17.14.0
+
+Earlier unreleased maintenance included in this release (intermediate versions):
 
 - `datatables.net-bs5` 3.0.1 → 3.0.3
 - `datatables.net-buttons-bs5` 4.0.1 → 4.0.2
